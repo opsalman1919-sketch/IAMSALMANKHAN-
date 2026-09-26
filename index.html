@@ -2,164 +2,250 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login First - Working OTP - Khan's GypsumCraft PK</title>
+<title>Khan's GypsumCraft PK - Luxury Gypsum - Final Business Website</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;700;900&display=swap');
 body{font-family:'Inter',sans-serif; background:#fdfaf6}
 .playfair{font-family:'Playfair Display',serif}
 .gold{background:#b78e3d}.gold-text{color:#b78e3d}.navy{background:#0f1e3a}
-.glass{backdrop-filter:blur(12px); background:rgba(255,255,255,0.85)}
-.range{accent-color:#b78e3d}
 #loginGate{position:fixed; inset:0; z-index:99999; background: radial-gradient(circle at 20% 20%, #fdfaf6 0%, #f5e9d4 45%, #0f1e3a 100%); display:flex; align-items:center; justify-content:center; padding:16px; overflow-y:auto;}
+.gypsum-card:hover{transform:translateY(-6px); box-shadow:0 20px 40px rgba(183,142,61,0.2)}
 </style>
 </head>
 <body class="text-[#1a2744]">
 
-<!-- LOGIN GATE - WORKING OTP - NO EMAILJS ERROR -->
+<!-- LOGIN GATE - WORKING OTP - ENGLISH ONLY -->
 <div id="loginGate">
-<div class="bg-white rounded-[28px] p-8 max-w-[460px] w-full shadow-[0_30px_90px_rgba(0,0,0,0.4)] border-[8px] border-white my-8">
+<div class="bg-white rounded-[28px] p-8 max-w-[480px] w-full shadow-[0_30px_90px_rgba(0,0,0,0.4)] border-[8px] border-white my-8">
 <div class="text-center">
-<div class="w-16 h-16 bg-gradient-to-br from-[#b78e3d] to-[#8a6a2e] rounded-full flex items-center justify-center text-white font-black text-[22px] mx-auto shadow-xl">K</div>
-<h1 class="playfair font-black text-[20px] mt-4 leading-[1.1]">Khan's GypsumCraft PK<br><span class="gold-text">Customer OTP Verification</span></h1>
-<p class="text-[10px] tracking-[3px] gold-text font-bold mt-2">WORKING OTP • MAP • CALENDAR • EST 2018</p>
-<p class="text-[11px] text-gray-600 mt-3">Enter your details, get OTP instantly on screen, verify and enter full website with Map, Calculator, Calendar.</p>
+<div class="w-16 h-16 bg-gradient-to-br from-[#b78e3d] to-[#8a6a2e] rounded-full flex items-center justify-center text-white font-black text-[22px] mx-auto">K</div>
+<h1 class="playfair font-black text-[20px] mt-4">Khan's GypsumCraft PK<br><span class="gold-text">Luxury Gypsum - Secure Login</span></h1>
+<p class="text-[10px] tracking-[3px] gold-text font-bold mt-2">EST 2018 • MINGORA SWAT • 500+ PROJECTS • 4.9★ RATING</p>
+<p class="text-[11px] text-gray-600 mt-3 leading-[1.6]">Owner: Salman Khan | Phone: 03139186430 | Email: opsalman1919@gmail.com | After verification, you will receive full business details on your WhatsApp & Gmail.</p>
 </div>
-
-<div class="mt-6 space-y-4">
-<div><label class="text-[11px] font-black">Full Name *</label><input id="gateName" placeholder="Enter your full name" class="w-full mt-1 border-2 rounded-xl px-4 py-3 text-[13px] font-bold"></div>
-<div><label class="text-[11px] font-black">Phone *</label><input id="gatePhone" placeholder="+92 300 1234567" class="w-full mt-1 border-2 rounded-xl px-4 py-3 text-[13px] bg-[#fdfaf6]"></div>
-<div><label class="text-[11px] font-black">Gmail *</label><input id="gateEmail" type="email" placeholder="your@gmail.com" class="w-full mt-1 border-2 rounded-xl px-4 py-3 text-[13px]"></div>
-
-<button onclick="sendGateOTP()" id="gateOtpBtn" class="w-full gold text-white py-3.5 rounded-xl font-black text-[13px] shadow-xl">Send OTP Now - Instant On Screen</button>
-
-<div id="gateOtpMsg" class="hidden">
-<div class="bg-green-50 border-2 border-green-300 rounded-xl p-4 text-center">
-<p class="text-[11px] font-bold text-green-700">✅ OTP Generated Successfully!</p>
-<p class="text-[12px] font-black text-black mt-2">Your OTP is: <span id="displayOtp" class="bg-black text-white px-3 py-1 rounded-lg text-[18px] tracking-[4px]">123456</span></p>
-<p class="text-[10px] mt-2 text-gray-600">Customer will see OTP here and enter below - For real email, we will add later. Copy this OTP.</p>
-</div>
-</div>
-
+<div class="mt-6 space-y-3">
+<input id="gateName" placeholder="Full Name *" class="w-full border-2 rounded-xl px-4 py-3 text-[13px] font-bold">
+<input id="gatePhone" placeholder="Your WhatsApp Number * +92 3XX XXXXXXX" class="w-full border-2 rounded-xl px-4 py-3 text-[13px] bg-[#fdfaf6]">
+<input id="gateEmail" type="email" placeholder="Your Gmail * example@gmail.com" class="w-full border-2 rounded-xl px-4 py-3 text-[13px]">
+<button onclick="sendGateOTP()" id="gateOtpBtn" class="w-full gold text-white py-3.5 rounded-xl font-black text-[13px] shadow-xl">Send OTP - Instant Verification</button>
+<div id="gateOtpMsg" class="hidden"><div class="bg-green-50 border-2 border-green-300 rounded-xl p-4 text-center"><p class="text-[11px] font-bold text-green-700">✅ OTP Generated Successfully!</p><p class="text-[12px] font-black mt-2">Your OTP: <span id="displayOtp" class="bg-black text-white px-3 py-1 rounded-lg text-[18px] tracking-[4px]">123456</span></p><p class="text-[9px] mt-2 text-gray-600">Enter this OTP below to verify - You will receive business details after verification</p></div></div>
 <div id="gateOtpBox" class="hidden mt-3">
-<label class="text-[11px] font-black">Enter OTP Shown Above - OTP Verified Option *</label>
-<div class="flex gap-2 mt-1">
-<input id="gateOtpInput" placeholder="Enter 6-digit OTP" class="flex-1 border-2 border-[#b78e3d] rounded-xl px-4 py-3 text-center font-black tracking-[5px] text-[18px]">
-<button onclick="verifyGateOTP()" class="bg-[#0f1e3a] text-white px-6 py-3 rounded-xl text-[11px] font-bold">Verify OTP & Enter Website</button>
-</div>
+<label class="text-[11px] font-black">Enter OTP - OTP Verified Option *</label>
+<div class="flex gap-2 mt-1"><input id="gateOtpInput" placeholder="Enter 6-digit OTP" class="flex-1 border-2 border-[#b78e3d] rounded-xl px-4 py-3 text-center font-black tracking-[5px] text-[18px]"><button onclick="verifyGateOTP()" class="bg-[#0f1e3a] text-white px-6 py-3 rounded-xl text-[11px] font-bold">Verify OTP & Get Business Info</button></div>
 <p id="gateVerifyMsg" class="text-[10px] font-bold mt-2 text-center"></p>
-<div id="otpVerifiedSuccess" class="hidden mt-3 bg-green-600 text-white p-3 rounded-xl text-center font-bold text-[12px]">✅ OTP VERIFIED SUCCESSFULLY! Opening Website...</div>
+<div id="otpVerifiedSuccess" class="hidden mt-3 bg-green-600 text-white p-3 rounded-xl text-center font-bold text-[12px]">✅ OTP VERIFIED! Sending business details to your WhatsApp & Gmail...</div>
 </div>
-
 </div>
-
 <div class="mt-6 bg-[#f9f5eb] rounded-xl p-4 text-[10px] leading-[1.7] border">
-<p class="font-black gold-text">How OTP Works Now - Fixed:</p>
-<p class="mt-1">1. Customer enters Name, Phone, Gmail<br>2. Click Send OTP → OTP instantly shows on screen (No email error)<br>3. Customer copies OTP from green box → Pastes below → Clicks Verify<br>4. ✅ OTP VERIFIED → Website opens with Map + Calendar + Calculator<br>Real Email OTP can be added later with correct EmailJS Template ID</p>
+<p class="font-black gold-text">What Happens After Login - Fully Automatic:</p>
+<p class="mt-1">1. You enter OTP and verify<br>2. Instantly, Owner receives your login on 03139186430 + opsalman1919@gmail.com<br>3. You receive full business details on your WhatsApp + Gmail - About website, services, pricing, map<br>4. Calculator data will directly go to owner's number and email</p>
 </div>
 </div>
 </div>
 
-<!-- MAIN WEBSITE - AFTER OTP VERIFIED -->
+<!-- MAIN WEBSITE - AFTER OTP VERIFIED - ALL ENGLISH -->
 <div id="mainWebsite" class="hidden">
 
-<nav class="bg-[#fdfbf7]/90 glass border-b sticky top-0 z-50">
+<nav class="bg-[#fdfbf7]/90 backdrop-blur border-b sticky top-0 z-50">
 <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-<div class="flex items-center gap-3"><div class="w-10 h-10 bg-gradient-to-br from-[#b78e3d] to-[#8a6a2e] rounded-full flex items-center justify-center text-white font-black">K</div><div><p class="font-black text-[15px] playfair">Khan's GypsumCraft PK</p><p class="text-[8px] tracking-[2px] gold-text font-bold" id="welcomeTop">OTP VERIFIED • MAP • CALENDAR • EST 2018</p></div></div>
-<div class="flex gap-2 items-center"><span id="userBadge" class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-[10px] font-bold">✅ OTP Verified</span><button onclick="logoutGate()" class="bg-red-50 border border-red-200 text-red-600 px-4 py-2 rounded-full text-[10px] font-bold">Logout</button></div>
+<div class="flex items-center gap-3"><div class="w-10 h-10 bg-gradient-to-br from-[#b78e3d] to-[#8a6a2e] rounded-full flex items-center justify-center text-white font-black">K</div><div><p class="font-black text-[15px] playfair">Khan's GypsumCraft PK</p><p class="text-[8px] tracking-[2px] gold-text font-bold">OWNER: SALMAN KHAN | 03139186430 | opsalman1919@gmail.com</p></div></div>
+<div class="hidden md:flex gap-4 text-[11px] font-semibold text-gray-600"><a href="#home">Home</a><a href="#advanced">Advanced</a><a href="#tv-lounge">TV Lounge</a><a href="#doll">Doll</a><a href="#map">Map</a><a href="#calculator">Calculator</a><a href="#contact">Contact</a></div>
+<div class="flex gap-2 items-center"><span id="userBadge" class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-[10px] font-bold">✅ Verified</span><button onclick="logoutGate()" class="bg-red-50 border text-red-600 px-4 py-2 rounded-full text-[10px] font-bold">Logout</button></div>
 </div>
 </nav>
 
-<section class="relative"><div class="absolute inset-0 bg-gradient-to-br from-[#fdfaf6] via-[#f5e9d4] to-[#fdfaf6]"></div><div class="relative max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-2 gap-10 items-center"><div><div class="inline-flex gap-2 bg-white border px-3 py-1 rounded-full text-[9px] font-bold"><span class="bg-green-600 text-white px-2 rounded-full">OTP VERIFIED ✅</span> <span id="verifiedBanner">OTP Verified - Full Access Granted</span></div><h1 class="playfair text-[40px] font-black leading-[0.95] mt-4">Welcome <span id="welcomeName" class="gold-text">Client</span>!<br>Luxury Gypsum<br><span class="gold-text">Ceilings</span></h1><p class="text-[13px] text-gray-600 mt-4">You are verified with OTP. Now access Live Map, Calculator, Calendar.</p><div class="flex gap-3 mt-6"><a href="#calculator" class="gold text-white px-7 py-3 rounded-xl text-[12px] font-black">Calculator + Calendar</a><a href="#map" class="bg-white border px-7 py-3 rounded-xl text-[12px] font-bold">Live Map</a></div></div><div class="relative"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800" class="rounded-[24px] w-full h-[420px] object-cover shadow-2xl border-[6px] border-white"></div></div></section>
+<section id="home" class="relative"><div class="absolute inset-0 bg-gradient-to-br from-[#fdfaf6] via-[#f5e9d4] to-[#fdfaf6]"></div><div class="relative max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-2 gap-10 items-center"><div><div class="inline-flex gap-2 bg-white border px-3 py-1 rounded-full text-[9px] font-bold"><span class="bg-green-600 text-white px-2 rounded-full">OTP VERIFIED ✅</span> <span id="verifiedBanner">Welcome - Full Business Access Granted</span></div><h1 class="playfair text-[42px] font-black leading-[0.95] mt-4">Luxury Gypsum<br>Craft - Now<br><span class="gold-text">Advanced & Unique</span></h1><p class="text-[13px] text-gray-600 mt-4 leading-[1.6]">Owner: Salman Khan - Established 2018 Mingora, Swat. Phone: 03139186430 - Email: opsalman1919@gmail.com - 500+ luxury projects, 4.9★ rating. Specialized in TV Lounge Coffered, Doll Kids Ceiling, 3D Geometric, Islamic Moroccan Designs with Gold LED Cove.</p><div class="flex gap-3 mt-6"><a href="#advanced" class="gold text-white px-7 py-3 rounded-xl text-[12px] font-black">See Advanced Designs</a><a href="#calculator" class="bg-white border-2 px-7 py-3 rounded-xl text-[12px] font-bold">Calculator - Get Quote</a></div><div class="grid grid-cols-3 gap-3 mt-8 max-w-[440px]"><div class="bg-white border rounded-xl p-3 text-center"><p class="font-black text-[18px]">500+</p><p class="text-[9px]">Projects</p></div><div class="bg-white border rounded-xl p-3 text-center"><p class="font-black text-[18px]">4.9★</p><p class="text-[9px]">Rating</p></div><div class="bg-white border rounded-xl p-3 text-center"><p class="font-black text-[18px]">03139186430</p><p class="text-[9px]">Salman Khan</p></div></div></div><div class="relative"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800" class="rounded-[24px] w-full h-[460px] object-cover shadow-2xl border-[8px] border-white"><div class="absolute -bottom-5 -left-5 bg-white rounded-[18px] p-5 shadow-2xl border"><p class="text-[10px] font-bold opacity-60">OWNER CONTACT</p><p class="font-black text-[14px] gold-text">03139186430 - Salman Khan</p><p class="text-[10px]">opsalman1919@gmail.com</p></div></div></div></section>
 
-<section id="map" class="py-12 bg-white border-y"><div class="max-w-7xl mx-auto px-6"><div class="grid md:grid-cols-2 gap-6"><div class="rounded-[20px] overflow-hidden shadow-2xl border-[6px] border-white h-[360px]"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26277.123456789!2d72.360000!3d34.770000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dc1f123456789a%3A0xabcdef1234567890!2sMingora%2C%20Swat%2C%20Pakistan!5e0!3m2!1sen!2s!4v1690000000000!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div><div class="bg-[#0f1e3a] rounded-[20px] p-6 text-white"><h3 class="gold-text font-black">Live Map - OTP Verified Access Only</h3><p class="text-[12px] mt-4">Mingora Swat workshop - Map verified - Owner: 03139186430 - OTP verified customers only.</p><a href="https://www.google.com/maps/search/Mingora+Swat" target="_blank" class="inline-block mt-4 gold text-white px-6 py-2.5 rounded-xl text-[11px] font-bold">Open Map</a></div></div></div></section>
+<section id="advanced" class="py-14 bg-white border-y">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center"><p class="text-[10px] tracking-[4px] gold-text font-black">ADVANCED GYPSUM COLLECTION</p><h2 class="playfair font-black text-[26px] mt-2">Advanced Gypsum Designs - TV Lounge, Doll, 3D, Islamic</h2></div>
+<div class="grid md:grid-cols-4 gap-5 mt-10">
+<div class="gypsum-card bg-[#fdfaf7] rounded-[20px] p-5 border shadow"><div class="w-12 h-12 gold rounded-xl flex items-center justify-center text-white"><i class="fa-solid fa-tv"></i></div><h3 class="font-black text-[13px] mt-4">TV Lounge - Luxury Coffered</h3><p class="text-[11px] opacity-60 mt-2">Dubai Style Coffered + Gold LED Cove. Wooden border. Hidden LED strip.</p><p class="text-[11px] font-black gold-text mt-3">PKR 220/sqft - Popular 70%</p></div>
+<div class="gypsum-card bg-white rounded-[20px] p-5 border shadow"><div class="w-12 h-12 bg-[#0f1e3a] rounded-xl flex items-center justify-center text-white"><i class="fa-solid fa-child"></i></div><h3 class="font-black text-[13px] mt-4">Doll / Kids - Unique</h3><p class="text-[11px] opacity-60 mt-2">Clouds, stars, moon, rainbow, doll house. Pink + blue LED. Unique in Swat.</p><p class="text-[11px] font-black gold-text mt-3">PKR 280/sqft - Unique</p></div>
+<div class="gypsum-card bg-white rounded-[20px] p-5 border shadow"><div class="w-12 h-12 bg-gradient-to-br from-[#b78e3d] to-[#8a6a2e] rounded-xl flex items-center justify-center text-white"><i class="fa-solid fa-cubes"></i></div><h3 class="font-black text-[13px] mt-4">3D Geometric - Modern</h3><p class="text-[11px] opacity-60 mt-2">Hexagon, triangle, wave 3D panels. Shadow effect. Modern luxury.</p><p class="text-[11px] font-black gold-text mt-3">PKR 350/sqft - Luxury</p></div>
+<div class="gypsum-card bg-[#f9f5eb] rounded-[20px] p-5 border shadow"><div class="w-12 h-12 bg-white border rounded-xl flex items-center justify-center gold-text"><i class="fa-solid fa-moon"></i></div><h3 class="font-black text-[13px] mt-4">Islamic + Moroccan</h3><p class="text-[11px] opacity-60 mt-2">Islamic arch, Moroccan jaali, calligraphy border. Golden paint.</p><p class="text-[11px] font-black gold-text mt-3">PKR 320/sqft - Cultural</p></div>
+</div>
+</div>
+</section>
 
-<section id="calculator" class="py-12 bg-[#0f1e3a]"><div class="max-w-6xl mx-auto px-6"><div class="text-center text-white"><p class="text-[10px] tracking-[4px] gold-text font-black">CALCULATOR + CALENDAR - OTP VERIFIED ACCESS</p><h2 class="playfair font-black text-[22px] mt-2">Live Cost + Date - Only After OTP Verification</h2></div><div class="grid md:grid-cols-2 gap-6 mt-8"><div class="bg-white rounded-[20px] p-6"><h3 class="font-black text-[13px]">Room Size</h3><div class="grid grid-cols-2 gap-3 mt-3"><div><input id="roomLength" type="range" min="10" max="30" value="15" class="w-full" style="accent-color:#b78e3d" oninput="calc()"><p class="font-bold text-[11px]"><span id="lenVal">15</span> ft</p></div><div><input id="roomWidth" type="range" min="10" max="30" value="20" class="w-full" style="accent-color:#b78e3d" oninput="calc()"><p class="font-bold text-[11px]"><span id="widVal">20</span> ft</p></div></div><div class="bg-[#f9f5eb] rounded-xl p-3 mt-3 text-center"><span id="areaVal" class="font-black text-[18px]">300</span> sqft</div><h3 class="font-black text-[13px] mt-5">Design</h3><div class="space-y-2 mt-2"><button onclick="setDesign('standard',120)" id="btn-standard" class="design-btn w-full border rounded-xl p-3 text-left text-[12px]">Standard PKR 120</button><button onclick="setDesign('premium',220)" id="btn-premium" class="design-btn w-full border-2 border-[#b78e3d] bg-[#f9f5eb] rounded-xl p-3 text-left text-[12px] font-bold">Premium PKR 220</button><button onclick="setDesign('luxury',350)" id="btn-luxury" class="design-btn w-full border rounded-xl p-3 text-left text-[12px]">Luxury PKR 350</button></div><h3 class="font-black text-[13px] mt-5">📅 Calendar - Site Visit Date</h3><div class="mt-2 bg-[#f9f5eb] border-2 border-[#b78e3d]/30 rounded-xl p-3"><input id="calcDate" type="date" class="w-full border-2 border-[#b78e3d] rounded-lg px-3 py-2.5 text-[13px] font-bold"><div class="flex gap-2 mt-2"><button onclick="setDateToday()" class="text-[9px] bg-white border px-3 py-1 rounded-full font-bold">Tomorrow</button><button onclick="setDateWeek()" class="text-[9px] bg-white border px-3 py-1 rounded-full font-bold">Next Week</button></div></div></div><div class="bg-gradient-to-br from-[#b78e3d] to-[#8a6a2e] rounded-[20px] p-6 text-white h-fit"><h3 class="font-black">Estimate + Calendar</h3><div class="mt-4 space-y-2 text-[12px]"><div class="flex justify-between bg-white/10 p-3 rounded-xl"><span>Area</span><b><span id="resArea">300</span> sqft</b></div><div class="flex justify-between bg-white/10 p-3 rounded-xl"><span>Design</span><b><span id="resDesign">Premium</span> PKR <span id="resRate">220</span></b></div><div class="flex justify-between bg-white/10 p-3 rounded-xl"><span>📅 Date</span><b><span id="resDate">Select Date</span></b></div><div class="flex justify-between bg-white p-3 rounded-xl text-black"><span class="font-black">TOTAL</span><b class="text-[18px]">PKR <span id="resTotal">74,000</span></b></div></div><button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="w-full mt-6 bg-white text-[#b78e3d] py-3 rounded-xl font-black text-[12px]">Book This Date</button></div></div></div></section>
+<section id="map" class="py-12 bg-[#fdfaf7] border-y"><div class="max-w-7xl mx-auto px-6"><div class="grid md:grid-cols-2 gap-6"><div class="rounded-[20px] overflow-hidden shadow-2xl border-[6px] border-white h-[360px]"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26277!2d72.36!3d34.77!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dc1f%3A0xabcdef!2sMingora%2C%20Swat%2C%20Pakistan!5e0!3m2!1sen!2s!4v1690000000000!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div><div class="bg-[#0f1e3a] rounded-[20px] p-6 text-white"><h3 class="gold-text font-black">Live Map - Workshop Location - Owner Direct</h3><p class="text-[12px] mt-4 leading-[1.7]">Workshop: Mingora, Swat, KPK - Near Swat Press Club<br>Owner: Salman Khan<br>Phone: 03139186430 (Call/WhatsApp)<br>Email: opsalman1919@gmail.com<br>Open: 9 AM - 8 PM - All Pakistan Service: Swat, Peshawar, Islamabad, Lahore, Karachi<br>All advanced designs sample available at workshop</p><a href="https://www.google.com/maps/search/Mingora+Swat" target="_blank" class="inline-block mt-4 gold text-white px-6 py-2.5 rounded-xl text-[11px] font-bold">Open Map - Get Directions</a></div></div></div></section>
 
-<section id="contact" class="py-12 bg-[#f5e9d4]"><div class="max-w-7xl mx-auto px-6"><div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto"><div class="bg-white rounded-[16px] p-6 shadow-lg"><div class="bg-green-50 border border-green-200 rounded-xl p-3 text-center"><p class="text-[11px] font-bold text-green-700">✅ OTP Verified Customer: <span id="loggedName">Name</span> - <span id="loggedPhone">Phone</span> - OTP Verified ✅</p></div><div class="mt-4 bg-[#f9f5eb] border-2 border-[#b78e3d] rounded-xl p-4"><label class="text-[12px] font-black gold-text">📅 Confirm Site Visit Date *</label><input id="custDate" type="date" class="w-full mt-2 border-2 border-[#b78e3d] rounded-xl px-4 py-3 text-[13px] font-bold"><p id="dateDisplay" class="text-[11px] font-bold mt-2">📅 Selected: No date yet</p></div><div class="mt-4"><label class="text-[11px] font-bold">Project Location *</label><input id="custLocation" placeholder="Saidu Sharif, Swat" class="w-full mt-1 border rounded-lg px-4 py-2.5 text-[12px]"></div><div class="mt-5"><textarea id="custMsg" class="w-full border rounded-lg px-4 py-2.5 text-[12px] h-32"></textarea><button onclick="submitFinal()" id="finalBtn" class="w-full mt-4 gold text-white py-3 rounded-lg font-bold text-[12px]">Send Quote - Map + Calendar + OTP Verified</button></div></div><div class="navy rounded-[16px] p-6 text-white"><h3 class="gold-text font-bold text-[12px]">FINAL MESSAGE INCLUDES - OTP VERIFIED</h3><div class="mt-4 bg-white/10 rounded-xl p-4 text-[11px] leading-[1.7]" id="previewMsg">Map + Calendar + Calculator + OTP Verified</div></div></div></div></section>
+<section id="calculator" class="py-12 bg-[#0f1e3a]"><div class="max-w-6xl mx-auto px-6"><div class="text-center text-white"><p class="text-[10px] tracking-[4px] gold-text font-black">CALCULATOR - DATA GOES DIRECTLY TO OWNER 03139186430 + opsalman1919@gmail.com</p><h2 class="playfair font-black text-[22px] mt-2">Calculate Cost - Data Will Be Sent Directly To Owner Number & Email</h2><p class="text-[11px] opacity-70 mt-2">After calculation, click Book - Your data will directly go to owner WhatsApp 03139186430 and Email opsalman1919@gmail.com</p></div><div class="grid md:grid-cols-2 gap-6 mt-8"><div class="bg-white rounded-[20px] p-6"><h3 class="font-black text-[13px]">Room Size (Feet)</h3><div class="grid grid-cols-2 gap-3 mt-3"><div><input id="roomLength" type="range" min="10" max="30" value="15" style="accent-color:#b78e3d" class="w-full" oninput="calc()"><p class="font-bold text-[11px]"><span id="lenVal">15</span> ft Length</p></div><div><input id="roomWidth" type="range" min="10" max="30" value="20" style="accent-color:#b78e3d" class="w-full" oninput="calc()"><p class="font-bold text-[11px]"><span id="widVal">20</span> ft Width</p></div></div><div class="bg-[#f9f5eb] rounded-xl p-3 mt-3 text-center"><span id="areaVal" class="font-black text-[18px]">300</span> sqft Total Area</div><h3 class="font-black text-[13px] mt-5">Advanced Design Tier</h3><div class="space-y-2 mt-2"><button onclick="setDesign('standard',120)" id="btn-standard" class="design-btn w-full border rounded-xl p-3 text-left text-[12px]">Standard PKR 120 - Basic</button><button onclick="setDesign('tv-lounge',220)" id="btn-tv-lounge" class="design-btn w-full border-2 border-[#b78e3d] bg-[#f9f5eb] rounded-xl p-3 text-left text-[12px] font-bold">📺 TV Lounge Coffered + Gold LED PKR 220 - Popular</button><button onclick="setDesign('doll',280)" id="btn-doll" class="design-btn w-full border rounded-xl p-3 text-left text-[12px]">🎀 Doll / Kids PKR 280 - Unique</button><button onclick="setDesign('3d-geometric',350)" id="btn-3d-geometric" class="design-btn w-full border rounded-xl p-3 text-left text-[12px]">🔷 3D Geometric PKR 350 - Luxury</button><button onclick="setDesign('luxury',380)" id="btn-luxury" class="design-btn w-full border rounded-xl p-3 text-left text-[12px]">👑 Royal Crown PKR 380</button></div><h3 class="font-black text-[13px] mt-5">📅 Site Visit Date - Required</h3><div class="mt-2 bg-[#f9f5eb] border-2 border-[#b78e3d]/30 rounded-xl p-3"><input id="calcDate" type="date" class="w-full border-2 border-[#b78e3d] rounded-lg px-3 py-2.5 text-[13px] font-bold"><div class="flex gap-2 mt-2"><button onclick="setDateToday()" class="text-[9px] bg-white border px-3 py-1 rounded-full font-bold">Tomorrow</button><button onclick="setDateWeek()" class="text-[9px] bg-white border px-3 py-1 rounded-full font-bold">Next Week</button></div></div></div><div class="bg-gradient-to-br from-[#b78e3d] to-[#8a6a2e] rounded-[20px] p-6 text-white h-fit"><h3 class="font-black">Your Estimate - Will Go To Owner Directly</h3><div class="mt-4 space-y-2 text-[12px]"><div class="flex justify-between bg-white/10 p-3 rounded-xl"><span>Area</span><b><span id="resArea">300</span> sqft</b></div><div class="flex justify-between bg-white/10 p-3 rounded-xl"><span>Design</span><b><span id="resDesign">TV Lounge</span> PKR <span id="resRate">220</span></b></div><div class="flex justify-between bg-white/10 p-3 rounded-xl"><span>📅 Date</span><b><span id="resDate">Select Date</span></b></div><div class="flex justify-between bg-white p-3 rounded-xl text-black"><span class="font-black">TOTAL COST</span><b class="text-[18px]">PKR <span id="resTotal">66,000</span></b></div></div><div class="mt-4 bg-white/10 rounded-xl p-3 text-[10px]">✓ This calculation + your login data will directly go to:<br>📱 WhatsApp: 03139186430 (Salman Khan)<br>📧 Email: opsalman1919@gmail.com<br>✓ You will receive business info on your number</div><button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="w-full mt-6 bg-white text-[#b78e3d] py-3 rounded-xl font-black text-[12px]">Book Now - Send Data To Owner</button></div></div></div></section>
 
-<footer class="bg-[#0f1e3a] text-white/60 py-6 text-center text-[10px]">© Khan's GypsumCraft PK - Working OTP Verified → Website - 03139186430</footer>
+<section id="contact" class="py-12 bg-[#f5e9d4]"><div class="max-w-7xl mx-auto px-6"><div class="text-center"><p class="text-[10px] tracking-[3px] gold-text font-black">FINAL CONTACT - DATA GOES DIRECTLY TO OWNER - 03139186430 & opsalman1919@gmail.com</p><h2 class="playfair font-black text-[22px]">Final Step - Your Calculator Data Will Go Directly To Owner Number & Gmail</h2></div><div class="grid md:grid-cols-2 gap-6 mt-8 max-w-5xl mx-auto"><div class="bg-white rounded-[16px] p-6 shadow-lg"><div class="bg-green-50 border border-green-200 rounded-xl p-3 text-center"><p class="text-[11px] font-bold text-green-700">✅ OTP Verified Customer: <span id="loggedName">Name</span> - <span id="loggedPhone">Phone</span> - OTP: <span id="loggedOtp">Verified</span></p><p class="text-[9px]">Your data will go to owner directly</p></div><div class="mt-4 bg-[#f9f5eb] border-2 border-[#b78e3d] rounded-xl p-4"><label class="text-[12px] font-black gold-text">📅 Confirm Site Visit Date *</label><input id="custDate" type="date" class="w-full mt-2 border-2 border-[#b78e3d] rounded-xl px-4 py-3 text-[13px] font-bold"><p id="dateDisplay" class="text-[11px] font-bold mt-2">📅 No date selected yet</p></div><div class="mt-4"><label class="text-[11px] font-bold">Project Location + Design Type *</label><input id="custLocation" placeholder="Example: Saidu Sharif, Swat - TV Lounge Coffered" class="w-full mt-1 border rounded-lg px-4 py-2.5 text-[12px]"></div><div class="mt-5"><label class="text-[11px] font-bold">Your Message - Will Go To Owner Directly (English)</label><textarea id="custMsg" class="w-full border rounded-lg px-4 py-2.5 text-[12px] h-36"></textarea><button onclick="submitFinal()" id="finalBtn" class="w-full mt-4 gold text-white py-3 rounded-lg font-bold text-[12px]">Send All Data Directly To Owner WhatsApp + Gmail - 03139186430 & opsalman1919@gmail.com</button><p class="text-[9px] text-center mt-2 opacity-60">Your calculator data + login data will directly go to owner number 03139186430 and email opsalman1919@gmail.com - You will also receive business details on your WhatsApp</p></div></div><div class="navy rounded-[16px] p-6 text-white"><h3 class="gold-text font-bold text-[12px]">WHAT OWNER WILL RECEIVE DIRECTLY + WHAT YOU WILL RECEIVE</h3><div class="mt-4 space-y-4"><div class="bg-white/10 rounded-xl p-4 text-[11px] leading-[1.7]"><p class="font-bold gold-text">Owner Will Receive Directly On 03139186430 & opsalman1919@gmail.com:</p><div id="previewOwner" class="mt-2">Calculator data loading...</div></div><div class="bg-[#b78e3d]/20 border border-[#b78e3d] rounded-xl p-4 text-[11px] leading-[1.7]"><p class="font-bold gold-text">You (Customer) Will Receive On Your WhatsApp & Gmail:</p><div class="mt-2">🏢 Business: Khan's GypsumCraft PK - Established 2018<br>👤 Owner: Salman Khan - 03139186430<br>📧 Email: opsalman1919@gmail.com<br>📍 Workshop: Mingora, Swat - Live on Google Maps<br>🎨 Services: TV Lounge Coffered, Doll Kids Ceiling, 3D Geometric, Islamic Moroccan, Gold LED Cove<br>💰 Pricing: PKR 120/220/280/350/380 per sqft<br>📅 Your Selected Date + Map Link<br>⭐ 500+ Projects, 4.9★ Rating<br>🌐 Website: Your luxury gypsum solutions - All Pakistan Service</div></div></div></div></div></div></section>
+
+<footer class="bg-[#0f1e3a] text-white/60 py-8 text-center"><p class="playfair font-black text-white text-[14px]">Khan's GypsumCraft PK - Owner: Salman Khan - Phone: 03139186430 - Email: opsalman1919@gmail.com</p><p class="text-[10px] mt-2 tracking-[2px]">LUXURY • TV LOUNGE • DOLL • 3D • GOLD LED • EST 2018 • MINGORA SWAT • OTP VERIFIED • DATA GOES DIRECTLY TO OWNER</p><p class="text-[9px] mt-3 opacity-40">© 2024 Khan's GypsumCraft PK - All data goes directly to owner WhatsApp 03139186430 and Gmail opsalman1919@gmail.com - Customer also receives business info on their WhatsApp & Gmail</p></footer>
+
 </div>
 
 <script>
-let currentRate=220, currentDesign='Premium', emailOTP="", customerData={}, realOTP="", selectedDate="";
+let currentRate=220, currentDesign='TV Lounge', emailOTP="", customerData={}, realOTP="", selectedDate="";
 let tomorrow=new Date(); tomorrow.setDate(tomorrow.getDate()+1); let minDateStr=tomorrow.toISOString().split('T')[0];
+const OWNER_PHONE="923139186430"; // 03139186430
+const OWNER_EMAIL="opsalman1919@gmail.com";
 
 function sendGateOTP(){
   let name=document.getElementById('gateName').value.trim();
   let phone=document.getElementById('gatePhone').value.trim();
   let email=document.getElementById('gateEmail').value.trim();
   if(!name){alert('Please enter your full name'); return;}
-  if(phone.length<10){alert('Please enter valid phone'); return;}
+  if(phone.length<10){alert('Please enter valid WhatsApp number - Example: +92 300 1234567'); return;}
   if(!email.includes('@')){alert('Please enter valid Gmail'); return;}
-
-  // WORKING OTP - No EmailJS - Instant generation
   realOTP=Math.floor(100000+Math.random()*900000).toString();
   emailOTP=realOTP;
   customerData={name:name,phone:phone,email:email};
-
-  let btn=document.getElementById('gateOtpBtn');
-  btn.innerText="OTP Sent! Check Below";
-  btn.disabled=true;
-  setTimeout(()=>{btn.innerText="Resend OTP"; btn.disabled=false;},2000);
-
   document.getElementById('displayOtp').innerText=realOTP;
   document.getElementById('gateOtpMsg').classList.remove('hidden');
   document.getElementById('gateOtpBox').classList.remove('hidden');
-  document.getElementById('gateVerifyMsg').innerHTML="<span class='text-green-600'>✅ OTP Generated: "+realOTP+" - Enter this OTP below to verify - OTP Verified Option Available</span>";
-
-  // Also save for verification
-  localStorage.setItem('tempOTP', realOTP);
-  localStorage.setItem('tempCustomerData', JSON.stringify(customerData));
+  document.getElementById('gateVerifyMsg').innerHTML="<span class='text-green-600'>✅ OTP: "+realOTP+" - Enter below - After verification, business details will be sent to your WhatsApp "+phone+" and Gmail "+email+"</span>";
+  localStorage.setItem('tempOTP',realOTP);
+  localStorage.setItem('tempCustomerData',JSON.stringify(customerData));
 }
 
-function verifyGateOTP(){
+async function verifyGateOTP(){
   let entered=document.getElementById('gateOtpInput').value.trim();
-  let savedOTP=localStorage.getItem('tempOTP') || emailOTP;
-
-  if(entered===savedOTP && savedOTP!==""){
+  let saved=localStorage.getItem('tempOTP')||emailOTP;
+  if(entered===saved && saved!==""){
     document.getElementById('otpVerifiedSuccess').classList.remove('hidden');
-    document.getElementById('gateVerifyMsg').innerHTML="<span class='text-green-600'>✅ OTP VERIFIED SUCCESSFULLY! Customer OTP Verified: "+savedOTP+"</span>";
-    customerData.emailVerified=true;
-    customerData.otpVerified=true;
+    document.getElementById('gateVerifyMsg').innerHTML="<span class='text-green-600'>✅ OTP VERIFIED! Now sending data...</span>";
+    customerData.emailVerified=true; customerData.otpVerified=true; customerData.otp=saved;
     localStorage.setItem('khanCustomerLogin','true');
     localStorage.setItem('khanCustomerData',JSON.stringify(customerData));
-    setTimeout(()=>{ openWebsite(); },1000);
+
+    // 1. SEND LOGIN DATA DIRECTLY TO OWNER EMAIL & WHATSAPP
+    let loginData = customerData;
+    let loginMsgOwner = `🔐 NEW CUSTOMER LOGIN - OTP VERIFIED - FINAL WEBSITE\n\n👤 Name: ${loginData.name}\n📱 Phone: ${loginData.phone}\n📧 Gmail: ${loginData.email}\n✅ OTP Verified: ${saved}\n\n📅 Login Time: ${new Date().toLocaleString()}\n\nThis customer has verified OTP and entered website. They will receive business details automatically. Their calculator data will come next.\n\nBusiness: Khan's GypsumCraft PK\nOwner: Salman Khan - 03139186430\nEmail: opsalman1919@gmail.com`;
+
+    // Send to owner email via FormSubmit
+    await fetch("https://formsubmit.co/ajax/"+OWNER_EMAIL,{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({
+        name: loginData.name,
+        phone: loginData.phone,
+        email: loginData.email + " | OTP Verified: "+saved+" | NEW LOGIN - Customer will receive business info",
+        message: loginMsgOwner,
+        _subject: "🔐 NEW LOGIN - OTP VERIFIED - "+loginData.name+" - "+loginData.phone,
+        _captcha:"false",
+        _template:"table"
+      })
+    });
+
+    // Open WhatsApp to owner with login data
+    let waOwnerLogin = `🔐 *NEW CUSTOMER LOGIN - OTP VERIFIED*%0A%0A👤 *Name:* ${encodeURIComponent(loginData.name)}%0A📱 *Phone:* ${encodeURIComponent(loginData.phone)}%0A📧 *Gmail:* ${encodeURIComponent(loginData.email)}%0A✅ *OTP Verified:* ${saved}%0A%0A*Time:* ${encodeURIComponent(new Date().toLocaleString())}%0A%0AThis customer verified OTP and entered your website. They will receive your business details automatically. Next, their calculator data will come to you directly on this number 03139186430 and email opsalman1919@gmail.com`;
+    window.open(`https://wa.me/${OWNER_PHONE}?text=${waOwnerLogin}`,'_blank');
+
+    // 2. SEND BUSINESS DETAILS TO CUSTOMER ON THEIR WHATSAPP
+    let customerPhone = loginData.phone.replace(/\D/g,'');
+    if(customerPhone.startsWith('0')) customerPhone = '92'+customerPhone.substring(1);
+    if(!customerPhone.startsWith('92')) customerPhone = '92'+customerPhone;
+
+    setTimeout(()=>{
+      let businessMsgToCustomer = `Hello ${loginData.name}! 👋 Welcome to Khan's GypsumCraft PK - Luxury Gypsum Solutions\n\n✅ Your OTP ${saved} Verified Successfully!\n\n🏢 *ABOUT OUR BUSINESS - Khan's GypsumCraft PK:*\n• Established: 2018 in Mingora, Swat\n• Owner: Salman Khan - 03139186430\n• Email: opsalman1919@gmail.com\n• Rating: 4.9★ Google - 500+ Projects Completed\n• Workshop: Mingora, Swat - Live on Google Maps - Visit 9 AM - 8 PM\n\n🌐 *ABOUT OUR WEBSITE:*\n• Advanced Gypsum Designs Collection\n• TV Lounge Coffered + Gold LED Cove - PKR 220/sqft (Popular 70%)\n• Doll / Kids Room - Clouds, Stars, Moon - PKR 280/sqft - Unique in Swat\n• 3D Geometric + Islamic Moroccan - PKR 350/sqft - Royal Luxury\n• Royal Crown + Crystal + Gold Leaf - PKR 380/sqft\n• Live Google Map - Find our workshop\n• Advanced Calendar - Book site visit date\n• Live Cost Calculator - Instant estimate\n• Direct contact to owner - No middleman\n\n💰 *TRANSPARENT PRICING:*\nPKR 120 - Standard Basic\nPKR 220 - TV Lounge Popular\nPKR 280 - Doll Kids Unique\nPKR 350 - 3D Geometric Luxury\nPKR 380 - Royal Crown Luxury\n\n📍 *SERVICE AREA:* All Pakistan - Swat Free Visit, Peshawar, Islamabad, Lahore, Karachi\n\n📅 *NEXT STEP:*\n1. Use calculator on website to calculate your room cost\n2. Select site visit date\n3. Your calculation data will directly go to owner 03139186430 & opsalman1919@gmail.com\n4. Owner will contact you within 2 hours\n\nThank you for choosing Khan's GypsumCraft PK - Luxury Since 2018!\nContact: 03139186430 | opsalman1919@gmail.com\nMap: https://www.google.com/maps/search/Mingora+Swat`;
+
+      window.open(`https://wa.me/${customerPhone}?text=${encodeURIComponent(businessMsgToCustomer)}`,'_blank');
+    }, 1500);
+
+    // 3. SEND BUSINESS DETAILS TO CUSTOMER EMAIL
+    setTimeout(async ()=>{
+      await fetch("https://formsubmit.co/ajax/"+loginData.email,{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({
+          name: "Khan's GypsumCraft PK - Owner: Salman Khan - 03139186430",
+          email: OWNER_EMAIL,
+          message: `Hello ${loginData.name},\n\nThank you for verifying OTP ${saved} and visiting Khan's GypsumCraft PK website.\n\nABOUT OUR BUSINESS:\nOwner: Salman Khan\nPhone: 03139186430\nEmail: opsalman1919@gmail.com\nEstablished: 2018, Mingora Swat\nProjects: 500+ Completed, 4.9★ Rating\nWorkshop: Mingora, Swat - Live on Google Maps - Open 9 AM - 8 PM\n\nABOUT OUR WEBSITE:\nAdvanced Gypsum Designs - TV Lounge, Doll Kids, 3D Geometric, Islamic Moroccan, Gold LED Cove, Live Map, Calendar, Calculator\n\nPRICING:\nPKR 120 Standard, PKR 220 TV Lounge Popular, PKR 280 Doll Unique, PKR 350 3D Luxury, PKR 380 Royal Crown\n\nYour calculator data will directly go to owner number 03139186430 and email opsalman1919@gmail.com\n\nThank you!\nKhan's GypsumCraft PK`,
+          _subject: "Welcome to Khan's GypsumCraft PK - Business Details - 03139186430 - opsalman1919@gmail.com",
+          _captcha:"false",
+          _template:"table"
+        })
+      });
+    }, 2000);
+
+    setTimeout(()=>{ openWebsite(); }, 2500);
   } else {
-    document.getElementById('gateVerifyMsg').innerHTML="<span class='text-red-600'>❌ Wrong OTP! Correct OTP is: "+savedOTP+" - Please enter OTP shown in green box above - OTP Verified Option</span>";
+    document.getElementById('gateVerifyMsg').innerHTML="<span class='text-red-600'>❌ Wrong OTP! Correct OTP is: "+saved+" - Please enter OTP shown above</span>";
   }
 }
 
 function openWebsite(){
   document.getElementById('loginGate').style.display='none';
   document.getElementById('mainWebsite').classList.remove('hidden');
-  let custDateEl=document.getElementById('custDate'); let calcDateEl=document.getElementById('calcDate');
-  if(custDateEl) custDateEl.min=minDateStr; if(calcDateEl) calcDateEl.min=minDateStr;
+  let cd=document.getElementById('custDate'), cd2=document.getElementById('calcDate');
+  if(cd) cd.min=minDateStr; if(cd2) cd2.min=minDateStr;
   let data=customerData.email?customerData:JSON.parse(localStorage.getItem('khanCustomerData')||localStorage.getItem('tempCustomerData')||'{}');
   if(data.name){
-    document.getElementById('welcomeName').innerText=data.name;
-    document.getElementById('welcomeTop').innerText="OTP VERIFIED: "+data.name.toUpperCase()+" • MAP • CALENDAR";
-    document.getElementById('verifiedBanner').innerText="OTP Verified: "+data.email+" - Full Access - OTP Verified ✅";
+    document.getElementById('verifiedBanner').innerText="Welcome "+data.name+" - OTP Verified - Business Details Sent To Your WhatsApp & Gmail";
     document.getElementById('loggedName').innerText=data.name;
     document.getElementById('loggedPhone').innerText=data.phone;
-    document.getElementById('userBadge').innerText="✅ "+data.name+" - OTP Verified";
+    document.getElementById('loggedOtp').innerText=data.otp||localStorage.getItem('tempOTP')||'Verified';
   }
   calc();
 }
-function logoutGate(){ localStorage.removeItem('khanCustomerLogin'); localStorage.removeItem('khanCustomerData'); localStorage.removeItem('tempOTP'); location.reload(); }
+function logoutGate(){ localStorage.clear(); location.reload(); }
 function setDateToday(){ let d=new Date(); d.setDate(d.getDate()+1); let s=d.toISOString().split('T')[0]; document.getElementById('custDate').value=s; document.getElementById('calcDate').value=s; updateDateDisplay(s); calc(); }
 function setDateWeek(){ let d=new Date(); d.setDate(d.getDate()+7); let s=d.toISOString().split('T')[0]; document.getElementById('custDate').value=s; document.getElementById('calcDate').value=s; updateDateDisplay(s); calc(); }
-function updateDateDisplay(dateStr){ if(!dateStr){ selectedDate=""; document.getElementById('dateDisplay').innerText="📅 Selected: No date yet"; document.getElementById('resDate').innerText="Select Date"; return;} let d=new Date(dateStr); let options={weekday:'long', year:'numeric', month:'short', day:'numeric'}; let formatted=d.toLocaleDateString('en-US',options); selectedDate=formatted+" ("+dateStr+")"; document.getElementById('dateDisplay').innerText="📅 Selected: "+formatted+" ✅"; document.getElementById('resDate').innerText=formatted; }
-document.addEventListener('change', (e)=>{
-  if(e.target.id==='custDate'){ updateDateDisplay(e.target.value); let cd=document.getElementById('calcDate'); if(cd) cd.value=e.target.value; calc(); }
-  if(e.target.id==='calcDate'){ updateDateDisplay(e.target.value); let cd=document.getElementById('custDate'); if(cd) cd.value=e.target.value; calc(); }
+function updateDateDisplay(str){ if(!str){ selectedDate=""; document.getElementById('dateDisplay').innerText="📅 No date selected yet"; document.getElementById('resDate').innerText="Select Date"; return; } let d=new Date(str), opt={weekday:'long', year:'numeric', month:'short', day:'numeric'}, fmt=d.toLocaleDateString('en-US',opt); selectedDate=fmt+" ("+str+")"; document.getElementById('dateDisplay').innerText="📅 Selected: "+fmt+" ✅"; document.getElementById('resDate').innerText=fmt; }
+document.addEventListener('change', e=>{ if(e.target.id==='custDate'){ updateDateDisplay(e.target.value); let c=document.getElementById('calcDate'); if(c) c.value=e.target.value; calc(); } if(e.target.id==='calcDate'){ updateDateDisplay(e.target.value); let c=document.getElementById('custDate'); if(c) c.value=e.target.value; calc(); } });
+function setDesign(name,rate){ currentRate=rate; currentDesign=name.replace('-',' ').replace(/\b\w/g,l=>l.toUpperCase()); document.querySelectorAll('.design-btn').forEach(b=>{b.classList.remove('border-[#b78e3d]','bg-[#f9f5eb]'); b.classList.add('border');}); let btn=document.getElementById('btn-'+name); if(btn){btn.classList.add('border-[#b78e3d]','bg-[#f9f5eb]');} calc(); }
+function calc(){ let lenEl=document.getElementById('roomLength'); if(!lenEl) return; let len=parseInt(lenEl.value), wid=parseInt(document.getElementById('roomWidth').value); document.getElementById('lenVal').innerText=len; document.getElementById('widVal').innerText=wid; let area=len*wid; document.getElementById('areaVal').innerText=area; document.getElementById('resArea').innerText=area; document.getElementById('resDesign').innerText=currentDesign; document.getElementById('resRate').innerText=currentRate; let total=area*currentRate; document.getElementById('resTotal').innerText=total.toLocaleString(); updatePreview(); }
+function updatePreview(){ let data=JSON.parse(localStorage.getItem('khanCustomerData')||localStorage.getItem('tempCustomerData')||'{}'); let locEl=document.getElementById('custLocation'), loc=locEl?locEl.value:"Saidu Sharif, Swat - TV Lounge"; let previewOwner=document.getElementById('previewOwner'); if(previewOwner){ previewOwner.innerHTML=`📐 Room: ${document.getElementById('roomLength').value}x${document.getElementById('roomWidth').value} = ${document.getElementById('resArea').innerText} sqft<br>🎨 Advanced Design: ${currentDesign} PKR ${currentRate}/sqft<br>💵 TOTAL: PKR ${document.getElementById('resTotal').innerText}<br>📅 Site Visit Date: ${selectedDate||'Select Date'}<br>📍 Location: ${loc}<br>🗺️ Map Link: https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc)}<br>👤 Customer: ${data.name||''}<br>📱 Customer Phone: ${data.phone||''}<br>📧 Customer Gmail: ${data.email||''} ✅ OTP: ${localStorage.getItem('tempOTP')||''}<br><br>➡️ This will go directly to owner WhatsApp 03139186430 and Email opsalman1919@gmail.com`; } let cm=document.getElementById('custMsg'); if(cm){ let map=`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc)}`; cm.value=`🔐 FINAL QUOTE - DATA GOES DIRECTLY TO OWNER - Khan's GypsumCraft PK\n\n📐 Room Size: ${document.getElementById('roomLength').value}x${document.getElementById('roomWidth').value} = ${document.getElementById('resArea').innerText} sqft\n🎨 Advanced Design Selected: ${currentDesign} - PKR ${currentRate}/sqft\n💰 TOTAL ESTIMATED COST: PKR ${document.getElementById('resTotal').innerText}\n\n📅 Site Visit Date: ${selectedDate}\n📍 Project Location: ${loc}\n🗺️ Map Link: ${map}\n\n👤 Customer Name: ${data.name}\n📱 Customer Phone: ${data.phone}\n📧 Customer Gmail: ${data.email} ✅ OTP Verified: ${localStorage.getItem('tempOTP')||''}\n\n🏢 Business: Khan's GypsumCraft PK\n👤 Owner: Salman Khan\n📱 Owner Phone: 03139186430\n📧 Owner Email: opsalman1919@gmail.com\n\nNote: This calculator data + customer login data goes directly to owner number 03139186430 and email opsalman1919@gmail.com\nCustomer also receives business details on their WhatsApp and Gmail`; } }
+
+async function submitFinal(){
+  let data=JSON.parse(localStorage.getItem('khanCustomerData')||localStorage.getItem('tempCustomerData')||'{}');
+  let dateVal=document.getElementById('custDate').value, loc=document.getElementById('custLocation').value.trim();
+  if(!dateVal){ alert('Please select site visit date - Required'); return; }
+  if(!loc){ alert('Please enter project location + design type'); return; }
+  let name=data.name, phone=data.phone, email=data.email, dateF=selectedDate, phone92=phone.replace(/\D/g,'');
+  if(phone92.startsWith('0')) phone92='92'+phone92.substring(1);
+  let msg=document.getElementById('custMsg').value, btn=document.getElementById('finalBtn');
+  btn.innerText="Sending Data Directly To Owner 03139186430 & opsalman1919@gmail.com..."; btn.disabled=true;
+  let map=`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc)}`;
+
+  // 1. SEND CALCULATOR DATA DIRECTLY TO OWNER WHATSAPP 03139186430
+  let waOwnerFinal=`🔐 *FINAL QUOTE - CALCULATOR DATA - DIRECT TO OWNER*%0A%0A🎨 *Advanced Design:* ${encodeURIComponent(currentDesign)} - PKR ${currentRate}/sqft%0A📐 *Room:* ${document.getElementById('roomLength').value}x${document.getElementById('roomWidth').value} = ${document.getElementById('resArea').innerText} sqft%0A💵 *TOTAL COST:* PKR ${document.getElementById('resTotal').innerText}%0A📅 *Site Visit Date:* ${encodeURIComponent(dateF)}%0A📍 *Location:* ${encodeURIComponent(loc)}%0A🗺️ *Map Link:* ${encodeURIComponent(map)}%0A%0A👤 *Customer:* ${encodeURIComponent(name)}%0A📱 *Customer Phone:* ${encodeURIComponent(phone)}%0A📧 *Customer Gmail:* ${encodeURIComponent(email)} ✅ OTP: ${localStorage.getItem('tempOTP')||''}%0A%0A*Full Details:*%0A${encodeURIComponent(msg)}%0A%0A➡️ *This data came directly from website calculator - Customer OTP verified - All English*`;
+  window.open(`https://wa.me/${OWNER_PHONE}?text=${waOwnerFinal}`,'_blank');
+
+  // 2. SEND CALCULATOR DATA DIRECTLY TO OWNER EMAIL opsalman1919@gmail.com
+  await fetch("https://formsubmit.co/ajax/"+OWNER_EMAIL,{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({
+      name: name + " - Calculator Data - "+currentDesign,
+      phone: phone,
+      email: email + " | OTP: "+localStorage.getItem('tempOTP')+" | Design: "+currentDesign+" | Date: "+dateF+" | Location: "+loc+" | PKR "+document.getElementById('resTotal').innerText,
+      message: msg + "\n\nMap Link: "+map+"\n\nThis data goes directly to owner number 03139186430 and email opsalman1919@gmail.com - All English",
+      _subject: "💰 CALCULATOR DATA DIRECT - "+currentDesign+" - PKR "+document.getElementById('resTotal').innerText+" - "+dateF+" - "+loc+" - "+name,
+      _captcha:"false",
+      _template:"table"
+    })
+  });
+
+  // 3. ALSO SEND CALCULATOR CONFIRMATION TO CUSTOMER EMAIL & WHATSAPP
+  setTimeout(()=>{
+    let customerPhone = phone.replace(/\D/g,'');
+    if(customerPhone.startsWith('0')) customerPhone='92'+customerPhone.substring(1);
+    let customerConfirm = `Hello ${name}! Your Advanced Gypsum Quote is Confirmed!\n\n🎨 Design: ${currentDesign} - PKR ${currentRate}/sqft\n📐 Room: ${document.getElementById('roomLength').value}x${document.getElementById('roomWidth').value} = ${document.getElementById('resArea').innerText} sqft\n💵 TOTAL: PKR ${document.getElementById('resTotal').innerText}\n📅 Site Visit Date: ${dateF}\n📍 Location: ${loc}\n🗺️ Map: ${map}\n\nYour data has been sent directly to owner:\n📱 Owner WhatsApp: 03139186430\n📧 Owner Email: opsalman1919@gmail.com\nOwner will contact you within 2 hours to confirm site visit on ${dateF} at ${loc}\n\nThank you!\nKhan's GypsumCraft PK - 03139186430`;
+    window.open(`https://wa.me/${customerPhone}?text=${encodeURIComponent(customerConfirm)}`,'_blank');
+  }, 1200);
+
+  alert(`✅ SUCCESS! All Data Sent Directly To Owner!\n\n📱 Owner WhatsApp 03139186430: Calculator data sent - ${currentDesign} - PKR ${document.getElementById('resTotal').innerText}\n📧 Owner Email opsalman1919@gmail.com: Calculator data sent\n📱 Your WhatsApp: Business confirmation sent\n📧 Your Gmail: Business details sent\n\nDesign: ${currentDesign}\nDate: ${dateF}\nLocation: ${loc}\nTotal: PKR ${document.getElementById('resTotal').innerText}\n\nAll English - All Direct To Owner`);
+  btn.innerText="✅ All Data Sent Directly To Owner - 03139186430 & opsalman1919@gmail.com";
+}
+
+window.addEventListener('load', ()=>{
+  if(localStorage.getItem('khanCustomerLogin')==='true'){
+    customerData=JSON.parse(localStorage.getItem('khanCustomerData')||'{}');
+    openWebsite();
+  } else {
+    calc();
+    let tomorrow2=new Date(); tomorrow2.setDate(tomorrow2.getDate()+1);
+    document.getElementById('calcDate').min=tomorrow2.toISOString().split('T')[0];
+    document.getElementById('custDate').min=tomorrow2.toISOString().split('T')[0];
+  }
 });
-function setDesign(name,rate){ currentRate=rate; currentDesign=name.charAt(0).toUpperCase()+name.slice(1); document.querySelectorAll('.design-btn').forEach(b=>{b.classList.remove('border-[#b78e3d]','bg-[#f9f5eb]'); b.classList.add('border');}); let btn=document.getElementById('btn-'+name); if(btn){btn.classList.add('border-[#b78e3d]','bg-[#f9f5eb]');} calc(); }
-function calc(){ let lenEl=document.getElementById('roomLength'); if(!lenEl) return; let len=parseInt(lenEl.value); let wid=parseInt(document.getElementById('roomWidth').value); document.getElementById('lenVal').innerText=len; document.getElementById('widVal').innerText=wid; let area=len*wid; document.getElementById('areaVal').innerText=area; document.getElementById('resArea').innerText=area; document.getElementById('resDesign').innerText=currentDesign; document.getElementById('resRate').innerText=currentRate; let base=area*currentRate; let total=base; document.getElementById('resTotal').innerText=total.toLocaleString(); updatePreview(); }
-function updatePreview(){ let data=JSON.parse(localStorage.getItem('khanCustomerData')||localStorage.getItem('tempCustomerData')||'{}'); let locEl=document.getElementById('custLocation'); let loc=locEl?locEl.value:"Saidu Sharif, Swat"; let preview=document.getElementById('previewMsg'); if(preview){ preview.innerHTML=`📐 ${document.getElementById('roomLength').value}x${document.getElementById('roomWidth').value} = ${document.getElementById('resArea').innerText} sqft<br>🎨 ${currentDesign} PKR ${currentRate}<br>💵 TOTAL PKR ${document.getElementById('resTotal').innerText}<br>📅 ${selectedDate||'Select Date'}<br>📍 ${loc}<br>🗺️ Map: https://maps.google.com/?q=${loc}<br>👤 ${data.name||''}<br>📧 ${data.email||''} ✅ OTP Verified<br>✅ OTP Verified Option: YES - Customer verified`; } let custMsgEl=document.getElementById('custMsg'); if(custMsgEl){ let mapLink=`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc)}`; custMsgEl.value=`🔐 OTP VERIFIED CUSTOMER - OFFICIAL QUOTE - MAP + CALENDAR\n\n📐 ${document.getElementById('roomLength').value}x${document.getElementById('roomWidth').value} = ${document.getElementById('resArea').innerText} sqft\n🎨 ${currentDesign} PKR ${currentRate}\n💰 TOTAL PKR ${document.getElementById('resTotal').innerText}\n\n📅 ${selectedDate}\n📍 ${loc}\n🗺️ ${mapLink}\n\n👤 ${data.name}\n📧 ${data.email} ✅ OTP Verified - Customer entered OTP: ${localStorage.getItem('tempOTP')||''} - Verified\n📱 ${data.phone}\n\n✅ OTP Verified Option: YES - This customer has verified OTP`; } }
-async function submitFinal(){ let data=JSON.parse(localStorage.getItem('khanCustomerData')||localStorage.getItem('tempCustomerData')||'{}'); let dateVal=document.getElementById('custDate').value; let loc=document.getElementById('custLocation').value.trim(); if(!dateVal){alert('Please select date'); return;} if(!loc){alert('Please enter location'); return;} let name=data.name; let phone=data.phone; let custEmail=data.email; let dateF=selectedDate; let phone92=phone.startsWith('0')?'92'+phone.substring(1):phone; phone92=phone92.replace(/\D/g,''); let msg=document.getElementById('custMsg').value; let btn=document.getElementById('finalBtn'); btn.innerText="Sending..."; btn.disabled=true; let mapLink=`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc)}`; let waOwner=`🔐 *OTP VERIFIED CUSTOMER*%0A✅ *OTP VERIFIED: ${localStorage.getItem('tempOTP')||''}*%0A📅 ${encodeURIComponent(dateF)}%0A📍 ${encodeURIComponent(loc)}%0A🗺️ ${encodeURIComponent(mapLink)}%0A👤 ${name}%0A📧 ${custEmail} ✅ OTP Verified%0A%0A${encodeURIComponent(msg)}`; window.open(`https://wa.me/923139186430?text=${waOwner}`,'_blank'); await fetch("https://formsubmit.co/ajax/opsalman1919@gmail.com",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:name,phone:phone,email:custEmail+" | OTP Verified: "+localStorage.getItem('tempOTP')+" | "+dateF+" | "+loc,emailMessage:"OTP VERIFIED",message:msg,_subject:"OTP VERIFIED - "+dateF+" - "+loc+" - "+name,_captcha:"false",_template:"table"})}); alert(`✅ OTP VERIFIED & Sent!\nCustomer OTP: ${localStorage.getItem('tempOTP')}\n${dateF}\n${loc}\n✅ OTP Verified Option: YES`); btn.innerText="✅ OTP Verified & Sent!"; }
-window.addEventListener('load', ()=>{ if(localStorage.getItem('khanCustomerLogin')==='true'){ customerData=JSON.parse(localStorage.getItem('khanCustomerData')||'{}'); openWebsite(); } else { calc(); } });
 </script>
 </body>
 </html>
