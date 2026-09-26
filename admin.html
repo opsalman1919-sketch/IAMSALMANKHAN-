@@ -1,76 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Business Dashboard - Khan Gypsum Craft</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex, nofollow">
+<title>Owner Dashboard - Khan's GypsumCraft PK - Gold</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-<style>
-body{background:#0a1931;color:white}
-.gold{color:#d4b46a}.bg-gold{background:#d4b46a}
-.card{background:#10264d;border:1px solid #d4b46a33;border-radius:16px}
-</style>
+<style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;900&display=swap'); body{font-family:'Inter',sans-serif; background:#f6efe3}.gold{background:#b78e3d}.gold-text{color:#b78e3d}.navy{background:#0f1e3a}</style>
 </head>
 <body>
-
-<!-- LOGIN -->
-<div id="login" class="min-h-screen flex items-center justify-center p-4">
-<div class="bg-[#0a1931] border border-[#d4b46a]/30 rounded-[28px] p-8 w-full max-w-sm text-center">
-<div class="w-20 h-20 mx-auto rounded-full border-2 border-[#d4b46a] flex items-center justify-center text-3xl font-black gold">K</div>
-<h1 class="text-3xl font-bold mt-6">Owner Login</h1>
-<p class="text-sm text-gray-400 mt-1">Access the Gypsum Craft Dashboard</p>
-<p class="text-[11px] tracking-[3px] gold mt-10">OWNER PASSWORD</p>
-<div class="relative mt-3"><input id="pass" type="password" placeholder="••••••" class="w-full bg-[#1a315e] border border-[#d4b46a]/50 rounded-xl px-4 py-4 text-white"><i class="fa-solid fa-eye absolute right-4 top-5 gold"></i><div class="text-left text-xs text-gray-500 mt-1 px-1">8430</div></div>
-<button onclick="doLogin()" class="w-full bg-gold text-[#0a1931] font-black py-4 rounded-xl mt-6 text-lg">Login</button>
-<p id="err" class="text-red-400 text-xs mt-3 hidden">Wrong Password! Use 8430</p>
-<p class="text-[11px] text-gray-500 mt-8">🔒 Gypsum Craft • Secure Owner Access</p>
+<div id="loginBox" class="min-h-screen flex items-center justify-center p-6 bg-[#0f1e3a]">
+<div class="bg-white rounded-[24px] p-8 max-w-[380px] w-full text-center shadow-2xl">
+<div class="w-14 h-14 gold rounded-xl flex items-center justify-center text-white font-black text-xl mx-auto">K</div>
+<h1 class="font-black text-[20px] mt-3">Khan's GypsumCraft PK</h1><p class="text-[10px] text-gray-400 tracking-widest">OWNER DASHBOARD - GOLD EDITION</p>
+<input id="passInput" type="password" placeholder="Enter Password" class="w-full mt-6 border-2 rounded-xl px-4 py-3 text-center"><button onclick="checkPass()" class="w-full mt-3 navy text-white py-3 rounded-xl font-bold">Login</button>
+<p class="text-[10px] text-gray-400 mt-3">Password: Swat786@Khan</p><p id="passMsg" class="text-[11px] mt-2 font-bold"></p>
 </div>
 </div>
-
-<!-- DASHBOARD -->
-<div id="dash" class="hidden p-4 max-w-5xl mx-auto">
-<div class="flex justify-between items-center">
-<div><h1 class="text-2xl font-bold gold">Business Dashboard</h1><p class="text-xs text-gray-400">Owner • Updated today, 26 Sep 2026</p></div>
-<div class="flex gap-3"><div class="w-10 h-10 rounded-full border border-[#d4b46a] flex items-center justify-center">👤</div><button onclick="logout()" class="bg-red-500 px-3 py-1 rounded-full text-xs">Logout</button></div>
+<div id="dashBox" class="hidden">
+<div class="navy text-white px-6 py-3 flex justify-between items-center sticky top-0 z-50">
+<div class="flex items-center gap-3"><div class="w-10 h-10 gold rounded-lg flex items-center justify-center font-black">K</div><div><p class="font-black text-[14px] gold-text">Khan's GypsumCraft PK</p><p class="text-[8px] opacity-60">OWNER SECRET</p></div></div>
+<div class="flex gap-3 items-center"><span class="gold-text border-b-2 border-[#b78e3d] text-[11px] font-bold">Dashboard</span><button onclick="logout()" class="bg-red-500/20 text-red-300 px-3 py-1 rounded-full text-[10px]">Logout</button></div>
 </div>
-
-<div class="grid grid-cols-2 gap-4 mt-6">
-<div class="card p-4"><p class="text-xs gold">💬 Total Inquiries</p><p class="text-4xl font-black mt-2">24</p><p class="text-xs text-green-400">+3 from yesterday ↗</p></div>
-<div class="card p-4"><p class="text-xs gold">WhatsApp Leads</p><p class="text-4xl font-black mt-2">18</p><p class="text-xs text-green-400">+5 from yesterday ↗</p></div>
-<div class="card p-4"><p class="text-xs gold">Active Projects</p><p class="text-4xl font-black mt-2">5</p><p class="text-xs text-gray-400">2 due this week</p></div>
-<div class="card p-4"><p class="text-xs gold">Revenue</p><p class="text-3xl font-black mt-2">Rs 1.2L</p><p class="text-xs text-green-400">+12% this month ↗</p></div>
+<div class="p-6 max-w-7xl mx-auto">
+<h1 class="text-[26px] font-black">Manage Your Gypsum Business, Smarter.</h1><p class="text-[11px] text-gray-500">Real-time insights • Updated <span id="todayDate"></span> • <span id="todayTime"></span></p>
+<div class="grid md:grid-cols-3 gap-4 mt-6">
+<div class="bg-white rounded-[16px] p-5 shadow border"><p class="text-[11px] opacity-60">Dashboard Overview</p><p id="totalLeads" class="text-[28px] font-black">0</p><p class="text-[10px]">Active Leads <span class="gold-text font-bold">+12% ↑</span></p></div>
+<div class="bg-white rounded-[16px] p-5 shadow border"><p class="text-[11px] opacity-60">Total Sales (YTD)</p><p class="text-[28px] font-black">$84,392</p><p class="text-[10px]">Revenue <span class="gold-text">+8.4% ↑</span> +$6,520</p></div>
+<div class="bg-white rounded-[16px] p-5 shadow border"><p class="text-[11px] opacity-60">Gmail Verified</p><p id="verifiedLeads" class="text-[28px] font-black">0</p><p class="text-[10px] text-green-600">✓ 92% verified</p></div>
 </div>
-
-<div class="card p-4 mt-5"><div class="flex justify-between"><h3 class="gold font-bold">Revenue (Last 7 Days)</h3><a class="text-xs gold">View Details ></a></div>
-<div class="mt-4 h-20 flex items-end gap-2"><div class="flex-1 bg-[#d4b46a]/30 h-[30%]"></div><div class="flex-1 bg-[#d4b46a]/40 h-[45%]"></div><div class="flex-1 bg-[#d4b46a]/50 h-[60%]"></div><div class="flex-1 bg-[#d4b46a]/60 h-[80%]"></div><div class="flex-1 bg-[#d4b46a] h-[100%]"></div><div class="flex-1 bg-[#d4b46a]/80 h-[70%]"></div><div class="flex-1 bg-[#d4b46a] h-[90%]"></div></div>
-<div class="flex justify-between text-[10px] text-gray-400 mt-2"><span>18 Oct</span><span>19 Oct</span><span>20 Oct</span><span>21 Oct</span><span>22 Oct</span><span>23 Oct</span><span>24 Oct</span></div>
-</div>
-
-<div class="card p-4 mt-5"><div class="flex justify-between"><h3 class="gold font-bold">Recent Customer Inquiries</h3><span class="text-xs gold">See All ></span></div>
-<div class="mt-4 space-y-3 text-xs">
-<div class="flex justify-between border-b border-white/10 pb-2"><span><b>Priya Sharma</b><br><span class="text-[10px] text-gray-400">Interior Design</span></span><span class="bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full">Pending</span></div>
-<div class="flex justify-between border-b border-white/10 pb-2"><span><b>Ahmed Khan Swat</b><br><span class="text-[10px] text-gray-400">False Ceiling</span></span><span class="bg-green-500/20 text-green-300 px-2 py-1 rounded-full">Contacted</span></div>
-<div class="flex justify-between border-b border-white/10 pb-2"><span><b>Zahid Ali Saidu</b><br><span class="text-[10px] text-gray-400">TV Wall</span></span><span class="bg-gray-500/20 text-gray-300 px-2 py-1 rounded-full">Closed</span></div>
+<div class="bg-white rounded-[16px] shadow border mt-6 overflow-hidden">
+<div class="p-5 flex justify-between border-b"><div><p class="font-black">Customers - Full Details</p><p class="text-[10px] opacity-60">Name, Phone (No OTP), Gmail Verified ✅, Project</p></div><div class="flex gap-2"><input id="searchCust" onkeyup="searchTable()" placeholder="Search..." class="border rounded-lg px-3 py-1.5 text-[10px] w-[160px]"><button onclick="downloadCSV()" class="navy text-white px-3 py-1.5 rounded-lg text-[10px]">Export CSV</button><button onclick="clearLeads()" class="bg-red-50 text-red-600 px-3 py-1.5 rounded-lg text-[10px]">Clear</button></div></div>
+<div class="overflow-x-auto"><table class="w-full text-[11px]"><thead class="bg-[#f9f5eb] text-[9px] opacity-60"><tr><th class="text-left py-3 px-5">DATE</th><th class="text-left">NAME</th><th class="text-left">PHONE (Direct)</th><th class="text-left">GMAIL VERIFIED</th><th class="text-left">PROJECT</th><th>STATUS</th><th>ACTION</th></tr></thead><tbody id="leadsTable"></tbody></table></div>
+<p id="noLeads" class="text-center py-16 text-gray-400 text-[11px]">No customers yet - Jab customer form bharega to yahan ayega</p>
 </div>
 </div>
-
-<div class="card p-4 mt-5">
-<h3 class="gold font-bold">Quick Actions</h3>
-<div class="grid grid-cols-2 gap-2 mt-3">
-<a href="https://mail.google.com" target="_blank" class="bg-[#1a315e] border border-[#d4b46a]/30 py-2 rounded-full text-xs text-center">+ New Inquiry</a>
-<a href="https://wa.me/923139186430" target="_blank" class="bg-[#1a315e] border border-[#d4b46a]/30 py-2 rounded-full text-xs text-center">💬 Send WhatsApp</a>
-<a href="index.html" class="bg-[#1a315e] border border-[#d4b46a]/30 py-2 rounded-full text-xs text-center">📄 View Website</a>
-<a href="https://mail.google.com" target="_blank" class="bg-[#1a315e] border border-[#d4b46a]/30 py-2 rounded-full text-xs text-center">📅 Schedule</a>
 </div>
-</div>
-<p class="text-center text-[10px] text-gray-500 mt-6">© 2026 Khan Gypsum Craft • Private Owner Access Only</p>
-</div>
-
 <script>
-function doLogin(){if(document.getElementById('pass').value=="8430"){document.getElementById('login').classList.add('hidden');document.getElementById('dash').classList.remove('hidden');localStorage.setItem('owner','yes')}else{document.getElementById('err').classList.remove('hidden')}}
-function logout(){localStorage.removeItem('owner');location.reload()}
-if(localStorage.getItem('owner')=='yes'){document.getElementById('login').classList.add('hidden');document.getElementById('dash').classList.remove('hidden')}
-document.getElementById('pass').addEventListener('keypress',e=>{if(e.key==='Enter')doLogin()})
+const OWNER_PASS="Swat786@Khan";
+document.getElementById('todayDate').innerText=new Date().toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});
+document.getElementById('todayTime').innerText=new Date().toLocaleTimeString();
+function checkPass(){if(document.getElementById('passInput').value===OWNER_PASS){localStorage.setItem('ownerLogged','yes'); showDash();}else{document.getElementById('passMsg').innerHTML="<span class='text-red-600'>Wrong Password!</span>";}}
+function showDash(){document.getElementById('loginBox').classList.add('hidden'); document.getElementById('dashBox').classList.remove('hidden'); loadLeads();}
+function logout(){localStorage.removeItem('ownerLogged'); location.reload();}
+function loadLeads(){let leads=JSON.parse(localStorage.getItem('khanLeads')||'[]'); document.getElementById('totalLeads').innerText=leads.length; document.getElementById('verifiedLeads').innerText=leads.length; let table=document.getElementById('leadsTable'); if(leads.length===0){document.getElementById('noLeads').classList.remove('hidden'); return;} document.getElementById('noLeads').classList.add('hidden'); table.innerHTML=""; leads.slice().reverse().forEach(l=>{table.innerHTML+=`<tr class="border-b hover:bg-[#fdf6e3]"><td class="py-3 px-5 text-[10px]">${l.date}</td><td class="font-bold"><div class="w-5 h-5 gold text-white rounded-full inline-flex items-center justify-center text-[8px] mr-1">${l.name.charAt(0)}</div>${l.name}</td><td>${l.phone}<br><span class="text-[8px] opacity-50">No OTP Direct</span></td><td class="text-green-700 font-bold">${l.email} <span class="bg-green-600 text-white px-1 rounded-full text-[7px]">✅</span></td><td class="max-w-[180px] truncate text-[10px] opacity-70">${l.msg}</td><td><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-[8px]">Verified</span></td><td><a href="https://wa.me/${l.phone92}" target="_blank" class="gold text-white px-2 py-1 rounded-full text-[8px]">WhatsApp</a></td></tr>`;});}
+function searchTable(){let q=document.getElementById('searchCust').value.toLowerCase(); document.querySelectorAll('#leadsTable tr').forEach(r=>{r.style.display=r.innerText.toLowerCase().includes(q)?'':'none';});}
+function clearLeads(){if(confirm('Delete all?')){localStorage.removeItem('khanLeads'); loadLeads();}}
+function downloadCSV(){let leads=JSON.parse(localStorage.getItem('khanLeads')||'[]'); if(leads.length===0){alert('No leads'); return;} let csv="Date,Name,Phone,Gmail,Project\n"; leads.forEach(l=>{csv+=`${l.date},"${l.name}",${l.phone},${l.email},"${l.msg.replace(/"/g,'""')}"\n`;}); let a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'})); a.download='Khan_Customers.csv'; a.click();}
+if(localStorage.getItem('ownerLogged')==='yes'){showDash();}
 </script>
 </body>
 </html>
