@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Dashboard - Khan Gypsum Craft</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<style>
+body{background:#0a1931;color:white}
+.gold{color:#d4b46a}.bg-gold{background:#d4b46a}
+.card{background:#10264d;border:1px solid #d4b46a33;border-radius:16px}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login" class="min-h-screen flex items-center justify-center p-4">
+<div class="bg-[#0a1931] border border-[#d4b46a]/30 rounded-[28px] p-8 w-full max-w-sm text-center">
+<div class="w-20 h-20 mx-auto rounded-full border-2 border-[#d4b46a] flex items-center justify-center text-3xl font-black gold">K</div>
+<h1 class="text-3xl font-bold mt-6">Owner Login</h1>
+<p class="text-sm text-gray-400 mt-1">Access the Gypsum Craft Dashboard</p>
+<p class="text-[11px] tracking-[3px] gold mt-10">OWNER PASSWORD</p>
+<div class="relative mt-3"><input id="pass" type="password" placeholder="••••••" class="w-full bg-[#1a315e] border border-[#d4b46a]/50 rounded-xl px-4 py-4 text-white"><i class="fa-solid fa-eye absolute right-4 top-5 gold"></i><div class="text-left text-xs text-gray-500 mt-1 px-1">8430</div></div>
+<button onclick="doLogin()" class="w-full bg-gold text-[#0a1931] font-black py-4 rounded-xl mt-6 text-lg">Login</button>
+<p id="err" class="text-red-400 text-xs mt-3 hidden">Wrong Password! Use 8430</p>
+<p class="text-[11px] text-gray-500 mt-8">🔒 Gypsum Craft • Secure Owner Access</p>
+</div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dash" class="hidden p-4 max-w-5xl mx-auto">
+<div class="flex justify-between items-center">
+<div><h1 class="text-2xl font-bold gold">Business Dashboard</h1><p class="text-xs text-gray-400">Owner • Updated today, 26 Sep 2026</p></div>
+<div class="flex gap-3"><div class="w-10 h-10 rounded-full border border-[#d4b46a] flex items-center justify-center">👤</div><button onclick="logout()" class="bg-red-500 px-3 py-1 rounded-full text-xs">Logout</button></div>
+</div>
+
+<div class="grid grid-cols-2 gap-4 mt-6">
+<div class="card p-4"><p class="text-xs gold">💬 Total Inquiries</p><p class="text-4xl font-black mt-2">24</p><p class="text-xs text-green-400">+3 from yesterday ↗</p></div>
+<div class="card p-4"><p class="text-xs gold">WhatsApp Leads</p><p class="text-4xl font-black mt-2">18</p><p class="text-xs text-green-400">+5 from yesterday ↗</p></div>
+<div class="card p-4"><p class="text-xs gold">Active Projects</p><p class="text-4xl font-black mt-2">5</p><p class="text-xs text-gray-400">2 due this week</p></div>
+<div class="card p-4"><p class="text-xs gold">Revenue</p><p class="text-3xl font-black mt-2">Rs 1.2L</p><p class="text-xs text-green-400">+12% this month ↗</p></div>
+</div>
+
+<div class="card p-4 mt-5"><div class="flex justify-between"><h3 class="gold font-bold">Revenue (Last 7 Days)</h3><a class="text-xs gold">View Details ></a></div>
+<div class="mt-4 h-20 flex items-end gap-2"><div class="flex-1 bg-[#d4b46a]/30 h-[30%]"></div><div class="flex-1 bg-[#d4b46a]/40 h-[45%]"></div><div class="flex-1 bg-[#d4b46a]/50 h-[60%]"></div><div class="flex-1 bg-[#d4b46a]/60 h-[80%]"></div><div class="flex-1 bg-[#d4b46a] h-[100%]"></div><div class="flex-1 bg-[#d4b46a]/80 h-[70%]"></div><div class="flex-1 bg-[#d4b46a] h-[90%]"></div></div>
+<div class="flex justify-between text-[10px] text-gray-400 mt-2"><span>18 Oct</span><span>19 Oct</span><span>20 Oct</span><span>21 Oct</span><span>22 Oct</span><span>23 Oct</span><span>24 Oct</span></div>
+</div>
+
+<div class="card p-4 mt-5"><div class="flex justify-between"><h3 class="gold font-bold">Recent Customer Inquiries</h3><span class="text-xs gold">See All ></span></div>
+<div class="mt-4 space-y-3 text-xs">
+<div class="flex justify-between border-b border-white/10 pb-2"><span><b>Priya Sharma</b><br><span class="text-[10px] text-gray-400">Interior Design</span></span><span class="bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full">Pending</span></div>
+<div class="flex justify-between border-b border-white/10 pb-2"><span><b>Ahmed Khan Swat</b><br><span class="text-[10px] text-gray-400">False Ceiling</span></span><span class="bg-green-500/20 text-green-300 px-2 py-1 rounded-full">Contacted</span></div>
+<div class="flex justify-between border-b border-white/10 pb-2"><span><b>Zahid Ali Saidu</b><br><span class="text-[10px] text-gray-400">TV Wall</span></span><span class="bg-gray-500/20 text-gray-300 px-2 py-1 rounded-full">Closed</span></div>
+</div>
+</div>
+
+<div class="card p-4 mt-5">
+<h3 class="gold font-bold">Quick Actions</h3>
+<div class="grid grid-cols-2 gap-2 mt-3">
+<a href="https://mail.google.com" target="_blank" class="bg-[#1a315e] border border-[#d4b46a]/30 py-2 rounded-full text-xs text-center">+ New Inquiry</a>
+<a href="https://wa.me/923139186430" target="_blank" class="bg-[#1a315e] border border-[#d4b46a]/30 py-2 rounded-full text-xs text-center">💬 Send WhatsApp</a>
+<a href="index.html" class="bg-[#1a315e] border border-[#d4b46a]/30 py-2 rounded-full text-xs text-center">📄 View Website</a>
+<a href="https://mail.google.com" target="_blank" class="bg-[#1a315e] border border-[#d4b46a]/30 py-2 rounded-full text-xs text-center">📅 Schedule</a>
+</div>
+</div>
+<p class="text-center text-[10px] text-gray-500 mt-6">© 2026 Khan Gypsum Craft • Private Owner Access Only</p>
+</div>
+
+<script>
+function doLogin(){if(document.getElementById('pass').value=="8430"){document.getElementById('login').classList.add('hidden');document.getElementById('dash').classList.remove('hidden');localStorage.setItem('owner','yes')}else{document.getElementById('err').classList.remove('hidden')}}
+function logout(){localStorage.removeItem('owner');location.reload()}
+if(localStorage.getItem('owner')=='yes'){document.getElementById('login').classList.add('hidden');document.getElementById('dash').classList.remove('hidden')}
+document.getElementById('pass').addEventListener('keypress',e=>{if(e.key==='Enter')doLogin()})
+</script>
+</body>
+</html>
