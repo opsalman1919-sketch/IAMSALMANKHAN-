@@ -25,9 +25,9 @@ header{position:sticky;top:0;z-index:999;background:#fff;padding:12px 5%;display
 .card-actions{display:flex;gap:4px;margin-top:6px}.card-actions button{flex:1;padding:5px 3px;border:1px solid #F0E6C8;border-radius:6px;background:#fff;font-size:10px;cursor:pointer;font-weight:600}.card-actions button:hover{background:var(--gold);color:#111}
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:100000;display:none;padding:15px;overflow:auto}
 .modal-box{background:#fff;max-width:700px;margin:15px auto;padding:18px;border-radius:14px;border-top:4px solid var(--gold)}
-#imgModal{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:100001;display:none;justify-content:center;align-items:center;flex-direction:column;padding:15px}
-#imgModal img{max-width:90%;max-height:70vh;object-fit:contain;border-radius:12px;transition:.3s}
-#imgControls{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;justify-content:center}
+#imgModal{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:100001;display:none;justify-content:center;align-items:center;flex-direction:column;padding:10px;touch-action:none;overscroll-behavior:contain}
+#imgModal img{width:auto;height:auto;max-width:95vw;max-height:75vh;object-fit:contain;border-radius:12px;transition:transform.25s ease;transform-origin:center center;will-change:transform;display:block;margin:auto}
+#imgControls{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;justify-content:center;position:sticky;bottom:0}
 #aiBtn{position:fixed;bottom:18px;right:18px;z-index:9998;background:linear-gradient(90deg,#D4AF37,#C9A86A);color:#111;border:none;padding:13px 18px;border-radius:30px;font-weight:800;cursor:pointer;box-shadow:0 6px 20px rgba(212,175,55,.4)}
 #aiBot{position:fixed;bottom:80px;right:18px;width:370px;max-width:95%;background:#fff;border-radius:18px;box-shadow:0 12px 35px rgba(0,0,0,.25);z-index:9999;overflow:hidden;border:1px solid #F0E6C8;display:none;flex-direction:column}
 #aiHead{background:#111;color:var(--gold);padding:12px 14px;font-weight:700;display:flex;justify-content:space-between;border-bottom:2px solid var(--gold)}
@@ -45,6 +45,11 @@ header{position:sticky;top:0;z-index:999;background:#fff;padding:12px 5%;display
 .super-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;padding:16px}
 .super-card{background:#FFFEF8;border:1px solid #F0E6C8;border-left:4px solid var(--gold);padding:12px;border-radius:12px}
 .super-card input,.super-card textarea,.super-card select{width:100%;padding:8px;border:1px solid #ddd;border-radius:8px;margin-top:6px;font-size:11px}
+@media(max-width:600px){
+ .gallery{grid-template-columns:1fr}
+ .card img{height:220px}
+  #imgModal img{max-width:98vw;max-height:70vh}
+}
 </style>
 </head>
 <body>
@@ -108,7 +113,7 @@ header{position:sticky;top:0;z-index:999;background:#fff;padding:12px 5%;display
 <div class="gallery" id="gallery"></div>
 <p style="text-align:center;font-size:10px;color:#888;margin-top:10px">Click Image = Zoom In/Out + Save Option | 28 designs per category - Total 224 - White Gold</p>
 </div>
-<div class="strip" style="background:#FFFEF8"><h2><b>Step 3: Calculator + 10 Currencies - White Gold</b></h2>
+ <div class="strip" style="background:#FFFEF8"><h2><b>Step 3: Calculator + 10 Currencies - White Gold</b></h2>
 <div class="calc-box">
 <input type="number" id="len" placeholder="Length (ft)" oninput="calc()">
 <input type="number" id="wid" placeholder="Width (ft)" oninput="calc()">
@@ -183,10 +188,10 @@ setTimeout(()=>window.open(`https://wa.me/${ownerNum}?text=🔔 NEW LOGIN ID: ${
 adminLogs.push(`${new Date().toLocaleTimeString()} - ${customerId} - ${name} - ${phone} - Owner:${isOwner}`);document.getElementById('adminData').innerHTML=adminLogs.join('<br>');document.getElementById('todayCount').innerText=adminLogs.length;
 }
 
-function openImg(src,code,name){currentImgSrc=src; currentImgCode=code; zoomLevel=1; document.getElementById('modalImg').src=src; document.getElementById('modalImg').style.transform='scale(1)'; document.getElementById('modalCode').innerText=code+' - '+name+' - KHANS GYPSUMCRAFT PK - White Gold - ADMIN-SALMAN-1919'; document.getElementById('imgModal').style.display='flex';}
-function closeImg(){document.getElementById('imgModal').style.display='none'; zoomLevel=1;}
-function zoomIn(){zoomLevel+=0.2; document.getElementById('modalImg').style.transform=`scale(${zoomLevel})`;}
-function zoomOut(){if(zoomLevel>0.4){zoomLevel-=0.2; document.getElementById('modalImg').style.transform=`scale(${zoomLevel})`;}}
+function openImg(src,code,name){currentImgSrc=src; currentImgCode=code; zoomLevel=1; let mImg=document.getElementById('modalImg'); mImg.src=src; mImg.style.transform='scale(1)'; document.getElementById('modalCode').innerText=code+' - '+name; document.getElementById('imgModal').style.display='flex'; document.body.style.overflow='hidden';}
+function closeImg(){document.getElementById('imgModal').style.display='none'; zoomLevel=1; document.body.style.overflow='auto'; document.getElementById('modalImg').style.transform='scale(1)';}
+function zoomIn(){zoomLevel+=0.25; if(zoomLevel>3) zoomLevel=3; document.getElementById('modalImg').style.transform=`scale(${zoomLevel})`;}
+function zoomOut(){if(zoomLevel>0.5){zoomLevel-=0.25; document.getElementById('modalImg').style.transform=`scale(${zoomLevel})`;}}
 function downloadCurrent(){let a=document.createElement('a'); a.href=currentImgSrc; a.download=currentImgCode+'.jpg'; a.target='_blank'; a.click(); alert('Design '+currentImgCode+' Saved / Downloaded! White Gold');}
 function saveDesign(code,src){let a=document.createElement('a'); a.href=src; a.download=code+'.jpg'; a.target='_blank'; a.click(); alert(code+' Saved to your device! White Gold');}
 function openSetting(){document.getElementById('setId').value=localStorage.getItem('khans_id')||customerId;document.getElementById('setName').value=localStorage.getItem('khans_name')||'';document.getElementById('setPhone').value=localStorage.getItem('khans_phone')||'';document.getElementById('settingModal').style.display='block';}
