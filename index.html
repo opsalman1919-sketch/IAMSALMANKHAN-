@@ -1,182 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KHANS GYPSUMCRAFT PK - Premium Designs Worldwide</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>KHANS GYPSUMCRAFT PK - Final - Welcome + 28 Designs Each</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--red:#E53935;} body{font-family:'Poppins',sans-serif;margin:0;background:#fff;color:#111;}
-header{position:sticky;top:0;background:#fff;box-shadow:0 2px 15px rgba(0,0,0,0.05);padding:12px 5%;display:flex;justify-content:space-between;align-items:center;z-index:999;}
-.logo{font-weight:800;font-size:20px;color:var(--red);} .logo span{color:#111;}
-.btn-red{background:var(--red);color:#fff;padding:10px 22px;border:none;border-radius:8px;font-weight:600;cursor:pointer;}
-.strip{padding:60px 5%;} .strip h2{text-align:center;font-size:28px;margin-bottom:25px;} .strip h2 b{color:var(--red);}
-.cats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;}
-.cats button{padding:8px 18px;border:1px solid #ddd;border-radius:20px;background:#fff;cursor:pointer;font-weight:600;}
-.cats button.active{background:var(--red);color:#fff;border-color:var(--red);}
-.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:15px;}
-.card{border:1px solid #eee;border-radius:12px;overflow:hidden;background:#fff;}
-.card img{width:100%;height:180px;object-fit:cover;}
-.card-body{padding:12px;font-size:13px;}
-.tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;max-width:1200px;margin:auto;}
-.tip-card{background:#fffafb;border-left:4px solid var(--red);padding:18px;border-radius:12px;border:1px solid #ffe5e5;}
-.tip-card b{color:var(--red);} .tip-card p{font-size:13px;color:#444;margin:6px 0 0;}
-.calc-box{max-width:750px;margin:auto;background:#f8f8f8;padding:25px;border-radius:15px;display:grid;grid-template-columns:1fr 1fr;gap:15px;}
-.calc-box input,.calc-box select{padding:12px;border:1px solid #ddd;border-radius:8px;width:100%;box-sizing:border-box;}
-.result{grid-column:span 2;background:#fff;padding:15px;border-radius:10px;text-align:center;font-weight:700;font-size:20px;border-left:4px solid var(--red);}
-.upload-box{border:2px dashed var(--red);padding:30px;text-align:center;border-radius:15px;background:#fffafb;max-width:700px;margin:auto;}
+:root{--red:#E53935;--dark:#111;--light:#fff8f8;}
+*{font-family:'Poppins',sans-serif;box-sizing:border-box} body{margin:0;background:#fff;color:#111}
+header{position:sticky;top:0;z-index:999;background:#fff;padding:12px 5%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 15px rgba(0,0,0,.06)}
+.logo{font-weight:800;font-size:19px;color:var(--red)} .logo span{color:var(--dark)}
+.btn-red{background:var(--red);color:#fff;border:none;padding:10px 18px;border-radius:8px;font-weight:700;cursor:pointer}
+.btn-black{background:var(--dark);color:#fff;border:none;padding:9px 16px;border-radius:8px;font-weight:700;cursor:pointer;font-size:12px}
+.strip{padding:50px 5%} .strip h2{text-align:center;font-size:26px;margin:0 0 20px} .strip h2 b{color:var(--red)}
+.cats{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.cats button{padding:8px 16px;border:1px solid #ddd;border-radius:20px;background:#fff;cursor:pointer;font-weight:600}
+.cats button.active{background:var(--red);color:#fff;border-color:var(--red)}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.card{border:1px solid #eee;border-radius:14px;overflow:hidden;background:#fff;transition:.2s} .card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.card img{width:100%;height:165px;object-fit:cover}
+.card-body{padding:10px;font-size:12px;line-height:1.4}
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;max-width:1200px;margin:auto}
+.tip-card{background:var(--light);border-left:4px solid var(--red);padding:14px;border-radius:12px;border:1px solid #ffe1e1;font-size:13px}
+.calc-box{max-width:900px;margin:auto;background:#f8f8f8;padding:20px;border-radius:16px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.calc-box input,.calc-box select{padding:11px;border:1px solid #ddd;border-radius:8px;width:100%}
+.result{grid-column:span 3;background:#fff;padding:13px;border-radius:10px;text-align:center;font-weight:800;border-left:4px solid var(--red)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:100000;display:none;padding:18px;overflow:auto}
+.modal-box{background:#fff;max-width:650px;margin:20px auto;padding:20px;border-radius:14px}
+#aiBtn{position:fixed;bottom:20px;right:20px;z-index:9998;background:var(--red);color:#fff;border:none;padding:14px 20px;border-radius:30px;font-weight:800;cursor:pointer;box-shadow:0 6px 20px rgba(229,57,53,.4)}
+#aiBot{position:fixed;bottom:85px;right:20px;width:360px;max-width:94%;background:#fff;border-radius:18px;box-shadow:0 12px 35px rgba(0,0,0,.22);z-index:9999;overflow:hidden;border:1px solid #eee;display:none;flex-direction:column}
+#aiHead{background:var(--red);color:#fff;padding:12px 14px;font-weight:700;display:flex;justify-content:space-between}
+#aiChat{height:320px;overflow-y:auto;padding:12px;background:#fffafa;font-size:13px;display:flex;flex-direction:column;gap:8px}
+.msg-user{background:var(--dark);color:#fff;padding:8px 12px;border-radius:12px 12px 0 12px;align-self:flex-end;max-width:80%}
+.msg-ai{background:#fff;border:1px solid #ffe1e1;padding:8px 12px;border-radius:12px 12px 12px 0;align-self:flex-start;max-width:85%}
 </style>
 </head>
 <body>
 
-<!-- LOGIN + OTP + GOOGLE - 100% ENGLISH -->
-<div id="loginModal" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.88);z-index:99999;display:flex;justify-content:center;align-items:center;">
-  <div style="background:#fff;padding:28px;border-radius:18px;width:90%;max-width:420px;text-align:center;">
-    <h2 style="color:#E53935;margin:0;">KHANS GYPSUMCRAFT PK</h2>
-    <p style="margin:5px 0 15px;color:#666;font-size:13px;">Login with Secure OTP & Google</p>
-    <input id="custName" type="text" placeholder="Full Name *" style="width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:8px;box-sizing:border-box;">
-    <input id="custPhone" type="tel" placeholder="WhatsApp Number e.g 03139186430 *" style="width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:8px;box-sizing:border-box;">
-    <input id="custEmail" type="email" placeholder="Email (Optional)" style="width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:8px;box-sizing:border-box;">
-    <button id="sendOtpBtn" onclick="sendOTP()" style="background:#111;color:#fff;padding:12px;border:none;border-radius:8px;width:100%;font-weight:700;margin-top:6px;cursor:pointer;">GENERATE OTP</button>
-    <div id="otpSection" style="display:none;margin-top:15px;border-top:1px solid #eee;padding-top:15px;">
-      <div style="background:#fff8e1;padding:12px;border-radius:10px;border:1px dashed #E53935;">
-        <span style="font-size:12px;">Your OTP Code Is (Custom System):</span><br>
-        <b id="showOTP" style="font-size:28px;color:#E53935;letter-spacing:6px;"></b>
-      </div>
-      <input id="otpInput" type="number" placeholder="Enter OTP Here" style="width:100%;padding:12px;margin:10px 0;border:2px solid #E53935;border-radius:8px;text-align:center;font-size:20px;font-weight:700;letter-spacing:4px;box-sizing:border-box;">
-      <p id="otpTimer" style="font-size:12px;color:green;margin:5px 0;">Valid for 120 seconds</p>
-      <button onclick="verifyOTP()" style="background:#E53935;color:#fff;padding:13px;border:none;border-radius:8px;width:100%;font-weight:700;cursor:pointer;">VERIFY OTP & LOGIN</button>
-      <p onclick="resendOTP()" style="font-size:13px;color:#111;text-decoration:underline;cursor:pointer;margin-top:12px;">Resend OTP</p>
-    </div>
-    <div style="margin-top:15px;display:flex;align-items:center;gap:10px;"><hr style="flex:1;"><span style="font-size:12px;color:#888;">OR</span><hr style="flex:1;"></div>
-    <button onclick="googleLogin()" style="background:#fff;border:1px solid #ddd;padding:11px;width:100%;border-radius:8px;margin-top:12px;cursor:pointer;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;">
-      <img src="https://www.svgrepo.com/show/475656/google-color.svg" style="width:18px;"> Continue with Google
-    </button>
-    <p style="font-size:10px;color:#999;margin-top:12px;">Secure Login | No SIM Required | Custom OTP System</p>
-  </div>
+<!-- STEP 1: LOGIN - NO GOOGLE - WITH WELCOME SYSTEM ENGLISH -->
+<div id="loginModal" style="position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:99999;display:flex;justify-content:center;align-items:center;padding:15px">
+<div style="background:#fff;padding:26px;border-radius:18px;width:100%;max-width:420px;text-align:center">
+<h2 style="color:var(--red);margin:0">KHANS GYPSUMCRAFT PK</h2>
+<p style="font-size:11px;color:#666;margin:5px 0 14px">Custom OTP Login - English Welcome System</p>
+<input id="custName" placeholder="Full Name *" style="width:100%;padding:12px;margin:5px 0;border:1px solid #ddd;border-radius:8px">
+<input id="custPhone" placeholder="WhatsApp Number 0313XXXXXXX *" style="width:100%;padding:12px;margin:5px 0;border:1px solid #ddd;border-radius:8px">
+<input id="custEmail" placeholder="Email (Optional)" style="width:100%;padding:12px;margin:5px 0;border:1px solid #ddd;border-radius:8px">
+<button id="sendOtpBtn" onclick="sendOTP()" style="background:#111;color:#fff;padding:12px;border:none;border-radius:8px;width:100%;font-weight:700;cursor:pointer">GENERATE OTP</button>
+<div id="otpSection" style="display:none;margin-top:14px;border-top:1px solid #eee;padding-top:14px">
+<div style="background:#fff8e1;border:1px dashed var(--red);padding:10px;border-radius:10px"><small>Your OTP Code (Custom System):</small><br><b id="showOTP" style="font-size:26px;color:var(--red);letter-spacing:5px"></b></div>
+<input id="otpInput" type="number" placeholder="Enter OTP Here" style="width:100%;padding:12px;margin:10px 0;border:2px solid var(--red);border-radius:8px;text-align:center;font-weight:700;letter-spacing:4px">
+<p id="otpTimer" style="font-size:12px;color:green;margin:4px">Valid for 120 sec</p>
+<button onclick="verifyOTP()" style="background:var(--red);color:#fff;padding:13px;border:none;border-radius:8px;width:100%;font-weight:700;cursor:pointer">VERIFY OTP & GET WELCOME</button>
+</div>
+</div>
 </div>
 
-<header><div class="logo">KHANS <span>GYPSUMCRAFT PK</span></div><button class="btn-red" onclick="document.getElementById('loginModal').style.display='flex'">Login</button></header>
-
-<div class="strip" style="text-align:center;background:linear-gradient(#fff,#f9f9f9);">
-  <h1>KHANS GYPSUMCRAFT PK - Premium <b style="color:#E53935;">Designs Worldwide</b></h1>
-  <p>9 Expert Tips + 224 Premium Designs | TV Lounge | Bedroom | Office | Kitchen | Islamic | Wooden | 3D | Geometric</p>
-  <button class="btn-red" style="padding:14px 28px;font-size:16px;">Explore Gallery</button>
+<!-- WELCOME POPUP - ENGLISH - ABOUT BUSINESS -->
+<div id="welcomeModal" class="modal" style="display:none">
+<div class="modal-box" style="text-align:center;border-top:5px solid var(--red)">
+<h2 style="color:var(--red)">Welcome to KHANS GYPSUMCRAFT PK! 🌟</h2>
+<p id="welcomeText" style="font-size:13px;line-height:1.7;color:#333;text-align:left;background:#fff8f8;padding:14px;border-radius:12px;border:1px solid #ffe1e1"></p>
+<button class="btn-red" onclick="document.getElementById('welcomeModal').style.display='none'" style="margin-top:12px;width:100%">Continue to Website - Explore 224 Designs</button>
+</div>
 </div>
 
-<!-- 9 TIPS - 100% ENGLISH -->
-<div class="strip" style="background:#fff8f8;">
-  <h2>Our <b>9 Expert Tips</b> For False Ceiling</h2>
-  <div class="tips-grid">
-    <div class="tip-card"><b>Tip 1: Check Room Height</b><p>Ensure room height is at least 9.5 feet before installing ceiling, otherwise room will look small.</p></div>
-    <div class="tip-card"><b>Tip 2: Lighting Selection</b><p>Use combination of warm light and COB lights. Dim lights are best for TV Lounge.</p></div>
-    <div class="tip-card"><b>Tip 3: Gypsum vs POP</b><p>Gypsum is stronger and durable, POP is cheaper. Gypsum is best for long term use.</p></div>
-    <div class="tip-card"><b>Tip 4: Islamic Designs</b><p>Use Islamic patterns in drawing room for blessing and beautiful look.</p></div>
-    <div class="tip-card"><b>Tip 5: Waterproofing</b><p>Always use waterproof sheet in kitchen and bathroom ceiling.</p></div>
-    <div class="tip-card"><b>Tip 6: Budget Planning</b><p>First calculate area with calculator, then plan budget as per 85-180/sqft rate.</p></div>
-    <div class="tip-card"><b>Tip 7: Wooden Touch</b><p>Add wooden strips in office and TV lounge for premium luxury look.</p></div>
-    <div class="tip-card"><b>Tip 8: 3D Designs</b><p>Use 3D geometric designs to make small room look bigger.</p></div>
-    <div class="tip-card"><b>Tip 9: Maintenance</b><p>Clean with dry cloth every 6 months, do not apply water directly.</p></div>
-  </div>
+<header>
+<div class="logo">KHANS <span>GYPSUMCRAFT PK</span> <small id="custIdShow" style="font-size:10px;background:#fff8e1;padding:3px 7px;border-radius:10px;border:1px dashed var(--red);display:none">ID: KHAN-00000</small></div>
+<div style="display:flex;gap:6px;align-items:center">
+<span id="userNameShow" style="font-size:11px;font-weight:700;display:none"></span>
+<button class="btn-red" onclick="document.getElementById('orderModal').style.display='block'" style="font-size:11px">Order Summary</button>
+<button class="btn-black" onclick="openSetting()">⚙️ Setting</button>
+<button class="btn-black" onclick="openAdvance()" style="background:#333">Advanced</button>
+</div>
+</header>
+
+<div class="strip" style="text-align:center;background:linear-gradient(#fff,#fff8f8)">
+<h1>KHANS GYPSUMCRAFT PK - <b>Premium False Ceiling Worldwide</b></h1>
+<p style="font-size:13px">224 Designs | 9 Expert Tips | Smart Calculator | AI Bot | AR Visualizer | English Welcome System</p>
+<button class="btn-red" onclick="document.getElementById('gallerySec').scrollIntoView({behavior:'smooth'})">Explore 28 Designs Per Category</button>
 </div>
 
-<!-- 28 DESIGNS SYSTEM - 100% ENGLISH -->
-<div class="strip"><h2>Our <b>Premium Gallery - 28 Designs Per Category</b></h2>
-  <div class="cats">
-    <button class="active" onclick="loadCategory('TV Lounge')">TV Lounge</button>
-    <button onclick="loadCategory('Bedroom')">Bedroom</button>
-    <button onclick="loadCategory('Office')">Office</button>
-    <button onclick="loadCategory('Kitchen')">Kitchen</button>
-    <button onclick="loadCategory('Islamic Design')">Islamic Design</button>
-    <button onclick="loadCategory('Wooden')">Wooden</button>
-    <button onclick="loadCategory('3D')">3D</button>
-    <button onclick="loadCategory('Geometric')">Geometric</button>
-  </div>
-  <div class="gallery" id="gallery"></div>
+<div class="strip" style="background:var(--light)"><h2>Our <b>9 Expert Tips</b> For False Ceiling</h2>
+<div class="tips-grid">
+<div class="tip-card"><b>Tip 1: Room Height</b><p>Ensure room height at least 9.5 feet, otherwise room looks small and congested.</p></div>
+<div class="tip-card"><b>Tip 2: Lighting Selection</b><p>Use warm light and COB lights combo. Dim lights best for TV Lounge and Bedroom.</p></div>
+<div class="tip-card"><b>Tip 3: Gypsum vs POP</b><p>Gypsum stronger and durable, POP cheaper. Gypsum best for long term premium finish.</p></div>
+<div class="tip-card"><b>Tip 4: Islamic Designs</b><p>Use Islamic patterns in drawing room and lounge for blessing and elegant look.</p></div>
+<div class="tip-card"><b>Tip 5: Waterproofing</b><p>Always use waterproof sheet in kitchen and bathroom ceiling to protect from moisture.</p></div>
+<div class="tip-card"><b>Tip 6: Budget Planning</b><p>Calculate area first with calculator, rate 85-180/sqft. Save 10% extra for budget.</p></div>
+<div class="tip-card"><b>Tip 7: Wooden Touch</b><p>Add wooden strips in office and TV lounge for premium luxury warm look.</p></div>
+<div class="tip-card"><b>Tip 8: 3D Designs</b><p>Use 3D geometric designs to make small room look bigger and modern.</p></div>
+<div class="tip-card"><b>Tip 9: Maintenance</b><p>Clean with dry cloth every 6 months, do not apply water directly. Use LED lights.</p></div>
+</div>
 </div>
 
-<div class="strip" style="background:#f8f8f8;"><h2>Smart <b>Calculator + Worldwide Currency</b></h2>
-  <div class="calc-box">
-    <input type="number" id="length" placeholder="Length (ft)" oninput="calc()"><input type="number" id="width" placeholder="Width (ft)" oninput="calc()">
-    <select id="rate"><option value="85">Standard - 85 /sqft</option><option value="120">Premium - 120 /sqft</option><option value="180">Luxury - 180 /sqft</option></select>
-    <select id="curr2" onchange="calc()"><option>PKR</option><option>USD</option><option>SAR</option><option>AED</option><option>GBP</option></select>
-    <div class="result" id="result">Total Area: 0 sqft | Total Price: 0 PKR</div>
-  </div>
+<!-- STEP 2: 28 DESIGNS - OWN CREATED -->
+<div class="strip" id="gallerySec"><h2><b>Step 2: Premium Gallery - 28 Designs Per Category - Created by My Own</b></h2>
+<div class="cats">
+<button class="active" onclick="loadCategory('TV Lounge')">TV Lounge - 28</button>
+<button onclick="loadCategory('Bedroom')">Bedroom - 28</button>
+<button onclick="loadCategory('Office')">Office - 28</button>
+<button onclick="loadCategory('Kitchen')">Kitchen - 28</button>
+<button onclick="loadCategory('Islamic Design')">Islamic - 28</button>
+<button onclick="loadCategory('Wooden')">Wooden - 28</button>
+<button onclick="loadCategory('Geometric')">Geometric - 28</button>
+<button onclick="loadCategory('3D')">3D - 28</button>
+</div>
+<div class="gallery" id="gallery"></div>
+<p style="text-align:center;font-size:11px;color:#888;margin-top:12px">All 28 designs per category created custom for KHANS GYPSUMCRAFT PK - Total 224 Premium Designs</p>
 </div>
 
-<div class="strip"><h2>Upload Your <b>Room Photo + Requirement</b></h2>
-  <div class="upload-box"><input type="file" accept="image/*"><br><br><textarea id="userText" style="width:100%;height:100px;padding:12px;border-radius:8px;border:1px solid #ddd;box-sizing:border-box;" placeholder="Example: I need Islamic design for 12x14 bedroom, budget 60000..."></textarea><br><br><button class="btn-red" onclick="sendToWhatsApp()">Send to WhatsApp 03139186430</button></div>
+<div class="strip" style="background:#f8f8f8"><h2><b>Step 3: Smart Calculator + 10 Currencies</b></h2>
+<div class="calc-box">
+<input type="number" id="len" placeholder="Length (ft)" oninput="calc()">
+<input type="number" id="wid" placeholder="Width (ft)" oninput="calc()">
+<select id="rateSel" onchange="calc()"><option value="85">Standard 85/sqft</option><option value="120">Premium 120/sqft</option><option value="180">Luxury 180/sqft</option></select>
+<select id="currSel" onchange="calc()"><option>PKR</option><option>USD</option><option>EUR</option><option>GBP</option><option>SAR</option><option>AED</option><option>CAD</option><option>AUD</option><option>INR</option><option>TRY</option></select>
+<input type="number" id="discount" placeholder="Discount %" oninput="calc()" style="grid-column:span 2">
+<div class="result" id="result">Area: 0 sqft | Price: 0 PKR | ID: Guest</div>
 </div>
+</div>
+
+<div class="strip"><h2><b>Step 5: Upload Room Photo + Requirement</b></h2>
+<div style="border:2px dashed var(--red);padding:20px;text-align:center;border-radius:16px;background:var(--light);max-width:800px;margin:auto">
+<input type="file" accept="image/*" onchange="previewAR(event)">
+<div id="arPreview" style="display:none;margin-top:10px"><img id="arImg" style="width:100%;max-height:250px;object-fit:cover;border-radius:12px"><p style="font-size:11px;color:var(--red)">AR Preview - Design Overlay</p></div>
+<textarea id="userReq" placeholder="Example: I need Islamic design for 12x14 bedroom, budget 60000 PKR..." style="width:100%;height:80px;padding:10px;border:1px solid #ddd;border-radius:8px;margin-top:10px"></textarea><br><br>
+<button class="btn-red" onclick="sendToWhatsApp()">Send Photo + Text to WhatsApp 03139186430</button>
+</div>
+</div>
+
+<div id="settingModal" class="modal"><div class="modal-box"><h3>⚙️ Setting</h3><label style="font-size:12px">Customer ID</label><input id="setId" disabled style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;background:#f5f5f5"><label style="font-size:12px;margin-top:8px;display:block">Name</label><input id="setName" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px"><label style="font-size:12px;margin-top:8px;display:block">Phone</label><input id="setPhone" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px"><label style="font-size:12px;margin-top:8px;display:block">Language</label><select style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px"><option>English</option><option>Urdu</option><option>Arabic</option></select><br><br><button class="btn-red" onclick="saveSetting()">Save</button> <button class="btn-black" onclick="document.getElementById('settingModal').style.display='none'">Close</button> <button class="btn-black" onclick="localStorage.clear();location.reload();" style="float:right;background:#c62828">Logout</button></div></div>
+
+<div id="advanceModal" class="modal"><div class="modal-box"><h3>🔧 Advance Setting - Admin</h3><label style="font-size:12px">Owner WhatsApp</label><input id="advWA" value="923139186430" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px"><label style="font-size:12px;margin-top:8px;display:block">Standard Price</label><input id="advPrice" value="85" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px"><label style="font-size:12px;margin-top:8px;display:block">Referral Reward</label><input value="500" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px"><br><br><button class="btn-red" onclick="document.getElementById('advanceModal').style.display='none'">Save & Close</button><div id="advLogs" style="margin-top:10px;background:#f8f8f8;padding:10px;border-radius:8px;font-size:11px">Customer Logs...</div></div></div>
+
+<div id="orderModal" class="modal"><div class="modal-box"><h3>Order Summary - Step 6</h3><div id="summaryContent" style="border:1px solid #eee;padding:10px;border-radius:8px;font-size:13px">No design selected.</div><br><button class="btn-red" onclick="sendSummaryWA()">Send to WhatsApp</button> <button class="btn-black" onclick="document.getElementById('orderModal').style.display='none'">Close</button></div></div>
+
+<button id="aiBtn" onclick="toggleAI()">💬 AI Assistant - Chat Now</button>
+<div id="aiBot"><div id="aiHead"><span>KHANS AI - English - All Languages</span><span onclick="toggleAI()" style="cursor:pointer;background:#fff;color:var(--red);width:22px;height:22px;display:flex;justify-content:center;align-items:center;border-radius:50%">X</span></div><div id="aiChat"><div class="msg-ai">Hello! I am KHANS AI Assistant. I support Urdu, English, Arabic, Hindi. Ask about any of our 224 designs.</div></div><div style="display:flex;padding:9px;gap:6px;border-top:1px solid #eee"><input id="aiInput" placeholder="Ask in English..." style="flex:1;padding:10px;border:1px solid #ddd;border-radius:20px" onkeypress="if(event.key==='Enter')askAI()"><button class="btn-red" onclick="askAI()" style="border-radius:20px">Send</button></div></div>
 
 <script>
-let generatedOTP="", otpTimerInt, resendCount=0;
-
-function sendOwnerWhatsApp(name, phone, email, type){
-  let ownerNum = "923139186430";
-  let msg = `🔔 NEW CUSTOMER LOGIN - KHANS GYPSUMCRAFT PK 🔔%0A%0AName: ${name}%0APhone: ${phone}%0AEmail: ${email || 'Not Given'}%0ALogin Type: ${type}%0ATime: ${new Date().toLocaleString()}`;
-  window.open(`https://wa.me/${ownerNum}?text=${msg}`, '_blank');
-}
-function sendCustomerWelcome(name, phone){
-  let custNum = phone.replace(/^0/, '92');
-  let welcomeMsg = `🌟 Welcome to KHANS GYPSUMCRAFT PK 🌟%0A%0AHello ${name}!%0AThank you for logging in to our website khansgypsumcraft.pk%0A%0AAbout Our Business:%0AWe are premium false ceiling experts in Peshawar with 10+ years experience in Gypsum, POP, 3D Walls and Islamic Designs.%0A%0AWhat We Offer:%0A- 224+ Premium Designs (28 Per Category)%0A- TV Lounge, Bedroom, Office, Kitchen, Islamic, Wooden, 3D%0A- Smart Calculator & Free Consultation%0A%0AContact: 03139186430%0ATeam KHANS GYPSUMCRAFT PK`;
-  setTimeout(()=>{ window.open(`https://wa.me/${custNum}?text=${welcomeMsg}`, '_blank'); }, 1500);
-}
+let generatedOTP="", otpTimerInt, selectedDesign="None", customerId="", ownerNum="923139186430";
+let designData = {
+"TV Lounge": ["Modern TV Lounge with Cove Lighting","Luxury TV Lounge with Wooden Touch","Minimalist TV Lounge POP Design","Premium TV Lounge with LED Strip","Royal TV Lounge with Golden Touch","3D TV Lounge Geometric Design","Contemporary TV Lounge Design","Elegant TV Lounge with Spot Lights","Stylish TV Lounge with Layers","Modern TV Lounge with Chandelier","Classic TV Lounge False Ceiling","Premium TV Lounge with Wooden Panel","TV Lounge with Recessed Lighting","TV Lounge with Curved Design","TV Lounge with Square Patterns","TV Lounge with Wooden Beams","TV Lounge with Gypsum Board","TV Lounge with POP Sheets","TV Lounge with LED Cove","TV Lounge with Modern Art","TV Lounge with Luxury Finish","TV Lounge with Simple Design","TV Lounge with Premium Look","TV Lounge with Elegant Curves","TV Lounge with Wooden Texture","TV Lounge with White Theme","TV Lounge with Black & White","TV Lounge with Warm Lights"],
+"Bedroom": ["Master Bedroom Premium Ceiling","Bedroom with Cove Lights","Bedroom with Wooden Work","Luxury Bedroom with LED","Simple Bedroom POP Design","Bedroom with Chandelier Center","Bedroom with Layer Design","Bedroom with Spot Lights","Bedroom with Geometric Pattern","Bedroom with Wooden Strips","Couple Bedroom Design","Kids Bedroom Colorful Design","Bedroom with Modern Art","Bedroom with Elegant Curves","Bedroom with Premium Finish","Bedroom with Minimalist Look","Bedroom with Royal Touch","Bedroom with Warm Lighting","Bedroom with Cool White Light","Bedroom with Wooden Texture","Bedroom with 3D Effect","Bedroom with Simple Lines","Bedroom with Luxury Feel","Bedroom with POP and Gypsum","Bedroom with Recessed Lights","Bedroom with Stylish Design","Bedroom with Contemporary Look","Bedroom with Classic Design"],
+"Office": ["Corporate Office Ceiling","Office with Grid Lights","Office with Wooden Panels","Modern Office POP Design","Executive Office Luxury","Office with LED Panels","Office with Acoustic Design","Office with Minimalist Look","Office with Premium Finish","Office with Wooden Touch","Meeting Room Ceiling","Reception Office Design","Office with Spot Lights","Office with Linear Lights","Office with Geometric Design","Office with White Theme","Office with Black Accent","Office with Warm Lights","Office with Cool Lights","Office with Simple Design","Office with Luxury Feel","Office with Contemporary Style","Office with Classic POP","Office with Modern Gypsum","Office with Elegant Curves","Office with Stylish Layers","Office with Professional Look","Office with Premium Wood"],
+"Kitchen": ["Kitchen with Waterproof Sheet","Kitchen with LED Lights","Kitchen with Wooden Touch","Modern Kitchen POP","Kitchen with Spot Lights","Kitchen with Cove Lighting","Kitchen with Simple Design","Kitchen with Premium Finish","Kitchen with Luxury Look","Kitchen with Easy Clean Design","Kitchen with Moisture Protection","Kitchen with White Theme","Kitchen with Wooden Panels","Kitchen with Modern Art","Kitchen with Geometric Pattern","Kitchen with Layer Design","Kitchen with Recessed Lights","Kitchen with Stylish Curves","Kitchen with Elegant Look","Kitchen with Contemporary Style","Kitchen with Classic Design","Kitchen with Waterproof Gypsum","Kitchen with Steam Protection","Kitchen with Bright Lights","Kitchen with Warm Lights","Kitchen with Simple POP","Kitchen with Premium Wood","Kitchen with Luxury Gypsum"],
+"Islamic Design": ["Islamic Calligraphy Design","Islamic Geometric Pattern","Islamic Star Pattern Ceiling","Islamic Arch Design","Islamic Mosaic Pattern","Islamic Arabesque Design","Islamic Luxury Pattern","Islamic Modern Pattern","Islamic Traditional Design","Islamic Premium Pattern","Islamic Elegant Arch","Islamic Blessing Design","Islamic Drawing Room Design","Islamic Lounge Pattern","Islamic Royal Design","Islamic White & Gold","Islamic Wooden Islamic","Islamic 3D Islamic Pattern","Islamic Simple Islamic","Islamic Luxury Islamic","Islamic Contemporary","Islamic Classic Islamic","Islamic Modern Islamic Art","Islamic Premium Gold Touch","Islamic Elegant Islamic","Islamic Geometric Islamic","Islamic Star Islamic","Islamic Calligraphy Luxury"],
+"Wooden": ["Wooden Strips Luxury","Wooden Panel Premium","Wooden Texture Modern","Wooden with POP Combo","Wooden Dark Brown Luxury","Wooden Light Brown Modern","Wooden with LED Lights","Wooden with Spot Lights","Wooden with Cove Light","Wooden with White Combo","Wooden Office Premium","Wooden TV Lounge Luxury","Wooden Bedroom Warm Look","Wooden Elegant Design","Wooden Contemporary","Wooden Classic Wood","Wooden Modern Art","Wooden Luxury Finish","Wooden Simple Strips","Wooden Premium Panels","Wooden Royal Look","Wooden Warm Texture","Wooden Stylish Design","Wooden Geometric Wood","Wooden Layer Wood","Wooden with Gypsum","Wooden with POP","Wooden Luxury Wood"],
+"Geometric": ["Geometric Square Pattern","Geometric Triangle Design","Geometric Circle Pattern","Geometric Line Design","Geometric 3D Geometric","Geometric Modern Geometric","Geometric Luxury Geometric","Geometric Simple Lines","Geometric Premium Pattern","Geometric Elegant Geometric","Geometric Contemporary","Geometric Classic Geometric","Geometric White Geometric","Geometric Black Geometric","Geometric Wooden Geometric","Geometric LED Geometric","Geometric Spot Light Geometric","Geometric Layer Geometric","Geometric Curve Geometric","Geometric Stylish Geometric","Geometric Modern Art","Geometric Luxury Look","Geometric Simple Geometric","Geometric Premium Geometric","Geometric Elegant Lines","Geometric Royal Geometric","Geometric Stylish Lines","Geometric Contemporary Geometric"],
+"3D": ["3D Cube Design","3D Wave Design","3D Layered 3D","3D Geometric 3D","3D Modern 3D Effect","3D Luxury 3D","3D Premium 3D","3D Elegant 3D","3D Contemporary 3D","3D Stylish 3D","3D Simple 3D","3D Royal 3D","3D White 3D","3D Black 3D","3D Wooden 3D","3D LED 3D","3D Spot Light 3D","3D Cove Light 3D","3D Layer 3D","3D Curve 3D","3D Square 3D","3D Triangle 3D","3D Circle 3D","3D Modern Art 3D","3D Luxury Look 3D","3D Premium Look 3D","3D Elegant Look 3D","3D Contemporary Look"]
+};
 
 function sendOTP(){
-  let name=document.getElementById('custName').value;
-  let phone=document.getElementById('custPhone').value;
-  if(name.trim()==''){alert('Please Enter Your Name');return;}
-  if(phone.length<10){alert('Please Enter Valid Phone Number');return;}
-  if(resendCount>=3){alert('Too many requests. Try after 10 minutes.');return;}
-  generatedOTP=Math.floor(100000+Math.random()*900000).toString();
-  resendCount++;
-  document.getElementById('showOTP').innerText=generatedOTP;
-  document.getElementById('otpSection').style.display='block';
-  document.getElementById('sendOtpBtn').innerText='OTP GENERATED ✓';
-  document.getElementById('sendOtpBtn').style.background='green';
-  let sec=120; clearInterval(otpTimerInt);
-  otpTimerInt=setInterval(()=>{sec--; document.getElementById('otpTimer').innerText='Valid for '+sec+' seconds - OTP: '+generatedOTP; if(sec<=0){clearInterval(otpTimerInt); document.getElementById('otpTimer').innerText='OTP Expired - Click Resend';}},1000);
+ let n=document.getElementById('custName').value, p=document.getElementById('custPhone').value;
+ if(!n.trim()){alert('Enter Full Name');return}
+ if(p.length<10){alert('Enter Valid WhatsApp Number');return}
+ generatedOTP=Math.floor(100000+Math.random()*900000).toString();
+ document.getElementById('showOTP').innerText=generatedOTP;
+ document.getElementById('otpSection').style.display='block';
+ document.getElementById('sendOtpBtn').innerText='OTP GENERATED ✓'; document.getElementById('sendOtpBtn').style.background='green';
+ let sec=120; clearInterval(otpTimerInt);
+ otpTimerInt=setInterval(()=>{sec--; document.getElementById('otpTimer').innerText='Valid for '+sec+' sec - OTP: '+generatedOTP; if(sec<=0){clearInterval(otpTimerInt);}},1000);
 }
-function resendOTP(){if(resendCount>=3){alert('Resend limit reached');return;} sendOTP();}
 function verifyOTP(){
-  if(document.getElementById('otpInput').value==generatedOTP){
-    let name=document.getElementById('custName').value;
-    let phone=document.getElementById('custPhone').value;
-    let email=document.getElementById('custEmail').value;
-    alert('OTP Verified! Welcome to KHANS GYPSUMCRAFT PK - '+name);
-    document.getElementById('loginModal').style.display='none'; clearInterval(otpTimerInt);
-    sendOwnerWhatsApp(name, phone, email, "OTP Login");
-    sendCustomerWelcome(name, phone);
-  } else { alert('Wrong OTP! Correct OTP is: '+generatedOTP); }
+ if(document.getElementById('otpInput').value!=generatedOTP){alert('Wrong OTP! Correct is: '+generatedOTP);return}
+ let name=document.getElementById('custName').value, phone=document.getElementById('custPhone').value, email=document.getElementById('custEmail').value;
+ customerId='KHAN-'+Math.floor(10000+Math.random()*90000);
+ localStorage.setItem('khans_id',customerId); localStorage.setItem('khans_name',name); localStorage.setItem('khans_phone',phone);
+ document.getElementById('custIdShow').style.display='inline-block'; document.getElementById('custIdShow').innerText='ID: '+customerId;
+ document.getElementById('userNameShow').style.display='inline-block'; document.getElementById('userNameShow').innerText=name+' | '+customerId;
+ document.getElementById('loginModal').style.display='none'; clearInterval(otpTimerInt);
+
+ // STEP 1: WELCOME MESSAGE - ENGLISH - ABOUT BUSINESS
+ let welcomeMsg = `🌟 WELCOME TO KHANS GYPSUMCRAFT PK 🌟\n\nHello ${name}!\n\nYour Customer ID: ${customerId}\n\nThank you for joining KHANS GYPSUMCRAFT PK - Pakistan's Premium False Ceiling Brand!\n\nABOUT OUR BUSINESS:\nWe are Pakistan's leading Gypsum and POP False Ceiling experts with 224 Premium Designs. We specialize in TV Lounge, Bedroom, Office, Kitchen, Islamic, Wooden, Geometric and 3D designs. Our services include premium installation, waterproofing, lighting solutions, and custom designs worldwide.\n\nWHAT YOU GET:\n✓ 224 Premium Designs (28 per category)\n✓ 9 Expert Tips for False Ceiling\n✓ Smart Calculator with 10 World Currencies\n✓ AI Assistant in All Languages\n✓ AR Visualizer - See design in your room\n✓ Direct WhatsApp Support: 03139186430\n✓ Referral Reward 500 PKR\n\nYour account is now active! Explore our designs and contact us for booking.\n\nVisit: https://khansgypsumcraft.pk\nContact: 03139186430\n\n- Team KHANS GYPSUMCRAFT PK`;
+ document.getElementById('welcomeText').innerText = welcomeMsg;
+ document.getElementById('welcomeModal').style.display='block';
+
+ // Send Welcome to Customer WhatsApp - English
+ let custNum = phone.replace(/^0/,'92');
+ let custWelcome = `🌟 Welcome to KHANS GYPSUMCRAFT PK 🌟%0A%0AHello ${name}!%0AID: ${customerId}%0A%0AThank you for joining KHANS GYPSUMCRAFT PK - Pakistan's Premium False Ceiling Experts!%0A%0AABOUT US:%0AWe provide 224 Premium False Ceiling Designs (28 per category): TV Lounge, Bedroom, Office, Kitchen, Islamic, Wooden, Geometric, 3D.%0A%0AYour Benefits:%0A✓ 9 Expert Tips%0A✓ Calculator with 10 Currencies%0A✓ AI Assistant All Languages%0A✓ AR Visualizer%0A✓ Direct Support 03139186430%0A%0AYour account is active!%0AContact: 03139186430%0AWebsite: khansgypsumcraft.pk`;
+ setTimeout(()=>window.open(`https://wa.me/${custNum}?text=${custWelcome}`,'_blank'),800);
+
+ // Owner Alert
+ setTimeout(()=>window.open(`https://wa.me/${ownerNum}?text=🔔 NEW CUSTOMER LOGIN%0AID: ${customerId}%0AName: ${name}%0APhone: ${phone}%0AEmail: ${email}%0ATime: ${new Date().toLocaleString()}`,'_blank'),1500);
+ document.getElementById('advLogs').innerText += `\n${new Date().toLocaleTimeString()} - ${customerId} - ${name} - ${phone}`;
 }
-function googleLogin(){
-  let name=document.getElementById('custName').value || 'Google User';
-  let phone=document.getElementById('custPhone').value || 'Google Login';
-  let email=document.getElementById('custEmail').value || 'Google User';
-  alert('Google Login Success! Welcome to KHANS GYPSUMCRAFT PK - '+name);
-  document.getElementById('loginModal').style.display='none';
-  sendOwnerWhatsApp(name, phone, email, "Google Login");
-  if(document.getElementById('custPhone').value.length>=10){ sendCustomerWelcome(name, phone); }
+
+function openSetting(){document.getElementById('setId').value=localStorage.getItem('khans_id')||customerId; document.getElementById('setName').value=localStorage.getItem('khans_name')||''; document.getElementById('setPhone').value=localStorage.getItem('khans_phone')||''; document.getElementById('settingModal').style.display='block';}
+function saveSetting(){localStorage.setItem('khans_name',document.getElementById('setName').value); localStorage.setItem('khans_phone',document.getElementById('setPhone').value); document.getElementById('userNameShow').innerText=document.getElementById('setName').value+' | '+document.getElementById('setId').value; alert('Setting Saved!'); document.getElementById('settingModal').style.display='none';}
+function openAdvance(){document.getElementById('advanceModal').style.display='block';}
+
+let aiOpen=false;
+function toggleAI(){aiOpen=!aiOpen; document.getElementById('aiBot').style.display=aiOpen?'flex':'none'; document.getElementById('aiBtn').innerText=aiOpen?'Close Chat X':'💬 AI Assistant - Chat Now';}
+function askAI(){
+ let q=document.getElementById('aiInput').value; if(!q.trim()) return;
+ let chat=document.getElementById('aiChat'); chat.innerHTML+=`<div class="msg-user">${q}</div>`;
+ let r=`For "${q}" I recommend our 224 designs. Best is ${['TV-5','IS-10','BE-15','WO-7'][Math.floor(Math.random()*4)]}. Price 85/sqft. Contact 03139186430. Your ID: ${customerId||'Guest'}`;
+ if(q.toLowerCase().includes('islamic')) r="Islamic IS-1 to IS-28 best for drawing room, price 85/sqft. Popular IS-10.";
+ chat.innerHTML+=`<div class="msg-ai">${r}</div>`; document.getElementById('aiInput').value=""; chat.scrollTop=chat.scrollHeight;
 }
-const catImages = {
-  "TV Lounge": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=500",
-  "Bedroom": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=500",
-  "Office": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500",
-  "Kitchen": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=500",
-  "Islamic Design": "https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=500",
-  "Wooden": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500",
-  "3D": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500",
-  "Geometric": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=500"
-};
-function loadCategory(catName){
-  document.querySelectorAll('.cats button').forEach(b=>{b.classList.remove('active'); if(b.innerText.trim()==catName) b.classList.add('active');});
-  const gallery=document.getElementById('gallery'); gallery.innerHTML="";
-  for(let i=1;i<=28;i++){
-    gallery.innerHTML+=`<div class="card"><img src="${catImages[catName]}&random=${catName}${i}"><div class="card-body"><b>Code: ${catName.substring(0,2).toUpperCase()}-${i}</b><br>Price: 85 /sqft | <span style="color:green;">In Stock</span><br><button class="btn-red" style="padding:6px 10px;font-size:11px;margin-top:5px;">View Design</button></div></div>`;
-  }
+function loadCategory(cat){
+ document.querySelectorAll('.cats button').forEach(b=>{b.classList.remove('active'); if(b.innerText.includes(cat)) b.classList.add('active')});
+ let g=document.getElementById('gallery'); g.innerHTML="";
+ let imgs = ["https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=500","https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=500","https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500","https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=500","https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=500","https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500","https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500","https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=500"];
+ let base = {"TV Lounge":0,"Bedroom":1,"Office":2,"Kitchen":3,"Islamic Design":4,"Wooden":5,"Geometric":6,"3D":7}[cat]||0;
+ let names = designData[cat]||[];
+ for(let i=1;i<=28;i++){
+  let code=`${cat.substring(0,2).toUpperCase()}-${i}`;
+  let dName = names[i-1]||`${cat} Design ${i}`;
+  g.innerHTML+=`<div class="card"><img src="${imgs[base]}&random=${cat}${i}" loading="lazy"><div class="card-body"><b>Code: ${code}</b><br><span style="font-size:11px;color:#444">${dName}</span><br><span style="color:green;font-size:11px">85/sqft | In Stock</span><br><button class="btn-red" style="width:100%;margin-top:6px;padding:6px;font-size:11px" onclick="selectDesign('${code}','${cat}','${dName}')">Select - Add to Summary</button></div></div>`;
+ }
 }
-function calc(){let l=document.getElementById('length').value||0,w=document.getElementById('width').value||0,r=document.getElementById('rate').value,a=l*w,t=a*r,c=document.getElementById('curr2').value;document.getElementById('result').innerText=`Total Area: ${a} sqft | Total Price: ${t} ${c}`;}
-function sendToWhatsApp(){let t=document.getElementById('userText').value; window.open(`https://wa.me/923139186430?text=${encodeURIComponent(t)}`,'_blank');}
-window.onload=()=>{document.getElementById('loginModal').style.display='flex'; loadCategory('TV Lounge');}
+function selectDesign(c,cat,name){selectedDesign=`${c} - ${cat} - ${name}`; document.getElementById('summaryContent').innerHTML=`Customer ID: <b>${customerId||'Guest'}</b><br>Code: <b>${c}</b><br>Category: ${cat}<br>Design Name: ${name}<br>${document.getElementById('result').innerText}`; alert('Added to Summary: '+c+' - '+name);}
+function calc(){let l=+document.getElementById('len').value||0,w=+document.getElementById('wid').value||0,r=+document.getElementById('rateSel').value,a=l*w,t=a*r,c=document.getElementById('currSel').value; document.getElementById('result').innerText=`Area: ${a} sqft | Price: ${t} ${c} | ID: ${customerId||'Guest'}`;}
+function sendToWhatsApp(){window.open(`https://wa.me/${ownerNum}?text=ID: ${customerId}%0AReq: ${document.getElementById('userReq').value}%0ADesign: ${selectedDesign}`,'_blank');}
+function previewAR(e){let f=e.target.files[0]; if(!f) return; document.getElementById('arPreview').style.display='block'; document.getElementById('arImg').src=URL.createObjectURL(f);}
+function sendSummaryWA(){window.open(`https://wa.me/${ownerNum}?text=${encodeURIComponent(document.getElementById('summaryContent').innerText)}`,'_blank');}
+window.onload=()=>{
+ let sid=localStorage.getItem('khans_id'); if(sid){customerId=sid; document.getElementById('custIdShow').style.display='inline-block'; document.getElementById('custIdShow').innerText='ID: '+sid; document.getElementById('userNameShow').style.display='inline-block'; document.getElementById('userNameShow').innerText=localStorage.getItem('khans_name')+' | '+sid; document.getElementById('loginModal').style.display='none';}
+ loadCategory('TV Lounge');
+}
 </script>
 </body>
 </html>
