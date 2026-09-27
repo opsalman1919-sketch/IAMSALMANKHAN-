@@ -1,7 +1,7 @@
 {
-  "name": "khansgypsum",
-  "short_name": "khansgypsum",
-  "description": "KHANS GYPSUMCRAFT PK - Premium False Ceiling - White Gold - 224 Designs",
+  "name": "KHANS GYPSUMCRAFT PK - White Gold",
+  "short_name": "KHANS PK",
+  "description": "Premium False Ceiling - 224 Designs - White Gold Luxury",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
