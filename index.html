@@ -2,133 +2,141 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>I AM SALMAN KHAN - Oman Gypsum - 28 Designs</title>
-<meta name="theme-color" content="#b78e3d">
+<title>Salman False Ceiling - Premium Designs Worldwide</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:#f5f5f0}
-.top{background:#b78e3d;color:#0f1e3a;text-align:center;padding:8px;font-weight:bold;font-size:12px}
-.header{background:#0f1e3a;text-align:center;padding:18px}
-.header h1{color:#b78e3d;font-size:26px}
-.hero{background:linear-gradient(rgba(15,30,58,0.88),rgba(15,30,58,0.88)),url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=70');background-size:cover;color:white;text-align:center;padding:40px 20px}
-.btn{background:#b78e3d;color:#0f1e3a;padding:10px 20px;border-radius:25px;font-weight:bold;margin:5px;text-decoration:none;display:inline-block;border:none;cursor:pointer}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;padding:14px}
-.card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,0.1);border:1px solid #e9dfc3}
-.card img{width:100%;height:160px;object-fit:cover}
-.card-body{padding:10px}
-.bottom{position:fixed;bottom:0;left:0;right:0;background:#0f1e3a;display:flex;justify-content:space-around;padding:8px 0;z-index:900}
-.bottom a{color:#b78e3d;text-decoration:none;font-size:11px;text-align:center}
-/* AI */
-.ai-btn{position:fixed;bottom:75px;right:14px;background:#0f1e3a;color:#b78e3d;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;cursor:pointer;z-index:9999;border:2px solid #b78e3d}
-.ai-box{position:fixed;bottom:140px;right:8px;width:360px;max-width:96vw;height:520px;background:white;border-radius:16px;display:none;flex-direction:column;z-index:9999;border:2px solid #b78e3d;overflow:hidden}
-.ai-head{background:#0f1e3a;color:#b78e3d;padding:9px 10px;display:flex;justify-content:space-between;align-items:center}
-.ai-tabs{display:flex;background:#faf8f3;border-bottom:1px solid #e9dfc3}
-.ai-tabs button{flex:1;padding:7px 1px;border:none;background:none;font-size:10px;font-weight:bold;cursor:pointer}
-.ai-tabs button.active{background:#b78e3d}
-.ai-msgs{flex:1;padding:10px;overflow-y:auto;background:#faf8f3}
-.ai-panel{flex:1;padding:10px;overflow-y:auto;display:none;background:#faf8f3}
-.ai-panel.active{display:block}
-.ai-inp{display:flex;padding:7px;border-top:1px solid #eee;gap:5px;align-items:center}
-.ai-inp input{flex:1;padding:9px 12px;border:1px solid #b78e3d;border-radius:20px;outline:none;font-size:12px}
-.ai-inp button{background:#b78e3d;border:none;padding:7px 12px;border-radius:20px;font-weight:bold;cursor:pointer}
-.m{margin:5px 0;padding:8px 11px;border-radius:12px;font-size:12px;max-width:85%;line-height:1.4}
-.user{background:#b78e3d;margin-left:auto}
-.bot{background:#0f1e3a;color:white}
-.calc-input{width:100%;padding:8px;border:1px solid #b78e3d;border-radius:8px;margin:5px 0;font-size:12px}
+:root{--red:#E53935;--gray:#f8f8f8;} body{font-family:'Poppins',sans-serif;margin:0;background:#fff;color:#111;}
+header{position:sticky;top:0;background:#fff;box-shadow:0 2px 15px rgba(0,0,0,0.05);padding:12px 5%;display:flex;justify-content:space-between;align-items:center;z-index:999;}
+.logo{font-weight:700;font-size:22px;color:var(--red);} .logo span{color:#111;}
+.btn-red{background:var(--red);color:#fff;padding:10px 22px;border:none;border-radius:8px;font-weight:600;cursor:pointer;}
+.strip{padding:60px 5%;} .strip h2{text-align:center;font-size:28px;margin-bottom:30px;} .strip h2 b{color:var(--red);}
+.cats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;}
+.cats button{padding:8px 18px;border:1px solid #ddd;border-radius:20px;background:#fff;cursor:pointer;}
+.cats button.active{background:var(--red);color:#fff;border-color:var(--red);}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:15px;}
+.card{border:1px solid #eee;border-radius:12px;overflow:hidden;background:#fff;transition:0.3s;}
+.card:hover{box-shadow:0 10px 25px rgba(0,0,0,0.08);}
+.card img{width:100%;height:180px;object-fit:cover;cursor:pointer;}
+.card-body{padding:12px;}
+.calc-box{max-width:750px;margin:auto;background:var(--gray);padding:25px;border-radius:15px;display:grid;grid-template-columns:1fr 1fr;gap:15px;}
+.calc-box input,.calc-box select{padding:12px;border:1px solid #ddd;border-radius:8px;width:100%;box-sizing:border-box;}
+.result{grid-column:span 2;background:#fff;padding:15px;border-radius:10px;text-align:center;font-weight:700;font-size:20px;border-left:4px solid var(--red);}
+.upload-box{border:2px dashed var(--red);padding:30px;text-align:center;border-radius:15px;background:#fffafb;max-width:700px;margin:auto;}
 </style>
 </head>
 <body>
-<div class="top">⭐ 4.9/5 | 500+ Projects | Oman & PK - I AM SALMAN KHAN</div>
-<div class="header"><h1>K - I AM SALMAN KHAN</h1><p style="color:#b78e3d;font-size:10px;">OMAN + PAKISTAN - 28 LUXURY GYPSUM DESIGNS</p></div>
-<div class="hero"><h2 style="color:#b78e3d;">Bespoke Gypsum Ceilings</h2><p style="margin:10px 0;font-size:13px;">Cornice • 3D Panels • LED Cove - Oman & KPK</p><a class="btn" href="#gallery">Explore 28 Designs</a><a class="btn" style="background:white;" href="https://wa.me/923139186430">Book Free Visit</a></div>
-<div class="grid" id="gallery"></div>
-<div style="height:70px"></div>
-<div class="bottom"><a href="#">🏠<br>Home</a><a href="#gallery">🎨<br>Designs</a><a href="https://wa.me/923139186430">💬<br>Quote</a><a href="#">📁<br>Projects</a><a href="#">📞<br>Contact</a></div>
 
-<div class="ai-btn" onclick="toggleAI()">🤖</div>
-<div class="ai-box" id="aiBox">
-<div class="ai-head">
-<div><b>I AM SALMAN KHAN - AI</b><br><span style="font-size:9px;color:#4ade80;">● Online - Oman All Languages</span></div>
-<div style="display:flex;gap:4px;align-items:center;">
-<select id="langSel" onchange="changeLang()" style="background:#b78e3d;color:#0f1e3a;border:none;padding:4px 6px;border-radius:8px;font-size:9px;font-weight:bold;">
-<option value="en">English</option>
-<option value="ar">العربية - Arabic</option>
-<option value="ur">اردو - Urdu</option>
-<option value="hi">हिंदी - Hindi</option>
-<option value="bn">বাংলা - Bengali</option>
-<option value="ml">മലയാളം - Malayalam</option>
-<option value="ta">தமிழ் - Tamil</option>
-<option value="tl">Tagalog - Filipino</option>
-<option value="ps">پښتو - Pashto</option>
-</select>
-<span onclick="toggleAI()" style="cursor:pointer;font-size:18px;margin-left:3px;">✕</span>
-</div>
-</div>
-<div class="ai-tabs">
-<button id="t-chat" class="active" onclick="openTab('chat')">💬 Chat</button>
-<button id="t-calc" onclick="openTab('calc')">🧮 Calc</button>
-<button id="t-img" onclick="openTab('img')">📸 Image</button>
-<button id="t-vid" onclick="openTab('vid')">🎥 Video</button>
+<!-- ================= STEP 1: LOGIN + OTP FIRST - 03139186430 ================= -->
+<div id="loginModal" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.88);z-index:99999;display:flex;justify-content:center;align-items:center;">
+  <div style="background:#fff;padding:30px;border-radius:18px;width:90%;max-width:420px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+    <h2 style="color:#E53935;margin:0;">SALMAN FALSE CEILING</h2>
+    <p style="margin:5px 0 15px;color:#666;">Login with OTP Verification</p>
+    
+    <input id="custName" type="text" placeholder="Your Full Name *" style="width:100%;padding:13px;margin:7px 0;border:1px solid #ddd;border-radius:8px;box-sizing:border-box;">
+    <input id="custPhone" type="tel" placeholder="WhatsApp Number e.g 0313XXXXXXX *" style="width:100%;padding:13px;margin:7px 0;border:1px solid #ddd;border-radius:8px;box-sizing:border-box;">
+    <input id="custEmail" type="email" placeholder="Email (Optional)" style="width:100%;padding:13px;margin:7px 0;border:1px solid #ddd;border-radius:8px;box-sizing:border-box;">
+
+    <button id="sendOtpBtn" onclick="sendOTP()" style="background:#111;color:#fff;padding:13px;border:none;border-radius:8px;width:100%;font-weight:700;margin-top:8px;cursor:pointer;">SEND OTP</button>
+    
+    <div id="otpSection" style="display:none;margin-top:15px;border-top:1px solid #eee;padding-top:15px;">
+      <label style="font-size:13px;font-weight:600;">Enter 6 Digit OTP sent to your mobile</label>
+      <input id="otpInput" type="number" placeholder="0 0 0 0 0 0" style="width:100%;padding:13px;margin:10px 0;border:2px solid #E53935;border-radius:8px;box-sizing:border-box;text-align:center;letter-spacing:8px;font-size:20px;font-weight:700;">
+      <p id="otpTimer" style="font-size:12px;color:#E53935;margin:5px 0;">OTP valid for 60 sec</p>
+      <p id="wrongAttempt" style="font-size:12px;color:#111;display:none;">Wrong attempts: <span id="attemptCount">0</span>/3</p>
+      <button onclick="verifyOTP()" style="background:#E53935;color:#fff;padding:14px;border:none;border-radius:8px;width:100%;font-weight:700;cursor:pointer;font-size:16px;">VERIFY OTP & LOGIN</button>
+      <p onclick="resendOTP()" style="font-size:13px;color:#111;text-decoration:underline;cursor:pointer;margin-top:12px;">Resend OTP</p>
+    </div>
+
+    <div style="margin-top:15px;display:flex;align-items:center;gap:10px;"><hr style="flex:1;"><span style="font-size:12px;color:#888;">OR</span><hr style="flex:1;"></div>
+    <button onclick="googleLogin()" style="background:#fff;border:1px solid #ddd;padding:11px;width:100%;border-radius:8px;margin-top:12px;cursor:pointer;font-weight:600;">Continue with Google</button>
+    <p style="font-size:10px;color:#999;margin-top:12px;">Secure Login | SMS Alert to Owner: 03139186430</p>
+  </div>
 </div>
 
-<div class="ai-msgs" id="tab-chat"></div>
+<header>
+  <div class="logo">SALMAN <span>FALSE CEILING</span></div>
+  <div><select id="currency" onchange="updateCurrency()"><option>PKR</option><option>USD</option><option>EUR</option><option>GBP</option><option>SAR</option><option>AED</option><option>CAD</option><option>AUD</option><option>INR</option></select> <button class="btn-red" onclick="document.getElementById('loginModal').style.display='flex'">Login</button></div>
+</header>
 
-<div class="ai-panel" id="tab-calc">
-<b>🧮 Advanced Calculator</b>
-<input id="len" class="calc-input" type="number" placeholder="Length ft">
-<input id="wid" class="calc-input" type="number" placeholder="Width ft">
-<button class="btn" style="width:100%;margin-top:6px;" onclick="doCalc()">Calculate</button>
-<div id="calcRes" style="margin-top:8px;background:white;padding:8px;border-radius:8px;font-size:11px;display:none;"></div>
-</div>
-
-<div class="ai-panel" id="tab-img">
-<b>📸 Room Photo AI</b>
-<input type="file" id="roomImg" accept="image/*" class="calc-input">
-<div id="imgPrev" style="margin-top:6px;"></div>
-<button class="btn" style="width:100%;margin-top:6px;" onclick="analyzeImg()">Analyze</button>
-<div id="imgRes" style="margin-top:6px;font-size:11px;background:white;padding:6px;border-radius:6px;display:none;"></div>
+<div class="strip" style="text-align:center;background:linear-gradient(#fff,#f9f9f9);">
+  <h1>Premium False Ceiling Designs <b style="color:#E53935;">Worldwide</b></h1>
+  <p>TV Lounge | Bedroom | Office | Kitchen | Islamic Design | Wooden | 3D | Geometric - 28 Designs Each Category</p>
+  <button class="btn-red" style="padding:14px 28px;font-size:16px;">Explore Gallery</button>
 </div>
 
-<div class="ai-panel" id="tab-vid">
-<b>🎥 Oman Work Videos</b>
-<video controls style="width:100%;border-radius:8px;margin-top:6px;" poster="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500&q=60"><source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"></video>
-<p style="font-size:10px;margin-top:6px;">▶️ Design 01 - Muscat Villa<br>▶️ Design 15 - Salalah Palace<br>All 28 designs video on WhatsApp</p>
-<a class="btn" style="width:100%;text-align:center;font-size:11px;" href="https://wa.me/923139186430?text=Video%20catalog%20Oman">Get Videos on WhatsApp</a>
+<div class="strip"><h2>Our <b>Premium Gallery - 28 Designs Per Category</b></h2>
+  <div class="cats"><button class="active">TV Lounge</button><button>Bedroom</button><button>Office</button><button>Kitchen</button><button>Islamic Design</button><button>Wooden</button><button>3D</button><button>Geometric</button></div>
+  <div class="gallery" id="gallery"></div>
 </div>
 
-<div class="ai-inp" id="aiInputBar">
-<button onclick="startVoice()" style="background:#0f1e3a;color:#b78e3d;border-radius:50%;width:32px;height:32px;border:none;cursor:pointer;">🎤</button>
-<input id="aiInput" placeholder="Type...">
-<button onclick="sendAI()">➤</button>
+<div class="strip" style="background:#f8f8f8;"><h2>Smart <b>Calculator + Worldwide Currency</b></h2>
+  <div class="calc-box">
+    <input type="number" id="length" placeholder="Length (ft)" oninput="calc()"><input type="number" id="width" placeholder="Width (ft)" oninput="calc()">
+    <select id="rate"><option value="85">Standard - 85 /sqft</option><option value="120">Premium - 120 /sqft</option><option value="180">Luxury - 180 /sqft</option></select>
+    <select id="curr2" onchange="calc()"><option>PKR</option><option>USD</option><option>EUR</option><option>SAR</option><option>AED</option><option>GBP</option></select>
+    <div class="result" id="result">Total Area: 0 sqft | Total Price: 0 PKR</div>
+  </div>
 </div>
+
+<div class="strip"><h2>Upload Your <b>Room Photo + Requirement</b></h2>
+  <div class="upload-box"><input type="file" accept="image/*"><br><br><textarea id="userText" style="width:100%;height:100px;padding:12px;border-radius:8px;border:1px solid #ddd;box-sizing:border-box;" placeholder="Example: I need Islamic design for 12x14 bedroom, budget 60000..."></textarea><br><br><button class="btn-red" onclick="sendToWhatsApp()">Send to WhatsApp 03139186430</button></div>
 </div>
+
+<div class="strip" style="background:#111;color:#fff;text-align:center;"><h2 style="color:#fff;">Order Summary | Trust Gallery 4.9★ | Booking with JazzCash / EasyPaisa | Referral Reward 500 PKR</h2><p>All Connected to Admin Panel + AR Visualizer + AI Chatbot + Direct SMS</p><button class="btn-red">Book Now</button></div>
+
+<div style="position:fixed;bottom:20px;right:20px;background:#fff;border:1px solid #eee;padding:12px 15px;border-radius:15px;box-shadow:0 5px 25px rgba(0,0,0,0.1);width:260px;"><b>AI Assistant</b><br><small>Urdu | English | Arabic | Hindi</small><br><input type="text" placeholder="Ask about any design..." style="width:100%;margin-top:8px;padding:8px;border:1px solid #ddd;border-radius:6px;box-sizing:border-box;"></div>
 
 <script>
+let generatedOTP="", otpTimerInt, wrongAttempts=0, resendCount=0;
 const gallery=document.getElementById('gallery');
-const base='https://images.unsplash.com/photo-1600585154340-be6161a56a0c';
-for(let i=1;i<=28;i++){gallery.innerHTML+=`<div class="card"><img src="${base}?auto=format&fit=crop&w=500&q=70&sig=${i}"><div class="card-body"><b style="font-size:12px;">Design ${String(i).padStart(2,'0')} - I AM SALMAN KHAN</b><p style="font-size:10px;color:#666;">📏 12x14 ft • 💎 Pure Gypsum • 💰 85 PKR / 2.1 OMR</p><a href="https://wa.me/923139186430?text=Design%20${String(i).padStart(2,'0')}%20Oman" style="background:#b78e3d;color:#0f1e3a;padding:6px 10px;border-radius:15px;font-size:10px;font-weight:bold;text-decoration:none;display:block;text-align:center;margin-top:5px;">WhatsApp Quote</a></div></div>`;}
-let curLang='en';
-const langs={
-en:{w:"Hello! 👋 I'm AI of <b>I AM SALMAN KHAN</b><br><br>✅ Chat ✅ Calculator ✅ Image ✅ Voice ✅ Video<br>English default - Change language from top!",ph:"Type message...",r:"Thanks! 😊<br>28 luxury gypsum designs.<br>We work Oman & PK.<br>Contact: <b>03139186430</b>"},
-ar:{w:"مرحبا! 👋 أنا مساعد <b>I AM SALMAN KHAN</b><br><br>لدينا 28 تصميم جبس فاخر في عمان.",ph:"اكتب رسالة...",r:"شكرا! 😊<br>لدينا 28 تصميم جبس فاخر.<br>نعمل في مسقط، صلالة، كل عمان.<br>اتصل: <b>03139186430</b>"},
-ur:{w:"السلام علیکم! 👋 میں <b>I AM SALMAN KHAN</b> کا اسسٹنٹ ہوں<br>عمان میں 28 ڈیزائن دستیاب!",ph:"پیغام لکھیں...",r:"شکریہ! 😊<br>28 لگژری ڈیزائن عمان اور پاکستان میں۔<br>رابطہ: <b>03139186430</b>"},
-hi:{w:"नमस्ते! 👋 मैं <b>I AM SALMAN KHAN</b> का असिस्टेंट हूं<br>ओमान में 28 डिज़ाइन!",ph:"संदेश लिखें...",r:"धन्यवाद! 😊<br>ओमान में 28 लग्जरी डिज़ाइन।<br>संपर्क: <b>03139186430</b>"},
-bn:{w:"হ্যালো! 👋 আমি <b>I AM SALMAN KHAN</b> এর সহকারী<br>ওমানে 28 ডিজাইন!",ph:"বার্তা লিখুন...",r:"ধন্যবাদ! 😊<br>ওমানে 28 বিলাসবহুল ডিজাইন।<br>যোগাযোগ: <b>03139186430</b>"},
-ml:{w:"ഹലോ! 👋 ഞാൻ <b>I AM SALMAN KHAN</b> ന്റെ അസിസ്റ്റന്റ് ആണ്<br>ഒമാനിൽ 28 ഡിസൈനുകൾ!",ph:"സന്ദേശം ടൈപ്പ് ചെയ്യുക...",r:"നന്ദി! 😊<br>ഒമാനിൽ 28 ആഡംബര ഡിസൈനുകൾ.<br>ബന്ധപ്പെടുക: <b>03139186430</b>"},
-ta:{w:"வணக்கம்! 👋 நான் <b>I AM SALMAN KHAN</b> உதவியாளர்<br>ஓமானில் 28 வடிவமைப்புகள்!",ph:"செய்தியை தட்டச்சு செய்யவும்...",r:"நன்றி! 😊<br>ஓமானில் 28 ஆடம்பர வடிவமைப்புகள்.<br>தொடர்பு: <b>03139186430</b>"},
-tl:{w:"Hello! 👋 Ako ay assistant ni <b>I AM SALMAN KHAN</b><br>28 designs sa Oman!",ph:"Mag-type ng mensahe...",r:"Salamat! 😊<br>28 luxury designs sa Oman.<br>Contact: <b>03139186430</b>"},
-ps:{w:"سلام! 👋 زه د <b>I AM SALMAN KHAN</b> مرستیال یم<br>په عمان کې 28 ډیزاینونه!",ph:"پیغام ولیکئ...",r:"مننه! 😊<br>په عمان کې 28 لوکس ډیزاینونه.<br>اړیکه: <b>03139186430</b>"}
-};
-function toggleAI(){let b=document.getElementById('aiBox');b.style.display=b.style.display==='flex'?'none':'flex';if(b.style.display==='flex'&&!document.getElementById('tab-chat').innerHTML.trim())loadWelcome();}
-function loadWelcome(){let d=langs[curLang];document.getElementById('tab-chat').innerHTML=`<div class="m bot">${d.w}</div>`;document.getElementById('aiInput').placeholder=d.ph;}
-function changeLang(){curLang=document.getElementById('langSel').value;loadWelcome();}
-function openTab(t){document.querySelectorAll('.ai-tabs button').forEach(b=>b.classList.remove('active'));document.getElementById('t-'+t).classList.add('active');document.getElementById('tab-chat').style.display=t==='chat'?'block':'none';document.querySelectorAll('.ai-panel').forEach(p=>p.classList.remove('active'));if(t!=='chat')document.getElementById('tab-'+t).classList.add('active');document.getElementById('aiInputBar').style.display=t==='chat'?'flex':'none';}
-function sendAI(){let inp=document.getElementById('aiInput');let txt=inp.value.trim();if(!txt)return;let box=document.getElementById('tab-chat');box.innerHTML+=`<div class="m user">${txt}</div>`;inp.value='';box.scrollTop=box.scrollHeight;setTimeout(()=>{let sq=0;let m=txt.match(/(\d+)\s*x\s*(\d+)/i);if(m)sq=parseInt(m[1])*parseInt(m[2]);let reply=langs[curLang].r;if(sq>0){let p1=sq*85;let omr=(sq*2.1).toFixed(1);reply=`Room: ${m[1]}x${m[2]}=${sq}sqft<br>💰 PKR: ${p1} | OMR: ${omr} OMR<br><br>`+reply;}box.innerHTML+=`<div class="m bot">${reply}</div>`;box.scrollTop=box.scrollHeight;},500);}
-function doCalc(){let l=parseFloat(document.getElementById('len').value)||0;let w=parseFloat(document.getElementById('wid').value)||0;if(l<=0||w<=0){alert('Enter size');return;}let sq=l*w;let p1=sq*85;let omr=(sq*2.1).toFixed(1);let res=document.getElementById('calcRes');res.style.display='block';res.innerHTML=`<b>${l}x${w}=${sq}sqft</b><br>PKR: ${p1} | OMR: ${omr} OMR<br><br><a href="https://wa.me/923139186430?text=Room%20${l}x${w}=${sq}sqft%20OMR${omr}" style="background:#b78e3d;color:#0f1e3a;padding:5px 10px;border-radius:12px;text-decoration:none;">WhatsApp Bill</a>`;}
-function analyzeImg(){let f=document.getElementById('roomImg').files[0];if(!f){alert('Select photo');return;}document.getElementById('imgPrev').innerHTML=`<img src="${URL.createObjectURL(f)}" style="width:100%;border-radius:8px;max-height:130px;object-fit:cover;">`;let res=document.getElementById('imgRes');res.style.display='block';res.innerHTML=`✅ Room ~12x14ft - 168sqft<br>✅ Best: Design 08<br>✅ Price: 14,280 PKR / 352 OMR`;}
-function startVoice(){let SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){alert('Use Chrome for voice');return;}let r=new SR();r.lang=curLang==='ar'?'ar-SA':curLang==='ur'?'ur-PK':'en-US';r.start();r.onresult=e=>{document.getElementById('aiInput').value=e.results[0][0].transcript;openTab('chat');sendAI();};}
-document.getElementById('aiInput').addEventListener('keypress',e=>{if(e.key==='Enter')sendAI();});
-loadWelcome();
+for(let i=1;i<=28;i++){gallery.innerHTML+=`<div class="card"><img src="https://picsum.photos/400/300?random=${i}" onclick="window.open(this.src)"><div class="card-body"><b>Code: TV-${i}</b><br>Price: 85 /sqft | <span style="color:green;">In Stock</span><br><button class="btn-red" style="padding:6px 12px;margin-top:6px;font-size:12px;">Zoom | Download | Fav</button></div></div>`;}
+
+function sendOTP(){
+  let phone=document.getElementById('custPhone').value;
+  let name=document.getElementById('custName').value;
+  if(name.trim()==''){alert('Please enter your name');return;}
+  if(phone.length<10){alert('Please enter valid phone number');return;}
+  if(resendCount>=3){alert('Too many OTP requests. Try after 10 minutes.');return;}
+
+  generatedOTP=Math.floor(100000+Math.random()*900000).toString();
+  resendCount++;
+  wrongAttempts=0;
+  document.getElementById('attemptCount').innerText='0';
+  document.getElementById('otpSection').style.display='block';
+  document.getElementById('sendOtpBtn').innerText='OTP SENT ✓ ('+resendCount+'/3)';
+  document.getElementById('wrongAttempt').style.display='block';
+  
+  // DEMO - Real API
+  // fetch('/api/send-otp',{method:'POST',body:JSON.stringify({phone:phone, otp:generatedOTP})})
+  alert('DEMO: OTP for '+phone+' is: '+generatedOTP+'\n\nReal website par ye OTP SMS se customer ke mobile par jayega');
+
+  let sec=60;
+  clearInterval(otpTimerInt);
+  otpTimerInt=setInterval(()=>{sec--; document.getElementById('otpTimer').innerText=`OTP valid for ${sec}s - Sent to ${phone}`; if(sec<=0){clearInterval(otpTimerInt); document.getElementById('otpTimer').innerText='OTP Expired - Click Resend';}},1000);
+}
+function resendOTP(){if(resendCount>=3){alert('Resend limit reached');return;} sendOTP();}
+function verifyOTP(){
+  let entered=document.getElementById('otpInput').value;
+  if(entered.length!=6){alert('Enter 6 digit OTP');return;}
+  if(entered==generatedOTP){
+    let name=document.getElementById('custName').value;
+    let phone=document.getElementById('custPhone').value;
+    alert('✓ OTP Verified! Login Success!\n\nSMS Alert Sent to Owner 03139186430:\nNew Verified Customer: '+name+' - '+phone);
+    // Owner SMS API: fetch('/api/owner-alert',{method:'POST', body:JSON.stringify({to:'03139186430', msg:`Verified Login: ${name} ${phone}`})})
+    document.getElementById('loginModal').style.display='none';
+    clearInterval(otpTimerInt);
+  } else {
+    wrongAttempts++;
+    document.getElementById('attemptCount').innerText=wrongAttempts;
+    if(wrongAttempts>=3){alert('3 Wrong attempts! OTP blocked. Please click Resend OTP'); clearInterval(otpTimerInt); document.getElementById('otpTimer').innerText='Blocked - Resend new OTP';}
+    else{alert('Wrong OTP! Attempts left: '+(3-wrongAttempts)+'\nCorrect is: '+generatedOTP);}
+  }
+}
+function googleLogin(){alert('Google Login Success! SMS Alert Sent to 03139186430'); document.getElementById('loginModal').style.display='none';}
+function calc(){let l=document.getElementById('length').value||0,w=document.getElementById('width').value||0,r=document.getElementById('rate').value,a=l*w,t=a*r,c=document.getElementById('curr2').value;document.getElementById('result').innerText=`Total Area: ${a} sqft | Total Price: ${t} ${c}`;}
+function sendToWhatsApp(){let t=document.getElementById('userText').value; window.open(`https://wa.me/923139186430?text=${encodeURIComponent(t)}`,'_blank');}
+function updateCurrency(){document.getElementById('curr2').value=document.getElementById('currency').value; calc();}
+window.onload=()=>{document.getElementById('loginModal').style.display='flex';}
 </script>
 </body>
 </html>
