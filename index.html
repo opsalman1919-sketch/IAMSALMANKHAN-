@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <title>KHANS GYPSUMCRAFT PK - White Gold</title>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#D4AF37">
@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--red:#D4AF37;--gold-dark:#B8960C;--gold-light:#FFF8E1;--dark:#111;--light:#FFFEF8;--gold:#D4AF37;}
-*{font-family:'Poppins',sans-serif;box-sizing:border-box} body{margin:0;background:#fff;color:#111}
+*{font-family:'Poppins',sans-serif;box-sizing:border-box} html,body{touch-action:manipulation;-webkit-text-size-adjust:100%;overscroll-behavior:none} body{margin:0;background:#fff;color:#111}
 header{position:sticky;top:0;z-index:999;background:#fff;padding:12px 5%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 15px rgba(212,175,55,.12);border-bottom:3px solid var(--gold)}
 .logo{font-weight:800;font-size:18px;color:var(--gold-dark)}.logo span{color:var(--dark)}
 .btn-red{background:linear-gradient(90deg,#D4AF37,#C9A86A);color:#111;border:none;padding:9px 14px;border-radius:8px;font-weight:800;cursor:pointer;font-size:12px}
@@ -45,12 +45,11 @@ header{position:sticky;top:0;z-index:999;background:#fff;padding:12px 5%;display
 .super-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;padding:16px}
 .super-card{background:#FFFEF8;border:1px solid #F0E6C8;border-left:4px solid var(--gold);padding:12px;border-radius:12px}
 .super-card input,.super-card textarea,.super-card select{width:100%;padding:8px;border:1px solid #ddd;border-radius:8px;margin-top:6px;font-size:11px}
-@media(max-width:600px){.gallery{grid-template-columns:1fr}.card img{height:220px} #imgModal img{max-width:98vw;max-height:70vh} }
+@media(max-width:600px){.gallery{grid-template-columns:1fr}.card img{height:220px} #imgModal img{max-width:98vw;max-height:70vh}}
 </style>
 </head>
 <body>
 
-<!-- SIRF INSTALL SCREEN - Pehle sirf ye dikhega -->
 <div id="installScreen" style="position:fixed;inset:0;background:#FFFEF8;z-index:999999;display:flex;justify-content:center;align-items:center;flex-direction:column;padding:20px;text-align:center">
   <div style="background:#fff;padding:24px;border-radius:20px;max-width:380px;width:100%;border-top:5px solid #D4AF37;box-shadow:0 10px 30px rgba(0,0,0,.15)">
     <div style="background:#D4AF37;color:#111;width:60px;height:60px;border-radius:50%;display:flex;justify-content:center;align-items:center;font-weight:800;font-size:22px;margin:0 auto 12px">SK</div>
@@ -59,7 +58,7 @@ header{position:sticky;top:0;z-index:999;background:#fff;padding:12px 5%;display
     <h1 style="font-size:42px;margin:12px 0 8px;color:#C9A86A;text-align:left">App</h1>
     <p style="font-size:12px;color:#333;text-align:left;line-height:1.5;margin:0 0 16px">I AM SALMAN KHAN - Owner of Khan's GypsumCraft PK - Welcome to my official app-like website - 7 TV Lounge + 7 Doll + 7 3D + 7 Islamic = 28 luxury photos - Mingora Swat - Calculator data goes directly to me 03139186430 & opsalman1919@gmail.com</p>
     <button id="realInstallBtn" style="background:linear-gradient(90deg,#B8960C,#D4AF37);color:#111;border:none;padding:14px 20px;border-radius:12px;font-weight:800;width:100%;cursor:pointer;font-size:13px">📱 I AM SALMAN KHAN - Install My App</button>
-    <p style="font-size:10px;color:#888;margin-top:10px">Install ke baad ye screen khud ghayab ho jayegi</p>
+    <p style="font-size:10px;color:#888;margin-top:10px">Install کے بعد یہ Screen خود غائب ہو جائے گی</p>
     <button onclick="document.getElementById('installScreen').style.display='none'" style="background:none;border:none;color:#888;font-size:11px;margin-top:8px;text-decoration:underline;cursor:pointer">Skip - Continue to Website</button>
   </div>
 </div>
@@ -123,7 +122,7 @@ header{position:sticky;top:0;z-index:999;background:#fff;padding:12px 5%;display
 <div class="gallery" id="gallery"></div>
 <p style="text-align:center;font-size:10px;color:#888;margin-top:10px">Click Image = Zoom In/Out + Save Option | 28 designs per category - Total 224 - White Gold</p>
 </div>
- <div class="strip" style="background:#FFFEF8"><h2><b>Step 3: Calculator + 10 Currencies - White Gold</b></h2>
+<div class="strip" style="background:#FFFEF8"><h2><b>Step 3: Calculator + 10 Currencies - White Gold</b></h2>
 <div class="calc-box">
 <input type="number" id="len" placeholder="Length (ft)" oninput="calc()">
 <input type="number" id="wid" placeholder="Width (ft)" oninput="calc()">
@@ -262,11 +261,9 @@ window.onload=()=>{let sid=localStorage.getItem('khans_id');if(sid){customerId=s
 if ('serviceWorker' in navigator) { navigator.serviceWorker.register('./sw.js'); }
 </script>
 <script>
-// INSTALL SCREEN LOGIC - Sirf Install Screen Pehle Dikhega
 let deferredPrompt;
 const realInstallBtn = document.getElementById('realInstallBtn');
 const installScreen = document.getElementById('installScreen');
-
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
@@ -274,7 +271,6 @@ window.addEventListener('beforeinstallprompt', (e) => {
   realInstallBtn.style.background = '#111';
   realInstallBtn.style.color = '#D4AF37';
 });
-
 realInstallBtn.addEventListener('click', async () => {
   if (deferredPrompt) {
     deferredPrompt.prompt();
@@ -282,11 +278,10 @@ realInstallBtn.addEventListener('click', async () => {
     if (outcome === 'accepted') { installScreen.style.display = 'none'; }
     deferredPrompt = null;
   } else {
-    alert('iPhone: Share > Add to Home Screen\nAndroid: 3 dot > Install App');
+    alert('Android: 3 dot > Install App\n iPhone: Share > Add to Home Screen');
     installScreen.style.display = 'none';
   }
 });
-
 window.addEventListener('appinstalled', () => { installScreen.style.display = 'none'; });
 if (window.matchMedia('(display-mode: standalone)').matches) { installScreen.style.display = 'none'; }
 </script>
