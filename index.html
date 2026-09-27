@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>KHANS GYPSUMCRAFT PK - White Gold + ADMIN-SALMAN-1919</title>
+<title>KHANS GYPSUMCRAFT PK - White Gold</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#D4AF37">
+<link rel="apple-touch-icon" href="icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--red:#D4AF37;--gold-dark:#B8960C;--gold-light:#FFF8E1;--dark:#111;--light:#FFFEF8;--gold:#D4AF37;}
@@ -239,6 +242,11 @@ function deleteDesign(){let g=document.getElementById('gallery');if(g.children.l
 function saveDashboard(){document.getElementById('dashCust').innerText=document.getElementById('sCust').value;document.getElementById('dashSales').innerText='PKR '+document.getElementById('sSales').value;alert('Dashboard Saved '+document.getElementById('sCust').value+' / '+document.getElementById('sSales').value+' - Setting Change');}
 function saveAllSuper(){saveAllPricing();saveAllWA();saveTheme();saveDashboard();alert('✅ ALL SAVED - ADMIN-SALMAN-1919 - White Gold - Setting Change - You can Change everything');document.getElementById('superOwnerPanel').style.display='none';}
 window.onload=()=>{let sid=localStorage.getItem('khans_id');if(sid){customerId=sid;document.getElementById('custIdShow').style.display='inline-block';document.getElementById('custIdShow').innerText='ID: '+sid;document.getElementById('userNameShow').style.display='inline-block';document.getElementById('userNameShow').innerText=localStorage.getItem('khans_name')+' | '+sid;if(localStorage.getItem('is_owner')=='1'){document.getElementById('ownerBadge').style.display='inline-block';document.getElementById('ownerDashBtn').style.display='inline-block';document.getElementById('superOwnerBtn').style.display='inline-block';}document.getElementById('loginModal').style.display='none';document.getElementById('refLink').innerText=`https://khansgypsumcraft.pk/ref?user=${sid}`;document.getElementById('refIdShow').innerText=sid;}loadCategory('TV Lounge');}
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js');
+}
 </script>
 </body>
 </html>
