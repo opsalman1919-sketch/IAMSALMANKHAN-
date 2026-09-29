@@ -69,7 +69,7 @@ header{
  background:radial-gradient(circle at 85% 10%,#ead39a55,transparent 30%)
 }
 .heroGrid{
- display:grid;grid-template-columns:1.1fr .9fr;
+ display:grid;grid-template-columns:1.1fr.9fr;
  gap:40px;align-items:center
 }
 .hero h1{
@@ -165,7 +165,7 @@ header{
 }
 .ba{display:grid;grid-template-columns:1fr 1fr}
 .ba img{width:100%;height:170px;object-fit:cover}
-.project .body{padding:14px}
+.project.body{padding:14px}
 
 .contact{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .contactCard{
@@ -256,7 +256,7 @@ footer{background:#171717;color:#ddd;padding:44px 0}
  display:block;width:100%;border:0;background:transparent;
  color:#ddd;text-align:left;padding:12px;border-radius:9px;margin:4px 0
 }
-.side button:hover,.side .active{background:#ffffff12}
+.side button:hover,.side.active{background:#ffffff12}
 .main{padding:28px}
 .dashTop{
  display:flex;justify-content:space-between;
@@ -407,63 +407,62 @@ footer{background:#171717;color:#ddd;padding:44px 0}
 .seoNote{font-size:11px;color:#777}
 
 @media(max-width:900px){
- .servicesGrid{grid-template-columns:repeat(2,1fr)}
- .testimonials{grid-template-columns:1fr}
- .heroGrid{grid-template-columns:1fr}
- .cats,.grid{grid-template-columns:repeat(2,1fr)}
- .formgrid,.steps{grid-template-columns:repeat(2,1fr)}
- .projects{grid-template-columns:1fr}
- .contact,.footerGrid{grid-template-columns:1fr}
- .dash{grid-template-columns:1fr}
- .side{position:static;height:auto}
- .stats{grid-template-columns:repeat(2,1fr)}
+.servicesGrid{grid-template-columns:repeat(2,1fr)}
+.testimonials{grid-template-columns:1fr}
+.heroGrid{grid-template-columns:1fr}
+.cats,.grid{grid-template-columns:repeat(2,1fr)}
+.formgrid,.steps{grid-template-columns:repeat(2,1fr)}
+.projects{grid-template-columns:1fr}
+.contact,.footerGrid{grid-template-columns:1fr}
+.dash{grid-template-columns:1fr}
+.side{position:static;height:auto}
+.stats{grid-template-columns:repeat(2,1fr)}
 }
 
 @media(max-width:560px){
- .wrap{padding:0 13px}
- .nav{min-height:62px}
- .brand{font-size:13px}
- .hero{padding:45px 0}
- .heroGrid{gap:22px}
- .hero h1{font-size:39px}
- .heroImg{height:270px}
- .section{padding:45px 0}
- .head h2{font-size:26px}
- .cats,.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
- .cat{min-height:145px}
- .card img{aspect-ratio:1/1}
- .formgrid,.adminForm{grid-template-columns:1fr}
- .calc{padding:19px;border-radius:18px}
- .total{font-size:24px}
- .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
- .stat{padding:13px}
- .stat b{font-size:19px}
- .dash{display:block}
- .side{
+.wrap{padding:0 13px}
+.nav{min-height:62px}
+.brand{font-size:13px}
+.hero{padding:45px 0}
+.heroGrid{gap:22px}
+.hero h1{font-size:39px}
+.heroImg{height:270px}
+.section{padding:45px 0}
+.head h2{font-size:26px}
+.cats,.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.cat{min-height:145px}
+.card img{aspect-ratio:1/1}
+.formgrid,.adminForm{grid-template-columns:1fr}
+.calc{padding:19px;border-radius:18px}
+.total{font-size:24px}
+.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.stat{padding:13px}
+.stat b{font-size:19px}
+.dash{display:block}
+.side{
   padding:10px;display:flex;gap:5px;overflow-x:auto;
   position:sticky;top:0;z-index:5;height:auto
  }
- .side h2{display:none}
- .side button{
+.side h2{display:none}
+.side button{
   min-width:max-content;margin:0;padding:9px 10px;font-size:12px
  }
- .main{padding:12px}
- .dashTop h1{font-size:21px}
- .analyticsGrid{grid-template-columns:1fr}
- .table th,.table td{font-size:12px;padding:8px}
- .ai{right:12px;bottom:12px}
- .aiBtn{width:52px;height:52px}
- .aiPanel{
+.main{padding:12px}
+.dashTop h1{font-size:21px}
+.analyticsGrid{grid-template-columns:1fr}
+.table th,.table td{font-size:12px;padding:8px}
+.ai{right:12px;bottom:12px}
+.aiBtn{width:52px;height:52px}
+.aiPanel{
   right:-2px;bottom:62px;
   width:calc(100vw - 24px);max-width:370px
  }
- .aiMessages{height:280px}
- .searchbar{flex-direction:column}
- .footerGrid{gap:12px}
+.aiMessages{height:280px}
+.searchbar{flex-direction:column}
+.footerGrid{gap:12px}
 }
 </style>
 </head>
-
 <body>
 
 <header>
@@ -638,7 +637,6 @@ footer{background:#171717;color:#ddd;padding:44px 0}
  </div>
 </div>
 </section>
-
 <section class="section">
 <div class="wrap">
  <div class="head">
@@ -713,6 +711,7 @@ footer{background:#171717;color:#ddd;padding:44px 0}
 </section>
 
 </main>
+
 <footer>
 <div class="wrap footerGrid">
  <div>
@@ -737,17 +736,12 @@ footer{background:#171717;color:#ddd;padding:44px 0}
  </div>
 </div>
 </footer>
-
 <!-- LOGIN MODAL -->
 <div id="loginModal" class="modal">
 <div class="modalBox loginBox">
-
  <div class="loginBrand">KG</div>
-
  <h2>Welcome to KHANS GYPSUMCRAFT PK</h2>
-
  <p class="muted">Sign in with Google to continue.</p>
-
  <button class="googleBtn" onclick="login()">
   <svg class="googleIcon" viewBox="0 0 24 24" aria-hidden="true">
    <path fill="#4285F4" d="M21.35 12.23c0-.79-.07-1.55-.23-2.27H12v4.3h5.24a4.48 4.48 0 0 1-1.95 2.94v2.44h3.15c1.84-1.69 2.91-4.18 2.91-7.41z"/>
@@ -757,83 +751,60 @@ footer{background:#171717;color:#ddd;padding:44px 0}
   </svg>
   Continue with Google
  </button>
-
  <div class="installCard">
   <div class="installRow">
    <div class="installLogo">KG</div>
    <div class="installCopy">
     <b>Install My App</b>
-    <small>
-     Install KHANS GYPSUMCRAFT PK on your mobile for a faster,
-     app-like experience.
-    </small>
+    <small>Install KHANS GYPSUMCRAFT PK on your mobile for a faster, app-like experience.</small>
    </div>
   </div>
-
-  <button id="installAppBtn" class="installBtn" onclick="installApp()">
-   Install My App
-  </button>
+  <button id="installAppBtn" class="installBtn" onclick="installApp()">Install My App</button>
  </div>
-
 </div>
 </div>
 
 <!-- DESIGN MODAL -->
 <div id="designModal" class="modal">
 <div class="modalBox">
-
  <div class="modalTop">
   <h2 id="dmTitle">Design</h2>
   <button class="close" onclick="closeM('designModal')">×</button>
  </div>
-
- <img id="dmImg"
-      style="width:100%;max-height:480px;object-fit:cover;border-radius:15px">
-
+ <img id="dmImg" style="width:100%;max-height:480px;object-fit:cover;border-radius:15px">
  <p id="dmInfo" class="muted"></p>
-
  <div class="actions">
   <button class="gold" onclick="selectDesign()">Save Design</button>
   <button class="outline" onclick="designWA()">WhatsApp Quote</button>
  </div>
-
 </div>
 </div>
 
 <!-- ACCOUNT MODAL -->
 <div id="accountModal" class="modal">
 <div class="modalBox">
-
  <div class="modalTop">
   <h2>My Account</h2>
   <button class="close" onclick="closeM('accountModal')">×</button>
  </div>
-
  <div id="accountInfo"></div>
-
  <div class="panel">
   <h3>My Saved Designs</h3>
   <div id="mySelections" class="grid" style="grid-template-columns:repeat(3,1fr)"></div>
  </div>
-
  <div class="panel">
   <h3>My Orders</h3>
   <div id="myOrders" class="tableWrap"></div>
  </div>
-
  <button class="danger" onclick="logout()">Sign Out</button>
-
 </div>
 </div>
 
 <!-- OWNER DASHBOARD -->
 <div id="dashboard" class="dashboard">
 <div class="dash">
-
 <aside class="side">
-
  <h2>KHANS<br>OWNER CENTER</h2>
-
  <button class="active" onclick="tab('overview',this)">▦ Overview</button>
  <button onclick="tab('analytics',this)">📊 Analytics & AI</button>
  <button onclick="tab('customers',this)">♙ Customers</button>
@@ -843,34 +814,22 @@ footer{background:#171717;color:#ddd;padding:44px 0}
  <button onclick="tab('designs',this)">▧ Gallery Manager</button>
  <button onclick="tab('projects',this)">▤ Projects</button>
  <button onclick="tab('settings',this)">⚙ Settings</button>
-
- <button onclick="closeOwner()" style="margin-top:25px">
-  ← Website
- </button>
-
+ <button onclick="closeOwner()" style="margin-top:25px">← Website</button>
 </aside>
-
 <div class="main">
-
  <div class="dashTop">
   <h1 id="dashTitle">Business Overview</h1>
   <button class="outline" onclick="closeOwner()">Close</button>
  </div>
-
  <div id="dashContent"></div>
-
 </div>
-
 </div>
 </div>
 
 <!-- KG AI CHAT -->
 <div class="ai">
-
 <div id="aiPanel" class="aiPanel">
-
  <div class="aiHead">
-
   <div style="display:flex;align-items:center">
    <span class="aiLogo">KG</span>
    <div>
@@ -878,34 +837,23 @@ footer{background:#171717;color:#ddd;padding:44px 0}
     <div style="font-size:10px;color:#aaa">Website AI Assistant</div>
    </div>
   </div>
-
   <div>
    <div id="aiStatus" class="aiStatus">Ready</div>
   </div>
-
  </div>
-
  <div id="aiMessages" class="aiMessages"></div>
-
  <div class="aiInput">
-  <input id="aiText"
-         placeholder="Ask about designs, prices or services..."
-         onkeydown="if(event.key==='Enter')sendAI()">
+  <input id="aiText" placeholder="Ask about designs, prices or services..." onkeydown="if(event.key==='Enter')sendAI()">
   <button class="gold" onclick="sendAI()">Send</button>
  </div>
-
 </div>
-
 <button class="aiBtn" onclick="toggleAI()">✦</button>
-
 </div>
 
 <div id="toast" class="toast hidden"></div>
-
 <script type="module">
 import{initializeApp}
 from"https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-
 import{
  getAuth,
  onAuthStateChanged,
@@ -914,7 +862,6 @@ import{
  signOut
 }
 from"https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
-
 import{
  getDatabase,
  ref,
@@ -927,9 +874,11 @@ import{
 }
 from"https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
+// YAHAN GALTI THI - AB THEEK HAI
 const firebaseConfig={
- apiKey:"AIzaSyAOZQKkqeDHC81KW3aQhmGVW4ckncmMo8",
+ apiKey:"AIzaSyAOZQKkqeDHC81KW3aQSHGVuW4ckncmMo8",
  authDomain:"khan-sgypsumcraptpk.firebaseapp.com",
+ databaseURL:"https://khan-sgypsumcraptpk-default-rtdb.firebaseio.com",
  projectId:"khan-sgypsumcraptpk",
  storageBucket:"khan-sgypsumcraptpk.firebasestorage.app",
  messagingSenderId:"82454361678",
@@ -992,1900 +941,366 @@ const imgs=[
 function img(id){
  return`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=900&q=82`
 }
-
 function esc(s){
- return String(s??"").replace(/[&<>"']/g,m=>({
-  "&":"&amp;",
-  "<":"&lt;",
-  ">":"&gt;",
-  '"':"&quot;",
-  "'":"&#39;"
- }[m]))
+ return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))
 }
-
 function demoDesigns(cat){
  let ci=Math.max(0,cats.findIndex(x=>x[0]===cat));
-
- return Array.from({length:28},(_,i)=>({
-  id:cat.slice(0,3).toUpperCase()+"-"+String(i+1).padStart(2,"0"),
-  name:cat+" Design "+String(i+1).padStart(2,"0"),
-  style:["Modern","Luxury","LED","Long","Layered","Minimal"][i%6],
-  image:img(imgs[(i+ci*2)%imgs.length])
- }))
+ return Array.from({length:28},(_,i)=>({id:cat.slice(0,3).toUpperCase()+"-"+String(i+1).padStart(2,"0"),name:cat+" Design "+String(i+1).padStart(2,"0"),style:["Modern","Luxury","LED","Long","Layered","Minimal"][i%6],image:img(imgs[(i+ci*2)%imgs.length])}))
 }
-
 function allDesigns(cat){
- return[
-  ...demoDesigns(cat),
-  ...Object.values(customDesigns).filter(d=>d.category===cat)
- ]
+ return[...demoDesigns(cat),...Object.values(customDesigns).filter(d=>d.category===cat)]
 }
-
 function go(id){
  document.getElementById(id)?.scrollIntoView({behavior:"smooth"})
 }
 window.go=go;
-
 function showLogin(){
  if(!user)document.getElementById("loginModal").classList.add("show")
 }
 window.openLogin=showLogin;
+ window.closeM=id=>document.getElementById(id).classList.remove("show");
 
-window.closeM=id=>
- document.getElementById(id).classList.remove("show");
-
-/* GOOGLE LOGIN */
 window.login=async()=>{
  try{
-  await signInWithPopup(auth,provider);
+  const result=await signInWithPopup(auth,provider);
+  await ensureUser(result.user);
+  closeM("loginModal");
+  toast("Signed in successfully.");
  }catch(e){
   console.error(e);
-
   let message="Google login failed.";
-
   if(e.code==="auth/api-key-not-valid"||e.code==="auth/invalid-api-key"){
    message="Firebase API key invalid. Firebase Web App config check karein.";
   }else if(e.code==="auth/popup-closed-by-user"){
    message="Google login window close ho gayi.";
   }else if(e.code==="auth/unauthorized-domain"){
    message="Current website domain Firebase Authentication mein authorized nahi hai.";
-  }else if(e.code==="auth/operation-not-allowed"){
-   message="Firebase Authentication mein Google provider enable nahi hai.";
-  }else if(e.code==="auth/popup-blocked"){
-   message="Google login popup browser ne block kar diya.";
   }else{
    message="Google login failed: "+e.message;
   }
-
   toast(message,true);
  }
 };
 
 async function ensureUser(u){
  user=u;
-
- /* UI immediately after successful Google authentication */
+ await update(ref(db,"users/"+u.uid),{uid:u.uid,name:u.displayName||"",email:u.email||"",photoURL:u.photoURL||"",lastLogin:Date.now(),role:u.uid===OWNER_UID?"owner":"customer"});
  document.getElementById("app").classList.remove("hidden");
- document.getElementById("loginModal").classList.remove("show");
-
- document.getElementById("loginBtn").textContent=
-  (u.displayName||"Account").split(" ")[0];
-
+ document.getElementById("loginBtn").textContent=(u.displayName||"Account").split(" ")[0];
  document.getElementById("accountBtn").classList.remove("hidden");
-
- document.getElementById("ownerBtn")
-  .classList.toggle("hidden",u.uid!==OWNER_UID);
-
+ document.getElementById("ownerBtn").classList.toggle("hidden",u.uid!==OWNER_UID);
  renderUserChip();
-
- /* User profile save is separate from Google authentication */
- try{
-  await update(
-   ref(db,"users/"+u.uid),
-   {
-    uid:u.uid,
-    name:u.displayName||"",
-    email:u.email||"",
-    photoURL:u.photoURL||"",
-    lastLogin:Date.now(),
-    role:u.uid===OWNER_UID?"owner":"customer"
-   }
-  );
- }catch(e){
-  console.error("User profile database write failed:",e);
-  toast(
-   "Google login successful, lekin user data Firebase Database mein save nahi hua. Database Rules check karein.",
-   true
-  );
- }
 }
-
 function renderUserChip(){
  let b=document.getElementById("accountBtn");
  if(user)b.textContent=(user.displayName||"Account").split(" ")[0];
 }
-
 onAuthStateChanged(auth,u=>{
  user=u;
-
- if(u){
-  ensureUser(u).catch(e=>{
-   console.error("ensureUser failed:",e);
-   toast("Account setup mein error aaya.",true);
-  });
- }else{
+ if(u){ensureUser(u);}else{
   document.getElementById("app").classList.add("hidden");
-  document.getElementById("accountBtn").classList.add("hidden");
-  document.getElementById("ownerBtn").classList.add("hidden");
-  document.getElementById("loginBtn").textContent="Continue with Google";
   document.getElementById("loginModal").classList.add("show");
  }
 });
-
 function renderCats(){
-
- document.getElementById("cats").innerHTML=
- cats.map(c=>`
- <button class="cat" onclick="openCat('${esc(c[0])}')">
-  <img src="${c[1]}?auto=format&fit=crop&w=900&q=82">
-  <div class="shade"></div>
-  <div class="ct">
-   <h3>${esc(c[0])}</h3>
-   <small>28 design slots</small>
-  </div>
- </button>
- `).join("");
-
- document.getElementById("pills").innerHTML=
- `<button class="pill active"
- onclick="filterCat('All',this)">All</button>`+
- cats.map(c=>`
- <button class="pill"
- onclick="filterCat('${esc(c[0])}',this)">
- ${esc(c[0])}
- </button>
- `).join("");
+ document.getElementById("cats").innerHTML=cats.map(c=>`<button class="cat" onclick="openCat('${esc(c[0])}')"><img src="${c[1]}?auto=format&fit=crop&w=900&q=82"><div class="shade"></div><div class="ct"><h3>${esc(c[0])}</h3><small>28 design slots</small></div></button>`).join("");
+ document.getElementById("pills").innerHTML=`<button class="pill active" onclick="filterCat('All',this)">All</button>`+cats.map(c=>`<button class="pill" onclick="filterCat('${esc(c[0])}',this)">${esc(c[0])}</button>`).join("");
 }
-
 window.filterCat=(cat,b)=>{
  selectedCategory=cat;
-
- document.querySelectorAll(".pill")
-  .forEach(x=>x.classList.remove("active"));
-
+ document.querySelectorAll(".pill").forEach(x=>x.classList.remove("active"));
  b.classList.add("active");
-
- if(cat==="All")categoriesView();
- else openCat(cat);
+ if(cat==="All")categoriesView(); else openCat(cat);
 };
-
 window.openCat=cat=>{
  currentCat=cat;
  selectedCategory=cat;
-
  document.getElementById("cats").classList.add("hidden");
  document.getElementById("designArea").classList.remove("hidden");
-
- document.getElementById("catTitle").textContent=
-  cat+" — 28 Designs + Owner Additions";
-
+ document.getElementById("catTitle").textContent=cat+" — 28 Designs + Owner Additions";
  renderCurrentGallery();
 };
-
 window.categoriesView=()=>{
  document.getElementById("designArea").classList.add("hidden");
  document.getElementById("cats").classList.remove("hidden");
 };
-
 window.renderCurrentGallery=()=>{
-
- let q=
-  (document.getElementById("designSearch").value||"")
-  .toLowerCase();
-
- let arr=allDesigns(currentCat)
-  .filter(d=>
-   (d.name+d.style+d.id)
-   .toLowerCase()
-   .includes(q)
-  );
-
- document.getElementById("designs").innerHTML=
- arr.map(d=>`
- <article class="card">
-
-  <img
-   src="${esc(d.image)}"
-   loading="lazy"
-   onerror="this.style.display='none'">
-
-  <div class="body">
-
-   <span class="tag">${esc(d.style)}</span>
-
-   <h4>${esc(d.name)}</h4>
-
-   <small>${esc(d.id)}</small>
-
-   <div class="actions">
-    <button onclick='viewDesign(${JSON.stringify(d)})'>
-     View
-    </button>
-
-    <button class="primary"
-     onclick='choose(${JSON.stringify(d)})'>
-     Save
-    </button>
-   </div>
-
-  </div>
-
- </article>
- `).join("")||
- `<div class="panel">No matching designs.</div>`;
+ let q=(document.getElementById("designSearch").value||"").toLowerCase();
+ let arr=allDesigns(currentCat).filter(d=>(d.name+d.style+d.id).toLowerCase().includes(q));
+ document.getElementById("designs").innerHTML=arr.map(d=>`<article class="card"><img src="${esc(d.image)}" loading="lazy" onerror="this.style.display='none'"><div class="body"><span class="tag">${esc(d.style)}</span><h4>${esc(d.name)}</h4><small>${esc(d.id)}</small><div class="actions"><button onclick='viewDesign(${JSON.stringify(d)})'>View</button><button class="primary" onclick='choose(${JSON.stringify(d)})'>Save</button></div></div></article>`).join("")||`<div class="panel">No matching designs.</div>`;
 };
-
 window.viewDesign=d=>{
  current=d;
-
  document.getElementById("dmTitle").textContent=d.name;
  document.getElementById("dmImg").src=d.image;
-
- document.getElementById("dmInfo").textContent=
-  `${d.id} • ${currentCat} • ${d.style}`;
-
+ document.getElementById("dmInfo").textContent=`${d.id} • ${currentCat} • ${d.style}`;
  document.getElementById("designModal").classList.add("show");
 };
-
 window.choose=async d=>{
- if(!user){
-  showLogin();
-  return;
- }
-
- try{
-  await saveSelection(d);
-  viewDesign(d);
- }catch(e){
-  console.error(e);
-  toast("Design save nahi ho saka. Firebase Database Rules check karein.",true);
- }
+ if(!user){showLogin();return;}
+ await saveSelection(d);
+ viewDesign(d);
 };
-
 async function saveSelection(d){
-
  let k=push(ref(db,"designSelections"));
-
- await set(k,{
-  uid:user.uid,
-  designId:d.id,
-  name:d.name,
-  category:d.category||currentCat,
-  style:d.style,
-  image:d.image,
-  createdAt:Date.now()
- });
-
+ await set(k,{uid:user.uid,designId:d.id,name:d.name,category:d.category||currentCat,style:d.style,image:d.image,createdAt:Date.now()});
  toast("Design saved to your account.");
 }
-
 window.selectDesign=async()=>{
  if(!current)return;
-
- if(!user){
-  closeM("designModal");
-  showLogin();
-  return;
- }
-
- try{
-  await saveSelection(current);
-  closeM("designModal");
- }catch(e){
-  console.error(e);
-  toast("Design save nahi ho saka.",true);
- }
+ if(!user){closeM("designModal");showLogin();return;}
+ await saveSelection(current);
+ closeM("designModal");
 };
-
 window.designWA=()=>{
  if(!current)return;
-
- openWhatsApp(
-  `Hello KHANS GYPSUMCRAFT PK, I want a quote for ${current.name} (${current.id}) in ${currentCat}.`
- );
+ openWhatsApp(`Hello KHANS GYPSUMCRAFT PK, I want a quote for ${current.name} (${current.id}) in ${currentCat}.`);
 };
- function calculate(){
-
- let area=
-  (+document.getElementById("len").value||0)*
-  (+document.getElementById("wid").value||0);
-
- let price=
-  area*
-  (+document.getElementById("rate").value||180);
-
- let discount=
-  Math.min(
-   100,
-   Math.max(
-    0,
-    +document.getElementById("discount").value||0
-   )
-  );
-
+function calculate(){
+ let area=(+document.getElementById("len").value||0)*(+document.getElementById("wid").value||0);
+ let price=area*(+document.getElementById("rate").value||180);
+ let discount=Math.min(100,Math.max(0,+document.getElementById("discount").value||0));
  let total=Math.round(price*(1-discount/100));
-
- document.getElementById("total").textContent=
-  `PKR ${total.toLocaleString()} • ${area.toFixed(1)} sq ft`;
-
- return{
-  area,
-  gross:price,
-  discount,
-  total
- };
+ document.getElementById("total").textContent=`PKR ${total.toLocaleString()} • ${area.toFixed(1)} sq ft`;
+ return{area,gross:price,discount,total};
 }
-
 window.calculate=calculate;
-
 window.saveQuote=async()=>{
-
- if(!user){
-  showLogin();
-  return;
- }
-
- try{
-
-  let c=calculate();
-
-  let k=push(ref(db,"quotations/"+user.uid));
-
-  await set(k,{
-   uid:user.uid,
-   customerName:user.displayName||"",
-   email:user.email||"",
-   length:+document.getElementById("len").value||0,
-   width:+document.getElementById("wid").value||0,
-   area:c.area,
-   type:document.getElementById("rate").options[
-    document.getElementById("rate").selectedIndex
-   ].text,
-   discount:c.discount,
-   total:c.total,
-   status:"Draft",
-   designId:current?.id||"",
-   designName:current?.name||"",
-   category:current?.category||currentCat||"",
-   style:current?.style||"",
-   createdAt:Date.now()
-  });
-
-  toast("Quotation saved.");
-
- }catch(e){
-  console.error(e);
-  toast("Quotation save nahi hui. Firebase Database Rules check karein.",true);
- }
-};
-
-window.quoteWA=()=>{
-
+ if(!user){showLogin();return;}
  let c=calculate();
-
- openWhatsApp(
- `Hello KHANS GYPSUMCRAFT PK, I want a quotation.
-Customer: ${user?.displayName||""}
-Project: ${document.getElementById("rate").options[
- document.getElementById("rate").selectedIndex
-].text}
-Area: ${c.area.toFixed(1)} sq ft
-Discount: ${c.discount}%
-Estimated Total: PKR ${c.total.toLocaleString()}`
- );
+ let k=push(ref(db,"quotations/"+user.uid));
+ await set(k,{uid:user.uid,customerName:user.displayName||"",email:user.email||"",length:+document.getElementById("len").value||0,width:+document.getElementById("wid").value||0,area:c.area,type:document.getElementById("rate").options[document.getElementById("rate").selectedIndex].text,discount:c.discount,total:c.total,status:"Draft",designId:current?.id||"",designName:current?.name||"",category:current?.category||currentCat||"",style:current?.style||"",createdAt:Date.now()});
+ toast("Quotation saved.");
 };
-
+window.quoteWA=()=>{
+ let c=calculate();
+ openWhatsApp(`Hello KHANS GYPSUMCRAFT PK, I want a quotation.\nCustomer: ${user?.displayName||""}\nProject: ${document.getElementById("rate").options[document.getElementById("rate").selectedIndex].text}\nArea: ${c.area.toFixed(1)} sq ft\nDiscount: ${c.discount}%\nEstimated Total: PKR ${c.total.toLocaleString()}`);
+};
 window.placeOrder=async()=>{
-
- if(!user){
-  showLogin();
-  return;
- }
-
- try{
-
-  let c=calculate();
-
-  let k=push(ref(db,"orders/"+user.uid));
-
-  await set(k,{
-   uid:user.uid,
-   customerName:user.displayName||"",
-   email:user.email||"",
-   length:+document.getElementById("len").value||0,
-   width:+document.getElementById("wid").value||0,
-   area:c.area,
-   projectType:document.getElementById("rate").options[
-    document.getElementById("rate").selectedIndex
-   ].text,
-   discount:c.discount,
-   total:c.total,
-   status:"Pending",
-   designId:current?.id||"",
-   designName:current?.name||"",
-   category:current?.category||currentCat||"",
-   style:current?.style||"",
-   createdAt:Date.now()
-  });
-
-  await update(ref(db,"adminLogs"),{
-   lastAction:{
-    action:"New order created",
-    uid:user.uid,
-    orderId:k.key,
-    total:c.total,
-    at:Date.now()
-   }
-  });
-
-  toast("Order placed successfully.");
-
-  openWhatsApp(
-   `Hello KHANS GYPSUMCRAFT PK, I placed an order.
-Customer: ${user.displayName||""}
-Project: ${document.getElementById("rate").options[
- document.getElementById("rate").selectedIndex
-].text}
-Area: ${c.area.toFixed(1)} sq ft
-Estimated Total: PKR ${c.total.toLocaleString()}`
-  );
-
- }catch(e){
-  console.error(e);
-  toast("Order place nahi hua. Firebase Database Rules check karein.",true);
- }
+ if(!user){showLogin();return;}
+ let c=calculate();
+ let k=push(ref(db,"orders/"+user.uid));
+ await set(k,{uid:user.uid,customerName:user.displayName||"",email:user.email||"",length:+document.getElementById("len").value||0,width:+document.getElementById("wid").value||0,area:c.area,projectType:document.getElementById("rate").options[document.getElementById("rate").selectedIndex].text,discount:c.discount,total:c.total,status:"Pending",designId:current?.id||"",designName:current?.name||"",category:current?.category||currentCat||"",style:current?.style||"",createdAt:Date.now()});
+ await update(ref(db,"adminLogs"),{lastAction:{action:"New order created",uid:user.uid,orderId:k.key,total:c.total,at:Date.now()}});
+ toast("Order placed successfully.");
+ openWhatsApp(`Hello KHANS GYPSUMCRAFT PK, I placed an order.\nCustomer: ${user.displayName||""}\nProject: ${document.getElementById("rate").options[document.getElementById("rate").selectedIndex].text}\nArea: ${c.area.toFixed(1)} sq ft\nEstimated Total: PKR ${c.total.toLocaleString()}`);
 };
-
-function openWhatsApp(
- text="Hello KHANS GYPSUMCRAFT PK, I would like to discuss a gypsum/interior project."
-){
- window.open(
-  "https://wa.me/"+WHATSAPP+
-  "?text="+encodeURIComponent(text),
-  "_blank"
- );
+function openWhatsApp(text="Hello KHANS GYPSUMCRAFT PK, I would like to discuss a gypsum/interior project."){
+ window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(text),"_blank");
 }
-
 window.openWhatsApp=openWhatsApp;
-
 window.openAccount=async()=>{
-
- if(!user){
-  showLogin();
-  return;
- }
-
- try{
-
-  document.getElementById("accountModal").classList.add("show");
-
-  document.getElementById("accountInfo").innerHTML=`
-  <div class="profile">
-   <img src="${esc(user.photoURL||"")}"
-        onerror="this.style.display='none'">
-
-   <div>
-    <b>${esc(user.displayName||"Customer")}</b>
-    <div class="muted">${esc(user.email||"")}</div>
-   </div>
-  </div>
-  `;
-
-  let s=await get(ref(db,"designSelections"));
-
-  let vals=s.exists()
-   ?Object.values(s.val())
-    .filter(x=>x.uid===user.uid)
-    .slice(-12)
-    .reverse()
-   :[];
-
-  document.getElementById("mySelections").innerHTML=
-  vals.map(d=>`
-  <article class="card">
-   <img src="${esc(d.image)}">
-   <div class="body">
-    <b>${esc(d.name)}</b>
-    <small>${esc(d.category)}</small>
-   </div>
-  </article>
-  `).join("")||
-  "<p class='muted'>No saved designs yet.</p>";
-
-  let o=await get(ref(db,"orders/"+user.uid));
-
-  let os=o.exists()
-   ?Object.entries(o.val())
-    .map(([id,d])=>({id,...d}))
-    .reverse()
-   :[];
-
-  document.getElementById("myOrders").innerHTML=`
-  <table class="table">
-   <tr>
-    <th>Order</th>
-    <th>Design</th>
-    <th>Total</th>
-    <th>Status</th>
-   </tr>
-
-   ${
-    os.map(d=>`
-    <tr>
-     <td>${esc(d.id.slice(-8))}</td>
-     <td>${esc(d.designName||"Custom")}</td>
-     <td>PKR ${(+d.total||0).toLocaleString()}</td>
-     <td>${esc(d.status||"Pending")}</td>
-    </tr>
-    `).join("")
-   ||
-    "<tr><td colspan='4'>No orders yet.</td></tr>"
-   }
-  </table>
-  `;
-
- }catch(e){
-  console.error(e);
-  toast("Account data load nahi ho saka. Database Rules check karein.",true);
- }
+ if(!user){showLogin();return;}
+ document.getElementById("accountModal").classList.add("show");
+ document.getElementById("accountInfo").innerHTML=`<div class="profile"><img src="${esc(user.photoURL||"")}" onerror="this.style.display='none'"><div><b>${esc(user.displayName||"Customer")}</b><div class="muted">${esc(user.email||"")}</div></div></div>`;
+ let s=await get(ref(db,"designSelections"));
+ let vals=s.exists()?Object.values(s.val()).filter(x=>x.uid===user.uid).slice(-12).reverse():[];
+ document.getElementById("mySelections").innerHTML=vals.map(d=>`<article class="card"><img src="${esc(d.image)}"><div class="body"><b>${esc(d.name)}</b><small>${esc(d.category)}</small></div></article>`).join("")||"<p class='muted'>No saved designs yet.</p>";
+ let o=await get(ref(db,"orders/"+user.uid));
+ let os=o.exists()?Object.entries(o.val()).map(([id,d])=>({id,...d})).reverse():[];
+ document.getElementById("myOrders").innerHTML=`<table class="table"><tr><th>Order</th><th>Design</th><th>Total</th><th>Status</th></tr>${os.map(d=>`<tr><td>${esc(d.id.slice(-8))}</td><td>${esc(d.designName||"Custom")}</td><td>PKR ${(+d.total||0).toLocaleString()}</td><td>${esc(d.status||"Pending")}</td></tr>`).join("")||"<tr><td colspan='4'>No orders yet.</td></tr>"}</table>`;
 };
-
-window.logout=async()=>{
- try{
-  await signOut(auth);
-  closeM("accountModal");
-  closeOwner();
- }catch(e){
-  console.error(e);
-  toast("Sign out failed.",true);
- }
-};
-
-function allowed(){
- return user&&user.uid===OWNER_UID;
-}
-
-window.openOwner=()=>{
- if(!allowed()){
-  toast("Owner access denied.",true);
-  return;
- }
-
- document.getElementById("dashboard").style.display="block";
- renderOverview();
-};
-
-window.closeOwner=()=>{
- document.getElementById("dashboard").style.display="none";
-};
-
+window.logout=async()=>{await signOut(auth);closeM("accountModal");closeOwner();};
+function allowed(){return user&&user.uid===OWNER_UID;}
+window.openOwner=()=>{if(!allowed()){toast("Owner access denied.",true);return;}document.getElementById("dashboard").style.display="block";renderOverview();};
+window.closeOwner=()=>{document.getElementById("dashboard").style.display="none";};
 window.tab=async(t,b)=>{
-
  if(!allowed())return;
-
- document.querySelectorAll(".side button")
-  .forEach(x=>x.classList.remove("active"));
-
+ document.querySelectorAll(".side button").forEach(x=>x.classList.remove("active"));
  b.classList.add("active");
-
- if(t==="overview")
-  renderOverview();
-
- else if(t==="analytics")
-  renderAnalytics();
-
- else if(t==="customers")
-  customers();
-
- else if(t==="orders")
-  orders();
-
- else if(t==="quotations")
-  quotations();
-
- else if(t==="saved")
-  savedDesigns();
-
- else if(t==="designs")
-  galleryManager();
-
- else if(t==="projects")
-  projectManager();
-
- else
-  settings();
+ if(t==="overview")renderOverview(); else if(t==="analytics")renderAnalytics(); else if(t==="customers")customers(); else if(t==="orders")orders(); else if(t==="quotations")quotations(); else if(t==="saved")savedDesigns(); else if(t==="designs")galleryManager(); else if(t==="projects")projectManager(); else settings();
 };
-
-async function read(path){
- let s=await get(ref(db,path));
- return s.exists()?s.val():null;
-}
-
-function flattenGroups(obj){
-
- let out=[];
-
- Object.entries(obj||{}).forEach(([uid,group])=>
-  Object.entries(group||{}).forEach(([id,d])=>
-   out.push({uid,id,...d})
-  )
- );
-
- return out;
-}
-
-async function getBusinessData(){
-
- let[u,o,q,s]=await Promise.all([
-  read("users"),
-  read("orders"),
-  read("quotations"),
-  read("designSelections")
- ]);
-
- return{
-  users:u||{},
-  orders:flattenGroups(o),
-  quotations:flattenGroups(q),
-  selections:Object.entries(s||{})
-   .map(([id,d])=>({id,...d}))
- };
-}
-
-function cutoffRows(rows,range){
-
- if(!range)return rows;
-
- let cut=Date.now()-range*86400000;
-
- return rows.filter(x=>
-  (+x.createdAt||0)>=cut
- );
-}
-
-function categoryOf(x){
-
- return x.category||
-  ((x.projectType||x.type||"")
-   .match(
-    /Bedroom|TV Lounge|Office|Kitchen|Islamic Design|Wooden|Geometric|3D/i
-   )?.[0]
-  )||
-  "Custom / Other";
-}
-
-function designOf(x){
-
- return x.designName||
-  x.name||
-  x.designId||
-  "Custom / No Design";
-}
-
+async function read(path){let s=await get(ref(db,path));return s.exists()?s.val():null;}
+function flattenGroups(obj){let out=[];Object.entries(obj||{}).forEach(([uid,group])=>Object.entries(group||{}).forEach(([id,d])=>out.push({uid,id,...d})));return out;}
+async function getBusinessData(){let[u,o,q,s]=await Promise.all([read("users"),read("orders"),read("quotations"),read("designSelections")]);return{users:u||{},orders:flattenGroups(o),quotations:flattenGroups(q),selections:Object.entries(s||{}).map(([id,d])=>({id,...d}))};}
+function cutoffRows(rows,range){if(!range)return rows;let cut=Date.now()-range*86400000;return rows.filter(x=>(+x.createdAt||0)>=cut);}
+function categoryOf(x){return x.category||((x.projectType||x.type||"").match(/Bedroom|TV Lounge|Office|Kitchen|Islamic Design|Wooden|Geometric|3D/i)?.[0])||"Custom / Other";}
+function designOf(x){return x.designName||x.name||x.designId||"Custom / No Design";}
 async function renderOverview(){
-
- try{
-
-  let d=await getBusinessData();
-
-  let users=Object.keys(d.users).length;
-
-  let orders=d.orders.length;
-
-  let sales=d.orders
-   .filter(x=>x.status!=="Cancelled")
-   .reduce((n,x)=>n+(+x.total||0),0);
-
-  let pending=d.orders.filter(x=>x.status==="Pending").length;
-
-  let confirmed=d.orders.filter(x=>x.status==="Confirmed").length;
-
-  let done=d.orders.filter(x=>x.status==="Completed").length;
-
-  document.getElementById("dashTitle").textContent=
-   "Business Overview";
-
-  document.getElementById("dashContent").innerHTML=`
-
-  <div class="stats">
-
-   <div class="stat">
-    <b>${users}</b>
-    <span>Total Customers</span>
-   </div>
-
-   <div class="stat">
-    <b>${orders}</b>
-    <span>Total Orders</span>
-   </div>
-
-   <div class="stat">
-    <b>PKR ${sales.toLocaleString()}</b>
-    <span>Recorded Sales</span>
-   </div>
-
-   <div class="stat">
-    <b>${d.selections.length}</b>
-    <span>Design Selections</span>
-   </div>
-
-  </div>
-
-  <div class="panel">
-   <h3>Order Pipeline</h3>
-
-   <div class="stats">
-
-    <div class="stat">
-     <b>${pending}</b>
-     <span>Pending</span>
-    </div>
-
-    <div class="stat">
-     <b>${confirmed}</b>
-     <span>Confirmed</span>
-    </div>
-
-    <div class="stat">
-     <b>${done}</b>
-     <span>Completed</span>
-    </div>
-
-    <div class="stat">
-     <b>${d.quotations.length}</b>
-     <span>Saved Quotations</span>
-    </div>
-
-   </div>
-  </div>
-
-  <div class="panel">
-   <h3>Quick Business Insight</h3>
-   <p class="muted">
-    Analytics & AI mein category aur design demand,
-    orders, quotations aur saves dekhein.
-   </p>
-  </div>
-
-  <div class="panel">
-   <h3>Owner Identity</h3>
-   <p class="muted">
-    Owner ID: <b>${OWNER_ID}</b><br>
-    Owner UID: <code>${OWNER_UID}</code><br>
-    Owner email: ${OWNER_EMAIL}
-   </p>
-  </div>
-  `;
-
- }catch(e){
-  console.error(e);
-  document.getElementById("dashContent").innerHTML=
-   `<div class="panel">
-    <b>Dashboard data load error.</b>
-    <p class="muted">Firebase Database Rules check karein.</p>
-   </div>`;
- }
-}
-
-async function renderAnalytics(){
-
  let d=await getBusinessData();
-
+ let users=Object.keys(d.users).length;
+ let orders=d.orders.length;
+ let sales=d.orders.filter(x=>x.status!=="Cancelled").reduce((n,x)=>n+(+x.total||0),0);
+ let pending=d.orders.filter(x=>x.status==="Pending").length;
+ let confirmed=d.orders.filter(x=>x.status==="Confirmed").length;
+ let done=d.orders.filter(x=>x.status==="Completed").length;
+ document.getElementById("dashTitle").textContent="Business Overview";
+ document.getElementById("dashContent").innerHTML=`<div class="stats"><div class="stat"><b>${users}</b><span>Total Customers</span></div><div class="stat"><b>${orders}</b><span>Total Orders</span></div><div class="stat"><b>PKR ${sales.toLocaleString()}</b><span>Recorded Sales</span></div><div class="stat"><b>${d.selections.length}</b><span>Design Selections</span></div></div><div class="panel"><h3>Order Pipeline</h3><div class="stats"><div class="stat"><b>${pending}</b><span>Pending</span></div><div class="stat"><b>${confirmed}</b><span>Confirmed</span></div><div class="stat"><b>${done}</b><span>Completed</span></div><div class="stat"><b>${d.quotations.length}</b><span>Saved Quotations</span></div></div></div><div class="panel"><h3>Quick Business Insight</h3><p class="muted">Analytics & AI mein category aur design demand, orders, quotations aur saves dekhein.</p></div><div class="panel"><h3>Owner Identity</h3><p class="muted">Owner ID: <b>${OWNER_ID}</b><br>Owner UID: <code>${OWNER_UID}</code><br>Owner email: ${OWNER_EMAIL}</p></div>`;
+}
+async function renderAnalytics(){
+ let d=await getBusinessData();
  let os=cutoffRows(d.orders,analyticsRange);
  let qs=cutoffRows(d.quotations,analyticsRange);
  let ss=cutoffRows(d.selections,analyticsRange);
-
  let valid=os.filter(x=>x.status!=="Cancelled");
-
- let catMap={};
- let designMap={};
-
- function add(map,key,x,kind){
-
-  if(!map[key]){
-   map[key]={
-    orders:0,
-    sales:0,
-    quotes:0,
-    saves:0
-   };
-  }
-
-  if(kind==="order"){
-   map[key].orders++;
-   map[key].sales+=(+x.total||0);
-  }else if(kind==="quote"){
-   map[key].quotes++;
-  }else{
-   map[key].saves++;
-  }
- }
-
- valid.forEach(x=>{
-  add(catMap,categoryOf(x),x,"order");
-  add(designMap,designOf(x),x,"order");
- });
-
- qs.forEach(x=>{
-  add(catMap,categoryOf(x),x,"quote");
-  add(designMap,designOf(x),x,"quote");
- });
-
- ss.forEach(x=>{
-  add(catMap,categoryOf(x),x,"save");
-  add(designMap,designOf(x),x,"save");
- });
-
- let catRows=Object.entries(catMap)
-  .sort((a,b)=>
-   b[1].orders-a[1].orders||
-   b[1].quotes-a[1].quotes||
-   b[1].saves-a[1].saves
-  );
-
- let desRows=Object.entries(designMap)
-  .sort((a,b)=>
-   b[1].orders-a[1].orders||
-   b[1].saves-a[1].saves
-  );
-
- let topCat=catRows[0];
- let topDes=desRows[0];
-
- let topSaved=Object.entries(designMap)
-  .sort((a,b)=>b[1].saves-a[1].saves)[0];
-
- let maxCat=Math.max(
-  1,
-  ...catRows.map(x=>x[1].orders)
- );
-
- let maxDes=Math.max(
-  1,
-  ...desRows.map(x=>x[1].orders)
- );
-
- let catHtml=catRows.slice(0,8).map(
- ([n,v],i)=>`
- <div class="rankItem">
-
-  <div class="rankNum">${i+1}</div>
-
-  <div>
-   <b>${esc(n)}</b>
-
-   <div class="bar">
-    <div class="barFill"
-     style="width:${Math.round(v.orders/maxCat*100)}%">
-    </div>
-   </div>
-
-   <small class="muted">
-    ${v.orders} orders ·
-    ${v.quotes} quotes ·
-    ${v.saves} saves
-   </small>
-  </div>
-
-  <b>PKR ${v.sales.toLocaleString()}</b>
-
- </div>
- `
- ).join("")||
- "<p class='muted'>No activity in this period.</p>";
-
- let desHtml=desRows.slice(0,10).map(
- ([n,v],i)=>`
- <div class="rankItem">
-
-  <div class="rankNum">${i+1}</div>
-
-  <div>
-   <b>${esc(n)}</b>
-
-   <div class="bar">
-    <div class="barFill"
-     style="width:${Math.round(v.orders/maxDes*100)}%">
-    </div>
-   </div>
-
-   <small class="muted">
-    ${v.orders} orders ·
-    ${v.saves} saves ·
-    ${v.quotes} quotes
-   </small>
-  </div>
-
-  <span>${v.orders} sold</span>
-
- </div>
- `
- ).join("")||
- "<p class='muted'>No design activity yet.</p>";
-
+ let catMap={}; let designMap={};
+ function add(map,key,x,kind){if(!map[key]){map[key]={orders:0,sales:0,quotes:0,saves:0};}if(kind==="order"){map[key].orders++;map[key].sales+=(+x.total||0);}else if(kind==="quote"){map[key].quotes++;}else{map[key].saves++;}}
+ valid.forEach(x=>{add(catMap,categoryOf(x),x,"order");add(designMap,designOf(x),x,"order");});
+ qs.forEach(x=>{add(catMap,categoryOf(x),x,"quote");add(designMap,designOf(x),x,"quote");});
+ ss.forEach(x=>{add(catMap,categoryOf(x),x,"save");add(designMap,designOf(x),x,"save");});
+ let catRows=Object.entries(catMap).sort((a,b)=>b[1].orders-a[1].orders||b[1].quotes-a[1].quotes||b[1].saves-a[1].saves);
+ let desRows=Object.entries(designMap).sort((a,b)=>b[1].orders-a[1].orders||b[1].saves-a[1].saves);
+ let topCat=catRows[0]; let topDes=desRows[0];
+ let topSaved=Object.entries(designMap).sort((a,b)=>b[1].saves-a[1].saves)[0];
+ let maxCat=Math.max(1,...catRows.map(x=>x[1].orders));
+ let maxDes=Math.max(1,...desRows.map(x=>x[1].orders));
+ let catHtml=catRows.slice(0,8).map(([n,v],i)=>`<div class="rankItem"><div class="rankNum">${i+1}</div><div><b>${esc(n)}</b><div class="bar"><div class="barFill" style="width:${Math.round(v.orders/maxCat*100)}%"></div></div><small class="muted">${v.orders} orders · ${v.quotes} quotes · ${v.saves} saves</small></div><b>PKR ${v.sales.toLocaleString()}</b></div>`).join("")||"<p class='muted'>No activity in this period.</p>";
+ let desHtml=desRows.slice(0,10).map(([n,v],i)=>`<div class="rankItem"><div class="rankNum">${i+1}</div><div><b>${esc(n)}</b><div class="bar"><div class="barFill" style="width:${Math.round(v.orders/maxDes*100)}%"></div></div><small class="muted">${v.orders} orders · ${v.saves} saves · ${v.quotes} quotes</small></div><span>${v.orders} sold</span></div>`).join("")||"<p class='muted'>No design activity yet.</p>";
  let insights=[];
-
- if(topCat)
-  insights.push(
-   `Category with the most orders:
-   <b>${esc(topCat[0])}</b>
-   (${topCat[1].orders} orders).`
-  );
-
- if(topDes)
-  insights.push(
-   `Design with the most orders:
-   <b>${esc(topDes[0])}</b>
-   (${topDes[1].orders} orders).`
-  );
-
- if(topSaved&&topSaved[1].saves)
-  insights.push(
-   `Most saved design:
-   <b>${esc(topSaved[0])}</b>
-   (${topSaved[1].saves} saves).`
-  );
-
- insights.push(
-  "Sales shown here exclude Cancelled orders."
- );
-
- document.getElementById("dashTitle").textContent=
-  "Analytics & Owner AI";
-
- document.getElementById("dashContent").innerHTML=`
-
- <div class="panel">
-  <div class="rangeBar">
-
-   <button
-    class="${analyticsRange===7?"active":""}"
-    onclick="setAnalyticsRange(7)">
-    7 Days
-   </button>
-
-   <button
-    class="${analyticsRange===30?"active":""}"
-    onclick="setAnalyticsRange(30)">
-    30 Days
-   </button>
-
-   <button
-    class="${analyticsRange===0?"active":""}"
-    onclick="setAnalyticsRange(0)">
-    All Time
-   </button>
-
-  </div>
- </div>
-
- <div class="analyticsGrid">
-
-  <div class="panel">
-   <h3>Owner AI Insights</h3>
-
-   ${insights.map(x=>
-    `<div class="insight">${x}</div>`
-   ).join("")}
-
-   <p class="muted">
-    These insights are calculated from your Firebase
-    business data. KG AI does not require Gemini API.
-   </p>
-  </div>
-
-  <div class="panel">
-   <h3>Period Summary</h3>
-
-   <div class="stats">
-
-    <div class="stat">
-     <b>${valid.length}</b>
-     <span>Non-cancelled Orders</span>
-    </div>
-
-    <div class="stat">
-     <b>PKR ${
-      valid.reduce((n,x)=>n+(+x.total||0),0)
-      .toLocaleString()
-     }</b>
-     <span>Sales</span>
-    </div>
-
-    <div class="stat">
-     <b>${qs.length}</b>
-     <span>Quotations</span>
-    </div>
-
-    <div class="stat">
-     <b>${ss.length}</b>
-     <span>Design Saves</span>
-    </div>
-
-   </div>
-  </div>
-
- </div>
-
- <div class="analyticsGrid">
-
-  <div class="panel">
-   <h3>Category Popularity</h3>
-   ${catHtml}
-  </div>
-
-  <div class="panel">
-   <h3>Top Designs</h3>
-   ${desHtml}
-  </div>
-
- </div>
- `;
+ if(topCat)insights.push(`Category with the most orders: <b>${esc(topCat[0])}</b> (${topCat[1].orders} orders).`);
+ if(topDes)insights.push(`Design with the most orders: <b>${esc(topDes[0])}</b> (${topDes[1].orders} orders).`);
+ if(topSaved&&topSaved[1].saves)insights.push(`Most saved design: <b>${esc(topSaved[0])}</b> (${topSaved[1].saves} saves).`);
+ insights.push("Sales shown here exclude Cancelled orders.");
+ document.getElementById("dashTitle").textContent="Analytics & Owner AI";
+ document.getElementById("dashContent").innerHTML=`<div class="panel"><div class="rangeBar"><button class="${analyticsRange===7?"active":""}" onclick="analyticsRange=7;renderAnalytics()">7 Days</button><button class="${analyticsRange===30?"active":""}" onclick="analyticsRange=30;renderAnalytics()">30 Days</button><button class="${analyticsRange===0?"active":""}" onclick="analyticsRange=0;renderAnalytics()">All Time</button></div></div><div class="analyticsGrid"><div class="panel"><h3>Owner AI Insights</h3>${insights.map(x=>`<div class="insight">${x}</div>`).join("")}<p class="muted">These insights are calculated from your Firebase business data. KG AI does not require Gemini API.</p></div><div class="panel"><h3>Period Summary</h3><div class="stats"><div class="stat"><b>${valid.length}</b><span>Non-cancelled Orders</span></div><div class="stat"><b>PKR ${valid.reduce((n,x)=>n+(+x.total||0),0).toLocaleString()}</b><span>Sales</span></div><div class="stat"><b>${qs.length}</b><span>Quotations</span></div><div class="stat"><b>${ss.length}</b><span>Design Saves</span></div></div></div></div><div class="analyticsGrid"><div class="panel"><h3>Category Popularity</h3>${catHtml}</div><div class="panel"><h3>Top Designs</h3>${desHtml}</div></div>`;
 }
-
-/* FIX: analyticsRange module scope is not accessible
-   from inline HTML onclick handlers */
-window.setAnalyticsRange=(range)=>{
- analyticsRange=range;
- renderAnalytics();
-};
-
-window.renderAnalytics=renderAnalytics;
-
 async function customers(){
-
  let u=await read("users")||{};
-
- let rows=Object.values(u).map(d=>`
- <tr>
-  <td>${esc((d.uid||"").slice(0,12))}</td>
-  <td>${esc(d.name)}</td>
-  <td>${esc(d.email)}</td>
-  <td>${esc(d.role||"customer")}</td>
-  <td>${d.lastLogin
-   ?new Date(d.lastLogin).toLocaleString()
-   :"—"}
-  </td>
- </tr>
- `).join("");
-
+ let rows=Object.values(u).map(d=>`<tr><td>${esc((d.uid||"").slice(0,12))}</td><td>${esc(d.name)}</td><td>${esc(d.email)}</td><td>${esc(d.role||"customer")}</td><td>${d.lastLogin?new Date(d.lastLogin).toLocaleString():"—"}</td></tr>`).join("");
  document.getElementById("dashTitle").textContent="Customers";
-
- document.getElementById("dashContent").innerHTML=`
- <div class="panel tableWrap">
-
- <table class="table">
-
- <tr>
-  <th>UID</th>
-  <th>Name</th>
-  <th>Email</th>
-  <th>Role</th>
-  <th>Last Login</th>
- </tr>
-
- ${rows||
- `<tr>
-  <td colspan="5">No customers yet.</td>
- </tr>`}
-
- </table>
-
- </div>
- `;
+ document.getElementById("dashContent").innerHTML=`<div class="panel tableWrap"><table class="table"><tr><th>UID</th><th>Name</th><th>Email</th><th>Role</th><th>Last Login</th></tr>${rows||`<tr><td colspan="5">No customers yet.</td></tr>`}</table></div>`;
 }
-
 async function orders(){
-
- let o=await read("orders")||{};
- let rows="";
-
- Object.entries(o).forEach(([uid,group])=>
-  Object.entries(group||{}).forEach(([id,d])=>{
-
-   rows+=`
-   <tr>
-
-    <td>${esc(id.slice(-8))}</td>
-
-    <td>${esc(
-     d.customerName||uid.slice(0,8)
-    )}</td>
-
-    <td>${esc(d.category||"Custom")}</td>
-
-    <td>${esc(
-     d.designName||"No design selected"
-    )}</td>
-
-    <td>
-     PKR ${(+d.total||0).toLocaleString()}
-    </td>
-
-    <td>
-
-     <select
-      onchange="status('${esc(uid)}','${esc(id)}',this.value)">
-
-      <option ${d.status==="Pending"?"selected":""}>
-       Pending
-      </option>
-
-      <option ${d.status==="Confirmed"?"selected":""}>
-       Confirmed
-      </option>
-
-      <option ${d.status==="In Progress"?"selected":""}>
-       In Progress
-      </option>
-
-      <option ${d.status==="Completed"?"selected":""}>
-       Completed
-      </option>
-
-      <option ${d.status==="Cancelled"?"selected":""}>
-       Cancelled
-      </option>
-
-     </select>
-
-    </td>
-
-   </tr>
-   `;
-  })
- );
-
+ let o=await read("orders")||{}; let rows="";
+ Object.entries(o).forEach(([uid,group])=>Object.entries(group||{}).forEach(([id,d])=>{
+  rows+=`<tr><td>${esc(id.slice(-8))}</td><td>${esc(d.customerName||uid.slice(0,8))}</td><td>${esc(d.category||"Custom")}</td><td>${esc(d.designName||"No design selected")}</td><td>PKR ${(+d.total||0).toLocaleString()}</td><td><select onchange="status('${esc(uid)}','${esc(id)}',this.value)"><option ${d.status==="Pending"?"selected":""}>Pending</option><option ${d.status==="Confirmed"?"selected":""}>Confirmed</option><option ${d.status==="In Progress"?"selected":""}>In Progress</option><option ${d.status==="Completed"?"selected":""}>Completed</option><option ${d.status==="Cancelled"?"selected":""}>Cancelled</option></select></td></tr>`;
+ }));
  document.getElementById("dashTitle").textContent="Orders";
-
- document.getElementById("dashContent").innerHTML=`
- <div class="panel tableWrap">
-
- <table class="table">
-
- <tr>
-  <th>Order</th>
-  <th>Customer</th>
-  <th>Category</th>
-  <th>Design</th>
-  <th>Total</th>
-  <th>Status</th>
- </tr>
-
- ${rows||
- `<tr>
-  <td colspan="6">No orders yet.</td>
- </tr>`}
-
- </table>
-
- </div>
- `;
+ document.getElementById("dashContent").innerHTML=`<div class="panel tableWrap"><table class="table"><tr><th>Order</th><th>Customer</th><th>Category</th><th>Design</th><th>Total</th><th>Status</th></tr>${rows||`<tr><td colspan="6">No orders yet.</td></tr>`}</table></div>`;
 }
-
 window.status=async(uid,id,v)=>{
-
- try{
-
-  await update(
-   ref(db,"orders/"+uid+"/"+id),
-   {
-    status:v,
-    updatedAt:Date.now()
-   }
-  );
-
-  await update(ref(db,"adminLogs"),{
-   lastAction:{
-    action:"Order status updated",
-    uid,
-    orderId:id,
-    status:v,
-    at:Date.now()
-   }
-  });
-
-  toast("Order updated.");
-  orders();
-
- }catch(e){
-  console.error(e);
-  toast("Order status update failed.",true);
- }
+ await update(ref(db,"orders/"+uid+"/"+id),{status:v,updatedAt:Date.now()});
+ await update(ref(db,"adminLogs"),{lastAction:{action:"Order status updated",uid,orderId:id,status:v,at:Date.now()}});
+ toast("Order updated."); orders();
 };
-
 async function quotations(){
-
- let q=await read("quotations")||{};
- let rows="";
-
- Object.entries(q).forEach(([uid,group])=>
-  Object.entries(group||{}).forEach(([id,d])=>{
-
-   rows+=`
-   <tr>
-    <td>${esc(id.slice(-8))}</td>
-    <td>${esc(d.customerName||uid.slice(0,8))}</td>
-    <td>${esc(d.category||"Custom")}</td>
-    <td>${esc(d.designName||"No design")}</td>
-    <td>PKR ${(+d.total||0).toLocaleString()}</td>
-    <td>${esc(d.status||"Draft")}</td>
-   </tr>
-   `;
-  })
- );
-
+ let q=await read("quotations")||{}; let rows="";
+ Object.entries(q).forEach(([uid,group])=>Object.entries(group||{}).forEach(([id,d])=>{
+  rows+=`<tr><td>${esc(id.slice(-8))}</td><td>${esc(d.customerName||uid.slice(0,8))}</td><td>${esc(d.category||"Custom")}</td><td>${esc(d.designName||"No design")}</td><td>PKR ${(+d.total||0).toLocaleString()}</td><td>${esc(d.status||"Draft")}</td></tr>`;
+ }));
  document.getElementById("dashTitle").textContent="Quotations";
-
- document.getElementById("dashContent").innerHTML=`
- <div class="panel tableWrap">
-
- <table class="table">
-
- <tr>
-  <th>Quote</th>
-  <th>Customer</th>
-  <th>Category</th>
-  <th>Design</th>
-  <th>Total</th>
-  <th>Status</th>
- </tr>
-
- ${rows||
- `<tr>
-  <td colspan="6">No quotations yet.</td>
- </tr>`}
-
- </table>
-
- </div>
- `;
+ document.getElementById("dashContent").innerHTML=`<div class="panel tableWrap"><table class="table"><tr><th>Quote</th><th>Customer</th><th>Category</th><th>Design</th><th>Total</th><th>Status</th></tr>${rows||`<tr><td colspan="6">No quotations yet.</td></tr>`}</table></div>`;
 }
-
 async function savedDesigns(){
-
- let s=await read("designSelections")||{};
- let rows="";
-
- Object.values(s)
- .sort((a,b)=>
-  (b.createdAt||0)-(a.createdAt||0)
- )
- .forEach(d=>{
-
-  rows+=`
-  <tr>
-
-   <td>${esc(d.name||d.designId||"—")}</td>
-
-   <td>${esc(d.category||"—")}</td>
-
-   <td>${esc(d.style||"—")}</td>
-
-   <td>${esc(d.uid||"—").slice(0,12)}</td>
-
-   <td>
-    ${d.createdAt
-     ?new Date(d.createdAt).toLocaleString()
-     :"—"}
-   </td>
-
-  </tr>
-  `;
+ let s=await read("designSelections")||{}; let rows="";
+ Object.values(s).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0)).forEach(d=>{
+  rows+=`<tr><td>${esc(d.name||d.designId||"—")}</td><td>${esc(d.category||"—")}</td><td>${esc(d.style||"—")}</td><td>${esc(d.uid||"—").slice(0,12)}</td><td>${d.createdAt?new Date(d.createdAt).toLocaleString():"—"}</td></tr>`;
  });
-
- document.getElementById("dashTitle").textContent=
-  "Saved Designs / Customer Interest";
-
- document.getElementById("dashContent").innerHTML=`
- <div class="panel tableWrap">
-
- <table class="table">
-
- <tr>
-  <th>Design</th>
-  <th>Category</th>
-  <th>Style</th>
-  <th>Customer UID</th>
-  <th>Saved At</th>
- </tr>
-
- ${rows||
- `<tr>
-  <td colspan="5">No saved designs yet.</td>
- </tr>`}
-
- </table>
-
- </div>
- `;
+ document.getElementById("dashTitle").textContent="Saved Designs / Customer Interest";
+ document.getElementById("dashContent").innerHTML=`<div class="panel tableWrap"><table class="table"><tr><th>Design</th><th>Category</th><th>Style</th><th>Customer UID</th><th>Saved At</th></tr>${rows||`<tr><td colspan="5">No saved designs yet.</td></tr>`}</table></div>`;
 }
- function galleryManager(){
-
- document.getElementById("dashTitle").textContent=
-  "Gallery Manager";
-
- document.getElementById("dashContent").innerHTML=`
-
- <div class="panel">
-
-  <h3>Add a real design</h3>
-
-  <div class="adminForm">
-
-   <input id="adName"
-    placeholder="Design name">
-
-   <select id="adCat">
-    ${cats.map(c=>
-     `<option>${esc(c[0])}</option>`
-    ).join("")}
-   </select>
-
-   <input id="adStyle"
-    placeholder="Style e.g. Modern, Luxury">
-
-   <input id="adImage"
-    placeholder="Image URL (https://...)"
-    class="full">
-
-   <textarea id="adDesc"
-    placeholder="Description"
-    class="full"></textarea>
-
-   <button class="gold"
-    onclick="addDesign()">
-    Add Design
-   </button>
-
-  </div>
- </div>
-
- <div class="panel">
-
-  <h3>Owner-added designs</h3>
-
-  <div class="tableWrap">
-
-   <table class="table">
-
-    <tr>
-     <th>ID</th>
-     <th>Name</th>
-     <th>Category</th>
-     <th>Action</th>
-    </tr>
-
-    ${
-     Object.values(customDesigns).map(d=>`
-      <tr>
-       <td>${esc(d.id)}</td>
-       <td>${esc(d.name)}</td>
-       <td>${esc(d.category)}</td>
-       <td>
-        <button class="danger"
-         onclick="deleteDesign('${esc(d.key)}')">
-         Delete
-        </button>
-       </td>
-      </tr>
-     `).join("")
-     ||
-     `<tr>
-      <td colspan="4">No owner-added designs yet.</td>
-     </tr>`
-    }
-
-   </table>
-
-  </div>
-
- </div>
- `;
+function galleryManager(){
+ document.getElementById("dashTitle").textContent="Gallery Manager";
+ document.getElementById("dashContent").innerHTML=`<div class="panel"><h3>Add a real design</h3><div class="adminForm"><input id="adName" placeholder="Design name"><select id="adCat">${cats.map(c=>`<option>${esc(c[0])}</option>`).join("")}</select><input id="adStyle" placeholder="Style e.g. Modern, Luxury"><input id="adImage" placeholder="Image URL (https://...)" class="full"><textarea id="adDesc" placeholder="Description" class="full"></textarea><button class="gold" onclick="addDesign()">Add Design</button></div></div><div class="panel"><h3>Owner-added designs</h3><div class="tableWrap"><table class="table"><tr><th>ID</th><th>Name</th><th>Category</th><th>Action</th></tr>${Object.values(customDesigns).map(d=>`<tr><td>${esc(d.id)}</td><td>${esc(d.name)}</td><td>${esc(d.category)}</td><td><button class="danger" onclick="deleteDesign('${esc(d.key)}')">Delete</button></td></tr>`).join("")||`<tr><td colspan="4">No owner-added designs yet.</td></tr>`}</table></div></div>`;
 }
-
 window.addDesign=async()=>{
-
- if(!allowed()){
-  toast("Owner access denied.",true);
-  return;
- }
-
- let d={
-  id:"OWN-"+Date.now().toString().slice(-8),
-  name:document.getElementById("adName").value.trim(),
-  category:document.getElementById("adCat").value,
-  style:
-   document.getElementById("adStyle").value.trim()
-   ||"Custom",
-  image:document.getElementById("adImage").value.trim(),
-  description:
-   document.getElementById("adDesc").value.trim(),
-  createdAt:Date.now()
- };
-
- if(!d.name||!d.image){
-  toast("Name and image URL are required.",true);
-  return;
- }
-
- try{
-
-  let k=push(ref(db,"designs"));
-
-  d.key=k.key;
-
-  await set(k,d);
-
-  await update(ref(db,"adminLogs"),{
-   lastAction:{
-    action:"Design added",
-    designId:d.id,
-    at:Date.now()
-   }
-  });
-
-  toast("Design added.");
-  galleryManager();
-
- }catch(e){
-  console.error(e);
-  toast("Design add nahi hua. Firebase Database Rules check karein.",true);
- }
+ let d={id:"OWN-"+Date.now().toString().slice(-8),name:document.getElementById("adName").value.trim(),category:document.getElementById("adCat").value,style:document.getElementById("adStyle").value.trim()||"Custom",image:document.getElementById("adImage").value.trim(),description:document.getElementById("adDesc").value.trim(),createdAt:Date.now()};
+ if(!d.name||!d.image){toast("Name and image URL are required.",true);return;}
+ let k=push(ref(db,"designs")); d.key=k.key; await set(k,d);
+ await update(ref(db,"adminLogs"),{lastAction:{action:"Design added",designId:d.id,at:Date.now()}});
+ toast("Design added."); galleryManager();
 };
-
 window.deleteDesign=async key=>{
-
- if(!allowed()){
-  toast("Owner access denied.",true);
-  return;
- }
-
- if(!confirm("Delete this owner-added design?"))
-  return;
-
- try{
-
-  await remove(ref(db,"designs/"+key));
-
-  await update(ref(db,"adminLogs"),{
-   lastAction:{
-    action:"Design deleted",
-    key,
-    at:Date.now()
-   }
-  });
-
-  toast("Design deleted.");
-  galleryManager();
-
- }catch(e){
-  console.error(e);
-  toast("Design delete nahi hua.",true);
- }
+ if(!confirm("Delete this owner-added design?"))return;
+ await remove(ref(db,"designs/"+key));
+ await update(ref(db,"adminLogs"),{lastAction:{action:"Design deleted",key,at:Date.now()}});
+ toast("Design deleted."); galleryManager();
 };
-
 function projectManager(){
-
- document.getElementById("dashTitle").textContent=
-  "Projects";
-
- document.getElementById("dashContent").innerHTML=`
-
- <div class="panel">
-
-  <h3>Before / After Projects</h3>
-
-  <p class="muted">
-   The demo projects are shown on the website.
-   Replace them with your real project photos when ready.
-  </p>
-
- </div>
- `;
+ document.getElementById("dashTitle").textContent="Projects";
+ document.getElementById("dashContent").innerHTML=`<div class="panel"><h3>Before / After Projects</h3><p class="muted">The demo projects are shown on the website. Replace them with your real project photos when ready.</p></div>`;
 }
-
 function settings(){
-
- document.getElementById("dashTitle").textContent=
-  "Settings";
-
- document.getElementById("dashContent").innerHTML=`
-
- <div class="panel">
-
-  <h3>Business Settings</h3>
-
-  <p class="muted">
-   Business: KHANS GYPSUMCRAFT PK<br>
-   Owner ID: ${OWNER_ID}<br>
-   Owner email: ${OWNER_EMAIL}<br>
-   WhatsApp: +92 313 9186430
-  </p>
-
-  <button class="gold"
-   onclick="openWhatsApp(
-   'Hello KHANS GYPSUMCRAFT PK, I want to discuss my project.'
-   )">
-   Open WhatsApp
-  </button>
-
- </div>
-
- <div class="panel">
-
-  <h3>Security</h3>
-
-  <p class="muted">
-   Owner access is checked against the authenticated Firebase UID.
-  </p>
-
-  <p class="seoNote">
-   KG AI is a built-in website knowledge assistant.
-   It does not require Gemini API or an external AI key.
-  </p>
-
- </div>
- `;
+ document.getElementById("dashTitle").textContent="Settings";
+ document.getElementById("dashContent").innerHTML=`<div class="panel"><h3>Business Settings</h3><p class="muted">Business: KHANS GYPSUMCRAFT PK<br>Owner ID: ${OWNER_ID}<br>Owner email: ${OWNER_EMAIL}<br>WhatsApp: +92 313 9186430</p><button class="gold" onclick="openWhatsApp('Hello KHANS GYPSUMCRAFT PK, I want to discuss my project.')">Open WhatsApp</button></div><div class="panel"><h3>Security</h3><p class="muted">Owner access is checked against the authenticated Firebase UID.</p><p class="seoNote">KG AI is a built-in website knowledge assistant. It does not require Gemini API or an external AI key.</p></div>`;
 }
-
-/* OWNER AI INSIGHTS */
-async function renderOwnerAI(){
-
- if(!allowed())return;
-
- let data=await getBusinessData();
-
- let valid=data.orders.filter(
-  x=>String(x.status||"").toLowerCase()!=="cancelled"
- );
-
- let cat={};
- let des={};
-
- valid.forEach(x=>{
-  let c=categoryOf(x);
-  let d=designOf(x);
-
-  cat[c]=(cat[c]||0)+1;
-  des[d]=(des[d]||0)+1;
- });
-
- data.selections.forEach(x=>{
-  let d=x.name||x.designId||"Custom";
-
-  if(!des[d])des[d]=0;
- });
-
- let topCat=
-  Object.entries(cat)
-  .sort((a,b)=>b[1]-a[1])[0];
-
- let topDes=
-  Object.entries(des)
-  .sort((a,b)=>b[1]-a[1])[0];
-
- let text=
-  topCat
-  ?
-  `Current demand signal: ${topCat[0]} has the most non-cancelled orders (${topCat[1]}). ${
-   topDes
-   ?`Strongest design signal: ${topDes[0]} (${topDes[1]} order/interest records).`
-   :"No individual design has enough order data yet."
-  } Use these figures together with actual customer enquiries and project margins.`
-  :
-  "No order data yet. As customers place orders, this section will automatically generate business insights.";
-
- let host=document.getElementById("dashContent");
-
- if(!host)return;
-
- let box=document.createElement("div");
-
- box.className="panel ownerAiBox";
-
- box.innerHTML=`
-  <h3>🤖 Owner AI Insights</h3>
-
-  <div class="muted">
-   Private website-data assistant — only visible inside Owner Dashboard.
-  </div>
-
-  <div class="insightLine"
-   style="margin-top:10px;white-space:pre-wrap">
-   ${esc(text)}
-  </div>
- `;
-
- host.prepend(box);
-}
-
-/* FIREBASE CUSTOM DESIGNS */
-function loadCustom(){
-
- onValue(ref(db,"designs"),s=>{
-
-  customDesigns=s.exists()
-   ?
-   Object.fromEntries(
-    Object.entries(s.val()).map(
-     ([k,v])=>[k,{...v,key:k}]
-    )
-   )
-   :
-   {};
-
-  if(currentCat)
-   renderCurrentGallery();
-
-  if(
-   document.getElementById("dashboard").style.display==="block" &&
-   document.getElementById("dashTitle").textContent==="Gallery Manager"
-  ){
-   galleryManager();
-  }
-
- });
-}
-
-/* PROJECTS */
 function renderProjects(){
-
- document.getElementById("projects").innerHTML=
- [0,1,2].map(i=>`
-
- <article class="project">
-
-  <div class="ba">
-
-   <img src="${img(imgs[i])}">
-
-   <img src="${img(imgs[i+6])}">
-
-  </div>
-
-  <div class="body">
-
-   <b>Featured Project ${i+1}</b>
-
-   <p class="muted">
-    Premium interior concept — replace with your real project photos.
-   </p>
-
-  </div>
-
- </article>
-
- `).join("");
+ document.getElementById("projects").innerHTML=[0,1,2].map(i=>`<article class="project"><div class="ba"><img src="${img(imgs[i])}"><img src="${img(imgs[i+6])}"></div><div class="body"><b>Featured Project ${i+1}</b><p class="muted">Premium interior concept — replace with your real project photos.</p></div></article>`).join("");
 }
-
-/* TOAST */
 function toast(m,err=false){
-
  let t=document.getElementById("toast");
-
  t.textContent=m;
-
  t.classList.remove("hidden");
-
- t.style.background=
-  err?"#8f1d14":"#171717";
-
+ t.style.background=err?"#8f1d14":"#171717";
  clearTimeout(window.__toast);
-
- window.__toast=setTimeout(
-  ()=>t.classList.add("hidden"),
-  2800
- );
+ window.__toast=setTimeout(()=>t.classList.add("hidden"),2800);
 }
-
-/* KG AI CHAT — BUILT-IN, NO GEMINI API */
-window.toggleAI=()=>
- document.getElementById("aiPanel")
- .classList.toggle("show");
-
-const aiWelcome=
- "Assalam-o-Alaikum! Main KG AI Chat hoon — built for KHANS GYPSUMCRAFT PK. Aap designs, quotation, measurements aur services ke baare mein pooch sakte hain.";
-
+window.toggleAI=()=>document.getElementById("aiPanel").classList.toggle("show");
+const aiWelcome="Assalam-o-Alaikum! Main KG AI Chat hoon — built for KHANS GYPSUMCRAFT PK. Aap designs, quotation, measurements aur services ke baare mein pooch sakte hain.";
 function addAI(text,me=false){
-
  let box=document.getElementById("aiMessages");
-
- box.innerHTML+=`
- <div class="msg ${me?"me":"bot"}">
-  ${esc(text)}
- </div>
- `;
-
+ box.innerHTML+=`<div class="msg ${me?"me":"bot"}">${esc(text)}</div>`;
  box.scrollTop=box.scrollHeight;
 }
-
 function localAI(t){
-
  let x=t.toLowerCase();
-
- if(
-  /price|cost|rate|qeemat|قیمت/.test(x)
- ){
-  return "Smart Quote calculator se estimated price nikal sakte ho. Final price site measurement aur customization ke baad confirm hogi.";
- }
-
- if(
-  /design|ceiling|tv wall|bedroom|lounge|ڈیزائن/.test(x)
- ){
-  return "Design Studio mein Bedroom, TV Lounge, Office, Kitchen, Islamic Design, Wooden, Geometric aur 3D categories available hain.";
- }
-
- if(
-  /whatsapp|contact|number|رابطہ/.test(x)
- ){
-  return "Website ke WhatsApp button se KHANS GYPSUMCRAFT PK ko direct contact kar sakte ho.";
- }
-
- if(
-  /order|quotation|quote|order status/.test(x)
- ){
-  return "Google se sign in karke quotation save aur order place kar sakte ho. Apna order Account section mein dekh sakte ho.";
- }
-
- if(
-  /service|services|gypsum|false ceiling|tv wall/.test(x)
- ){
-  return "KHANS GYPSUMCRAFT PK false ceilings, TV walls, wall panels aur custom interior designs provide karta hai.";
- }
-
+ if(/price|cost|rate|qeemat|قیمت|price/.test(x)){return "Smart Quote calculator se estimated price nikal sakte ho. Final price site measurement aur customization ke baad confirm hogi.";}
+ if(/design|ceiling|tv wall|bedroom|lounge|ڈیزائن/.test(x)){return "Design Studio mein Bedroom, TV Lounge, Office, Kitchen, Islamic Design, Wooden, Geometric aur 3D categories available hain.";}
+ if(/whatsapp|contact|number|رابطہ/.test(x)){return "Website ke WhatsApp button se KHANS GYPSUMCRAFT PK ko direct contact kar sakte ho.";}
+ if(/order|quotation|quote|order status/.test(x)){return "Google se sign in karke quotation save aur order place kar sakte ho. Apna order Account section mein dekh sakte ho.";}
+ if(/service|services|gypsum|false ceiling|tv wall/.test(x)){return "KHANS GYPSUMCRAFT PK false ceilings, TV walls, wall panels aur custom interior designs provide karta hai.";}
  return "Main KHANS GYPSUMCRAFT PK ke designs, quotations, measurements, orders aur services ke baare mein help kar sakta hoon.";
 }
-
 window.sendAI=async()=>{
-
  let i=document.getElementById("aiText");
-
  let t=i.value.trim();
-
  if(!t)return;
-
  addAI(t,true);
-
  i.value="";
-
  let msg=document.getElementById("aiStatus");
-
  if(msg)msg.textContent="Thinking…";
-
  try{
-
   await new Promise(r=>setTimeout(r,180));
-
   addAI(localAI(t));
-
  }catch(e){
-
-  addAI(
-   "Sorry, abhi AI assistant response nahi de saka. Please try again."
-  );
-
+  addAI("Sorry, abhi AI assistant response nahi de saka. Please try again.");
  }finally{
-
   if(msg)msg.textContent="Ready";
  }
 };
-
-/* PWA INSTALL */
 let deferredInstallPrompt=null;
-
-window.addEventListener(
- "beforeinstallprompt",
- e=>{
-
+window.addEventListener("beforeinstallprompt",e=>{
   e.preventDefault();
-
   deferredInstallPrompt=e;
-
   let b=document.getElementById("installAppBtn");
-
-  if(b){
-   b.disabled=false;
-   b.textContent="Install My App";
-  }
- }
-);
-
-window.addEventListener(
- "appinstalled",
- ()=>{
-
+  if(b){b.disabled=false;b.textContent="Install My App";}
+});
+window.addEventListener("appinstalled",()=>{
   deferredInstallPrompt=null;
-
   let b=document.getElementById("installAppBtn");
-
-  if(b){
-   b.disabled=true;
-   b.textContent="App Installed ✓";
-  }
-
+  if(b){b.disabled=true;b.textContent="App Installed ✓";}
   toast("KHANS GYPSUMCRAFT PK app installed.");
- }
-);
-
+});
 window.installApp=async()=>{
-
  if(deferredInstallPrompt){
-
   deferredInstallPrompt.prompt();
-
   let r=await deferredInstallPrompt.userChoice;
-
   deferredInstallPrompt=null;
-
   let b=document.getElementById("installAppBtn");
-
-  if(
-   b &&
-   r.outcome==="accepted"
-  ){
-   b.disabled=true;
-   b.textContent="App Installed ✓";
-  }
-
+  if(b&&r.outcome==="accepted"){b.disabled=true;b.textContent="App Installed ✓";}
   return;
  }
-
- if(
-  window.matchMedia(
-   "(display-mode: standalone)"
-  ).matches
- ){
-  toast("App is already installed.");
-  return;
- }
-
- toast(
-  "Chrome menu ⋮ → Add to Home screen / Install app se bhi install kar sakte hain."
- );
+ if(window.matchMedia("(display-mode: standalone)").matches){toast("App is already installed.");return;}
+ toast("Chrome menu ⋮ → Add to Home screen / Install app se bhi install kar sakte hain.");
 };
-
-/* SERVICE WORKER */
-if(
- "serviceWorker" in navigator &&
- location.protocol!=="file:"
-){
- window.addEventListener(
-  "load",
-  ()=>{
-   navigator.serviceWorker
-    .register("./sw.js")
-    .catch(()=>{});
-  }
- );
+if("serviceWorker" in navigator&&location.protocol!=="file:"){
+ window.addEventListener("load",()=>{navigator.serviceWorker.register("./sw.js").catch(()=>{});});
 }
-
-/* START */
 renderCats();
 renderProjects();
 calculate();
 loadCustom();
 addAI(aiWelcome);
+showLogin();
 
-/*
- IMPORTANT:
- showLogin() ko yahan intentionally remove kiya gaya hai.
- Firebase onAuthStateChanged khud login modal show karega.
- Is se already logged-in customer ko refresh par
- unnecessary login popup nahi milega.
- */
-
+function loadCustom(){
+ onValue(ref(db,"designs"),s=>{
+  customDesigns=s.exists()?Object.fromEntries(Object.entries(s.val()).map(([k,v])=>[k,{...v,key:k}])):{};
+  if(currentCat)renderCurrentGallery();
+  if(document.getElementById("dashboard").style.display==="block"&&document.getElementById("dashTitle").textContent==="Gallery Manager"){galleryManager();}
+ });
+}
 </script>
-
 </body>
 </html>
