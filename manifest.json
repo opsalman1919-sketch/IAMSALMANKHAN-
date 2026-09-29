@@ -1,11 +1,11 @@
 {
   "name": "KHANS GYPSUMCRAFT PK",
-  "short_name": "KG GypsumCraft",
+  "short_name": "KG Gypsumcraft",
+  "description": "Premium gypsum, false ceiling, TV wall and interior design services.",
   "start_url": "./KHANS_GYPSUMCRAFT_PK_FINAL.html",
-  "scope": "./",
   "display": "standalone",
-  "background_color": "#0b0b0b",
-  "theme_color": "#c9a86a",
-  "description": "KHANS GYPSUMCRAFT PK - Gypsum, ceiling and interior design services.",
+  "background_color": "#faf9f6",
+  "theme_color": "#c8a45a",
+  "orientation": "portrait",
   "icons": []
 }
