@@ -638,6 +638,7 @@ footer{background:#171717;color:#ddd;padding:44px 0}
  </div>
 </div>
 </section>
+
 <section class="section">
 <div class="wrap">
  <div class="head">
@@ -712,7 +713,6 @@ footer{background:#171717;color:#ddd;padding:44px 0}
 </section>
 
 </main>
-
 <footer>
 <div class="wrap footerGrid">
  <div>
@@ -1030,15 +1030,14 @@ function showLogin(){
  if(!user)document.getElementById("loginModal").classList.add("show")
 }
 window.openLogin=showLogin;
- window.closeM=id=>
+
+window.closeM=id=>
  document.getElementById(id).classList.remove("show");
 
+/* GOOGLE LOGIN */
 window.login=async()=>{
  try{
-  const result=await signInWithPopup(auth,provider);
-  await ensureUser(result.user);
-  closeM("loginModal");
-  toast("Signed in successfully.");
+  await signInWithPopup(auth,provider);
  }catch(e){
   console.error(e);
 
@@ -1050,6 +1049,10 @@ window.login=async()=>{
    message="Google login window close ho gayi.";
   }else if(e.code==="auth/unauthorized-domain"){
    message="Current website domain Firebase Authentication mein authorized nahi hai.";
+  }else if(e.code==="auth/operation-not-allowed"){
+   message="Firebase Authentication mein Google provider enable nahi hai.";
+  }else if(e.code==="auth/popup-blocked"){
+   message="Google login popup browser ne block kar diya.";
   }else{
    message="Google login failed: "+e.message;
   }
@@ -1061,19 +1064,9 @@ window.login=async()=>{
 async function ensureUser(u){
  user=u;
 
- await update(
-  ref(db,"users/"+u.uid),
-  {
-   uid:u.uid,
-   name:u.displayName||"",
-   email:u.email||"",
-   photoURL:u.photoURL||"",
-   lastLogin:Date.now(),
-   role:u.uid===OWNER_UID?"owner":"customer"
-  }
- );
-
+ /* UI immediately after successful Google authentication */
  document.getElementById("app").classList.remove("hidden");
+ document.getElementById("loginModal").classList.remove("show");
 
  document.getElementById("loginBtn").textContent=
   (u.displayName||"Account").split(" ")[0];
@@ -1084,6 +1077,27 @@ async function ensureUser(u){
   .classList.toggle("hidden",u.uid!==OWNER_UID);
 
  renderUserChip();
+
+ /* User profile save is separate from Google authentication */
+ try{
+  await update(
+   ref(db,"users/"+u.uid),
+   {
+    uid:u.uid,
+    name:u.displayName||"",
+    email:u.email||"",
+    photoURL:u.photoURL||"",
+    lastLogin:Date.now(),
+    role:u.uid===OWNER_UID?"owner":"customer"
+   }
+  );
+ }catch(e){
+  console.error("User profile database write failed:",e);
+  toast(
+   "Google login successful, lekin user data Firebase Database mein save nahi hua. Database Rules check karein.",
+   true
+  );
+ }
 }
 
 function renderUserChip(){
@@ -1095,9 +1109,15 @@ onAuthStateChanged(auth,u=>{
  user=u;
 
  if(u){
-  ensureUser(u);
+  ensureUser(u).catch(e=>{
+   console.error("ensureUser failed:",e);
+   toast("Account setup mein error aaya.",true);
+  });
  }else{
   document.getElementById("app").classList.add("hidden");
+  document.getElementById("accountBtn").classList.add("hidden");
+  document.getElementById("ownerBtn").classList.add("hidden");
+  document.getElementById("loginBtn").textContent="Continue with Google";
   document.getElementById("loginModal").classList.add("show");
  }
 });
@@ -1223,8 +1243,13 @@ window.choose=async d=>{
   return;
  }
 
- await saveSelection(d);
- viewDesign(d);
+ try{
+  await saveSelection(d);
+  viewDesign(d);
+ }catch(e){
+  console.error(e);
+  toast("Design save nahi ho saka. Firebase Database Rules check karein.",true);
+ }
 };
 
 async function saveSelection(d){
@@ -1253,8 +1278,13 @@ window.selectDesign=async()=>{
   return;
  }
 
- await saveSelection(current);
- closeM("designModal");
+ try{
+  await saveSelection(current);
+  closeM("designModal");
+ }catch(e){
+  console.error(e);
+  toast("Design save nahi ho saka.",true);
+ }
 };
 
 window.designWA=()=>{
@@ -1264,8 +1294,7 @@ window.designWA=()=>{
   `Hello KHANS GYPSUMCRAFT PK, I want a quote for ${current.name} (${current.id}) in ${currentCat}.`
  );
 };
-
-function calculate(){
+ function calculate(){
 
  let area=
   (+document.getElementById("len").value||0)*
@@ -1306,30 +1335,38 @@ window.saveQuote=async()=>{
   return;
  }
 
- let c=calculate();
- let k=push(ref(db,"quotations/"+user.uid));
+ try{
 
- await set(k,{
-  uid:user.uid,
-  customerName:user.displayName||"",
-  email:user.email||"",
-  length:+document.getElementById("len").value||0,
-  width:+document.getElementById("wid").value||0,
-  area:c.area,
-  type:document.getElementById("rate").options[
-   document.getElementById("rate").selectedIndex
-  ].text,
-  discount:c.discount,
-  total:c.total,
-  status:"Draft",
-  designId:current?.id||"",
-  designName:current?.name||"",
-  category:current?.category||currentCat||"",
-  style:current?.style||"",
-  createdAt:Date.now()
- });
+  let c=calculate();
 
- toast("Quotation saved.");
+  let k=push(ref(db,"quotations/"+user.uid));
+
+  await set(k,{
+   uid:user.uid,
+   customerName:user.displayName||"",
+   email:user.email||"",
+   length:+document.getElementById("len").value||0,
+   width:+document.getElementById("wid").value||0,
+   area:c.area,
+   type:document.getElementById("rate").options[
+    document.getElementById("rate").selectedIndex
+   ].text,
+   discount:c.discount,
+   total:c.total,
+   status:"Draft",
+   designId:current?.id||"",
+   designName:current?.name||"",
+   category:current?.category||currentCat||"",
+   style:current?.style||"",
+   createdAt:Date.now()
+  });
+
+  toast("Quotation saved.");
+
+ }catch(e){
+  console.error(e);
+  toast("Quotation save nahi hui. Firebase Database Rules check karein.",true);
+ }
 };
 
 window.quoteWA=()=>{
@@ -1355,51 +1392,58 @@ window.placeOrder=async()=>{
   return;
  }
 
- let c=calculate();
+ try{
 
- let k=push(ref(db,"orders/"+user.uid));
+  let c=calculate();
 
- await set(k,{
-  uid:user.uid,
-  customerName:user.displayName||"",
-  email:user.email||"",
-  length:+document.getElementById("len").value||0,
-  width:+document.getElementById("wid").value||0,
-  area:c.area,
-  projectType:document.getElementById("rate").options[
-   document.getElementById("rate").selectedIndex
-  ].text,
-  discount:c.discount,
-  total:c.total,
-  status:"Pending",
-  designId:current?.id||"",
-  designName:current?.name||"",
-  category:current?.category||currentCat||"",
-  style:current?.style||"",
-  createdAt:Date.now()
- });
+  let k=push(ref(db,"orders/"+user.uid));
 
- await update(ref(db,"adminLogs"),{
-  lastAction:{
-   action:"New order created",
+  await set(k,{
    uid:user.uid,
-   orderId:k.key,
+   customerName:user.displayName||"",
+   email:user.email||"",
+   length:+document.getElementById("len").value||0,
+   width:+document.getElementById("wid").value||0,
+   area:c.area,
+   projectType:document.getElementById("rate").options[
+    document.getElementById("rate").selectedIndex
+   ].text,
+   discount:c.discount,
    total:c.total,
-   at:Date.now()
-  }
- });
+   status:"Pending",
+   designId:current?.id||"",
+   designName:current?.name||"",
+   category:current?.category||currentCat||"",
+   style:current?.style||"",
+   createdAt:Date.now()
+  });
 
- toast("Order placed successfully.");
+  await update(ref(db,"adminLogs"),{
+   lastAction:{
+    action:"New order created",
+    uid:user.uid,
+    orderId:k.key,
+    total:c.total,
+    at:Date.now()
+   }
+  });
 
- openWhatsApp(
- `Hello KHANS GYPSUMCRAFT PK, I placed an order.
+  toast("Order placed successfully.");
+
+  openWhatsApp(
+   `Hello KHANS GYPSUMCRAFT PK, I placed an order.
 Customer: ${user.displayName||""}
 Project: ${document.getElementById("rate").options[
  document.getElementById("rate").selectedIndex
 ].text}
 Area: ${c.area.toFixed(1)} sq ft
 Estimated Total: PKR ${c.total.toLocaleString()}`
- );
+  );
+
+ }catch(e){
+  console.error(e);
+  toast("Order place nahi hua. Firebase Database Rules check karein.",true);
+ }
 };
 
 function openWhatsApp(
@@ -1421,78 +1465,90 @@ window.openAccount=async()=>{
   return;
  }
 
- document.getElementById("accountModal").classList.add("show");
+ try{
 
- document.getElementById("accountInfo").innerHTML=`
- <div class="profile">
-  <img src="${esc(user.photoURL||"")}"
-       onerror="this.style.display='none'">
+  document.getElementById("accountModal").classList.add("show");
 
-  <div>
-   <b>${esc(user.displayName||"Customer")}</b>
-   <div class="muted">${esc(user.email||"")}</div>
+  document.getElementById("accountInfo").innerHTML=`
+  <div class="profile">
+   <img src="${esc(user.photoURL||"")}"
+        onerror="this.style.display='none'">
+
+   <div>
+    <b>${esc(user.displayName||"Customer")}</b>
+    <div class="muted">${esc(user.email||"")}</div>
+   </div>
   </div>
- </div>
- `;
+  `;
 
- let s=await get(ref(db,"designSelections"));
+  let s=await get(ref(db,"designSelections"));
 
- let vals=s.exists()
-  ?Object.values(s.val())
-   .filter(x=>x.uid===user.uid)
-   .slice(-12)
-   .reverse()
-  :[];
+  let vals=s.exists()
+   ?Object.values(s.val())
+    .filter(x=>x.uid===user.uid)
+    .slice(-12)
+    .reverse()
+   :[];
 
- document.getElementById("mySelections").innerHTML=
- vals.map(d=>`
- <article class="card">
-  <img src="${esc(d.image)}">
-  <div class="body">
-   <b>${esc(d.name)}</b>
-   <small>${esc(d.category)}</small>
-  </div>
- </article>
- `).join("")||
- "<p class='muted'>No saved designs yet.</p>";
+  document.getElementById("mySelections").innerHTML=
+  vals.map(d=>`
+  <article class="card">
+   <img src="${esc(d.image)}">
+   <div class="body">
+    <b>${esc(d.name)}</b>
+    <small>${esc(d.category)}</small>
+   </div>
+  </article>
+  `).join("")||
+  "<p class='muted'>No saved designs yet.</p>";
 
- let o=await get(ref(db,"orders/"+user.uid));
+  let o=await get(ref(db,"orders/"+user.uid));
 
- let os=o.exists()
-  ?Object.entries(o.val())
-   .map(([id,d])=>({id,...d}))
-   .reverse()
-  :[];
+  let os=o.exists()
+   ?Object.entries(o.val())
+    .map(([id,d])=>({id,...d}))
+    .reverse()
+   :[];
 
- document.getElementById("myOrders").innerHTML=`
- <table class="table">
-  <tr>
-   <th>Order</th>
-   <th>Design</th>
-   <th>Total</th>
-   <th>Status</th>
-  </tr>
-
-  ${
-   os.map(d=>`
+  document.getElementById("myOrders").innerHTML=`
+  <table class="table">
    <tr>
-    <td>${esc(d.id.slice(-8))}</td>
-    <td>${esc(d.designName||"Custom")}</td>
-    <td>PKR ${(+d.total||0).toLocaleString()}</td>
-    <td>${esc(d.status||"Pending")}</td>
+    <th>Order</th>
+    <th>Design</th>
+    <th>Total</th>
+    <th>Status</th>
    </tr>
-   `).join("")
-  ||
-   "<tr><td colspan='4'>No orders yet.</td></tr>"
-  }
- </table>
- `;
+
+   ${
+    os.map(d=>`
+    <tr>
+     <td>${esc(d.id.slice(-8))}</td>
+     <td>${esc(d.designName||"Custom")}</td>
+     <td>PKR ${(+d.total||0).toLocaleString()}</td>
+     <td>${esc(d.status||"Pending")}</td>
+    </tr>
+    `).join("")
+   ||
+    "<tr><td colspan='4'>No orders yet.</td></tr>"
+   }
+  </table>
+  `;
+
+ }catch(e){
+  console.error(e);
+  toast("Account data load nahi ho saka. Database Rules check karein.",true);
+ }
 };
 
 window.logout=async()=>{
- await signOut(auth);
- closeM("accountModal");
- closeOwner();
+ try{
+  await signOut(auth);
+  closeM("accountModal");
+  closeOwner();
+ }catch(e){
+  console.error(e);
+  toast("Sign out failed.",true);
+ }
 };
 
 function allowed(){
@@ -1618,96 +1674,107 @@ function designOf(x){
 
 async function renderOverview(){
 
- let d=await getBusinessData();
+ try{
 
- let users=Object.keys(d.users).length;
+  let d=await getBusinessData();
 
- let orders=d.orders.length;
+  let users=Object.keys(d.users).length;
 
- let sales=d.orders
-  .filter(x=>x.status!=="Cancelled")
-  .reduce((n,x)=>n+(+x.total||0),0);
+  let orders=d.orders.length;
 
- let pending=d.orders.filter(x=>x.status==="Pending").length;
+  let sales=d.orders
+   .filter(x=>x.status!=="Cancelled")
+   .reduce((n,x)=>n+(+x.total||0),0);
 
- let confirmed=d.orders.filter(x=>x.status==="Confirmed").length;
+  let pending=d.orders.filter(x=>x.status==="Pending").length;
 
- let done=d.orders.filter(x=>x.status==="Completed").length;
+  let confirmed=d.orders.filter(x=>x.status==="Confirmed").length;
 
- document.getElementById("dashTitle").textContent=
-  "Business Overview";
+  let done=d.orders.filter(x=>x.status==="Completed").length;
 
- document.getElementById("dashContent").innerHTML=`
+  document.getElementById("dashTitle").textContent=
+   "Business Overview";
 
- <div class="stats">
-
-  <div class="stat">
-   <b>${users}</b>
-   <span>Total Customers</span>
-  </div>
-
-  <div class="stat">
-   <b>${orders}</b>
-   <span>Total Orders</span>
-  </div>
-
-  <div class="stat">
-   <b>PKR ${sales.toLocaleString()}</b>
-   <span>Recorded Sales</span>
-  </div>
-
-  <div class="stat">
-   <b>${d.selections.length}</b>
-   <span>Design Selections</span>
-  </div>
-
- </div>
-
- <div class="panel">
-  <h3>Order Pipeline</h3>
+  document.getElementById("dashContent").innerHTML=`
 
   <div class="stats">
 
    <div class="stat">
-    <b>${pending}</b>
-    <span>Pending</span>
+    <b>${users}</b>
+    <span>Total Customers</span>
    </div>
 
    <div class="stat">
-    <b>${confirmed}</b>
-    <span>Confirmed</span>
+    <b>${orders}</b>
+    <span>Total Orders</span>
    </div>
 
    <div class="stat">
-    <b>${done}</b>
-    <span>Completed</span>
+    <b>PKR ${sales.toLocaleString()}</b>
+    <span>Recorded Sales</span>
    </div>
 
    <div class="stat">
-    <b>${d.quotations.length}</b>
-    <span>Saved Quotations</span>
+    <b>${d.selections.length}</b>
+    <span>Design Selections</span>
    </div>
 
   </div>
- </div>
 
- <div class="panel">
-  <h3>Quick Business Insight</h3>
-  <p class="muted">
-   Analytics & AI mein category aur design demand,
-   orders, quotations aur saves dekhein.
-  </p>
- </div>
+  <div class="panel">
+   <h3>Order Pipeline</h3>
 
- <div class="panel">
-  <h3>Owner Identity</h3>
-  <p class="muted">
-   Owner ID: <b>${OWNER_ID}</b><br>
-   Owner UID: <code>${OWNER_UID}</code><br>
-   Owner email: ${OWNER_EMAIL}
-  </p>
- </div>
- `;
+   <div class="stats">
+
+    <div class="stat">
+     <b>${pending}</b>
+     <span>Pending</span>
+    </div>
+
+    <div class="stat">
+     <b>${confirmed}</b>
+     <span>Confirmed</span>
+    </div>
+
+    <div class="stat">
+     <b>${done}</b>
+     <span>Completed</span>
+    </div>
+
+    <div class="stat">
+     <b>${d.quotations.length}</b>
+     <span>Saved Quotations</span>
+    </div>
+
+   </div>
+  </div>
+
+  <div class="panel">
+   <h3>Quick Business Insight</h3>
+   <p class="muted">
+    Analytics & AI mein category aur design demand,
+    orders, quotations aur saves dekhein.
+   </p>
+  </div>
+
+  <div class="panel">
+   <h3>Owner Identity</h3>
+   <p class="muted">
+    Owner ID: <b>${OWNER_ID}</b><br>
+    Owner UID: <code>${OWNER_UID}</code><br>
+    Owner email: ${OWNER_EMAIL}
+   </p>
+  </div>
+  `;
+
+ }catch(e){
+  console.error(e);
+  document.getElementById("dashContent").innerHTML=
+   `<div class="panel">
+    <b>Dashboard data load error.</b>
+    <p class="muted">Firebase Database Rules check karein.</p>
+   </div>`;
+ }
 }
 
 async function renderAnalytics(){
@@ -1883,19 +1950,19 @@ async function renderAnalytics(){
 
    <button
     class="${analyticsRange===7?"active":""}"
-    onclick="analyticsRange=7;renderAnalytics()">
+    onclick="setAnalyticsRange(7)">
     7 Days
    </button>
 
    <button
     class="${analyticsRange===30?"active":""}"
-    onclick="analyticsRange=30;renderAnalytics()">
+    onclick="setAnalyticsRange(30)">
     30 Days
    </button>
 
    <button
     class="${analyticsRange===0?"active":""}"
-    onclick="analyticsRange=0;renderAnalytics()">
+    onclick="setAnalyticsRange(0)">
     All Time
    </button>
 
@@ -1965,7 +2032,17 @@ async function renderAnalytics(){
  </div>
  `;
 }
- async function customers(){
+
+/* FIX: analyticsRange module scope is not accessible
+   from inline HTML onclick handlers */
+window.setAnalyticsRange=(range)=>{
+ analyticsRange=range;
+ renderAnalytics();
+};
+
+window.renderAnalytics=renderAnalytics;
+
+async function customers(){
 
  let u=await read("users")||{};
 
@@ -2098,26 +2175,33 @@ async function orders(){
 
 window.status=async(uid,id,v)=>{
 
- await update(
-  ref(db,"orders/"+uid+"/"+id),
-  {
-   status:v,
-   updatedAt:Date.now()
-  }
- );
+ try{
 
- await update(ref(db,"adminLogs"),{
-  lastAction:{
-   action:"Order status updated",
-   uid,
-   orderId:id,
-   status:v,
-   at:Date.now()
-  }
- });
+  await update(
+   ref(db,"orders/"+uid+"/"+id),
+   {
+    status:v,
+    updatedAt:Date.now()
+   }
+  );
 
- toast("Order updated.");
- orders();
+  await update(ref(db,"adminLogs"),{
+   lastAction:{
+    action:"Order status updated",
+    uid,
+    orderId:id,
+    status:v,
+    at:Date.now()
+   }
+  });
+
+  toast("Order updated.");
+  orders();
+
+ }catch(e){
+  console.error(e);
+  toast("Order status update failed.",true);
+ }
 };
 
 async function quotations(){
@@ -2226,8 +2310,7 @@ async function savedDesigns(){
  </div>
  `;
 }
-
-function galleryManager(){
+ function galleryManager(){
 
  document.getElementById("dashTitle").textContent=
   "Gallery Manager";
@@ -2313,6 +2396,11 @@ function galleryManager(){
 
 window.addDesign=async()=>{
 
+ if(!allowed()){
+  toast("Owner access denied.",true);
+  return;
+ }
+
  let d={
   id:"OWN-"+Date.now().toString().slice(-8),
   name:document.getElementById("adName").value.trim(),
@@ -2331,41 +2419,60 @@ window.addDesign=async()=>{
   return;
  }
 
- let k=push(ref(db,"designs"));
+ try{
 
- d.key=k.key;
+  let k=push(ref(db,"designs"));
 
- await set(k,d);
+  d.key=k.key;
 
- await update(ref(db,"adminLogs"),{
-  lastAction:{
-   action:"Design added",
-   designId:d.id,
-   at:Date.now()
-  }
- });
+  await set(k,d);
 
- toast("Design added.");
- galleryManager();
+  await update(ref(db,"adminLogs"),{
+   lastAction:{
+    action:"Design added",
+    designId:d.id,
+    at:Date.now()
+   }
+  });
+
+  toast("Design added.");
+  galleryManager();
+
+ }catch(e){
+  console.error(e);
+  toast("Design add nahi hua. Firebase Database Rules check karein.",true);
+ }
 };
 
 window.deleteDesign=async key=>{
 
+ if(!allowed()){
+  toast("Owner access denied.",true);
+  return;
+ }
+
  if(!confirm("Delete this owner-added design?"))
   return;
 
- await remove(ref(db,"designs/"+key));
+ try{
 
- await update(ref(db,"adminLogs"),{
-  lastAction:{
-   action:"Design deleted",
-   key,
-   at:Date.now()
-  }
- });
+  await remove(ref(db,"designs/"+key));
 
- toast("Design deleted.");
- galleryManager();
+  await update(ref(db,"adminLogs"),{
+   lastAction:{
+    action:"Design deleted",
+    key,
+    at:Date.now()
+   }
+  });
+
+  toast("Design deleted.");
+  galleryManager();
+
+ }catch(e){
+  console.error(e);
+  toast("Design delete nahi hua.",true);
+ }
 };
 
 function projectManager(){
@@ -2608,7 +2715,7 @@ function localAI(t){
  let x=t.toLowerCase();
 
  if(
-  /price|cost|rate|qeemat|قیمت|price/.test(x)
+  /price|cost|rate|qeemat|قیمت/.test(x)
  ){
   return "Smart Quote calculator se estimated price nikal sakte ho. Final price site measurement aur customization ke baad confirm hogi.";
  }
@@ -2769,7 +2876,14 @@ renderProjects();
 calculate();
 loadCustom();
 addAI(aiWelcome);
-showLogin();
+
+/*
+ IMPORTANT:
+ showLogin() ko yahan intentionally remove kiya gaya hai.
+ Firebase onAuthStateChanged khud login modal show karega.
+ Is se already logged-in customer ko refresh par
+ unnecessary login popup nahi milega.
+ */
 
 </script>
 
