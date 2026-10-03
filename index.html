@@ -555,3 +555,4 @@ function showPage(id,push=true){
   const target=document.getElementById('page-'+id)?id:'home';
   if(target==='owner-center' && !isOwnerUser){ toast('Owner Center access denied.',true); return; }
   document.querySelectorAll('.page').forEach(x=>x.classList.add('hidden'));
+</script>
