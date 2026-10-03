@@ -168,6 +168,22 @@ body.authLocked>header,body.authLocked>.mobileQuickNav,body.authLocked>main,body
 /* Premium visualizer emphasis */
 .visualizerStage:before{content:"KHANS ROOM STUDIO";position:absolute;top:12px;left:12px;z-index:4;background:#171717dd;color:#ead39a;border:1px solid #ead39a55;padding:7px 10px;border-radius:9px;font-size:9px;font-weight:900;letter-spacing:1.5px;pointer-events:none}
 
+/* ===== SCROLLABLE CUSTOMER SERVICE NAV ===== */
+.scrollServices{padding:18px 0 8px;background:#fff;border-bottom:1px solid var(--line)}
+.scrollServiceBar{display:flex;gap:9px;overflow-x:auto;padding:2px 1px 8px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.scrollServiceBar button{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:13px;padding:10px 13px;font-weight:700;font-size:12px;white-space:nowrap;box-shadow:0 4px 12px #00000008}
+.scrollServiceBar button:hover{background:#f7f1e3;border-color:#dfca91}
+.scrollServiceBar .featured{background:#171717;color:#fff;border-color:#171717}
+.scrollHint{text-align:center;font-size:10px;color:#888;margin:0 0 4px}
+.homePreview{padding:38px 0 10px}
+.homePreviewGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.homePreviewCard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;min-height:150px;box-shadow:0 7px 22px #00000008}
+.homePreviewCard i{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:#f7f1e3;color:#8b6b2e;margin-bottom:10px}
+.homePreviewCard h3{font-size:15px;margin:0 0 5px}.homePreviewCard p{font-size:11px;color:#777;line-height:1.55;margin:0 0 12px}
+.homePreviewCard button{width:100%}
+@media(max-width:900px){.homePreviewGrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.homePreview{padding-top:25px}.homePreviewGrid{grid-template-columns:1fr}.scrollServiceBar{padding-left:4px;padding-right:4px}.scrollServices{position:sticky;top:64px;z-index:54}}
+
 </style>
 </head>
 <body class="authLocked">
@@ -186,6 +202,33 @@ body.authLocked>header,body.authLocked>.mobileQuickNav,body.authLocked>main,body
 <div class="futureGrid"><div class="futureCard"><div class="fi"><i class="fa-solid fa-cube"></i></div><h3>3D / Room Studio</h3><p>Selected design ko Room Visualizer workflow mein le ja sakte hain.</p></div><div class="futureCard"><div class="fi"><i class="fa-solid fa-file-invoice-dollar"></i></div><h3>Digital Quotation</h3><p>Measurements se estimate aur quotation workflow tak digital journey.</p></div><div class="futureCard"><div class="fi"><i class="fa-solid fa-route"></i></div><h3>Live Project Journey</h3><p>Order Received se Completed tak project stages ek jagah.</p></div><div class="futureCard"><div class="fi"><i class="fa-solid fa-chart-line"></i></div><h3>Owner Intelligence</h3><p>Customers, orders, quotations, gallery aur business data Owner Center mein.</p></div></div></div>
 <div class="futureRoad"><div class="futureStep"><b>01 — Discover</b><span>Design Studio + categories + search</span></div><div class="futureStep"><b>02 — Visualize</b><span>Room photo/video + selected design preview</span></div><div class="futureStep"><b>03 — Quote</b><span>Measurements + estimate + quotation workflow</span></div><div class="futureStep"><b>04 — Track</b><span>Order, appointment aur project status</span></div></div>
 </div></section>
+
+<section class="scrollServices" aria-label="Customer services">
+ <div class="wrap">
+  <div class="scrollHint">Services ko scroll karte hue bhi yahan se open karein</div>
+  <div class="scrollServiceBar">
+   <button class="featured" onclick="showPage('design-studio')">🎨 Designs</button>
+   <button onclick="showPage('room-planner')">📐 Room Planner</button>
+   <button onclick="showPage('calculator')">🧮 Calculator</button>
+   <button onclick="showPage('portfolio')">🏠 Projects</button>
+   <button onclick="showPage('site-visit')">📍 Site Visit</button>
+   <button onclick="openVisualizerFromNav()">✨ Visualizer</button>
+   <button onclick="showPage('customer-account')">👤 My Project</button>
+  </div>
+ </div>
+</section>
+<section class="homePreview">
+ <div class="wrap">
+  <div class="sectionHead"><div class="eyebrow">CUSTOMER TOOLS</div><h2>Sab kuch scroll karte hue bhi accessible</h2><p class="muted">Button se full page khulega, aur neeche se customer features ko explore bhi kar sakta hai.</p></div>
+  <div class="homePreviewGrid">
+   <div class="homePreviewCard"><i class="fa-solid fa-images"></i><h3>Design Studio</h3><p>Ceiling, TV wall aur interior designs browse karein.</p><button class="gold" onclick="showPage('design-studio')">Open Designs</button></div>
+   <div class="homePreviewCard"><i class="fa-solid fa-ruler-combined"></i><h3>Room Planner</h3><p>Room size, style, budget aur requirements save karein.</p><button class="outline" onclick="showPage('room-planner')">Plan Room</button></div>
+   <div class="homePreviewCard"><i class="fa-solid fa-calculator"></i><h3>Smart Calculator</h3><p>Area aur selected work ke basis par estimate check karein.</p><button class="outline" onclick="showPage('calculator')">Calculate</button></div>
+   <div class="homePreviewCard"><i class="fa-solid fa-location-dot"></i><h3>Free Site Visit</h3><p>Measurement aur site visit request directly submit karein.</p><button class="outline" onclick="showPage('site-visit')">Request Visit</button></div>
+  </div>
+ </div>
+</section>
+
 <section id="page-home" class="page"><div class="hero"><div class="wrap heroGrid"><div><div class="eyebrow">WHITE GOLD • PREMIUM INTERIORS</div><h1 id="heroTitle">Modern ceilings.<br><span>Beautiful spaces.</span></h1><p id="heroText">Explore premium false ceilings, TV walls, gypsum details and interior concepts. Select a design, plan your room, estimate your project and request a quotation for WhatsApp.</p><div class="heroActions"><button class="gold" onclick="showPage('design-studio')">Explore Designs</button><button class="outline" onclick="showPage('calculator')">Get a Quote</button><button class="outline" onclick="openAdvancedGallery()">Advanced Gallery</button></div></div><div class="heroImg"></div></div></div>
 <div class="section" style="padding-top:30px"><div class="wrap"><div class="grid grid3"><div class="panel"><div class="eyebrow">01</div><h3>Design Studio</h3><p class="muted">20 demo concepts per category plus owner-added media.</p></div><div class="panel"><div class="eyebrow">02</div><h3>Smart Estimate</h3><p class="muted">Area, rate, labour, material and owner-controlled pricing.</p></div><div class="panel"><div class="eyebrow">03</div><h3>Project Journey</h3><p class="muted">Quotation → order → site visit → installation → completion.</p></div></div></div></div>
 <div class="mobileServiceNav" id="mobileServiceNav"><div class="mobileServiceHead"><div><div class="eyebrow">QUICK SERVICES</div><h3>Explore More</h3><p>Scroll karke room planning, calculator, projects aur visualizer direct open karein.</p></div></div><div class="mobileServiceGrid"><button onclick="showPage('room-planner')"><span class="serviceIcon">⌂</span><span><b>Room Planner</b><small>Plan your room</small></span></button><button onclick="showPage('calculator')"><span class="serviceIcon">₨</span><span><b>Smart Calculator</b><small>Get estimate</small></span></button><button onclick="showPage('portfolio')"><span class="serviceIcon">▦</span><span><b>Projects</b><small>Real project work</small></span></button><button onclick="showPage('site-visit')"><span class="serviceIcon">⌖</span><span><b>Site Visit</b><small>Book measurement</small></span></button><button onclick="openVisualizerFromNav()"><span class="serviceIcon">◉</span><span><b>Room Visualizer</b><small>Preview a design</small></span></button></div></div>
