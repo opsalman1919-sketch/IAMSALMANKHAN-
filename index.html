@@ -1,752 +1,685 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ur" class="scroll-smooth">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#c8a45a">
-<link rel="manifest" href="manifest.json">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="KHANS GYPSUMCRAFT PK">
-<meta name="description" content="KHANS GYPSUMCRAFT PK — premium gypsum, false ceiling, TV wall and interior design services.">
-<title>KHANS GYPSUMCRAFT PK — Premium White Gold</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Step 22: SEO & Local Business Meta Tags -->
+    <title>KHANS GYPSUMCRAFT PK — Modern Ceiling & Interior Design Swat</title>
+    <meta name="description" content="Best Gypsum Board Ceiling, 3D TV Wall Design & Interior Decoration in Swat, Mingora. Free Site Visit & Instant Calculator.">
+    <meta name="keywords" content="Gypsum Board Swat, False Ceiling Mingora, TV Wall Design, Interior Design Swat">
+    
+    <!-- Step 20: PWA Manifest & Icons -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0B1120">
 
-<style>
-:root{--gold:#c8a45a;--gold2:#ead39a;--ink:#171717;--bg:#faf9f6;--card:#fff;--line:#e9e5dc;--muted:#777;--ok:#168458;--danger:#b42318;--shadow:0 18px 50px #17171712}
-*{box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:hidden}body{margin:0;font-family:Poppins,Arial,sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{max-width:1180px;margin:auto;padding:0 18px}.hidden{display:none!important}#app.hidden{display:block!important}.muted{color:var(--muted);line-height:1.7}.gold{background:linear-gradient(135deg,#d9bb72,#b68e3e);color:#fff;border:0;border-radius:12px;padding:11px 16px;font-weight:700}.outline{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px}.danger{background:#fff0f0;color:var(--danger);border:1px solid #ffd6d2;border-radius:10px;padding:9px 12px}.eyebrow{color:var(--gold);font-size:12px;font-weight:800;letter-spacing:2px}
-header{position:sticky;top:0;z-index:50;background:#fffffff0;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-weight:800}.brand span{color:var(--gold)}.navlinks{display:flex;align-items:center;gap:4px}.navlinks button{border:0;background:none;padding:9px;border-radius:9px}
-.hero{padding:78px 0;background:radial-gradient(circle at 85% 10%,#ead39a55,transparent 30%)}.heroGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}.hero h1{font-size:clamp(40px,6vw,68px);line-height:1.03;margin:12px 0}.hero h1 span{color:var(--gold)}.heroImg{height:410px;border-radius:30px;background:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85') center/cover;box-shadow:var(--shadow)}.heroActions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
-.section{padding:62px 0}.head{margin-bottom:24px}.head h2{font-size:32px;margin:5px 0}.cats,.grid,.projects,.steps{display:grid;gap:16px}.cats{grid-template-columns:repeat(4,1fr)}.cat{min-height:205px;border:0;border-radius:20px;overflow:hidden;position:relative;color:#fff;background:#222;text-align:left;padding:0}.cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.8;transition:.3s}.cat:hover img{transform:scale(1.06)}.shade{position:absolute;inset:0;background:linear-gradient(transparent 20%,#000d)}.ct{position:absolute;left:17px;right:12px;bottom:16px}.ct h3{margin:0}.grid{grid-template-columns:repeat(4,1fr)}.card{background:var(--card);border:1px solid var(--line);border-radius:17px;overflow:hidden;box-shadow:0 5px 18px #17171708}.card img{width:100%;aspect-ratio:4/3;object-fit:cover}.body{padding:13px}.tag{display:inline-block;background:#f5ecd6;color:#8b6b2e;padding:4px 8px;border-radius:99px;font-size:11px}.actions{display:flex;gap:7px;margin-top:10px}.actions button{flex:1;border:0;border-radius:9px;padding:9px}.primary{background:#171717;color:#fff}.searchbar{display:flex;gap:8px;margin-bottom:16px}.searchbar input{flex:1;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff}.pillbar{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px}.pill{border:1px solid var(--line);background:#fff;padding:7px 11px;border-radius:99px}.pill.active{background:#171717;color:#fff}
-.calc{background:#181818;color:#fff;border-radius:24px;padding:28px;box-shadow:var(--shadow)}.formgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.field label{display:block;font-size:12px;color:#aaa;margin-bottom:5px}.field input,.field select,.field textarea{width:100%;padding:11px;border-radius:9px;border:1px solid #444;background:#252525;color:#fff}.total{font-size:29px;color:var(--gold2);font-weight:800;margin:15px 0}.steps{grid-template-columns:repeat(4,1fr)}.box{background:#fff;border:1px solid var(--line);border-radius:17px;padding:20px}.num{color:var(--gold);font-weight:800}.projects{grid-template-columns:repeat(3,1fr)}.project{background:#fff;border:1px solid var(--line);border-radius:17px;overflow:hidden}.ba{display:grid;grid-template-columns:1fr 1fr}.ba img{width:100%;height:170px;object-fit:cover}.project .body{padding:14px}.contact{display:grid;grid-template-columns:1fr 1fr;gap:16px}.contactCard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}footer{background:#171717;color:#ddd;padding:44px 0}.footerGrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:25px}.footerGrid a{color:#ddd;text-decoration:none;display:block;margin:7px 0}
-.modal{display:none;position:fixed;inset:0;background:#0009;z-index:100;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modalBox{background:#fff;max-width:760px;width:100%;max-height:92vh;overflow:auto;border-radius:24px;padding:25px;box-shadow:0 30px 90px #0004}.loginBox{max-width:430px;text-align:center}.loginBrand{width:68px;height:68px;border-radius:20px;margin:0 auto 16px;background:linear-gradient(135deg,#d9bb72,#b68e3e);display:grid;place-items:center;color:#fff;font-size:22px;font-weight:800}.googleBtn{width:100%;padding:13px;border:1px solid #ddd;background:#fff;border-radius:12px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:10px}.googleIcon{width:20px;height:20px;display:block;flex:0 0 20px}.close{border:0;background:#eee;border-radius:50%;width:36px;height:36px}.modalTop{display:flex;justify-content:space-between;align-items:center}.profile{display:flex;align-items:center;gap:12px}.profile img{width:52px;height:52px;border-radius:50%}
-.installCard{margin-top:18px;padding:15px;border:1px solid #ead9ae;border-radius:15px;background:linear-gradient(135deg,#fffdf6,#f7f1df);text-align:left}.installRow{display:flex;align-items:center;gap:12px}.installLogo{width:48px;height:48px;flex:0 0 48px;border-radius:14px;background:linear-gradient(135deg,#d9bb72,#b68e3e);color:#fff;display:grid;place-items:center;font-weight:900}.installCopy{flex:1}.installCopy b{display:block}.installCopy small{display:block;color:#777;line-height:1.5;margin-top:2px}.installBtn{width:100%;margin-top:11px;padding:11px;border:0;border-radius:10px;background:#171717;color:#fff;font-weight:700}
-.dashboard{display:none;position:fixed;inset:0;z-index:90;background:#f6f5f1;overflow:auto}.dash{display:grid;grid-template-columns:245px 1fr;min-height:100vh}.side{background:#171717;color:#fff;padding:20px;position:sticky;top:0;height:100vh}.side h2{color:var(--gold2);line-height:1.15}.side button{display:block;width:100%;border:0;background:transparent;color:#ddd;text-align:left;padding:12px;border-radius:9px;margin:4px 0}.side button:hover,.side button.active{background:#ffffff12}.main{padding:28px;min-width:0}.dashTop{display:flex;justify-content:space-between;align-items:center;gap:12px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:18px 0}.stat{background:#fff;border:1px solid #e7e3db;border-radius:15px;padding:17px}.stat b{display:block;font-size:24px}.panel{background:#fff;border:1px solid #e7e3db;border-radius:15px;padding:18px;margin-bottom:15px}.table{width:100%;border-collapse:collapse}.table th,.table td{padding:10px;border-bottom:1px solid #eee;text-align:left;font-size:13px;white-space:nowrap}.tableWrap{overflow:auto}.adminForm{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.adminForm input,.adminForm select,.adminForm textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;background:#fff}.adminForm textarea{min-height:90px}.full{grid-column:1/-1}.toast{position:fixed;right:18px;bottom:18px;z-index:200;background:#171717;color:#fff;padding:12px 16px;border-radius:12px;box-shadow:var(--shadow)}
-.analyticsGrid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.rankItem{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:9px;padding:10px;border:1px solid #eee;border-radius:11px;margin-bottom:8px}.rankNum{width:30px;height:30px;border-radius:9px;background:#f5ecd6;display:grid;place-items:center;font-weight:800;color:#8b6b2e}.bar{height:8px;background:#eee;border-radius:99px;overflow:hidden;margin-top:7px}.barFill{height:100%;background:linear-gradient(90deg,#c8a45a,#ead39a);border-radius:99px}.insight{border-left:4px solid var(--gold);background:#fffaf0;padding:13px 15px;border-radius:10px;margin:8px 0}.rangeBar{display:flex;gap:7px;flex-wrap:wrap}.rangeBar button{border:1px solid var(--line);background:#fff;border-radius:9px;padding:8px 11px}.rangeBar button.active{background:#171717;color:#fff}.ownerAiBox{background:linear-gradient(135deg,#fffdf6,#f7f1df);border:1px solid #ead9ae;border-radius:16px;padding:18px}
-.ownerMobileMenu{display:none}.ownerMobileHead{display:none}.ownerMobileGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.ownerMobileCard{border:1px solid #e7e3db;background:#fff;border-radius:16px;padding:17px 12px;text-align:left;min-height:92px;box-shadow:0 4px 15px #17171708}.ownerMobileCard b{display:block;margin-top:8px}.ownerMobileCard small{color:#777}.ownerBack{margin-bottom:12px}.uploadPreview{width:100%;max-height:240px;object-fit:cover;border-radius:12px;margin-top:8px}.modelThumb{width:100%;height:230px;border-radius:12px;overflow:hidden;background:#111}.modelThumb model-viewer{width:100%;height:100%}.mediaPlayer{width:100%;max-height:420px;border-radius:14px;background:#000}.projectMedia{width:100%;border-radius:14px;overflow:hidden;background:#111}.projectMedia video{width:100%;max-height:360px;display:block}.projectMedia model-viewer{width:100%;height:330px}.miniGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.miniCard{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}.miniCard img{width:100%;aspect-ratio:1/1;object-fit:cover}.miniCard .miniBody{padding:9px}.statusBadge{display:inline-block;padding:4px 8px;border-radius:99px;background:#f5ecd6;font-size:11px}.detailGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.detailBox{padding:11px;border:1px solid #eee;border-radius:10px}.photoInput{padding:9px;background:#fafafa}.notice{padding:11px;border-radius:10px;background:#f7f1df;border:1px solid #ead9ae;margin:8px 0}
-.ai{position:fixed;right:18px;bottom:18px;z-index:60}.aiBtn{width:56px;height:56px;border:0;border-radius:50%;background:linear-gradient(135deg,#d9bb72,#b68e3e);color:#fff;font-size:22px;box-shadow:var(--shadow)}.aiPanel{display:none;position:absolute;right:0;bottom:68px;width:350px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}.aiPanel.show{display:block}.aiHead{padding:14px;background:#171717;color:#fff;display:flex;justify-content:space-between;align-items:center}.aiMessages{height:300px;overflow:auto;padding:12px;background:#faf9f6}.msg{max-width:85%;padding:9px 11px;border-radius:12px;margin:7px 0;font-size:13px}.bot{background:#fff;border:1px solid var(--line)}.me{background:#171717;color:#fff;margin-left:auto}.aiInput{display:flex;padding:9px;gap:7px;border-top:1px solid var(--line)}.aiInput input{flex:1;padding:9px;border:1px solid var(--line);border-radius:9px}.aiLogo{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#d9bb72,#b68e3e);display:inline-grid;place-items:center;color:#fff;font-weight:900;margin-right:8px}.aiStatus{font-size:10px;margin-top:3px;color:#8fd3b0}
-.servicesGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.serviceCard,.quoteCard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 5px 18px #17171708}.serviceIcon{width:42px;height:42px;border-radius:12px;background:#f5ecd6;color:#8b6b2e;display:grid;place-items:center;font-weight:800;margin-bottom:13px}.serviceCard h3{margin:0 0 7px}.testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.quoteCard p{font-size:15px;line-height:1.7}.stars{letter-spacing:2px;color:var(--gold);font-size:18px}
-@media(max-width:900px){.servicesGrid{grid-template-columns:repeat(2,1fr)}.testimonials{grid-template-columns:1fr}.heroGrid{grid-template-columns:1fr}.cats,.grid{grid-template-columns:repeat(2,1fr)}.formgrid,.steps{grid-template-columns:repeat(2,1fr)}.projects{grid-template-columns:1fr}.contact,.footerGrid{grid-template-columns:1fr}.dash{grid-template-columns:1fr}.side{position:static;height:auto}.stats{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){
-.wrap{padding:0 13px}.nav{min-height:62px}.brand{font-size:13px}.navlinks{gap:2px}.navlinks>button:not(.gold):not(#accountBtn):not(#ownerBtn){display:none}.navlinks .gold{font-size:11px;padding:8px 9px}.hero{padding:45px 0}.heroGrid{gap:22px}.hero h1{font-size:39px}.heroImg{height:270px}.section{padding:45px 0}.head h2{font-size:26px}.cats,.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.cat{min-height:145px}.card img{aspect-ratio:1/1}.formgrid,.adminForm{grid-template-columns:1fr}.calc{padding:19px;border-radius:18px}.total{font-size:24px}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.stat{padding:13px}.stat b{font-size:19px}.side{display:none}.main{padding:12px}.dashTop h1{font-size:21px}.analyticsGrid{grid-template-columns:1fr}.table th,.table td{font-size:12px;padding:8px}.ai{right:12px;bottom:12px}.aiBtn{width:52px;height:52px}.aiPanel{right:-2px;bottom:62px;width:calc(100vw - 24px);max-width:370px}.aiMessages{height:280px}.searchbar{flex-direction:column}.footerGrid{gap:12px}.ownerMobileMenu{display:block}.ownerMobileHead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}.ownerMobileGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.detailGrid{grid-template-columns:1fr}.miniGrid{grid-template-columns:repeat(2,1fr)}.modal{padding:8px}.modalBox{border-radius:18px;padding:16px;max-height:95vh}.heroActions .outline,.heroActions .gold{flex:1}.project .ba img{height:135px}
-}
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            400: '#FACC15',
+                            500: '#EAB308',
+                            600: '#D97706',
+                            700: '#B45309',
+                        },
+                        darknavy: '#0B1120',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- FontAwesome & 3D Model Viewer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 
-/* SALLU OWNER AI */
-.salluFab{position:fixed;right:18px;bottom:88px;z-index:75;width:62px;height:62px;border:0;border-radius:50%;background:linear-gradient(135deg,#d9bb72,#b68e3e);color:#fff;font-weight:900;font-size:15px;box-shadow:0 12px 35px #17171730}
-.salluFab small{display:block;font-size:8px;letter-spacing:1px}
-.salluPanel{display:none;position:fixed;right:18px;bottom:160px;z-index:120;width:min(430px,calc(100vw - 24px));background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 30px 90px #0004;overflow:hidden}
-.salluPanel.show{display:block}
-.salluHead{padding:14px 16px;background:linear-gradient(135deg,#171717,#2a2a2a);color:#fff;display:flex;align-items:center;justify-content:space-between}
-.salluIdentity{display:flex;align-items:center;gap:10px}
-.salluAvatar{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#ead39a,#b68e3e);display:grid;place-items:center;font-weight:900;color:#fff}
-.salluHead small{display:block;color:#bdbdbd}
-.salluState{font-size:11px;color:#ead39a}
-.salluMessages{height:300px;overflow:auto;padding:12px;background:#faf9f6}
-.salluMsg{max-width:88%;padding:10px 12px;border-radius:13px;margin:7px 0;font-size:13px;line-height:1.55;white-space:pre-wrap}
-.salluMsg.bot{background:#fff;border:1px solid var(--line)}
-.salluMsg.me{background:#171717;color:#fff;margin-left:auto}
-.salluControls{display:grid;grid-template-columns:1fr auto auto;gap:7px;padding:10px;border-top:1px solid var(--line)}
-.salluControls input{min-width:0;padding:10px;border:1px solid var(--line);border-radius:10px}
-.salluMic{border:0;border-radius:10px;padding:0 14px;background:#171717;color:#fff;font-weight:800}
-.salluMic.listening{background:#b42318}
-.salluSend{border:0;border-radius:10px;padding:0 14px;background:linear-gradient(135deg,#d9bb72,#b68e3e);color:#fff;font-weight:800}
-.salluConfirm{margin:0 12px 12px;padding:12px;border:1px solid #ead9ae;border-radius:12px;background:#fffaf0}
-.salluConfirm button{margin-right:7px}
-.salluHint{padding:0 12px 10px;color:#777;font-size:11px}
-@media(max-width:560px){
- .salluFab{right:12px;bottom:76px;width:56px;height:56px}
- .salluPanel{right:12px;bottom:140px}
- .salluMessages{height:280px}
-}
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-storage-compat.js"></script>
 
-
-/* ===== STEP 1-28 MASTER UPGRADE ===== */
-.kgMasterSection{padding:62px 0}.kgFeatureGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.kgFeature{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 5px 18px #17171708}.kgFeature b{display:block;margin:7px 0}.kgFeature small{color:#777;line-height:1.5}.kgGoldIcon{width:42px;height:42px;border-radius:12px;background:#f5ecd6;color:#8b6b2e;display:grid;place-items:center;font-weight:800}.kgModalWide{max-width:1050px}.kgTwo{display:grid;grid-template-columns:1fr 1fr;gap:15px}.kgThree{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.kgForm{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.kgForm input,.kgForm select,.kgForm textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px}.kgForm textarea{min-height:100px}.kgFull{grid-column:1/-1}.kgTimeline{display:flex;gap:8px;flex-wrap:wrap}.kgStep{padding:9px 11px;border:1px solid var(--line);border-radius:99px;background:#fff;font-size:12px}.kgStep.active{background:#171717;color:#fff}.kgVisualizer{position:relative;background:#111;border-radius:18px;min-height:430px;overflow:hidden}.kgVisualizer img,.kgVisualizer video{width:100%;height:430px;object-fit:cover;display:block}.kgOverlay{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:45%;max-height:55%;object-fit:contain;opacity:.65;mix-blend-mode:normal;cursor:move;border:2px dashed #ead39a;display:none}.kgOverlay.show{display:block}.kgVizControls{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}.kgVizControls input{width:100%}.kgARStatus{padding:10px;border-radius:10px;background:#fffaf0;border:1px solid #ead9ae;margin-top:10px}.kgBadge{display:inline-block;padding:4px 8px;border-radius:99px;background:#f5ecd6;color:#8b6b2e;font-size:11px}.kgMasterNav{margin-top:18px;border-top:1px solid #333;padding-top:14px}.kgMasterNav button{font-size:12px}.kgSalluCard{background:linear-gradient(135deg,#fffdf6,#f7f1df);border:1px solid #ead9ae;border-radius:18px;padding:18px}.kgCommandExamples{display:flex;flex-wrap:wrap;gap:7px}.kgCommandExamples button{border:1px solid #ead9ae;background:#fffaf0;border-radius:99px;padding:7px 10px;font-size:11px}
-@media(max-width:900px){.kgFeatureGrid{grid-template-columns:repeat(2,1fr)}.kgThree{grid-template-columns:1fr 1fr}.kgTwo{grid-template-columns:1fr}}
-@media(max-width:560px){.kgFeatureGrid,.kgThree,.kgTwo,.kgForm{grid-template-columns:1fr}.kgVisualizer,.kgVisualizer img,.kgVisualizer video{min-height:320px;height:320px}.kgVizControls{grid-template-columns:1fr 1fr}}
-
-.kg3dWrap{position:relative;overflow:hidden;border-radius:16px;background:#111;aspect-ratio:16/10}.kg3dWrap img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.01);transition:transform .5s ease}.card:hover .kg3dWrap img{transform:scale(1.06)}.kg3dBadge{position:absolute;top:10px;left:10px;padding:6px 10px;border:1px solid rgba(255,255,255,.35);border-radius:999px;background:rgba(20,20,20,.78);color:#f2d48a;font-size:10px;font-weight:800;letter-spacing:.12em;backdrop-filter:blur(8px)}
-</style>
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased selection:bg-gold-500 selection:text-white">
 
-<header>
-<div class="wrap nav">
- <div class="brand" id="siteBusinessName">KHANS <span>GYPSUMCRAFT PK</span></div>
- <div class="navlinks">
-  <button onclick="go('gallery')">Designs</button>
-  <button onclick="go('calculator')">Calculator</button>
-  <button onclick="go('contact')">Contact</button>
-  <button id="loginBtn" class="gold" onclick="login()">Continue with Google</button>
-  <button id="ownerBtn" class="outline hidden" onclick="openOwner()">Owner Center</button>
-  <button id="accountBtn" class="outline hidden" onclick="openAccount()">Account</button>
- </div>
-</div>
-</header>
-
-<main id="app">
-<section class="hero"><div class="wrap heroGrid"><div><div class="eyebrow">WHITE GOLD • PREMIUM INTERIORS</div><h1 id="heroTitle">Modern ceilings.<br><span>Beautiful spaces.</span></h1><p id="heroText">Explore premium false ceiling, TV wall and interior designs. Select a design, add your room details, estimate your project and send your quotation to WhatsApp.</p><div class="heroActions"><button class="gold" onclick="go('gallery')">Explore Designs</button><button class="outline" onclick="go('calculator')">Get a Quote</button><button class="outline" onclick="openAdvancedGallery()">Advanced Gallery</button></div></div><div class="heroImg"></div></div></section>
-
-<section class="section" id="gallery"><div class="wrap"><div class="head"><div class="eyebrow">DESIGN STUDIO</div><h2 id="galleryTitle">Explore Our Designs</h2><div class="muted" id="gallerySub">Browse designs and owner-added designs from Firebase.</div></div><div class="searchbar"><input id="designSearch" placeholder="Search designs..." oninput="renderCurrentGallery()"></div><div id="pills" class="pillbar"></div><div id="cats" class="cats"></div><div id="designArea" class="hidden"><button class="outline" onclick="categoriesView()">← Categories</button><h3 id="catTitle"></h3><div id="designs" class="grid"></div></div></div></section>
-
-<section class="section" id="services"><div class="wrap"><div class="head"><div class="eyebrow">OUR SERVICES</div><h2 id="servicesTitle">Professional Interior Solutions</h2></div><div class="servicesGrid"><div class="serviceCard"><div class="serviceIcon">01</div><h3>False Ceilings</h3><p class="muted">Modern layered, LED and luxury gypsum ceilings.</p></div><div class="serviceCard"><div class="serviceIcon">02</div><h3>TV Walls</h3><p class="muted">Custom TV wall, panel and feature-wall concepts.</p></div><div class="serviceCard"><div class="serviceIcon">03</div><h3>Wall Panels</h3><p class="muted">Wooden, geometric and decorative wall treatments.</p></div><div class="serviceCard"><div class="serviceIcon">04</div><h3>Custom Designs</h3><p class="muted">A design tailored to your room and requirements.</p></div></div></div></section>
-
-<section class="section" id="calculator"><div class="wrap"><div class="calc"><div class="eyebrow">SMART QUOTE</div><h2 id="calcTitle">Estimate Your Project</h2><div class="formgrid"><div class="field"><label>Length (ft)</label><input id="len" type="number" min="0" value="12" oninput="calculate()"></div><div class="field"><label>Width (ft)</label><input id="wid" type="number" min="0" value="12" oninput="calculate()"></div><div class="field"><label>Project Type</label><select id="rate" onchange="calculate()"><option value="180">False Ceiling — PKR 180/sq ft</option><option value="220">TV Wall — PKR 220/sq ft</option><option value="260">Luxury Ceiling — PKR 260/sq ft</option></select></div><div class="field"><label>Owner Discount</label><input id="discount" type="number" min="0" max="100" value="0" oninput="calculate()" disabled><small style="color:#aaa">Owner applies discount after reviewing the quote.</small></div></div><div id="total" class="total"></div><div class="muted" style="color:#aaa">Estimated quote only; final pricing depends on site measurement, materials and customization.</div><div class="heroActions"><button class="gold" onclick="saveQuote()">Save Quotation</button><button class="outline" onclick="placeOrder()">Place Order</button><button class="outline" onclick="quoteWA()">WhatsApp Quote</button></div></div></div></section>
-
-<section class="section"><div class="wrap"><div class="head"><div class="eyebrow">SIMPLE PROCESS</div><h2>How It Works</h2></div><div class="steps"><div class="box"><div class="num">01</div><h3>Choose Design</h3><p class="muted">Browse designs and select your favourite.</p></div><div class="box"><div class="num">02</div><h3>Share Measurements</h3><p class="muted">Add your room measurements and customer details.</p></div><div class="box"><div class="num">03</div><h3>Get Quotation</h3><p class="muted">Save an estimated quotation and request confirmation.</p></div><div class="box"><div class="num">04</div><h3>Complete Project</h3><p class="muted">Track your order from confirmation to completion.</p></div></div></div></section>
-
-<section class="section"><div class="wrap"><div class="head"><div class="eyebrow">OUR WORK</div><h2 id="projectsTitle">Recent Projects</h2></div><div id="projects" class="projects"></div></div></section>
-
-<section class="section"><div class="wrap"><div class="head"><div class="eyebrow">CUSTOMER FEEDBACK</div><h2>What Customers Say</h2></div><div id="testimonials" class="testimonials"></div></div></section>
-
-<section class="section" id="contact"><div class="wrap"><div class="head"><div class="eyebrow">GET IN TOUCH</div><h2>Let’s Build Your Space</h2></div><div class="contact"><div class="contactCard"><h3>KHANS GYPSUMCRAFT PK</h3><p class="muted">Premium gypsum, false ceiling, TV wall and interior design solutions.</p><button class="gold" onclick="openWhatsApp()">Chat on WhatsApp</button></div><div class="contactCard"><h3>Business Contact</h3><p class="muted">WhatsApp: +92 313 9186430<br>Email: opsalman1919@gmail.com<br>Owner: Salman Khan</p></div></div></div></section>
-
-<section class="kgMasterSection" id="masterFeatures"><div class="wrap">
-<div class="head"><div class="eyebrow">KHANS 1–28 MASTER EXPERIENCE</div><h2>Design • Plan • Visualize • Order</h2><p class="muted">Room Planner, appointments, project tracking, saved designs, advanced gallery and visualizer — all connected to your KHANS workflow.</p></div>
-<div class="kgFeatureGrid">
-<div class="kgFeature"><div class="kgGoldIcon">📐</div><b>Room Planner</b><small>Room measurements, area, room type, design and project notes.</small><button class="outline" style="margin-top:10px;width:100%" onclick="openRoomPlanner()">Open Planner</button></div>
-<div class="kgFeature"><div class="kgGoldIcon">📷</div><b>Try on Photo</b><small>Upload a room photo and preview a selected design as an overlay.</small><button class="outline" style="margin-top:10px;width:100%" onclick="openVisualizer('photo')">Try on Photo</button></div>
-<div class="kgFeature"><div class="kgGoldIcon">📱</div><b>Live View</b><small>Camera-based browser prototype for wall/ceiling preview. Advanced surface tracking can be added later.</small><button class="outline" style="margin-top:10px;width:100%" onclick="openVisualizer('camera')">Live View</button></div>
-<div class="kgFeature"><div class="kgGoldIcon">📅</div><b>Free Site Visit</b><small>Send location, project type, area, preferred date/time and notes.</small><button class="gold" style="margin-top:10px;width:100%" onclick="openSiteVisit()">Request Visit</button></div>
-</div></div></section>
-</main>
-
-<footer><div class="wrap footerGrid"><div><b>KHANS GYPSUMCRAFT PK</b><p class="muted" style="color:#aaa">White Gold • Premium Gypsum & Interior Design</p></div><div><b>Explore</b><a href="#gallery">Designs</a><a href="#services">Services</a><a href="#calculator">Calculator</a><a href="#contact">Contact</a></div><div><b>Business</b><a href="mailto:opsalman1919@gmail.com">Email</a><a href="https://wa.me/923139186430" target="_blank" rel="noopener">WhatsApp</a></div></div></footer>
-
-<div id="loginModal" class="modal"><div class="modalBox loginBox"><div class="loginBrand">KG</div><h2>Welcome to KHANS GYPSUMCRAFT PK</h2><p class="muted">Sign in with Google to continue.</p><button class="googleBtn" onclick="login()"><svg class="googleIcon" viewBox="0 0 24 24"><path fill="#4285F4" d="M21.35 12.23c0-.79-.07-1.55-.23-2.27H12v4.3h5.24a4.48 4.48 0 0 1-1.95 2.94v2.44h3.15c1.84-1.69 2.91-4.18 2.91-7.41z"/><path fill="#34A853" d="M12 21.8c2.63 0 4.84-.87 6.45-2.36l-3.15-2.44c-.87.58-1.98.92-3.3.92-2.54 0-4.69-1.72-5.46-4.03H3.28v2.52A9.74 9.74 0 0 0 12 21.8z"/><path fill="#FBBC05" d="M6.54 13.89A5.86 5.86 0 0 1 6.23 12c0-.66.11-1.3.31-1.89V7.59H3.28A9.78 9.78 0 0 0 2.2 12c0 1.58.38 3.08 1.08 4.41l3.26-2.52z"/><path fill="#EA4335" d="M12 6.08c1.43 0 2.71.49 3.72 1.45l2.79-2.79C16.83 3.18 14.63 2.2 12 2.2a9.74 9.74 0 0 0-8.72 5.39l3.26 2.52C7.31 7.8 9.46 6.08 12 6.08z"/></svg>Continue with Google</button><div class="installCard"><div class="installRow"><div class="installLogo">KG</div><div class="installCopy"><b>Install My App</b><small>Install KHANS GYPSUMCRAFT PK on your mobile.</small></div></div><button id="installAppBtn" class="installBtn" onclick="installApp()">Install My App</button></div></div></div>
-
-<div id="designModal" class="modal"><div class="modalBox"><div class="modalTop"><h2 id="dmTitle">Design</h2><button class="close" onclick="closeM('designModal')">×</button></div><img id="dmImg" style="width:100%;max-height:480px;object-fit:cover;border-radius:15px"><p id="dmInfo" class="muted"></p><div class="panel"><div id="selectionPreview"></div></div><div class="actions"><button class="gold" onclick="selectDesign()">Select Design</button><button class="outline" onclick="designWA()">WhatsApp Quote</button></div></div></div>
-
-<div id="accountModal" class="modal"><div class="modalBox"><div class="modalTop"><h2>My Account</h2><button class="close" onclick="closeM('accountModal')">×</button></div><div id="accountInfo"></div><div class="panel"><h3>My Details</h3><div class="adminForm"><input id="custPhone" placeholder="Phone / WhatsApp"><input id="custAddress" placeholder="Address"><button class="gold" onclick="saveProfile()">Save Details</button></div></div><div class="panel"><h3>My Saved Designs</h3><div id="mySelections" class="miniGrid"></div></div><div class="panel"><h3>My Orders</h3><div id="myOrders" class="tableWrap"></div></div><div class="panel"><h3>My Quotations</h3><div id="myQuotes" class="tableWrap"></div></div><button class="danger" onclick="logout()">Sign Out</button></div></div>
-
-
-<div id="roomPlannerModal" class="modal"><div class="modalBox kgModalWide"><div class="modalTop"><h2>Room Planner</h2><button class="close" onclick="closeM('roomPlannerModal')">×</button></div><div class="kgForm"><input id="rpRoomType" placeholder="Room type e.g. Bedroom"><input id="rpLocation" placeholder="Location"><input id="rpLength" type="number" min="0" placeholder="Length (ft)"><input id="rpWidth" type="number" min="0" placeholder="Width (ft)"><input id="rpHeight" type="number" min="0" placeholder="Height (ft)"><input id="rpBudget" type="number" min="0" placeholder="Budget (PKR)"><select id="rpMaterial"><option>Gypsum Board</option><option>Gypsum + Wooden</option><option>Wooden</option><option>Custom</option></select><input id="rpStyle" placeholder="Style preference"><textarea id="rpNotes" class="kgFull" placeholder="Project notes"></textarea></div><div class="panel"><b id="rpArea">Area: 0 sq ft</b><p class="muted">Planner estimate is preliminary; final measurement is confirmed on site.</p></div><div class="heroActions"><button class="gold" onclick="saveRoomPlan()">Save Room Plan</button><button class="outline" onclick="openVisualizer('photo')">Try Design on Photo</button></div></div></div>
-<div id="siteVisitModal" class="modal"><div class="modalBox"><div class="modalTop"><h2>Free Site Visit</h2><button class="close" onclick="closeM('siteVisitModal')">×</button></div><div class="kgForm"><input id="svName" placeholder="Your name"><input id="svPhone" placeholder="Phone / WhatsApp"><input id="svAddress" class="kgFull" placeholder="Full address / location"><input id="svProject" placeholder="Project type"><input id="svArea" type="number" placeholder="Approx. area sq ft"><input id="svDate" type="date"><input id="svTime" type="time"><textarea id="svNotes" class="kgFull" placeholder="Notes"></textarea></div><button class="gold" style="width:100%;margin-top:12px" onclick="submitSiteVisit()">Send Site Visit Request</button></div></div>
-<div id="visualizerModal" class="modal"><div class="modalBox kgModalWide"><div class="modalTop"><h2>Room Visualizer — Live View / Try on Photo</h2><button class="close" onclick="closeVisualizer()">×</button></div><div class="kgVisualizer" id="kgVizStage"><video id="kgCamera" autoplay playsinline muted style="display:none"></video><img id="kgPhoto" style="display:none" alt="Room preview"><img id="kgOverlay" class="kgOverlay" alt="Selected design overlay"></div><div class="kgARStatus" id="kgARStatus">Select a design first. Photo mode supports a basic overlay; Live View uses the browser camera and is a prototype, not true surface-tracked AR.</div><div class="kgForm" style="margin-top:10px"><input id="kgPhotoInput" class="kgFull" type="file" accept="image/*" onchange="loadVizPhoto(event)"><label>Overlay opacity <input id="kgOpacity" type="range" min="10" max="100" value="65" oninput="updateViz()"></label><label>Overlay width <input id="kgWidth" type="range" min="10" max="90" value="45" oninput="updateViz()"></label></div><div class="heroActions"><button class="outline" onclick="moveViz(-2,0)">←</button><button class="outline" onclick="moveViz(2,0)">→</button><button class="outline" onclick="moveViz(0,-2)">↑</button><button class="outline" onclick="moveViz(0,2)">↓</button><button class="gold" onclick="saveVisualizerPreview()">Save Preview</button><button class="outline" onclick="visualizerQuote()">Get Quote</button></div></div></div>
-<div id="advancedGalleryModal" class="modal"><div class="modalBox kgModalWide"><div class="modalTop"><h2>Advanced Design Gallery</h2><button class="close" onclick="closeM('advancedGalleryModal')">×</button></div><div id="advancedGallery"></div></div></div>
-<div id="dashboard" class="dashboard">
-<div class="dash">
-<aside class="side">
-<h2>KHANS<br>OWNER CENTER</h2>
-<button class="active" onclick="tab('overview',this)">▦ Overview</button>
-<button onclick="tab('analytics',this)">📊 Analytics & AI</button>
-<button onclick="tab('customers',this)">♙ Customers</button>
-<button onclick="tab('orders',this)">▣ Orders</button>
-<button onclick="tab('quotations',this)">▤ Quotations</button>
-<button onclick="tab('saved',this)">♡ Saved Designs</button>
-<button onclick="tab('designs',this)">🎨 Gallery Manager</button>
-<button onclick="tab('projects',this)">🏗 Projects</button>
-<button onclick="tab('testimonials',this)">⭐ Testimonials</button>
-<button onclick="tab('notifications',this)">🔔 Notifications</button>
-<button onclick="tab('settings',this)">⚙ Website Editor</button>
-<div class="kgMasterNav"><small style="color:#aaa">MASTER TOOLS</small><button onclick="masterTab('visits',this)">📍 Site Visits</button><button onclick="masterTab('appointments',this)">📅 Appointments</button><button onclick="masterTab('offers',this)">🏷 Offers</button><button onclick="masterTab('seo',this)">🌐 SEO & Google</button><button onclick="masterTab('documents',this)">🧾 Documents</button><button onclick="masterTab('visualizer',this)">📷 Visualizer</button><button onclick="masterTab('sallu',this)">🎙 Sallu</button></div><button onclick="closeOwner()" style="margin-top:25px">← Website</button>
-</aside>
-
-<div class="main">
-<div class="ownerMobileMenu" id="ownerMobileMenu">
-<div class="ownerMobileHead"><div><b>👑 OWNER CENTER</b><small class="muted" style="display:block">Mobile Control Center</small></div><button class="outline" onclick="closeOwner()">← Website</button></div>
-<div class="ownerMobileGrid">
-<button class="ownerMobileCard" onclick="mobileTab('overview')">📊<b>Dashboard</b><small>Business overview</small></button>
-<button class="ownerMobileCard" onclick="mobileTab('analytics')">📈<b>Analytics & AI</b><small>Business insights</small></button>
-<button class="ownerMobileCard" onclick="mobileTab('orders')">📦<b>Orders</b><small>Manage status</small></button>
-<button class="ownerMobileCard" onclick="mobileTab('quotations')">📄<b>Quotations</b><small>Quotes & totals</small></button>
-<button class="ownerMobileCard" onclick="mobileTab('designs')">🎨<b>Gallery</b><small>Add/edit designs</small></button>
-<button class="ownerMobileCard" onclick="mobileTab('saved')">❤️<b>Saved Designs</b><small>Customer interest</small></button>
-<button class="ownerMobileCard" onclick="mobileTab('customers')">👥<b>Customers</b><small>Customer details</small></button>
-<button class="ownerMobileCard" onclick="mobileTab('projects')">🏗<b>Projects</b><small>Before/after</small></button>
-<button class="ownerMobileCard" onclick="mobileTab('testimonials')">⭐<b>Testimonials</b><small>Customer reviews</small></button>
-<button class="ownerMobileCard" onclick="mobileTab('notifications')">🔔<b>Notifications</b><small>Owner notices</small></button>
-<button class="ownerMobileCard" onclick="mobileTab('settings')">⚙<b>Website Editor</b><small>Edit live website</small></button>
-</div>
-</div>
-<div class="dashTop"><h1 id="dashTitle">Business Overview</h1><button class="outline" onclick="mobileHome()">☰ Menu</button></div>
-<div id="dashContent"></div>
-</div>
-</div>
-</div>
-
-<div class="ai"><div id="aiPanel" class="aiPanel"><div class="aiHead"><div style="display:flex;align-items:center"><span class="aiLogo">KG</span><div><b>KG AI Chat</b><div style="font-size:10px;color:#aaa">Website AI Assistant</div></div></div><div id="aiStatus" class="aiStatus">Ready</div></div><div id="aiMessages" class="aiMessages"></div><div class="aiInput"><input id="aiText" placeholder="Ask about designs, prices or services..." onkeydown="if(event.key==='Enter')sendAI()"><button class="gold" onclick="sendAI()">Send</button></div></div><button class="aiBtn" onclick="toggleAI()">✦</button></div>
-<div id="toast" class="toast hidden"></div>
-
-<!-- SALLU: OWNER FEMALE VOICE ASSISTANT -->
-<div id="salluPanel" class="salluPanel" aria-label="Sallu AI Assistant">
-  <div class="salluHead">
-    <div class="salluIdentity">
-      <div class="salluAvatar">S</div>
-      <div><b>Sallu</b><small>Female Voice • Boss Assistant</small></div>
+    <!-- Step 19: Top Contact & Navigation Bar -->
+    <div class="bg-darknavy text-amber-300 text-xs py-2 px-4 text-center border-b border-gold-600/30 flex justify-between items-center">
+        <span><i class="fa-solid fa-location-dot text-gold-500 mr-1"></i> Serving Swat, Mingora & Surrounding Areas</span>
+        <div class="flex items-center space-x-4">
+            <a href="tel:+923000000000" class="hover:text-white"><i class="fa-solid fa-phone mr-1"></i> Call Now</a>
+            <span id="sallu-status-badge" class="bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-full text-[10px] hidden font-semibold">
+                🎙️ Sallu AI: Active
+            </span>
+        </div>
     </div>
-    <div id="salluState" class="salluState">Ready</div>
-  </div>
-  <div id="salluMessages" class="salluMessages"></div>
-  <div id="salluConfirm" class="salluConfirm hidden"></div>
-  <div class="salluControls">
-    <input id="salluText" placeholder="Sallu, new orders dikhao..." autocomplete="off">
-    <button id="salluMic" class="salluMic" onclick="salluListen()" title="Speak">🎙️</button>
-    <button class="salluSend" onclick="salluSendText()">Send</button>
-  </div>
-  <div class="salluHint">Boss ke liye voice/text commands. Delete/publish/major changes se pehle confirmation.</div>
-</div>
-<button id="salluFab" class="salluFab hidden" onclick="toggleSallu()" aria-label="Open Sallu">
-  SALLU<small>BOSS AI</small>
-</button>
 
+    <!-- Step 2: Main Header Navbar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-md border-b border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="showSection('home')">
+                    <div class="w-12 h-12 bg-darknavy rounded-xl flex items-center justify-center border-2 border-gold-500 shadow-lg">
+                        <span class="text-gold-500 font-black text-xl tracking-wider">KG</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-extrabold tracking-tight text-gray-900 leading-none">KHANS GYPSUMCRAFT <span class="text-gold-600">PK</span></h1>
+                        <p class="text-[10px] text-gray-500 tracking-widest uppercase font-medium">Luxury Ceiling & Interior Solutions</p>
+                    </div>
+                </div>
 
-<script type="module">
-import{initializeApp}from"https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-import{getAuth,onAuthStateChanged,GoogleAuthProvider,signInWithPopup,signOut}from"https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
-import{getDatabase,ref,set,get,push,update,remove,onValue}from"https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
-import{getStorage,ref as storageRef,uploadBytes,getDownloadURL,deleteObject}from"https://www.gstatic.com/firebasejs/12.19.0/firebase-storage.js";
+                <nav class="hidden md:flex items-center space-x-6 text-xs font-bold text-gray-700">
+                    <a href="#home" onclick="showSection('home')" class="hover:text-gold-600 transition">Home</a>
+                    <a href="#designs" onclick="showSection('design-studio')" class="hover:text-gold-600 transition">Design Studio</a>
+                    <a href="#planner" onclick="showSection('room-planner')" class="hover:text-gold-600 transition">Room Planner</a>
+                    <a href="#calculator" onclick="showSection('calculator')" class="hover:text-gold-600 transition">Calculator</a>
+                    <a href="#portfolio" onclick="showSection('portfolio')" class="hover:text-gold-600 transition">Projects</a>
+                    <a href="#visit" onclick="showSection('site-visit')" class="hover:text-gold-600 transition">Site Visit</a>
+                </nav>
 
-const firebaseConfig={
-apiKey:"AIzaSyAOZQKkqeDHC81KW3aQSHGVuW4ckncmMo8",
-authDomain:"khan-sgypsumcraptpk.firebaseapp.com",
-databaseURL:"https://khan-sgypsumcraptpk-default-rtdb.firebaseio.com",
-projectId:"khan-sgypsumcraptpk",
-storageBucket:"khan-sgypsumcraptpk.firebasestorage.app",
-messagingSenderId:"82454361678",
-appId:"1:82454361678:web:ec6f56190fe6cc68fe751f",
-measurementId:"G-E9SS7KCTM7"};
+                <div class="flex items-center space-x-3">
+                    <button id="customer-account-btn" onclick="showSection('customer-account')" class="hidden bg-gray-100 text-gray-800 hover:bg-gold-500 hover:text-darknavy px-3 py-2 rounded-lg text-xs font-bold transition">
+                        <i class="fa-solid fa-user-gear mr-1"></i> My Account
+                    </button>
+                    <button id="owner-center-btn" onclick="showSection('owner-center')" class="hidden bg-darknavy text-gold-400 border border-gold-500/50 hover:bg-gold-500 hover:text-darknavy px-3 py-2 rounded-lg text-xs font-bold transition flex items-center gap-1">
+                        <i class="fa-solid fa-crown"></i> Owner Center
+                    </button>
+                    <button id="login-btn" onclick="openLoginModal()" class="bg-gold-500 hover:bg-gold-600 text-darknavy px-4 py-2.5 rounded-lg text-xs font-bold transition shadow-md shadow-gold-500/20">
+                        <i class="fa-solid fa-user mr-1"></i> Login
+                    </button>
+                    <button id="logout-btn" onclick="handleLogout()" class="hidden text-red-500 hover:text-red-700 text-xs font-bold p-1">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
 
-const OWNER_UID="0opYFH8lt7go4jDCaQhgI4EIqRq2";
-const OWNER_ID="ADMIN-SALMAN-1919";
-const OWNER_EMAIL="opsalman1919@gmail.com";
-const WHATSAPP="923139186430";
+    <main id="main-content">
 
-const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getDatabase(app),storage=getStorage(app);
-const provider=new GoogleAuthProvider();provider.setCustomParameters({prompt:"select_account"});
-let user=null,current=null,currentCat="Bedroom",selectedCategory="All",customDesigns={},analyticsRange=30;
-const cats=[
-["Wall Design","https://images.unsplash.com/photo-1600210492486-724fe5c67fb0"],["Bedroom","https://images.unsplash.com/photo-1618221195710-dd6b41faaea6"],["TV Lounge","https://images.unsplash.com/photo-1618220179428-22790b461013"],["False Ceiling","https://images.unsplash.com/photo-1600607687920-4e2a09cf159d"],["Office","https://images.unsplash.com/photo-1497366754035-f200968a6e72"],["Kitchen","https://images.unsplash.com/photo-1600607688969-a5bfcd646154"],["3D Gypsum","https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"],["Geometric","https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea"],["Islamic Design","https://images.unsplash.com/photo-1600210492486-724fe5c67fb0"],["Wooden","https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3"],["Wooden + Gypsum","https://images.unsplash.com/photo-1600585154340-be6161a56a0c"]];
-const imgs=["1600607687920-4e2a09cf159d","1600210492486-724fe5c67fb0","1600566753190-17f0baa2a6c3","1600607687939-ce8a6c25118c","1600566753086-00f18fb6b3ea","1618220179428-22790b461013","1618221195710-dd6b41faaea6","1600585154340-be6161a56a0c","1600573472550-8090b5e0745e","1600607688969-a5bfcd646154","1600566753190-17f0baa2a6c3","1600607687939-ce8a6c25118c","1600210492486-724fe5c67fb0"];
-const img=id=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=900&q=82`;
-const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
-const money=n=>"PKR "+(+n||0).toLocaleString();
-function toast(m,err=false){let t=document.getElementById("toast");t.textContent=m;t.classList.remove("hidden");t.style.background=err?"#8f1d14":"#171717";clearTimeout(window.__toast);window.__toast=setTimeout(()=>t.classList.add("hidden"),3000)}
-function go(id){document.getElementById(id)?.scrollIntoView({behavior:"smooth"})}window.go=go;
-window.closeM=id=>document.getElementById(id).classList.remove("show");
-function showLogin(){if(!user)document.getElementById("loginModal").classList.add("show")}window.openLogin=showLogin;
+        <!-- ==================== STEP 2: HOME SECTION ==================== -->
+        <section id="section-home" class="space-y-12 py-8">
+            <div class="relative bg-darknavy rounded-3xl mx-4 sm:mx-8 p-8 md:p-16 overflow-hidden border border-gold-500/30 text-white shadow-2xl">
+                <div class="relative z-20 max-w-2xl space-y-6">
+                    <span class="inline-block px-3 py-1 bg-gold-500/20 border border-gold-500/50 text-gold-400 text-xs font-bold rounded-full">
+                        ✨ Swat's Premier Gypsum & Interior Craftsmen
+                    </span>
+                    <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight">
+                        Transform Your Ceiling With <span class="gold-gradient-text">Futuristic Gypsum Art</span>
+                    </h1>
+                    <p class="text-gray-300 text-sm md:text-base">
+                        Custom 3D Ceilings, TV Lounge Walls, Ambient Lighting, and Modern False Ceilings tailored for Homes & Luxury Villas.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <button onclick="showSection('design-studio')" class="bg-gold-500 hover:bg-gold-600 text-darknavy px-6 py-3 rounded-xl font-bold text-sm shadow-lg shadow-gold-500/30 transition">
+                            Explore 3D Designs
+                        </button>
+                        <button onclick="showSection('room-planner')" class="border border-gold-500 text-gold-400 hover:bg-gold-500 hover:text-darknavy px-6 py-3 rounded-xl font-bold text-sm transition">
+                            Start Room Planner
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-async function ensureUser(u){
-  user=u;
-  const loginBtn=document.getElementById("loginBtn");
-  const accountBtn=document.getElementById("accountBtn");
-  const ownerBtn=document.getElementById("ownerBtn");
-  document.getElementById("app")?.classList.remove("hidden");
-  if(loginBtn){
-    loginBtn.classList.remove("hidden");
-    loginBtn.style.display="inline-flex";
-    loginBtn.textContent=(u.displayName||"Account").split(" ")[0];
-  }
-  accountBtn?.classList.remove("hidden");
-  ownerBtn?.classList.toggle("hidden",u.uid!==OWNER_UID);
-  if(ownerBtn && u.uid===OWNER_UID)ownerBtn.textContent="Owner Center";
-  updateSalluVisibility();
-  try{
-    const old=await read("users/"+u.uid)||{};
-    await update(ref(db,"users/"+u.uid),{
-      uid:u.uid,
-      name:u.displayName||"",
-      email:u.email||"",
-      photoURL:u.photoURL||"",
-      phone:old.phone||"",
-      address:old.address||"",
-      lastLogin:Date.now(),
-      role:u.uid===OWNER_UID?"owner":"customer"
-    });
-  }catch(e){
-    console.warn("Customer profile sync failed; login remains active.",e);
-  }
-}
+            <!-- Step 18: Special Offers Banner -->
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="bg-gradient-to-r from-amber-500 to-gold-600 rounded-2xl p-6 text-darknavy flex flex-wrap justify-between items-center shadow-md">
+                    <div>
+                        <span class="text-xs font-black uppercase tracking-widest bg-darknavy text-gold-400 px-2 py-1 rounded">Limited Offer</span>
+                        <h3 class="text-xl font-bold mt-1">Full House Ceiling Package - 10% Discount</h3>
+                        <p class="text-xs font-medium">Book a free site visit this week and get custom 3D design renders included.</p>
+                    </div>
+                    <button onclick="showSection('site-visit')" class="mt-4 sm:mt-0 bg-darknavy text-white px-5 py-2.5 rounded-xl text-xs font-bold hover:bg-gray-800 transition">
+                        Claim Offer Now
+                    </button>
+                </div>
+            </div>
+        </section>
 
-window.login=async()=>{
-  if(!auth || !provider){
-    toast("Firebase login is not ready. Refresh the page and try again.",true);
-    return;
-  }
-  try{
-    const result=await signInWithPopup(auth,provider);
-    await ensureUser(result.user);
-    closeM("loginModal");
-    toast("Signed in successfully.");
-  }catch(e){
-    console.error(e);
-    const code=e?.code||"";
-    let msg=e?.message||"Please try again.";
-    if(code.includes("popup-blocked"))msg="Popup blocked hai. Chrome mein popups allow karo.";
-    else if(code.includes("unauthorized-domain"))msg="GitHub Pages domain Firebase Authentication mein authorized nahi hai.";
-    else if(code.includes("operation-not-allowed"))msg="Firebase Authentication mein Google provider enable nahi hai.";
-    else if(code.includes("popup-closed-by-user"))msg="Google login popup close ho gaya.";
-    toast("Google login failed: "+msg,true);
-  }
-};
+        <!-- ==================== STEP 3 & 23: DESIGN STUDIO & 3D VIEWER ==================== -->
+        <section id="section-design-studio" class="hidden max-w-7xl mx-auto px-4 py-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-extrabold text-gray-900">3D Design Studio</h2>
+                <p class="text-gray-500 text-sm mt-1">Explore interactive 3D ceilings, TV walls & bedroom designs</p>
+                
+                <div class="flex flex-wrap justify-center gap-2 mt-6">
+                    <button onclick="filterGallery('all')" class="cat-btn active bg-darknavy text-gold-400 px-4 py-2 rounded-xl text-xs font-bold">All Designs</button>
+                    <button onclick="filterGallery('bedroom')" class="cat-btn bg-gray-100 text-gray-600 hover:bg-gray-200 px-4 py-2 rounded-xl text-xs font-bold">Bedroom</button>
+                    <button onclick="filterGallery('tv-lounge')" class="cat-btn bg-gray-100 text-gray-600 hover:bg-gray-200 px-4 py-2 rounded-xl text-xs font-bold">TV Lounge</button>
+                    <button onclick="filterGallery('islamic')" class="cat-btn bg-gray-100 text-gray-600 hover:bg-gray-200 px-4 py-2 rounded-xl text-xs font-bold">Islamic Design</button>
+                </div>
+            </div>
 
-onAuthStateChanged(auth,u=>{
-  user=u||null;
-  const loginBtn=document.getElementById("loginBtn");
-  const accountBtn=document.getElementById("accountBtn");
-  const ownerBtn=document.getElementById("ownerBtn");
-  document.getElementById("app")?.classList.remove("hidden");
-  if(u){
-    ensureUser(u);
-  }else{
-    if(loginBtn){
-      loginBtn.classList.remove("hidden");
-      loginBtn.style.display="inline-flex";
-      loginBtn.textContent="Continue with Google";
-    }
-    accountBtn?.classList.add("hidden");
-    ownerBtn?.classList.add("hidden");
-    document.getElementById("loginModal")?.classList.remove("show");
-    updateSalluVisibility();
-  }
-});
-function demoDesigns(cat){let ci=Math.max(0,cats.findIndex(x=>x[0]===cat));return Array.from({length:20},(_,i)=>{let threeD=i%5===0;return{id:cat.replace(/\W/g,"").slice(0,4).toUpperCase()+"-"+String(i+1).padStart(2,"0"),name:cat+" Premium Design "+String(i+1).padStart(2,"0"),style:["Modern","Luxury","LED","Layered","Minimal","Royal","Linear","Curved"][i%8],image:img(imgs[(i+ci)%imgs.length]),mediaType:threeD?"3d-photo":"photo",price:0,description:threeD?"High-end architectural 3D showcase render for premium visualization.":"Professional interior showcase image."}})}
-function allDesigns(cat){return[...demoDesigns(cat),...Object.values(customDesigns).filter(d=>d.category===cat&&d.active!==false)]}
-function renderCats(){document.getElementById("cats").innerHTML=cats.map(c=>`<button class="cat" onclick="openCat('${esc(c[0])}')"><img src="${c[1]}?auto=format&fit=crop&w=900&q=82"><div class="shade"></div><div class="ct"><h3>${esc(c[0])}</h3><small>Design Studio</small></div></button>`).join("");document.getElementById("pills").innerHTML=`<button class="pill active" onclick="filterCat('All',this)">All</button>`+cats.map(c=>`<button class="pill" onclick="filterCat('${esc(c[0])}',this)">${esc(c[0])}</button>`).join("")}
-window.filterCat=(cat,b)=>{selectedCategory=cat;document.querySelectorAll(".pill").forEach(x=>x.classList.remove("active"));b.classList.add("active");cat==="All"?categoriesView():openCat(cat)};
-window.openCat=cat=>{currentCat=cat;selectedCategory=cat;document.getElementById("cats").classList.add("hidden");document.getElementById("designArea").classList.remove("hidden");document.getElementById("catTitle").textContent=cat+" — Designs";renderCurrentGallery()};
-window.categoriesView=()=>{document.getElementById("designArea").classList.add("hidden");document.getElementById("cats").classList.remove("hidden")};
-function mediaThumb(d){
- if(d.mediaType==="3d-photo") return `<div class="kg3dWrap"><img src="${esc(d.image)}" loading="lazy" alt="${esc(d.name)}"><span class="kg3dBadge">3D SHOWCASE</span></div>`;
- if(d.mediaType==="3d-model") return `<div class="modelThumb"><model-viewer src="${esc(d.image)}" camera-controls auto-rotate ar shadow-intensity="1" loading="lazy"></model-viewer></div>`;
- if(d.mediaType==="video"||d.mediaType==="3d-video") return `<video class="mediaPlayer" src="${esc(d.image)}" muted playsinline preload="metadata" controls></video>`;
- return `<img src="${esc(d.image)}" loading="lazy" alt="${esc(d.name)}">`;
-}
-window.renderCurrentGallery=()=>{let q=(document.getElementById("designSearch").value||"").toLowerCase();let arr=allDesigns(currentCat).filter(d=>(d.name+" "+d.style+" "+d.id+" "+(d.mediaType||"")).toLowerCase().includes(q));document.getElementById("designs").innerHTML=arr.map(d=>`<article class="card">${mediaThumb(d)}<div class="body"><span class="tag">${esc(d.mediaType||"Photo")}${d.style?" • "+esc(d.style):""}</span><h4>${esc(d.name)}</h4>${d.price?`<b>${money(d.price)}</b>`:"<small>Custom pricing</small>"}<div class="actions"><button onclick='viewDesign(${JSON.stringify(d)})'>View</button><button class="primary" onclick='choose(${JSON.stringify(d)})'>Select</button></div></div></article>`).join("")||`<div class="panel">No matching designs.</div>`};
-window.viewDesign=d=>{current=d;document.getElementById("dmTitle").textContent=d.name;let media=document.getElementById("dmImg");let html=d.mediaType==="3d-model"?`<model-viewer id="dmImg" src="${esc(d.image)}" camera-controls auto-rotate ar shadow-intensity="1" style="width:100%;height:70vh;background:#111;border-radius:14px"></model-viewer>`:(d.mediaType==="video"||d.mediaType==="3d-video")?`<video id="dmImg" src="${esc(d.image)}" controls playsinline class="mediaPlayer"></video>`:`<img id="dmImg" src="${esc(d.image)}" style="width:100%;max-height:70vh;object-fit:contain;border-radius:14px">`;media.outerHTML=html;document.getElementById("dmInfo").textContent=`${d.id} • ${d.category||currentCat} • ${d.mediaType||"Photo"} • ${d.style||"Custom"}${d.price?" • "+money(d.price):""}`;document.getElementById("selectionPreview").innerHTML=`<b>Selected Design</b><div class="detailGrid"><div class="detailBox">Design<br><b>${esc(d.name)}</b></div><div class="detailBox">Media<br><b>${esc(d.mediaType||"Photo")}</b></div><div class="detailBox">Price<br><b>${d.price?money(d.price):"Site quotation"}</b></div></div>`;document.getElementById("designModal").classList.add("show")};
-window.choose=async d=>{if(!user){showLogin();return}current=d;await saveSelection(d);viewDesign(d)};
-async function saveSelection(d){let k=push(ref(db,"designSelections"));await set(k,{uid:user.uid,designId:d.id,name:d.name,category:d.category||currentCat,style:d.style||"Custom",image:d.image,price:+d.price||0,createdAt:Date.now()});await notifyOwner("New design selected",`${user.displayName||"Customer"} selected ${d.name}`);toast("Design selected and saved.")};
-window.selectDesign=async()=>{if(!current)return;if(!user){closeM("designModal");showLogin();return}await saveSelection(current);closeM("designModal");go("calculator")};
+            <div id="gallery-cards-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Dynamically Populated -->
+            </div>
+        </section>
 
-function calculate(){let area=(+document.getElementById("len").value||0)*(+document.getElementById("wid").value||0);let rate=+document.getElementById("rate").value||180;let gross=area*rate;let discount=Math.min(100,Math.max(0,+document.getElementById("discount").value||0));let designPrice=+current?.price||0;let total=Math.max(0,Math.round(Math.max(gross,designPrice)*(1-discount/100)));document.getElementById("total").textContent=`${money(total)} • ${area.toFixed(1)} sq ft${current?" • "+current.name:""}`;return{area,gross,discount,total,rate,designPrice}}window.calculate=calculate;
-async function profileData(){return user?await read("users/"+user.uid)||{}:{}}
-window.saveProfile=async()=>{if(!user)return;await update(ref(db,"users/"+user.uid),{phone:document.getElementById("custPhone").value.trim(),address:document.getElementById("custAddress").value.trim(),updatedAt:Date.now()});toast("Customer details saved.")};
-function orderPayload(c){return{uid:user.uid,customerName:user.displayName||"",email:user.email||"",phone:document.getElementById("custPhone")?.value.trim()||"",address:document.getElementById("custAddress")?.value.trim()||"",length:+document.getElementById("len").value||0,width:+document.getElementById("wid").value||0,area:c.area,rate:c.rate,projectType:document.getElementById("rate").options[document.getElementById("rate").selectedIndex].text,discount:c.discount,total:c.total,designId:current?.id||"",designName:current?.name||"",category:current?.category||currentCat||"",style:current?.style||"",designPrice:c.designPrice,status:"Pending",statusHistory:{pending:{status:"Pending",at:Date.now()}},createdAt:Date.now()}};
-window.saveQuote=async()=>{if(!user){showLogin();return}let p=await profileData(),c=calculate(),k=push(ref(db,"quotations/"+user.uid));await set(k,{...orderPayload(c),phone:p.phone||"",address:p.address||"",status:"Draft",quoteNo:"KGQ-"+Date.now().toString().slice(-8)});await notifyOwner("New quotation",`${user.displayName||"Customer"} saved a quotation`);toast("Quotation saved.")};
-window.placeOrder=async()=>{if(!user){showLogin();return}let p=await profileData(),c=calculate(),k=push(ref(db,"orders/"+user.uid));await set(k,{...orderPayload(c),phone:p.phone||"",address:p.address||"",orderNo:"KGO-"+Date.now().toString().slice(-8)});await addActivity("New order created",{uid:user.uid,orderId:k.key,total:c.total});await notifyOwner("New order",`${user.displayName||"Customer"} placed a new order`);toast("Order placed successfully.");openWhatsApp(`Hello KHANS GYPSUMCRAFT PK, I placed an order.\nDesign: ${current?.name||"Custom"}\nArea: ${c.area.toFixed(1)} sq ft\nEstimated Total: ${money(c.total)}\nPhone: ${p.phone||""}\nAddress: ${p.address||""}`)};
-window.quoteWA=async()=>{let c=calculate(),p=await profileData();openWhatsApp(`Hello KHANS GYPSUMCRAFT PK, I want a quotation.\nDesign: ${current?.name||"Custom"}\nProject: ${document.getElementById("rate").options[document.getElementById("rate").selectedIndex].text}\nArea: ${c.area.toFixed(1)} sq ft\nDiscount: ${c.discount}%\nEstimated Total: ${money(c.total)}\nPhone: ${p.phone||""}\nAddress: ${p.address||""}`)};
-function openWhatsApp(text="Hello KHANS GYPSUMCRAFT PK, I would like to discuss a gypsum/interior project."){window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(text),"_blank")}window.openWhatsApp=openWhatsApp;
-window.designWA=()=>{if(!current)return;openWhatsApp(`Hello KHANS GYPSUMCRAFT PK, I want a quote for ${current.name} (${current.id}).`)};
+        <!-- ==================== STEP 5: ROOM PLANNER ==================== -->
+        <section id="section-room-planner" class="hidden max-w-3xl mx-auto px-4 py-8">
+            <div class="bg-white rounded-3xl p-8 shadow-xl border border-gold-500/20 space-y-6">
+                <div class="text-center">
+                    <h2 class="text-2xl font-bold text-gray-900">Custom Room Planner</h2>
+                    <p class="text-xs text-gray-500 mt-1">Define your room details to get tailored ceiling proposals</p>
+                </div>
 
-window.openAccount=async()=>{if(!user){showLogin();return}document.getElementById("accountModal").classList.add("show");let p=await profileData();document.getElementById("accountInfo").innerHTML=`<div class="profile"><img src="${esc(user.photoURL||"")}" onerror="this.style.display='none'"><div><b>${esc(user.displayName||"Customer")}</b><div class="muted">${esc(user.email||"")}</div></div></div>`;document.getElementById("custPhone").value=p.phone||"";document.getElementById("custAddress").value=p.address||"";let s=await read("designSelections")||{};let vals=Object.values(s).filter(x=>x.uid===user.uid).reverse().slice(0,12);document.getElementById("mySelections").innerHTML=vals.map(d=>`<article class="miniCard"><img src="${esc(d.image)}"><div class="miniBody"><b>${esc(d.name)}</b><small>${esc(d.category||"")}</small></div></article>`).join("")||"<p class='muted'>No saved designs yet.</p>";let o=await read("orders/"+user.uid)||{};let os=Object.entries(o).map(([id,d])=>({id,...d})).reverse();document.getElementById("myOrders").innerHTML=`<table class="table"><tr><th>Order</th><th>Design</th><th>Total</th><th>Status</th></tr>${os.map(d=>`<tr><td>${esc(d.orderNo||d.id.slice(-8))}</td><td>${esc(d.designName||"Custom")}</td><td>${money(d.total)}</td><td><span class="statusBadge">${esc(d.status||"Pending")}</span></td></tr>`).join("")||"<tr><td colspan='4'>No orders yet.</td></tr>"}</table>`;let q=await read("quotations/"+user.uid)||{};let qs=Object.entries(q).map(([id,d])=>({id,...d})).reverse();document.getElementById("myQuotes").innerHTML=`<table class="table"><tr><th>Quote</th><th>Design</th><th>Total</th><th>Status</th></tr>${qs.map(d=>`<tr><td>${esc(d.quoteNo||d.id.slice(-8))}</td><td>${esc(d.designName||"Custom")}</td><td>${money(d.total)}</td><td>${esc(d.status||"Draft")}</td></tr>`).join("")||"<tr><td colspan='4'>No quotations yet.</td></tr>"}</table>`};
-window.logout=async()=>{await signOut(auth);closeM("accountModal");closeOwner()};
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Room Category</label>
+                        <select id="plan-room-type" class="w-full p-3 border rounded-xl text-sm outline-none">
+                            <option value="Master Bedroom">Master Bedroom</option>
+                            <option value="Main TV Lounge">Main TV Lounge</option>
+                            <option value="Guest Drawing Room">Guest Drawing Room</option>
+                            <option value="Commercial Hall">Commercial Hall / Shop</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Target Budget Range (PKR)</label>
+                        <select id="plan-budget" class="w-full p-3 border rounded-xl text-sm outline-none">
+                            <option value="50,000 - 100,000">Rs. 50,000 - 100,000</option>
+                            <option value="100,000 - 250,000">Rs. 100,000 - 250,000</option>
+                            <option value="250,000+">Rs. 250,000+</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Length (Ft)</label>
+                        <input type="number" id="plan-length" placeholder="14" class="w-full p-3 border rounded-xl text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Width (Ft)</label>
+                        <input type="number" id="plan-width" placeholder="12" class="w-full p-3 border rounded-xl text-sm">
+                    </div>
+                </div>
 
-function allowed(){return user&&user.uid===OWNER_UID}
-window.openOwner=()=>{if(!allowed()){toast("Owner access denied.",true);return}document.getElementById("dashboard").style.display="block";renderOverview()};
-window.closeOwner=()=>document.getElementById("dashboard").style.display="none";
-window.mobileHome=()=>{document.getElementById("ownerMobileMenu").style.display=window.innerWidth<=560?"block":"none";document.getElementById("dashContent").innerHTML=""};
-window.mobileTab=t=>{document.getElementById("ownerMobileMenu").style.display="none";tab(t,null)};
-window.addEventListener("resize",()=>{if(document.getElementById("dashboard").style.display==="block"&&window.innerWidth<=560&&document.getElementById("dashContent").innerHTML==="")document.getElementById("ownerMobileMenu").style.display="block"});
-window.tab=async(t,b)=>{if(!allowed())return;if(b){document.querySelectorAll(".side button").forEach(x=>x.classList.remove("active"));b.classList.add("active")}document.getElementById("ownerMobileMenu").style.display=window.innerWidth<=560?"none":"none";if(t==="overview")renderOverview();else if(t==="analytics")renderAnalytics();else if(t==="customers")customers();else if(t==="orders")orders();else if(t==="quotations")quotations();else if(t==="saved")savedDesigns();else if(t==="designs")galleryManager();else if(t==="projects")projectManager();else if(t==="testimonials")testimonialManager();else if(t==="notifications")notificationManager();else settings()};
-async function read(path){let s=await get(ref(db,path));return s.exists()?s.val():null}
-async function addActivity(action,data={}){let k=push(ref(db,"activityLogs"));await set(k,{action,...data,at:Date.now(),ownerId:OWNER_ID})}
-async function notifyOwner(title,message){let k=push(ref(db,"ownerNotifications"));await set(k,{title,message,read:false,at:Date.now()})}
-function flattenGroups(obj){let out=[];Object.entries(obj||{}).forEach(([uid,g])=>Object.entries(g||{}).forEach(([id,d])=>out.push({uid,id,...d})));return out}
-async function getBusinessData(){let[u,o,q,s]=await Promise.all([read("users"),read("orders"),read("quotations"),read("designSelections")]);return{users:u||{},orders:flattenGroups(o),quotations:flattenGroups(q),selections:Object.entries(s||{}).map(([id,d])=>({id,...d}))}}
-function cutoffRows(rows,range){if(!range)return rows;let cut=Date.now()-range*86400000;return rows.filter(x=>(+x.createdAt||0)>=cut)}
-function categoryOf(x){return x.category||"Custom / Other"}function designOf(x){return x.designName||x.name||x.designId||"Custom / No Design"}
-async function renderOverview(){let d=await getBusinessData(),users=Object.keys(d.users).length,orders=d.orders.length,sales=d.orders.filter(x=>x.status!=="Cancelled").reduce((n,x)=>n+(+x.total||0),0),pending=d.orders.filter(x=>x.status==="Pending").length,confirmed=d.orders.filter(x=>x.status==="Confirmed").length,done=d.orders.filter(x=>x.status==="Completed").length;document.getElementById("dashTitle").textContent="Business Overview";document.getElementById("dashContent").innerHTML=`<div class="stats"><div class="stat"><b>${users}</b><span>Total Customers</span></div><div class="stat"><b>${orders}</b><span>Total Orders</span></div><div class="stat"><b>${money(sales)}</b><span>Recorded Sales</span></div><div class="stat"><b>${d.quotations.length}</b><span>Quotations</span></div></div><div class="panel"><h3>Order Pipeline</h3><div class="stats"><div class="stat"><b>${pending}</b><span>Pending</span></div><div class="stat"><b>${confirmed}</b><span>Confirmed</span></div><div class="stat"><b>${done}</b><span>Completed</span></div><div class="stat"><b>${d.selections.length}</b><span>Design Saves</span></div></div></div><div class="ownerAiBox"><h3>Quick Boss Actions</h3><div class="ownerMobileGrid"><button class="ownerMobileCard" onclick="tab('designs',null)">🎨<b>Add Design</b><small>Upload from PC or mobile</small></button><button class="ownerMobileCard" onclick="tab('orders',null)">📦<b>Manage Orders</b><small>Update order status</small></button><button class="ownerMobileCard" onclick="tab('projects',null)">🏗<b>Add Project</b><small>Before / after photos</small></button><button class="ownerMobileCard" onclick="tab('settings',null)">⚙<b>Website Settings</b><small>Business information</small></button></div></div><div class="panel"><h3>Owner Identity</h3><p class="muted">Owner ID: <b>${OWNER_ID}</b><br>Owner Email: ${OWNER_EMAIL}<br>Owner UID: <code>${OWNER_UID}</code></p></div>`}
-async function renderAnalytics(){let d=await getBusinessData(),os=cutoffRows(d.orders,analyticsRange),qs=cutoffRows(d.quotations,analyticsRange),ss=cutoffRows(d.selections,analyticsRange),valid=os.filter(x=>x.status!=="Cancelled"),catMap={},desMap={};const add=(m,k,x,type)=>{m[k]??={orders:0,sales:0,quotes:0,saves:0};if(type==="order"){m[k].orders++;m[k].sales+=(+x.total||0)}else if(type==="quote")m[k].quotes++;else m[k].saves++};valid.forEach(x=>{add(catMap,categoryOf(x),x,"order");add(desMap,designOf(x),x,"order")});qs.forEach(x=>{add(catMap,categoryOf(x),x,"quote");add(desMap,designOf(x),x,"quote")});ss.forEach(x=>{add(catMap,categoryOf(x),x,"save");add(desMap,designOf(x),x,"save")});let catsR=Object.entries(catMap).sort((a,b)=>b[1].orders-a[1].orders||b[1].saves-a[1].saves),desR=Object.entries(desMap).sort((a,b)=>b[1].orders-a[1].orders||b[1].saves-a[1].saves),mc=Math.max(1,...catsR.map(x=>x[1].orders)),md=Math.max(1,...desR.map(x=>x[1].orders));document.getElementById("dashTitle").textContent="Analytics & Boss AI";document.getElementById("dashContent").innerHTML=`<div class="panel"><div class="rangeBar"><button class="${analyticsRange===7?"active":""}" onclick="analyticsRange=7;renderAnalytics()">7 Days</button><button class="${analyticsRange===30?"active":""}" onclick="analyticsRange=30;renderAnalytics()">30 Days</button><button class="${analyticsRange===0?"active":""}" onclick="analyticsRange=0;renderAnalytics()">All Time</button></div></div><div class="analyticsGrid"><div class="panel"><h3>Period Summary</h3><div class="stats"><div class="stat"><b>${valid.length}</b><span>Orders</span></div><div class="stat"><b>${money(valid.reduce((n,x)=>n+(+x.total||0),0))}</b><span>Sales</span></div><div class="stat"><b>${qs.length}</b><span>Quotes</span></div><div class="stat"><b>${ss.length}</b><span>Saves</span></div></div></div><div class="panel"><h3>Owner AI Insights</h3><div class="insight">Most ordered category: <b>${esc(catsR[0]?.[0]||"No data")}</b></div><div class="insight">Most ordered design: <b>${esc(desR[0]?.[0]||"No data")}</b></div><div class="insight">Data is calculated from your Firebase records.</div></div></div><div class="analyticsGrid"><div class="panel"><h3>Category Popularity</h3>${catsR.slice(0,8).map(([n,v],i)=>`<div class="rankItem"><div class="rankNum">${i+1}</div><div><b>${esc(n)}</b><div class="bar"><div class="barFill" style="width:${Math.round(v.orders/mc*100)}%"></div></div><small>${v.orders} orders · ${v.quotes} quotes · ${v.saves} saves</small></div><b>${money(v.sales)}</b></div>`).join("")||"<p class='muted'>No activity.</p>"}</div><div class="panel"><h3>Top Designs</h3>${desR.slice(0,10).map(([n,v],i)=>`<div class="rankItem"><div class="rankNum">${i+1}</div><div><b>${esc(n)}</b><div class="bar"><div class="barFill" style="width:${Math.round(v.orders/md*100)}%"></div></div><small>${v.orders} orders · ${v.saves} saves</small></div><span>${v.orders}</span></div>`).join("")||"<p class='muted'>No design activity.</p>"}</div></div>`}
-async function customers(){let u=await read("users")||{},o=await read("orders")||{};let orderCount={};Object.values(o).forEach(g=>Object.entries(g||{}).forEach(([id,d])=>orderCount[d.uid||""]=(orderCount[d.uid||""]||0)+1));let rows=Object.values(u).map(d=>`<tr><td>${esc(d.name)}</td><td>${esc(d.email)}</td><td>${esc(d.phone||"—")}</td><td>${esc(d.address||"—")}</td><td>${orderCount[d.uid]||0}</td><td>${d.lastLogin?new Date(d.lastLogin).toLocaleString():"—"}</td></tr>`).join("");document.getElementById("dashTitle").textContent="Customers";document.getElementById("dashContent").innerHTML=`<div class="panel tableWrap"><table class="table"><tr><th>Name</th><th>Email</th><th>Phone</th><th>Address</th><th>Orders</th><th>Last Login</th></tr>${rows||"<tr><td colspan='6'>No customers yet.</td></tr>"}</table></div>`}
-async function orders(){let o=await read("orders")||{},rows="";Object.entries(o).forEach(([uid,g])=>Object.entries(g||{}).forEach(([id,d])=>{rows+=`<tr><td>${esc(d.orderNo||id.slice(-8))}</td><td>${esc(d.customerName||uid.slice(0,8))}</td><td>${esc(d.phone||"—")}</td><td>${esc(d.designName||"Custom")}</td><td>${money(d.total)}</td><td><select onchange="statusUpdate('${esc(uid)}','${esc(id)}',this.value)"><option ${d.status==="Pending"?"selected":""}>Pending</option><option ${d.status==="Confirmed"?"selected":""}>Confirmed</option><option ${d.status==="In Progress"?"selected":""}>In Progress</option><option ${d.status==="Completed"?"selected":""}>Completed</option><option ${d.status==="Cancelled"?"selected":""}>Cancelled</option></select></td><td><button class="outline" onclick='orderDetail(${JSON.stringify({uid,id,...d})})'>View</button></td></tr>`}));document.getElementById("dashTitle").textContent="Orders";document.getElementById("dashContent").innerHTML=`<div class="panel tableWrap"><table class="table"><tr><th>Order</th><th>Customer</th><th>Phone</th><th>Design</th><th>Total</th><th>Status</th><th></th></tr>${rows||"<tr><td colspan='7'>No orders yet.</td></tr>"}</table></div>`}
-window.statusUpdate=async(uid,id,v)=>{await update(ref(db,"orders/"+uid+"/"+id),{status:v,updatedAt:Date.now(),["statusHistory/"+v.replace(/\s/g,"_")]:{status:v,at:Date.now()}});await addActivity("Order status updated",{uid,orderId:id,status:v});toast("Order updated.");orders()};
-window.orderDetail=d=>{document.getElementById("dashContent").insertAdjacentHTML("afterbegin",`<div class="panel"><h3>${esc(d.orderNo||d.id)}</h3><div class="detailGrid"><div class="detailBox">Customer<br><b>${esc(d.customerName)}</b></div><div class="detailBox">Phone<br><b>${esc(d.phone||"—")}</b></div><div class="detailBox">Address<br><b>${esc(d.address||"—")}</b></div><div class="detailBox">Design<br><b>${esc(d.designName||"Custom")}</b></div><div class="detailBox">Area<br><b>${esc(d.area||0)} sq ft</b></div><div class="detailBox">Total<br><b>${money(d.total)}</b></div></div><button class="gold" style="margin-top:10px" onclick="openWhatsApp('Hello ${esc(d.customerName||'Customer')}, regarding your order ${esc(d.orderNo||d.id.slice(-8))}.')">WhatsApp Customer</button></div>`)};
-async function quotations(){let q=await read("quotations")||{},rows="";Object.entries(q).forEach(([uid,g])=>Object.entries(g||{}).forEach(([id,d])=>rows+=`<tr><td>${esc(d.quoteNo||id.slice(-8))}</td><td>${esc(d.customerName||uid.slice(0,8))}</td><td>${esc(d.designName||"Custom")}</td><td>${money(d.total)}</td><td>${esc(d.status||"Draft")}</td><td><button class="outline" onclick='printQuote(${JSON.stringify({id,...d})})'>Print</button></td></tr>`));document.getElementById("dashTitle").textContent="Quotations";document.getElementById("dashContent").innerHTML=`<div class="panel tableWrap"><table class="table"><tr><th>Quote</th><th>Customer</th><th>Design</th><th>Total</th><th>Status</th><th></th></tr>${rows||"<tr><td colspan='6'>No quotations yet.</td></tr>"}</table></div>`}
-window.printQuote=d=>{let w=window.open("","_blank");w.document.write(`<html><head><title>${esc(d.quoteNo||"Quotation")}</title><style>body{font-family:Arial;padding:35px}h1{color:#b68e3e}.box{border:1px solid #ddd;padding:15px;margin:10px 0}table{width:100%;border-collapse:collapse}td{padding:8px;border-bottom:1px solid #ddd}</style></head><body><h1>KHANS GYPSUMCRAFT PK</h1><h2>Quotation ${esc(d.quoteNo||"")}</h2><div class="box"><b>Customer:</b> ${esc(d.customerName||"")}<br><b>Phone:</b> ${esc(d.phone||"")}<br><b>Address:</b> ${esc(d.address||"")}</div><table><tr><td>Design</td><td>${esc(d.designName||"Custom")}</td></tr><tr><td>Area</td><td>${esc(d.area||0)} sq ft</td></tr><tr><td>Discount</td><td>${esc(d.discount||0)}%</td></tr><tr><td>Total</td><td><b>${money(d.total)}</b></td></tr></table><script>window.print()<\/script></body></html>`);w.document.close()};
-async function savedDesigns(){let s=await read("designSelections")||{},rows=Object.values(s).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0)).map(d=>`<tr><td>${esc(d.name)}</td><td>${esc(d.category||"")}</td><td>${esc(d.uid||"").slice(0,12)}</td><td>${d.createdAt?new Date(d.createdAt).toLocaleString():"—"}</td></tr>`).join("");document.getElementById("dashTitle").textContent="Saved Designs / Customer Interest";document.getElementById("dashContent").innerHTML=`<div class="panel tableWrap"><table class="table"><tr><th>Design</th><th>Category</th><th>Customer UID</th><th>Saved At</th></tr>${rows||"<tr><td colspan='4'>No saved designs yet.</td></tr>"}</table></div>`}
+                <button onclick="saveRoomPlan()" class="w-full bg-gold-500 text-darknavy font-bold py-3.5 rounded-xl text-sm shadow-md">
+                    Save Room Plan & Calculate Estimate
+                </button>
+            </div>
+        </section>
 
-function galleryManager(){document.getElementById("dashTitle").textContent="Gallery & Media Manager";document.getElementById("dashContent").innerHTML=`<div class="panel"><h3>Upload Photo, Video or 3D Media</h3><p class="muted">Owner can upload normal photos, videos, 360°/3D photos and 3D videos from mobile Gallery/Camera or PC.</p><div class="adminForm"><input id="adName" placeholder="Media / Design name"><select id="adCat">${cats.map(c=>`<option>${esc(c[0])}</option>`).join("")}</select><select id="adMediaType"><option value="photo">Photo</option><option value="3d-photo">3D Photo / 360° Photo</option><option value="video">Video</option><option value="3d-video">3D Video</option><option value="3d-model">3D Model (.glb/.gltf)</option></select><input id="adStyle" placeholder="Style e.g. Modern, Luxury"><input id="adPrice" type="number" min="0" placeholder="Design price (PKR)"><input id="adImage" placeholder="Media URL (optional)" class="full"><input id="adFile" class="photoInput full" type="file" accept="image/*,video/*,.glb,.gltf" capture="environment"><textarea id="adDesc" placeholder="Description" class="full"></textarea><label><input id="adFeatured" type="checkbox"> Featured media</label><button class="gold full" onclick="addDesign()">Upload & Publish</button></div></div><div class="panel"><h3>Owner Media</h3><div class="miniGrid">${Object.values(customDesigns).map(d=>`<article class="miniCard">${mediaThumb(d)}<div class="miniBody"><b>${esc(d.name)}</b><small>${esc(d.mediaType||"Photo")} • ${money(d.price||0)}</small><button class="danger" style="width:100%;margin-top:7px" onclick="deleteDesign('${esc(d.key)}')">Delete</button></div></article>`).join("")||"<p class='muted'>No owner media yet.</p>"}</div></div>`}
-window.addDesign=async()=>{if(!allowed())return;let name=document.getElementById("adName").value.trim(),cat=document.getElementById("adCat").value,mediaType=document.getElementById("adMediaType").value,style=document.getElementById("adStyle").value.trim()||"Custom",price=+document.getElementById("adPrice").value||0,file=document.getElementById("adFile").files[0],url=document.getElementById("adImage").value.trim();if(!name){toast("Media name is required.",true);return}try{if(file){let safe=file.name.replace(/[^a-zA-Z0-9._-]/g,"");let r=storageRef(storage,`gallery/${mediaType}/${Date.now()}-${safe}`);await uploadBytes(r,file);url=await getDownloadURL(r)}if(!url){toast("Please choose a photo/video or add a media URL.",true);return}if((mediaType==="video"||mediaType==="3d-video")&&!file&&url&&!(/\.(mp4|webm|ogg)(\?|$)/i.test(url))){toast("For video, use a direct MP4/WebM/Ogg video URL or upload a video file.",true);return}let k=push(ref(db,"designs")),d={id:"OWN-"+Date.now().toString().slice(-8),name,category:cat,mediaType,style,image:url,price,description:document.getElementById("adDesc").value.trim(),featured:document.getElementById("adFeatured").checked,active:true,createdAt:Date.now()};await set(k,d);await addActivity("Media uploaded",{mediaId:d.id,name:d.name,mediaType});toast("Media uploaded and published successfully.");galleryManager()}catch(e){console.error(e);toast("Upload failed. Check Firebase Storage and Storage Rules.",true)}};
-window.deleteDesign=async key=>{if(!confirm("Delete this owner-added design?"))return;await remove(ref(db,"designs/"+key));await addActivity("Design deleted",{key});toast("Design deleted.");galleryManager()};
+        <!-- ==================== STEP 6 & 9: CALCULATOR & QUOTATION SYSTEM ==================== -->
+        <section id="section-calculator" class="hidden max-w-4xl mx-auto px-4 py-8">
+            <div class="bg-white rounded-3xl p-8 shadow-xl border border-gold-500/20">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold text-gray-900">Smart Cost Calculator & Instant Quote</h2>
+                    <p class="text-xs text-gray-500 mt-1">Calculate real-time estimates for your project</p>
+                </div>
 
-function projectManager(){document.getElementById("dashTitle").textContent="Projects & Media";document.getElementById("dashContent").innerHTML=`<div class="panel"><h3>Add Project</h3><div class="adminForm"><input id="prTitle" placeholder="Project title"><input id="prLocation" placeholder="Location"><input id="prCategory" placeholder="Category"><input id="prCost" type="number" placeholder="Project cost PKR"><input id="prBefore" placeholder="Before image URL"><input id="prAfter" placeholder="After image URL"><input id="prVideo" placeholder="Project video URL (optional)"><input id="prModel" placeholder="3D model .glb/.gltf URL (optional)"><input id="prBeforeFile" type="file" accept="image/*" capture="environment"><input id="prAfterFile" type="file" accept="image/*" capture="environment"><input id="prVideoFile" type="file" accept="video/*"><input id="prModelFile" type="file" accept=".glb,.gltf"><textarea id="prDesc" placeholder="Description" class="full"></textarea><button class="gold full" onclick="addProject()">Add Project</button></div></div><div class="panel"><h3>Saved Projects</h3><div id="projectList" class="miniGrid">Loading...</div></div>`;loadProjects()}
-async function uploadFile(file,path){if(!file)return"";let r=storageRef(storage,path+"/"+Date.now()+"-"+file.name.replace(/[^a-zA-Z0-9._-]/g,""));await uploadBytes(r,file);return await getDownloadURL(r)}
-async function addProject(){try{let before=document.getElementById("prBefore").value.trim(),after=document.getElementById("prAfter").value.trim(),video=document.getElementById("prVideo").value.trim(),model=document.getElementById("prModel").value.trim();if(document.getElementById("prBeforeFile").files[0])before=await uploadFile(document.getElementById("prBeforeFile").files[0],"projects/before");if(document.getElementById("prAfterFile").files[0])after=await uploadFile(document.getElementById("prAfterFile").files[0],"projects/after");if(document.getElementById("prVideoFile").files[0])video=await uploadFile(document.getElementById("prVideoFile").files[0],"projects/video");if(document.getElementById("prModelFile").files[0])model=await uploadFile(document.getElementById("prModelFile").files[0],"projects/models");let k=push(ref(db,"projects"));await set(k,{title:document.getElementById("prTitle").value.trim(),location:document.getElementById("prLocation").value.trim(),category:document.getElementById("prCategory").value.trim(),cost:+document.getElementById("prCost").value||0,before,after,video,model,description:document.getElementById("prDesc").value.trim(),featured:true,createdAt:Date.now()});await addActivity("Project added",{});toast("Project added.");projectManager()}catch(e){console.error(e);toast("Project upload failed. Check Firebase Storage.",true)}}
-function projectMedia(d){let out=`<div class="ba"><img src="${esc(d.before||img(imgs[0]))}"><img src="${esc(d.after||img(imgs[1]))}"></div>`;if(d.video)out+=`<div style="margin-top:8px"><video class="mediaPlayer" src="${esc(d.video)}" controls playsinline></video></div>`;if(d.model)out+=`<div style="margin-top:8px" class="projectMedia"><model-viewer src="${esc(d.model)}" camera-controls auto-rotate ar></model-viewer></div>`;return out}
-async function loadProjects(){let p=await read("projects")||{};document.getElementById("projectList").innerHTML=Object.entries(p).map(([k,d])=>`<article class="miniCard">${projectMedia(d)}<div class="miniBody"><b>${esc(d.title||"Project")}</b><small>${esc(d.location||"")}</small><button class="danger" style="width:100%;margin-top:7px" onclick="deleteProject('${esc(k)}')">Delete</button></div></article>`).join("")||"<p class='muted'>No projects yet.</p>"}
-window.deleteProject=async k=>{if(!confirm("Delete project?"))return;await remove(ref(db,"projects/"+k));toast("Project deleted.");projectManager()};
-async function renderProjects(){let p=await read("projects")||{};let arr=Object.values(p).filter(x=>x.featured!==false).slice(-6).reverse();document.getElementById("projects").innerHTML=(arr.length?arr:[0,1,2].map(i=>({title:"Featured Project "+(i+1),before:img(imgs[i]),after:img(imgs[i+6]),description:"Premium interior concept."}))).map(d=>`<article class="project">${projectMedia(d)}<div class="body"><b>${esc(d.title)}</b><p class="muted">${esc(d.description||"")}</p></div></article>`).join("")}
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">Length (Feet)</label>
+                        <input type="number" id="calc-length" oninput="calculateBudget()" placeholder="e.g. 14" class="w-full p-3 border border-gray-200 rounded-xl text-sm outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">Width (Feet)</label>
+                        <input type="number" id="calc-width" oninput="calculateBudget()" placeholder="e.g. 12" class="w-full p-3 border border-gray-200 rounded-xl text-sm outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">Design Type</label>
+                        <select id="calc-type" onchange="calculateBudget()" class="w-full p-3 border border-gray-200 rounded-xl text-sm outline-none">
+                            <option value="180">Standard Gypsum Ceiling (Rs. 180 / sq ft)</option>
+                            <option value="250">Double Layer Luxury (Rs. 250 / sq ft)</option>
+                            <option value="320">3D TV Wall Panel (Rs. 320 / sq ft)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">Owner Approved Discount (Rs.)</label>
+                        <input type="number" id="calc-discount" oninput="calculateBudget()" value="0" placeholder="0" class="w-full p-3 border border-gray-200 rounded-xl text-sm outline-none">
+                    </div>
+                </div>
 
-function testimonialManager(){document.getElementById("dashTitle").textContent="Testimonials";document.getElementById("dashContent").innerHTML=`<div class="panel"><h3>Add Testimonial</h3><div class="adminForm"><input id="tmName" placeholder="Customer name"><select id="tmRating"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select><input id="tmPhoto" placeholder="Photo URL (optional)"><textarea id="tmReview" placeholder="Customer review" class="full"></textarea><button class="gold full" onclick="addTestimonial()">Add Review</button></div></div><div class="panel"><div id="tmList">Loading...</div></div>`;loadTestimonials()}
-async function addTestimonial(){let k=push(ref(db,"testimonials"));await set(k,{name:document.getElementById("tmName").value.trim(),rating:+document.getElementById("tmRating").value,photo:document.getElementById("tmPhoto").value.trim(),review:document.getElementById("tmReview").value.trim(),featured:true,createdAt:Date.now()});await addActivity("Testimonial added",{});toast("Review added.");testimonialManager()}
-async function loadTestimonials(){let t=await read("testimonials")||{};document.getElementById("tmList").innerHTML=Object.entries(t).map(([k,d])=>`<div class="notice"><b>${esc(d.name)}</b> — ${"★".repeat(+d.rating||5)}<p>${esc(d.review)}</p><button class="danger" onclick="deleteTestimonial('${esc(k)}')">Delete</button></div>`).join("")||"<p class='muted'>No testimonials yet.</p>"}
-window.deleteTestimonial=async k=>{await remove(ref(db,"testimonials/"+k));toast("Review deleted.");testimonialManager()};
-async function renderTestimonials(){let t=await read("testimonials")||{};let a=Object.values(t).filter(x=>x.featured!==false).slice(-6).reverse();document.getElementById("testimonials").innerHTML=(a.length?a:[{name:"Customer Review",rating:5,review:"Professional finishing and a clean modern look."},{name:"Customer Review",rating:5,review:"The quotation process was easy."},{name:"Customer Review",rating:5,review:"The final work matched the selected concept."}]).map(d=>`<article class="quoteCard">${d.photo?`<img src="${esc(d.photo)}" style="width:48px;height:48px;border-radius:50%;object-fit:cover">`:""}<div class="stars">${"★".repeat(+d.rating||5)}</div><p>“${esc(d.review)}”</p><b>${esc(d.name)}</b></article>`).join("")}
+                <div class="mt-8 bg-darknavy text-white p-6 rounded-2xl border border-gold-500/40 text-center space-y-3">
+                    <p class="text-xs text-gray-400 uppercase tracking-widest">Total Area</p>
+                    <h3 id="calc-area-display" class="text-2xl font-bold text-gold-400">0 Sq Ft</h3>
+                    
+                    <div class="border-t border-gray-800 pt-3">
+                        <p class="text-xs text-gray-400 uppercase tracking-widest">Estimated Cost</p>
+                        <h4 id="calc-total-display" class="text-4xl font-extrabold text-white mt-1">Rs. 0</h4>
+                    </div>
 
-async function notificationManager(){let n=await read("ownerNotifications")||{};let a=Object.entries(n).sort((a,b)=>(b[1].at||0)-(a[1].at||0));document.getElementById("dashTitle").textContent="Notifications";document.getElementById("dashContent").innerHTML=`<div class="panel"><button class="outline" onclick="markNotificationsRead()">Mark all read</button>${a.map(([k,d])=>`<div class="notice"><b>${esc(d.title)}</b><br>${esc(d.message)}<br><small>${d.at?new Date(d.at).toLocaleString():""}</small></div>`).join("")||"<p class='muted'>No notifications.</p>"}</div>`}
-window.markNotificationsRead=async()=>{let n=await read("ownerNotifications")||{};let u={};Object.entries(n).forEach(([k,d])=>u[k+"/read"]=true);if(Object.keys(u).length)await update(ref(db,"ownerNotifications"),u);toast("Notifications marked as read.");notificationManager()};
+                    <div class="flex gap-4 pt-2">
+                        <button onclick="sendQuoteWhatsApp()" class="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-bold text-xs flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Send Quote via WhatsApp
+                        </button>
+                        <button onclick="window.print()" class="bg-gray-800 hover:bg-gray-700 text-gold-400 px-4 py-3 rounded-xl font-bold text-xs">
+                            <i class="fa-solid fa-print"></i> Print
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-async function settings(){let s=await read("settings/site")||{};document.getElementById("dashTitle").textContent="Website Editor";document.getElementById("dashContent").innerHTML=`<div class="panel"><h3>Live Website Editor</h3><p class="muted">Yahan se public website ka text aur business information change karo. Save karte hi website par update ho jayega.</p><div class="adminForm"><input id="setName" value="${esc(s.businessName||"KHANS GYPSUMCRAFT PK")}" placeholder="Business name"><input id="setPhone" value="${esc(s.phone||"+92 313 9186430")}" placeholder="Phone / WhatsApp"><input id="setEmail" value="${esc(s.email||OWNER_EMAIL)}" placeholder="Email"><input id="setAddress" value="${esc(s.address||"Swat, Pakistan")}" placeholder="Business address"><input id="setHours" value="${esc(s.hours||"Mon-Sat: 9 AM - 8 PM")}" placeholder="Opening hours"><input id="setCurrency" value="${esc(s.currency||"PKR")}" placeholder="Currency"><input id="setHero" value="${esc(s.hero||"Modern ceilings. Beautiful spaces.")}" placeholder="Hero heading" class="full"><textarea id="setHeroText" class="full" placeholder="Hero description">${esc(s.heroText||"Explore premium false ceiling, TV wall and interior designs. Select a design, add your room details, estimate your project and send your quotation to WhatsApp.")}</textarea><input id="setGalleryTitle" value="${esc(s.galleryTitle||"Explore Our Designs")}" placeholder="Gallery heading"><input id="setGallerySub" value="${esc(s.gallerySub||"Browse designs and owner-added designs from Firebase.")}" placeholder="Gallery description"><input id="setServicesTitle" value="${esc(s.servicesTitle||"Professional Interior Solutions")}" placeholder="Services heading"><input id="setCalcTitle" value="${esc(s.calcTitle||"Estimate Your Project")}" placeholder="Calculator heading"><input id="setProjectsTitle" value="${esc(s.projectsTitle||"Recent Projects")}" placeholder="Projects heading"><input id="setTestimonialsTitle" value="${esc(s.testimonialsTitle||"What Our Customers Say")}" placeholder="Testimonials heading"><textarea id="setAbout" class="full" placeholder="Business description">${esc(s.about||"Premium gypsum, false ceiling, TV wall and interior design solutions.")}</textarea><button class="gold full" onclick="saveSettings()">Save & Publish Website</button></div></div><div class="panel"><h3>Owner Security</h3><p class="muted">Owner ID: <b>${OWNER_ID}</b><br>Owner UID: <code>${OWNER_UID}</code><br>Owner Email: ${OWNER_EMAIL}<br>Owner Center access is checked against the authenticated Boss UID.</p></div><div class="panel"><h3>Activity Log</h3><div id="activityList">Loading...</div></div>`;let a=await read("activityLogs")||{};document.getElementById("activityList").innerHTML=Object.values(a).sort((x,y)=>(y.at||0)-(x.at||0)).slice(0,20).map(x=>`<div class="notice"><b>${esc(x.action)}</b><br><small>${x.at?new Date(x.at).toLocaleString():""}</small></div>`).join("")||"<p class='muted'>No activity yet.</p>"}
-window.saveSettings=async()=>{let payload={businessName:document.getElementById("setName").value.trim(),phone:document.getElementById("setPhone").value.trim(),email:document.getElementById("setEmail").value.trim(),address:document.getElementById("setAddress").value.trim(),hours:document.getElementById("setHours").value.trim(),currency:document.getElementById("setCurrency").value.trim()||"PKR",hero:document.getElementById("setHero").value.trim(),heroText:document.getElementById("setHeroText").value.trim(),galleryTitle:document.getElementById("setGalleryTitle").value.trim(),gallerySub:document.getElementById("setGallerySub").value.trim(),servicesTitle:document.getElementById("setServicesTitle").value.trim(),calcTitle:document.getElementById("setCalcTitle").value.trim(),projectsTitle:document.getElementById("setProjectsTitle").value.trim(),testimonialsTitle:document.getElementById("setTestimonialsTitle").value.trim(),about:document.getElementById("setAbout").value.trim(),updatedAt:Date.now()};await set(ref(db,"settings/site"),payload);await addActivity("Website content updated",{});applySiteSettings(payload);toast("Website updated successfully.")};
-function applySiteSettings(s={}){document.getElementById("siteBusinessName")&&(document.getElementById("siteBusinessName").textContent=s.businessName||"KHANS GYPSUMCRAFT PK");let hero=document.getElementById("heroTitle");if(hero)hero.innerHTML=esc(s.hero||"Modern ceilings. Beautiful spaces.").replace(/\n/g,"<br>");let heroText=document.getElementById("heroText");if(heroText)heroText.textContent=s.heroText||"Explore premium false ceiling, TV wall and interior designs. Select a design, add your room details, estimate your project and send your quotation to WhatsApp.";let pairs={galleryTitle:"galleryTitle",gallerySub:"gallerySub",servicesTitle:"servicesTitle",calcTitle:"calcTitle",projectsTitle:"projectsTitle",testimonialsTitle:"testimonialsTitle"};Object.entries(pairs).forEach(([k,id])=>{let e=document.getElementById(id);if(e&&s[k])e.textContent=s[k]});let phone=s.phone||"+92 313 9186430",email=s.email||OWNER_EMAIL,address=s.address||"Swat, Pakistan",hours=s.hours||"Mon-Sat: 9 AM - 8 PM";document.querySelectorAll("[data-contact-phone]").forEach(e=>e.textContent=phone);document.querySelectorAll("[data-contact-email]").forEach(e=>e.textContent=email);document.querySelectorAll("[data-contact-address]").forEach(e=>e.textContent=address);document.querySelectorAll("[data-contact-hours]").forEach(e=>e.textContent=hours)}
+        <!-- ==================== STEP 16: REAL PROJECTS PORTFOLIO ==================== -->
+        <section id="section-portfolio" class="hidden max-w-7xl mx-auto px-4 py-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-extrabold text-gray-900">Completed Projects Portfolio</h2>
+                <p class="text-gray-500 text-sm mt-1">Real site transformations in Mingora, Saidu Sharif & Swat Valley</p>
+            </div>
 
-function toggleAI(){document.getElementById("aiPanel").classList.toggle("show")}window.toggleAI=toggleAI;
-function addAI(text,me=false){let b=document.getElementById("aiMessages");b.innerHTML+=`<div class="msg ${me?"me":"bot"}">${esc(text)}</div>`;b.scrollTop=b.scrollHeight}
-function localAI(t){let x=t.toLowerCase();if(/price|cost|rate|qeemat|قیمت/.test(x))return"Smart Quote calculator se estimated price nikal sakte ho. Final price site measurement aur customization ke baad confirm hogi.";if(/design|ceiling|tv wall|bedroom|lounge|ڈیزائن/.test(x))return"Design Studio mein Bedroom, TV Lounge, Office, Kitchen, Islamic Design, Wooden, Geometric aur 3D categories hain.";if(/whatsapp|contact|number|رابطہ/.test(x))return"WhatsApp button se KHANS GYPSUMCRAFT PK ko direct contact kar sakte ho.";if(/order|quotation|quote/.test(x))return"Google sign in karke quotation save aur order place kar sakte ho. Account section mein history milti hai.";return"Main KHANS GYPSUMCRAFT PK ke designs, quotations, measurements, orders aur services ke baare mein help kar sakta hoon."}
-window.sendAI=async()=>{let i=document.getElementById("aiText"),t=i.value.trim();if(!t)return;addAI(t,true);i.value="";document.getElementById("aiStatus").textContent="Thinking…";await new Promise(r=>setTimeout(r,180));addAI(localAI(t));document.getElementById("aiStatus").textContent="Ready"};
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl p-5 shadow-md border border-gray-100 space-y-3">
+                    <span class="text-[10px] bg-green-100 text-green-700 font-bold px-2.5 py-1 rounded-full">Completed - Mingora Swat</span>
+                    <h3 class="font-bold text-lg">Luxury Villa Master Bedroom False Ceiling</h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div>
+                            <p class="text-[10px] font-bold text-gray-400 mb-1">BEFORE WORK</p>
+                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=400" class="rounded-xl h-32 w-full object-cover">
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-bold text-gold-600 mb-1">AFTER FINISHING</p>
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400" class="rounded-xl h-32 w-full object-cover">
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500">Area: 280 sq ft | Duration: 4 Days | Ambient Warm LED Strip Integration.</p>
+                </div>
+            </div>
+        </section>
 
-/* =========================
-   SALLU BOSS AI — STEP 7/8
-   Browser-native voice layer.
-   No paid AI API is required for the voice shell.
-   ========================= */
-let salluRecognition=null;
-let salluListening=false;
-let salluPending=null;
-let salluVoices=[];
+        <!-- ==================== STEP 8 & 11: FREE SITE VISIT & APPOINTMENTS ==================== -->
+        <section id="section-site-visit" class="hidden max-w-2xl mx-auto px-4 py-8">
+            <div class="bg-white rounded-3xl p-8 shadow-xl border border-gold-500/20 space-y-6">
+                <div class="text-center">
+                    <h2 class="text-2xl font-bold text-gray-900">Book Free Site Visit & Measurement</h2>
+                    <p class="text-xs text-gray-500 mt-1">Our master technician will visit your location in Swat for precise measurements</p>
+                </div>
 
-function salluAllowed(){return !!(user && user.uid===OWNER_UID)}
+                <form id="site-visit-form" onsubmit="handleSiteVisitSubmit(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Full Name</label>
+                        <input type="text" id="visit-name" required placeholder="Aapka Naam" class="w-full p-3 border rounded-xl text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1">WhatsApp Number</label>
+                        <input type="tel" id="visit-phone" required placeholder="0300 0000000" class="w-full p-3 border rounded-xl text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Location Address in Swat</label>
+                        <textarea id="visit-address" required rows="2" placeholder="Complete address..." class="w-full p-3 border rounded-xl text-sm"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Preferred Date</label>
+                        <input type="date" id="visit-date" required class="w-full p-3 border rounded-xl text-sm">
+                    </div>
+                    <button type="submit" class="w-full bg-gold-500 hover:bg-gold-600 text-darknavy font-bold py-3.5 rounded-xl text-sm shadow-md transition">
+                        Confirm Site Visit Request
+                    </button>
+                </form>
+            </div>
+        </section>
 
-function loadSalluVoices(){
-  if(!("speechSynthesis" in window)) return;
-  salluVoices=window.speechSynthesis.getVoices()||[];
-}
-if("speechSynthesis" in window){
-  loadSalluVoices();
-  window.speechSynthesis.onvoiceschanged=loadSalluVoices;
-}
+        <!-- ==================== STEP 4 & 12: CUSTOMER ACCOUNT & LIVE ORDER TRACKING ==================== -->
+        <section id="section-customer-account" class="hidden max-w-5xl mx-auto px-4 py-8 space-y-8">
+            <div class="bg-white p-6 rounded-3xl border border-gold-500/30 shadow-md">
+                <h2 class="text-2xl font-extrabold text-gray-900">My Customer Account</h2>
+                <p class="text-xs text-gray-500">Track your ongoing orders, saved room plans & active quotations</p>
+            </div>
 
-function salluFemaleVoice(){
-  const preferred=[
-    "microsoft zira","zira","samantha","susan","victoria","karen","hazel",
-    "google uk english female","google us english female","female"
-  ];
-  return salluVoices.find(v=>preferred.some(x=>v.name.toLowerCase().includes(x))) ||
-         salluVoices.find(v=>/female/i.test(v.name)) ||
-         salluVoices.find(v=>/^en[-_]/i.test(v.lang)) || salluVoices[0] || null;
-}
+            <!-- Step 12: Live Project Tracking Timeline -->
+            <div class="bg-darknavy text-white p-6 rounded-3xl border border-gold-500/40 space-y-4">
+                <h3 class="text-base font-bold text-gold-400">Live Project Status Tracking</h3>
+                <div class="flex items-center justify-between text-center text-xs pt-4">
+                    <div class="space-y-1">
+                        <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mx-auto"><i class="fa-solid fa-check text-white"></i></div>
+                        <p class="font-bold">Order Received</p>
+                    </div>
+                    <div class="h-0.5 bg-green-500 flex-1 mx-2"></div>
+                    <div class="space-y-1">
+                        <div class="w-8 h-8 bg-gold-500 text-darknavy rounded-full flex items-center justify-center mx-auto font-bold">2</div>
+                        <p class="font-bold text-gold-400">Site Visit Scheduled</p>
+                    </div>
+                    <div class="h-0.5 bg-gray-700 flex-1 mx-2"></div>
+                    <div class="space-y-1">
+                        <div class="w-8 h-8 bg-gray-800 text-gray-400 rounded-full flex items-center justify-center mx-auto font-bold">3</div>
+                        <p class="text-gray-400">Work Started</p>
+                    </div>
+                    <div class="h-0.5 bg-gray-700 flex-1 mx-2"></div>
+                    <div class="space-y-1">
+                        <div class="w-8 h-8 bg-gray-800 text-gray-400 rounded-full flex items-center justify-center mx-auto font-bold">4</div>
+                        <p class="text-gray-400">Completed</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-// Natural, professional delivery: short sentence pauses, calm speed and warm pitch.
-function salluSpeak(text){
-  if(!("speechSynthesis" in window)) return;
-  window.speechSynthesis.cancel();
-  const clean=String(text).replace(/[\u2764\u2765]/g,"").replace(/\s+/g," ").trim();
-  if(!clean) return;
-  const parts=clean.match(/[^.!?]+[.!?]+|[^.!?]+$/g)||[clean];
-  const voice=salluFemaleVoice();
-  parts.forEach((part,i)=>{
-    const u=new SpeechSynthesisUtterance(part.trim());
-    if(voice) u.voice=voice;
-    u.rate=.92;
-    u.pitch=1.05;
-    u.volume=1;
-    u.onstart=()=>{if(i===0)salluSetState("Speaking…")};
-    u.onend=()=>{if(i===parts.length-1)salluSetState("Ready")};
-    window.speechSynthesis.speak(u);
-  });
-}
+        <!-- ==================== STEP 7, 14, 15 & 21: OWNER CENTER (ADMIN + SALLU AI + ACCESS CONTROL) ==================== -->
+        <section id="section-owner-center" class="hidden max-w-7xl mx-auto px-4 py-8 space-y-8">
+            <div class="bg-darknavy text-white rounded-3xl p-6 border border-gold-500/40 flex flex-wrap justify-between items-center gap-4 shadow-xl">
+                <div>
+                    <span class="text-xs text-gold-400 font-bold uppercase tracking-wider">Master Command Center</span>
+                    <h2 class="text-2xl font-extrabold">KHANS Business Owner Dashboard</h2>
+                </div>
+                
+                <!-- Sallu AI Console Controls -->
+                <div class="bg-gray-900/90 p-4 rounded-2xl border border-gold-500/30 flex items-center gap-4">
+                    <div class="w-10 h-10 bg-gold-500 text-darknavy rounded-full flex items-center justify-center text-lg shadow-md animate-pulse">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-gold-400">Sallu AI Assistant (Female Voice)</h4>
+                        <p id="sallu-console-status" class="text-[11px] text-gray-300">Listening automatically... Speak commands.</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="toggleSalluAI(true)" class="bg-green-600 text-white px-3 py-1.5 rounded-lg text-xs font-bold">On</button>
+                        <button onclick="toggleSalluAI(false)" class="bg-red-600 text-white px-3 py-1.5 rounded-lg text-xs font-bold">Off</button>
+                    </div>
+                </div>
+            </div>
 
-function salluAdd(text,me=false){
-  const b=document.getElementById("salluMessages");
-  if(!b)return;
-  b.insertAdjacentHTML("beforeend",`<div class="salluMsg ${me?"me":"bot"}">${esc(text)}</div>`);
-  b.scrollTop=b.scrollHeight;
-}
+            <!-- Management Tabs -->
+            <div class="flex border-b border-gray-200 gap-4 overflow-x-auto text-sm font-bold">
+                <button onclick="switchOwnerTab('orders')" class="owner-tab-btn active border-b-2 border-gold-500 text-gold-600 pb-3 px-2">Orders & Site Visits</button>
+                <button onclick="switchOwnerTab('add-design')" class="owner-tab-btn text-gray-500 pb-3 px-2">Gallery Manager</button>
+                <button onclick="switchOwnerTab('access-control')" class="owner-tab-btn text-gray-500 pb-3 px-2">Owner Access Control</button>
+            </div>
 
-function salluReply(text,speak=true){
-  salluAdd(text,false);
-  if(speak) salluSpeak(text);
-}
-window.salluReply=salluReply;
+            <!-- Tab 1: Orders Table -->
+            <div id="owner-tab-orders" class="owner-tab-content space-y-4">
+                <h3 class="text-lg font-bold">Customer Orders & Site Visit Requests</h3>
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-x-auto">
+                    <table class="w-full text-left text-xs">
+                        <thead class="bg-gray-50 border-b text-gray-700 uppercase">
+                            <tr>
+                                <th class="p-4">Customer</th>
+                                <th class="p-4">Phone</th>
+                                <th class="p-4">Address</th>
+                                <th class="p-4">Status</th>
+                                <th class="p-4">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-table-body" class="divide-y divide-gray-100">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-function salluSetState(text){
-  const e=document.getElementById("salluState");
-  if(e)e.textContent=text;
-}
+            <!-- Tab 2: Add Design -->
+            <div id="owner-tab-add-design" class="owner-tab-content hidden max-w-xl bg-white p-6 rounded-2xl border border-gray-200 space-y-4">
+                <h3 class="text-lg font-bold">Upload New Design to Studio</h3>
+                <div>
+                    <label class="block text-xs font-bold mb-1">Design Title</label>
+                    <input type="text" id="new-design-title" placeholder="e.g. Arabic Ceiling Pattern" class="w-full p-2.5 border rounded-xl text-xs">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold mb-1">Category</label>
+                    <select id="new-design-category" class="w-full p-2.5 border rounded-xl text-xs">
+                        <option value="bedroom">Bedroom</option>
+                        <option value="tv-lounge">TV Lounge</option>
+                        <option value="islamic">Islamic Design</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold mb-1">Image URL</label>
+                    <input type="url" id="new-design-img" placeholder="https://..." class="w-full p-2.5 border rounded-xl text-xs">
+                </div>
+                <button onclick="saveNewDesign()" class="w-full bg-gold-500 text-darknavy font-bold py-3 rounded-xl text-xs">Publish Design</button>
+            </div>
 
-function toggleSallu(){
-  if(!salluAllowed()){
-    toast("Sallu is available only inside Boss Center.",true);
-    if(!user)showLogin();
-    return;
-  }
-  const p=document.getElementById("salluPanel");
-  const opening=!p.classList.contains("show");
-  p.classList.toggle("show");
-  if(opening){
-    if(!document.getElementById("salluMessages").children.length) salluReply("Assalam-o-Alaikum Boss. Main Sallu hoon. Voice ready hai — aap boliye.",true);
-    setTimeout(()=>{if(p.classList.contains("show") && !salluListening) window.salluListen?.()},650);
-  }else{
-    window.__salluVoiceSession=false;
-    try{salluRecognition?.stop()}catch(e){}
-    try{window.speechSynthesis?.cancel()}catch(e){}
-  }
-}
-window.toggleSallu=toggleSallu;
+            <!-- Tab 3: Dynamic Owner Access System -->
+            <div id="owner-tab-access-control" class="owner-tab-content hidden max-w-xl bg-white p-6 rounded-2xl border border-gray-200 space-y-4">
+                <h3 class="text-lg font-bold">Manage Owner Access Permissions</h3>
+                <p class="text-xs text-gray-500">Naye trusted owner ko add ya remove karein.</p>
 
-function salluShowConfirm(message,action){
-  salluPending=action;
-  const box=document.getElementById("salluConfirm");
-  box.classList.remove("hidden");
-  box.innerHTML=`<b>Sallu confirmation</b><div style="margin:6px 0 10px">${esc(message)}</div>
-  <button class="gold" onclick="salluConfirm(true)">Confirm</button>
-  <button class="outline" onclick="salluConfirm(false)">Cancel</button>`;
-}
-window.salluConfirm=async ok=>{
-  const action=salluPending;
-  salluPending=null;
-  document.getElementById("salluConfirm").classList.add("hidden");
-  if(!ok){salluReply("Theek hai Boss, main ye action nahi karungi.");return;}
-  try{
-    if(action?.type==="hero"){
-      const old=await read("settings/site")||{};
-      await set(ref(db,"settings/site"),{...old,hero:action.value,updatedAt:Date.now()});
-      await addActivity("Sallu changed hero text",{value:action.value});
-      salluReply("Done Boss. Hero text update kar diya hai.");
-    }else if(action?.type==="about"){
-      const old=await read("settings/site")||{};
-      await set(ref(db,"settings/site"),{...old,about:action.value,updatedAt:Date.now()});
-      await addActivity("Sallu changed About text",{value:action.value});
-      salluReply("Done Boss. About content update kar diya hai.");
-    }else if(action?.type==="businessHours"){
-      const old=await read("settings/site")||{};
-      await set(ref(db,"settings/site"),{...old,hours:action.value,updatedAt:Date.now()});
-      await addActivity("Sallu changed business hours",{value:action.value});
-      salluReply("Done Boss. Business hours update kar diye hain.");
-    }else if(action?.type==="deleteDesign"){
-      await remove(ref(db,"designs/"+action.key));
-      await addActivity("Sallu deleted design",{designKey:action.key});
-      salluReply("Design delete kar diya hai.");
-    }else{
-      salluReply("Action confirm ho gaya, lekin is command ke liye exact operation available nahi hai.");
-    }
-  }catch(e){
-    console.error(e); salluReply("Boss, action complete nahi ho saka. Firebase permission ya data check karna hoga.");
-  }
-};
+                <div class="flex gap-2">
+                    <input type="email" id="new-owner-email" placeholder="Partner Email or Firebase UID" class="w-full p-2.5 border rounded-xl text-xs outline-none">
+                    <button onclick="addNewOwnerAccess()" class="bg-darknavy text-gold-400 font-bold px-4 rounded-xl text-xs whitespace-nowrap">Add Owner</button>
+                </div>
 
-async function salluDataSummary(){
-  try{
-    const d=await getBusinessData();
-    const valid=d.orders.filter(x=>x.status!=="Cancelled");
-    const sales=valid.reduce((n,x)=>n+(+x.total||0),0);
-    const pending=valid.filter(x=>x.status==="Pending").length;
-    const confirmed=valid.filter(x=>x.status==="Confirmed").length;
-    const completed=valid.filter(x=>x.status==="Completed").length;
-    return `Boss, abhi ${d.users ? Object.keys(d.users).length : 0} customers, ${valid.length} active orders aur ${d.quotations.length} quotations hain. Recorded sales ${money(sales)} hain. Pending ${pending}, Confirmed ${confirmed}, Completed ${completed}.`;
-  }catch(e){return "Boss, business data read nahi ho saka."}
-}
+                <div class="mt-4 border-t pt-4">
+                    <h4 class="text-xs font-bold mb-2">Current Authorized Owners:</h4>
+                    <ul id="owner-list-display" class="space-y-2 text-xs">
+                        <!-- Loaded dynamically -->
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-function salluNormalize(t){
-  return String(t||"").toLowerCase().replace(/[!?.,]/g," ").replace(/\s+/g," ").trim();
-}
+    </main>
 
-async function salluCommand(raw){
-  if(!salluAllowed()){
-    salluReply("Sallu ka Boss mode sirf Boss Center ke authenticated owner ke liye hai.",true);
-    return;
-  }
-  const t=salluNormalize(raw);
+    <!-- Login Modal -->
+    <div id="login-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-sm rounded-3xl p-6 shadow-2xl border border-gold-500/30 text-center space-y-4">
+            <h3 class="text-xl font-bold text-gray-900">Sign In to KHANS</h3>
+            <p class="text-xs text-gray-500">Google account se sign-in karein</p>
+            <button onclick="loginWithGoogle()" class="w-full bg-darknavy text-white font-bold py-3 rounded-xl text-xs flex items-center justify-center gap-2">
+                <i class="fa-brands fa-google text-gold-400"></i> Continue with Google
+            </button>
+            <button onclick="closeLoginModal()" class="text-xs text-gray-400 font-semibold block mx-auto">Cancel</button>
+        </div>
+    </div>
 
-  // Navigation / information
-  if(/(new )?orders|orders dikhao|order dikhao|order dekho/.test(t)){
-    tab("orders",null); salluReply("Boss, Orders section khol diya hai."); return;
-  }
-  if(/quotation|quotations|quotes|quote dikhao/.test(t)){
-    tab("quotations",null); salluReply("Boss, Quotations section khol diya hai."); return;
-  }
-  if(/customer|customers/.test(t)){
-    tab("customers",null); salluReply("Boss, Customers section khol diya hai."); return;
-  }
-  if(/analytics|business analytics|sales|business ka kya scene/.test(t)){
-    tab("analytics",null); salluReply(await salluDataSummary()); return;
-  }
-  if(/gallery|designs|design section|design manager/.test(t)){
-    tab("designs",null); salluReply("Boss, Gallery Manager khol diya hai."); return;
-  }
-  if(/saved design|favorites|customer interest/.test(t)){
-    tab("saved",null); salluReply("Boss, Saved Designs khol diya hai."); return;
-  }
-  if(/project|projects/.test(t)){
-    tab("projects",null); salluReply("Boss, Projects section khol diya hai."); return;
-  }
-  if(/testimonial|review|reviews/.test(t)){
-    tab("testimonials",null); salluReply("Boss, Testimonials section khol diya hai."); return;
-  }
-  if(/notification|notifications/.test(t)){
-    tab("notifications",null); salluReply("Boss, Notifications section khol diya hai."); return;
-  }
-  if(/website settings|website editor|settings|website edit/.test(t)){
-    tab("settings",null); salluReply("Boss, Website Editor khol diya hai."); return;
-  }
-  if(/owner center|dashboard|overview/.test(t)){
-    renderOverview(); salluReply("Owner dashboard ready hai."); return;
-  }
+    <!-- JAVASCRIPT CORE -->
+    <script>
+        const firebaseConfig = {
+            apiKey: "YOUR_FIREBASE_API_KEY",
+            authDomain: "khans-gypsumcraft.firebaseapp.com",
+            databaseURL: "https://khans-gypsumcraft-default-rtdb.firebaseio.com",
+            projectId: "khans-gypsumcraft",
+            storageBucket: "khans-gypsumcraft.appspot.com",
+            messagingSenderId: "123456789",
+            appId: "1:123456789:web:abcdef"
+        };
 
-  // Website changes — always confirm before write.
-  let m;
-  if((m=t.match(/(?:hero|headline|hero text)(?: ko| text)?\s*(?:change|update|set|kar do|karo)\s+(.+)/)) ||
-     (m=t.match(/hero\s+(.+)/))){
-    const value=raw.replace(/^.*?(?:hero|headline|hero text)\s*/i,"").trim();
-    if(value){
-      salluShowConfirm(`Hero text ko ye set kar doon?\n"${value}"`,{type:"hero",value});
-      salluReply("Boss, main hero text change kar sakti hoon. Pehle confirmation chahiye.");
-      return;
-    }
-  }
-  if((m=t.match(/(?:about|about section)\s+(?:change|update|set|kar do|karo)\s+(.+)/))){
-    const value=raw.replace(/^.*?(?:about|about section)\s*(?:change|update|set|kar do|karo)\s*/i,"").trim();
-    if(value){
-      salluShowConfirm(`About section ko ye content de doon?\n"${value}"`,{type:"about",value});
-      salluReply("Boss, About content change karne se pehle confirmation chahiye.");
-      return;
-    }
-  }
-  if((m=t.match(/(?:business hours|hours)\s+(?:change|update|set|kar do|karo)\s+(.+)/))){
-    const value=raw.replace(/^.*?(?:business hours|hours)\s*(?:change|update|set|kar do|karo)\s*/i,"").trim();
-    if(value){
-      salluShowConfirm(`Business hours ko "${value}" kar doon?`,{type:"businessHours",value});
-      salluReply("Boss, hours update karne se pehle confirmation chahiye.");
-      return;
-    }
-  }
+        if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.database();
 
-  // Casual conversation / website information.
-  if(/^(hi|hello|hey|salam|assalam|aoa|how are you|kaisi ho|kesi ho|kya haal|haal kya hai)/.test(t)){
-    salluReply("Alhamdulillah main theek hoon Boss ❤️ Aap batao, aaj website ka kaunsa kaam start karein?",true); return;
-  }
-  if(/who are you|tum kon|kaun ho|ap kon|aap kon|naam kya/.test(t)){
-    salluReply("Main Sallu hoon — aapki female-voice AI assistant. Main website, designs, customers, orders, quotations, projects, analytics aur website settings mein aapki help karti hoon.",true); return;
-  }
-  if(/what can you do|kya kar sakti|kya kya kar/.test(t)){
-    salluReply("Main Boss Center khol sakti hoon, orders/quotations/customers/analytics dikha sakti hoon, website content changes prepare karke confirmation ke baad publish kar sakti hoon, aur aap se normal casual baat bhi kar sakti hoon.",true); return;
-  }
-  if(/website|site|web/i.test(t)){
-    salluReply("KHANS GYPSUMCRAFT PK mein Design Studio, Smart Calculator, Google login, customer account, quotations, orders, Boss Center, analytics, gallery manager, projects, testimonials, notifications aur Website Editor already integrated hain.",true); return;
-  }
+        let currentUser = null;
+        let isOwnerUser = false;
 
-  salluReply("Boss, main samajh gayi hoon. Agar ye website/business command hai to thora clear bolo, jaise: “Sallu, new orders dikhao”, “Sallu, analytics batao”, ya “Sallu, website settings kholo”. Normal baat bhi kar sakte ho.",true);
-}
+        const sampleDesigns = [
+            { id: 1, title: 'Royal Gold Ceiling', category: 'bedroom', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600' },
+            { id: 2, title: 'TV Lounge LED Panel', category: 'tv-lounge', img: 'https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=600' },
+            { id: 3, title: 'Islamic Geometric Ceiling', category: 'islamic', img: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600' }
+        ];
 
-window.salluSendText=async()=>{
-  if(!salluAllowed()){toggleSallu();return;}
-  const input=document.getElementById("salluText");
-  const t=input.value.trim();
-  if(!t)return;
-  input.value="";
-  salluAdd(t,true);
-  salluSetState("Thinking…");
-  await salluCommand(t);
-  salluSetState("Ready");
-};
+        // SALLU AI VOICE ENGINE
+        let isSalluActive = false;
+        let recognition = null;
+        let synth = window.speechSynthesis;
 
-document.getElementById("salluText")?.addEventListener("keydown",e=>{
-  if(e.key==="Enter")salluSendText();
-});
+        function initSalluAI() {
+            if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) return;
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            recognition = new SpeechRecognition();
+            recognition.continuous = true;
+            recognition.lang = 'ur-PK';
 
-function setupSalluRecognition(){
-  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
-  if(!SR)return null;
-  const r=new SR();
-  r.lang="en-PK";
-  r.interimResults=false;
-  r.continuous=false;
-  r.maxAlternatives=1;
-  r.onstart=()=>{salluListening=true;document.getElementById("salluMic").classList.add("listening");salluSetState("Listening…")};
-  r.onend=()=>{salluListening=false;document.getElementById("salluMic").classList.remove("listening");salluSetState("Ready")};
-  r.onerror=e=>{salluSetState("Mic error");salluListening=false;document.getElementById("salluMic").classList.remove("listening");salluReply("Boss, voice input start nahi ho saka. Browser microphone permission aur site settings check karein.",false)};
-  r.onresult=async e=>{
-    const text=e.results?.[0]?.[0]?.transcript||"";
-    if(!text)return;
-    document.getElementById("salluText").value=text;
-    salluAdd(text,true);
-    await salluCommand(text);
-  };
-  return r;
-}
+            recognition.onresult = function(event) {
+                const last = event.results.length - 1;
+                const command = event.results[last][0].transcript.trim().toLowerCase();
+                handleSalluVoiceCommand(command);
+            };
 
-window.salluListen=()=>{
-  if(!salluAllowed()){toggleSallu();return;}
-  if(!salluRecognition)salluRecognition=setupSalluRecognition();
-  if(!salluRecognition){
-    salluReply("Aapke browser mein Speech Recognition available nahi hai. Text input se Sallu use kar sakte hain.",false);
-    return;
-  }
-  if(salluListening){salluRecognition.stop();return;}
-  try{salluRecognition.start()}catch(e){}
-};
+            recognition.onend = function() {
+                if (isSalluActive) recognition.start();
+            };
+        }
 
-// Show Sallu only to the authenticated Boss.
-function updateSalluVisibility(){
-  const b=document.getElementById("salluFab");
-  if(b)b.classList.toggle("hidden",!salluAllowed());
-}
+        function speakSallu(text) {
+            if (!synth) return;
+            synth.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            const voices = synth.getVoices();
+            const femaleVoice = voices.find(v => v.name.includes('Female') || v.name.includes('Google') || v.name.includes('Zira')) || voices[0];
+            if (femaleVoice) utterance.voice = femaleVoice;
+            utterance.pitch = 1.1;
+            synth.speak(utterance);
+        }
 
-let deferredInstallPrompt=null;window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredInstallPrompt=e});window.installApp=async()=>{if(deferredInstallPrompt){deferredInstallPrompt.prompt();await deferredInstallPrompt.userChoice;deferredInstallPrompt=null;return}toast("Chrome menu ⋮ → Add to Home screen / Install app se install kar sakte hain.")};
-onValue(ref(db,"settings/site"),snap=>{applySiteSettings(snap.exists()?snap.val():{})});
-renderCats();calculate();renderProjects();renderTestimonials();updateSalluVisibility();addAI("Assalam-o-Alaikum! Main KG AI Chat hoon — designs, quotations, measurements aur services ke baare mein help kar sakta hoon.");
-onValue(ref(db,"designs"),s=>{customDesigns=s.exists()?Object.fromEntries(Object.entries(s.v
-if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
-al()).map(([k,v])=>[k,{...v,key:k}])):{};if(currentCat)renderCurrentGallery()});
+        function toggleSalluAI(status) {
+            isSalluActive = status;
+            const badge = document.getElementById('sallu-status-badge');
+            const statusText = document.getElementById('sallu-console-status');
 
-/* ===== STEP 1-28 MASTER FEATURES ===== */
-const __baseOwnerTab=window.tab;
-window.masterTab=async function(t,b){if(!allowed())return;if(b){document.querySelectorAll('.side button').forEach(x=>x.classList.remove('active'));b.classList.add('active')}if(t==='visits')return renderMasterVisits();if(t==='appointments')return renderMasterAppointments();if(t==='offers')return renderMasterOffers();if(t==='seo')return renderMasterSEO();if(t==='documents')return renderMasterDocuments();if(t==='visualizer')return renderMasterVisualizer();if(t==='sallu')return renderMasterSallu();return __baseOwnerTab(t,b)};
-window.openRoomPlanner=()=>{if(!user){showLogin();return}document.getElementById('roomPlannerModal').classList.add('show');['rpRoomType','rpLocation','rpLength','rpWidth','rpHeight','rpBudget','rpStyle','rpNotes'].forEach(id=>{let e=document.getElementById(id);if(e)e.value=''});document.getElementById('rpArea').textContent='Area: 0 sq ft';['rpLength','rpWidth'].forEach(id=>document.getElementById(id).oninput=updateRoomArea)};
-window.updateRoomArea=()=>{let a=(+document.getElementById('rpLength').value||0)*(+document.getElementById('rpWidth').value||0);document.getElementById('rpArea').textContent=`Area: ${a.toFixed(1)} sq ft`};
-window.saveRoomPlan=async()=>{if(!user){showLogin();return}let length=+document.getElementById('rpLength').value||0,width=+document.getElementById('rpWidth').value||0;let data={uid:user.uid,roomType:document.getElementById('rpRoomType').value.trim(),location:document.getElementById('rpLocation').value.trim(),length,width,height:+document.getElementById('rpHeight').value||0,area:length*width,budget:+document.getElementById('rpBudget').value||0,material:document.getElementById('rpMaterial').value,style:document.getElementById('rpStyle').value.trim(),notes:document.getElementById('rpNotes').value.trim(),designId:current?.id||'',designName:current?.name||'',createdAt:Date.now()};await set(push(ref(db,'roomPlans')),data);await notifyOwner('New room plan',`${user.displayName||'Customer'} saved a ${data.roomType||'room'} plan.`);toast('Room plan saved.');closeM('roomPlannerModal')};
-window.openSiteVisit=async()=>{if(!user){showLogin();return}document.getElementById('siteVisitModal').classList.add('show');let p=await profileData();document.getElementById('svName').value=user.displayName||'';document.getElementById('svPhone').value=p.phone||'';document.getElementById('svAddress').value=p.address||''};
-window.submitSiteVisit=async()=>{if(!user){showLogin();return}let d={uid:user.uid,name:document.getElementById('svName').value.trim(),phone:document.getElementById('svPhone').value.trim(),address:document.getElementById('svAddress').value.trim(),projectType:document.getElementById('svProject').value.trim(),area:+document.getElementById('svArea').value||0,date:document.getElementById('svDate').value,time:document.getElementById('svTime').value,notes:document.getElementById('svNotes').value.trim(),status:'Requested',createdAt:Date.now()};await set(push(ref(db,'siteVisits')),d);await notifyOwner('New site visit request',`${d.name||'Customer'} requested a site visit.`);toast('Site visit request sent.');closeM('siteVisitModal')};
-let kgVizStream=null,kgVizMode='photo',kgVizX=50,kgVizY=42;
-window.openVisualizer=async mode=>{if(!user){showLogin();return}kgVizMode=mode;document.getElementById('visualizerModal').classList.add('show');let cam=document.getElementById('kgCamera'),photo=document.getElementById('kgPhoto'),status=document.getElementById('kgARStatus');if(current?.image){document.getElementById('kgOverlay').src=current.image;document.getElementById('kgOverlay').classList.add('show')}if(mode==='camera'){photo.style.display='none';cam.style.display='block';try{kgVizStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'}},audio:false});cam.srcObject=kgVizStream;status.textContent='Live View active. Move the phone and adjust the overlay. True surface tracking requires an AR/computer-vision layer.'}catch(e){status.textContent='Camera permission nahi mili. Photo mode use karein.';toast('Camera permission required.',true)}}else{cam.style.display='none';photo.style.display='block';status.textContent='Photo mode: room photo upload karein, phir design overlay adjust karein.'}updateViz()};
-window.loadVizPhoto=e=>{let f=e.target.files?.[0];if(!f)return;let u=URL.createObjectURL(f);let p=document.getElementById('kgPhoto');p.src=u;p.style.display='block';kgVizMode='photo';document.getElementById('kgCamera').style.display='none';document.getElementById('kgARStatus').textContent='Room photo loaded. Design overlay is ready.';updateViz()};
-window.updateViz=()=>{let o=document.getElementById('kgOverlay');o.style.opacity=(+document.getElementById('kgOpacity').value||65)/100;o.style.width=(+document.getElementById('kgWidth').value||45)+'%';o.style.left=kgVizX+'%';o.style.top=kgVizY+'%'};
-window.moveViz=(dx,dy)=>{kgVizX=Math.max(5,Math.min(95,kgVizX+dx));kgVizY=Math.max(5,Math.min(95,kgVizY+dy));updateViz()};
-window.closeVisualizer=()=>{if(kgVizStream){kgVizStream.getTracks().forEach(t=>t.stop());kgVizStream=null}closeM('visualizerModal')};
-window.saveVisualizerPreview=()=>{toast('Preview controls saved for this session. For permanent customer storage, use Firebase Storage integration.')};
-window.visualizerQuote=()=>{closeVisualizer();go('calculator');toast('Visualizer design selected for quotation.')};
-window.openAdvancedGallery=()=>{document.getElementById('advancedGalleryModal').classList.add('show');let categories=['Wall Design','Bedroom','TV Lounge','False Ceiling','Office','Kitchen','3D Gypsum','Geometric','Islamic','Wooden','Wooden + Gypsum'];let html='<div class="pillbar">'+categories.map(c=>`<span class="kgBadge">${esc(c)}</span>`).join(' ')+'</div><div class="grid">';categories.slice(0,8).forEach((c,i)=>{let d=demoDesigns(c==='Wall Design'?'Geometric':c)[0];html+=`<article class="card"><img src="${esc(d.image)}" alt="${esc(c)} design"><div class="body"><b>${esc(c)}</b><p class="muted">Showcase + individual design pieces. Select a design to preview, save or quote.</p><button class="primary" onclick="window.__kgOpenAdvancedDesign(${JSON.stringify(d).replace(/"/g,"&quot;")})">Open</button></div></article>`});html+='</div>';document.getElementById('advancedGallery').innerHTML=html};
-window.__kgOpenAdvancedDesign=d=>{current=d;closeM('advancedGalleryModal');viewDesign(d)};
-window.renderMasterVisits=async()=>{let n=await read('siteVisits')||{};let a=Object.entries(n).sort((x,y)=>(y[1].createdAt||0)-(x[1].createdAt||0));document.getElementById('dashTitle').textContent='Site Visits';document.getElementById('dashContent').innerHTML='<div class="panel"><h3>Free Measurement / Site Visit Requests</h3><div class="tableWrap"><table class="table"><tr><th>Customer</th><th>Project</th><th>Area</th><th>Date</th><th>Status</th><th>Action</th></tr>'+a.map(([k,d])=>`<tr><td>${esc(d.name)}<br><small>${esc(d.phone)}</small></td><td>${esc(d.projectType)}</td><td>${esc(d.area)} sq ft</td><td>${esc(d.date||'')}</td><td><span class="statusBadge">${esc(d.status||'Requested')}</span></td><td><button class="outline" onclick="updateSiteVisitStatus('${esc(k)}','Approved')">Approve</button> <button class="outline" onclick="updateSiteVisitStatus('${esc(k)}','Scheduled')">Schedule</button></td></tr>`).join('')||'<tr><td colspan="6">No requests.</td></tr>'+'</table></div></div>'};
-window.updateSiteVisitStatus=async(k,status)=>{await update(ref(db,'siteVisits/'+k),{status,updatedAt:Date.now()});await addActivity('Site visit '+status,{id:k});toast('Site visit updated.');renderMasterVisits()};
-window.renderMasterAppointments=async()=>{let n=await read('appointments')||{};let a=Object.entries(n);document.getElementById('dashTitle').textContent='Appointments';document.getElementById('dashContent').innerHTML='<div class="panel"><h3>Appointments</h3><p class="muted">Site visit appointments and future project meetings.</p><div class="tableWrap"><table class="table"><tr><th>Customer</th><th>Date</th><th>Time</th><th>Status</th></tr>'+a.map(([k,d])=>`<tr><td>${esc(d.name||d.customerName||'')}</td><td>${esc(d.date||'')}</td><td>${esc(d.time||'')}</td><td><span class="statusBadge">${esc(d.status||'Pending')}</span></td></tr>`).join('')||'<tr><td colspan="4">No appointments yet.</td></tr>'+'</table></div></div>'};
-window.renderMasterOffers=async()=>{let n=await read('offers')||{};document.getElementById('dashTitle').textContent='Offers';document.getElementById('dashContent').innerHTML='<div class="panel"><h3>Create Offer</h3><div class="kgForm"><input id="ofTitle" placeholder="Offer title"><input id="ofDiscount" type="number" placeholder="Discount %"><textarea id="ofText" class="kgFull" placeholder="Offer description"></textarea><button class="gold kgFull" onclick="saveOffer()">Publish Offer</button></div></div><div class="panel"><h3>Current Offers</h3>'+Object.entries(n).map(([k,d])=>`<div class="notice"><b>${esc(d.title)}</b> — ${esc(d.discount)}%<br>${esc(d.text)}<br><button class="danger" onclick="deleteOffer('${esc(k)}')">Delete</button></div>`).join('')||'<p class="muted">No offers.</p>'+'</div>'};
-window.saveOffer=async()=>{if(!allowed())return;await set(push(ref(db,'offers')),{title:document.getElementById('ofTitle').value.trim(),discount:+document.getElementById('ofDiscount').value||0,text:document.getElementById('ofText').value.trim(),active:true,createdAt:Date.now()});await addActivity('Offer published',{});toast('Offer published.');renderMasterOffers()};window.deleteOffer=async k=>{await remove(ref(db,'offers/'+k));toast('Offer removed.');renderMasterOffers()};
-window.renderMasterSEO=async()=>{let s=await read('settings/seo')||{};document.getElementById('dashTitle').textContent='SEO & Google';document.getElementById('dashContent').innerHTML=`<div class="panel"><h3>SEO Editor</h3><div class="kgForm"><input id="seoTitle" value="${esc(s.title||'KHANS GYPSUMCRAFT PK — Gypsum & False Ceiling in Swat')}" placeholder="SEO title"><textarea id="seoDesc" class="kgFull" placeholder="Meta description">${esc(s.description||'Premium gypsum, false ceiling, TV wall and interior design services in Swat, Pakistan.')}</textarea><input id="seoKeywords" class="kgFull" value="${esc(s.keywords||'Gypsum Board in Swat, False Ceiling in Mingora, TV Wall Design Swat, Interior Design Swat')}"><input id="seoCanonical" class="kgFull" value="${esc(s.canonical||location.href)}" placeholder="Canonical URL"><button class="gold kgFull" onclick="saveSEO()">Save SEO Settings</button></div></div><div class="panel"><h3>SEO Checklist</h3><p class="muted">Title • Meta • H1/H2 • LocalBusiness schema • Open Graph • sitemap • robots.txt • Search Console • Maps/business presence • image alt text.</p></div>`};window.saveSEO=async()=>{let d={title:document.getElementById('seoTitle').value.trim(),description:document.getElementById('seoDesc').value.trim(),keywords:document.getElementById('seoKeywords').value.trim(),canonical:document.getElementById('seoCanonical').value.trim(),updatedAt:Date.now()};await set(ref(db,'settings/seo'),d);await addActivity('SEO settings updated',{});toast('SEO settings saved.');renderMasterSEO()};
-window.renderMasterDocuments=async()=>{let n=await read('documents')||{};document.getElementById('dashTitle').textContent='Digital Documents';document.getElementById('dashContent').innerHTML='<div class="panel"><h3>Digital Business Records</h3><p class="muted">Invoice, receipt, warranty and project documents can be stored here. PDF generation can be added with a dedicated PDF library/service.</p>'+Object.entries(n).map(([k,d])=>`<div class="notice"><b>${esc(d.type||'Document')}</b> — ${esc(d.number||k)}<br>${esc(d.customerName||'')} — ${money(d.total||0)}<br><span class="kgBadge">${esc(d.status||'Draft')}</span></div>`).join('')||'<p class="muted">No documents yet.</p>'+'</div>'};
-window.renderMasterVisualizer=()=>{document.getElementById('dashTitle').textContent='Room Visualizer';document.getElementById('dashContent').innerHTML='<div class="kgSalluCard"><h3>Live Room / Wall / Ceiling Visualizer</h3><p class="muted">Use the same visualizer from Owner Center. Select a gallery design first, then open Live View or Try on Photo.</p><button class="gold" onclick="openVisualizer(\'camera\')">Open Live View</button> <button class="outline" onclick="openVisualizer(\'photo\')">Try on Photo</button></div>'};
-window.renderMasterSallu=()=>{document.getElementById('dashTitle').textContent='Sallu — Boss AI';document.getElementById('dashContent').innerHTML='<div class="kgSalluCard"><h3>Sallu Voice Assistant</h3><p class="muted">Female voice • natural conversation • business commands • analytics • website help. Sallu addresses you as <b>Boss</b>.</p><div class="kgCommandExamples"><button onclick="salluReply(\'Assalam-o-Alaikum Boss ❤️ Main Sallu hoon. Bataiye, aaj kya karna hai?\',true)">Greeting</button><button onclick="salluReply(\'Ji Boss, main orders aur quotations check kar sakti hoon.\',true)">Business</button><button onclick="salluReply(\'Boss, main website, designs aur settings mein aapki help kar sakti hoon.\',true)">Website</button></div></div>'};
-// Extend customer account with favourites, compare, recent views and appointments.
-const __baseOpenAccount=window.openAccount;
-window.openAccount=async function(){await __baseOpenAccount();if(!user)return;let box=document.getElementById('accountModal')?.querySelector('.modalBox');if(!box||box.querySelector('#kgAccountExtras'))return;let extra=document.createElement('div');extra.id='kgAccountExtras';extra.className='panel';extra.innerHTML='<h3>My Planning & Tracking</h3><div class="heroActions"><button class="outline" onclick="openRoomPlanner()">Room Planner</button><button class="outline" onclick="openSiteVisit()">Free Site Visit</button><button class="outline" onclick="openVisualizer(\'photo\')">Try on Photo</button></div><div id="kgCustomerTimeline" class="kgTimeline" style="margin-top:10px"></div>';box.insertBefore(extra,box.querySelector('.danger'));let o=await read('orders/'+user.uid)||{};let latest=Object.values(o).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0))[0];let states=['Order Received','Confirmed','Site Visit','Work Started','Installation','Quality Check','Completed'];document.getElementById('kgCustomerTimeline').innerHTML=states.map(x=>`<span class="kgStep ${latest&&String(latest.status||'').toLowerCase().includes(x.toLowerCase().split(' ')[0])?'active':''}">${esc(x)}</span>`).join('')};
-// Improve Sallu speech: Pakistani-friendly recognition, warm female voice preference, sentence pauses.
-const __baseSalluSpeak=window.salluSpeak;
-window.salluSpeak=function(text){if(!('speechSynthesis'in window))return;window.speechSynthesis.cancel();let parts=String(text).split(/(?<=[.!?۔])\s+/).filter(Boolean),i=0;let speakNext=()=>{if(i>=parts.length)return;let u=new SpeechSynthesisUtterance(parts[i++]);let v=(typeof salluFemaleVoice==='function'?salluFemaleVoice():null);if(v)u.voice=v;u.lang=v?.lang||'en-PK';u.rate=.90;u.pitch=1.10;u.volume=1;u.onend=()=>setTimeout(speakNext,130);window.speechSynthesis.speak(u)};speakNext()};
-/* ===== INTERACTION SAFETY BRIDGE ===== */
-window.addProject=addProject;
-window.addTestimonial=addTestimonial;
-window.renderAnalytics=renderAnalytics;
-window.renderCats=renderCats;
-window.ensureUser=ensureUser;
+            if (status) {
+                badge.classList.remove('hidden');
+                statusText.innerText = "Sallu Active & Listening...";
+                try { recognition.start(); } catch(e){}
+                speakSallu("Sallu AI active ho gayi hai owner.");
+            } else {
+                badge.classList.add('hidden');
+                statusText.innerText = "Sallu Sleep Mode.";
+                try { recognition.stop(); } catch(e){}
+                speakSallu("Sallu off ho rahi hai.");
+            }
+        }
 
-function ensureLoginButton(){
-  const nav=document.querySelector(".navlinks");
-  if(!nav)return;
-  let btn=document.getElementById("loginBtn");
-  if(!btn){
-    btn=document.createElement("button");
-    btn.id="loginBtn";
-    btn.className="gold";
-    btn.type="button";
-    btn.textContent="Continue with Google";
-    nav.appendChild(btn);
-  }
-  btn.classList.remove("hidden");
-  btn.style.display="inline-flex";
-  btn.type="button";
-  btn.onclick=ev=>{ev.preventDefault();window.login();};
-}
+        function handleSalluVoiceCommand(cmd) {
+            if (cmd.includes("sallu off") || cmd.includes("off ho jao")) {
+                toggleSalluAI(false);
+                return;
+            }
+            if (cmd.includes("order") || cmd.includes("orders")) {
+                showSection('owner-center');
+                switchOwnerTab('orders');
+                speakSallu("Ji owner, orders window khol di hai.");
+            } else if (cmd.includes("gallery") || cmd.includes("design")) {
+                showSection('design-studio');
+                speakSallu("Design gallery display kar di hai.");
+            } else if (cmd.includes("calculator")) {
+                showSection('calculator');
+                speakSallu("Smart calculator open ho gaya hai.");
+            }
+        }
 
-window.addEventListener("DOMContentLoaded",()=>{
-  ensureLoginButton();
-  setTimeout(ensureLoginButton,300);
-  setTimeout(ensureLoginButton,1200);
-});
+        // AUTHENTICATION & ACCESS CONTROL
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                currentUser = user;
+                document.getElementById('login-btn').classList.add('hidden');
+                document.getElementById('logout-btn').classList.remove('hidden');
+                document.getElementById('customer-account-btn').classList.remove('hidden');
 
-window.addEventListener('load',()=>{let sr=window.SpeechRecognition||window.webkitSpeechRecognition;if(sr&&typeof salluRecognition!=='undefined'&&salluRecognition){salluRecognition.lang='en-PK'}document.querySelectorAll('.salluMsg').forEach(e=>e.textContent=e.textContent.replace(/\bOwner\b/g,'Boss'));document.querySelectorAll('.kgFeature button').forEach(b=>b.addEventListener('click',()=>{}));});
-</script>
+                db.ref('owners').once('value', snapshot => {
+                    const owners = snapshot.val() || {};
+                    const isAuthorized = Object.values(owners).some(o => o.email === user.email) || user.email === "admin@khansgypsum.com";
+                    
+                    if (isAuthorized) {
+                        isOwnerUser = true;
+                        document.getElementById('owner-center-btn').classList.remove('hidden');
+                        toggleSalluAI(true); // Auto Start Sallu
+                    }
+                });
+            } else {
+                currentUser = null;
+                isOwnerUser = false;
+                document.getElementById('login-btn').classList.remove('hidden');
+                document.getElementById('logout-btn').classList.add('hidden');
+                document.getElementById('owner-center-btn').classList.add('hidden');
+                document.getElementById('customer-account-btn').classList.add('hidden');
+            }
+        });
+
+        function loginWithGoogle() {
+            const provider = new firebase.auth.GoogleAuthProvider();
+            auth.signInWithPopup(provider).then(() => closeLoginModal());
+        }
+
+        function handleLogout() {
+            auth.signOut();
+            toggleSalluAI(false);
+            showSection('home');
+        }
+
+        function addNewOwnerAccess() {
+            const emailInput = document.getElementById('new-owner-email').value;
+            if (!emailInput) return;
+            db.ref('owners').push({ email: emailInput, addedAt: Date.now() }).then(() => {
+                alert("Naya Owner Access kamyabi se add ho gaya!");
+                document.getElementById('new-owner-email').value = '';
+                loadOwnerList();
+            });
+        }
+
+        function loadOwnerList() {
+            db.ref('owners').on('value', snapshot => {
+                const list = document.getElementById('owner-list-display');
+                list.innerHTML = '';
+                const data = snapshot.val() || {};
+                Object.keys(data).forEach(key => {
+                    list.innerHTML += `<li class="flex justify-between items-center bg-gray-50 p-2 rounded">
+                        <span>${data[key].email}</span>
+                        <button onclick="removeOwnerAccess('${key}')" class="text-red-500 font-bold">Remove</button>
+                    </li>`;
+                });
+            });
+        }
+
+        function removeOwnerAccess(key) { db.ref(`owners/${key}`).remove(); }
+
+        // NAVIGATION & UI
+        function showSection(sectionId) {
+            document.querySelectorAll('main > section').forEach(sec => sec.classList.add('hidden'));
+            const target = document.getElementById(`section-${sectionId}`);
+            if (target) target.classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function renderGallery(filterCategory = 'all') {
+            const grid = document.getElementById('gallery-cards-grid');
+            grid.innerHTML = '';
+            const filtered = filterCategory === 'all' ? sampleDesigns : sampleDesigns.filter(d => d.category === filterCategory);
+            
+            filtered.forEach(item => {
+                grid.innerHTML += `
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md border hover:shadow-xl transition">
+                        <img src="${item.img}" class="w-full h-48 object-cover">
+                        <div class="p-5 space-y-3">
+                            <span class="text-[10px] font-bold text-gold-600 bg-gold-500/10 px-2.5 py-1 rounded-full uppercase">${item.category}</span>
+                            <h3 class="font-bold text-base text-gray-900">${item.title}</h3>
+                            <button onclick="showSection('calculator')" class="w-full bg-darknavy text-gold-400 py-2.5 rounded-xl text-xs font-bold">Get Quote</button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function filterGallery(cat) { renderGallery(cat); }
+
+        function calculateBudget() {
+            const len = parseFloat(document.getElementById('calc-length').value) || 0;
+            const wid = parseFloat(document.getElementById('calc-width').value) || 0;
+            const rate = parseFloat(document.getElementById('calc-type').value) || 0;
+            const discount = parseFloat(document.getElementById('calc-discount').value) || 0;
+
+            const area = len * wid;
+            let total = (area * rate) - discount;
+            if (total < 0) total = 0;
+
+            document.getElementById('calc-area-display').innerText = `${area} Sq Ft`;
+            document.getElementById('calc-total-display').innerText = `Rs. ${total.toLocaleString()}`;
+        }
+
+        function sendQuoteWhatsApp() {
+            const area = document.getElementById('calc-area-display').innerText;
+            const total = document.getElementById('calc-total-display').innerText;
+            const text = `Assalamu Alaikum KHANS GYPSUMCRAFT PK! Mujhe ceiling quotation chahiye:%0A- Area: ${area}%0A- Estimated Cost: ${total}`;
+            window.open(`https://wa.me/923000000000?text=${text}`, '_blank');
+        }
+
+        function switchOwnerTab(tabName) {
+            document.querySelectorAll('.owner-tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`owner-tab-${tabName}`).classList.remove('hidden');
+        }
+
+        function openLoginModal() { document.getElementById('login-modal').classList.remove('hidden'); }
+        function closeLoginModal() { document.getElementById('login-modal').classList.add('hidden'); }
+
+        window.addEventListener('load', () => {
+            renderGallery();
+            initSalluAI();
+            loadOwnerList();
+        });
+    </script>
 </body>
 </html>
