@@ -34,31 +34,33 @@
   if(typeof closeModal!=="function") window.closeModal=function(id){$(id)?.classList.remove("show")};
   if(typeof openLoginModal!=="function") window.openLoginModal=function(){if($("loginModal"))$("loginModal").classList.add("show")};
   if(typeof handleLogout!=="function") window.handleLogout=function(){auth.signOut().catch(()=>{})};
+  /* Google login is bound to the Firebase client exposed after initialization.
+     This avoids relying on a later top-level lexical "auth" declaration. */
   if(typeof loginWithGoogle!=="function") window.loginWithGoogle=async function(){
     const b=$("authGateStatus");
-    if(b)b.textContent="Opening Google sign-in...";
     const btn=$("authGateGoogle");
+    if(b)b.textContent="Opening Google sign-in...";
     if(btn)btn.disabled=true;
     try{
-      if(!window.firebase || !window.firebase.auth){
-        throw new Error("Firebase Auth abhi load nahi hua. Page ko refresh karo.");
-      }
-      await auth.signInWithPopup(googleProvider);
+      const authClient=window.KHANS_AUTH||(window.firebase&&window.firebase.auth?window.firebase.auth():null);
+      const provider=window.KHANS_GOOGLE_PROVIDER||(window.firebase&&window.firebase.auth?new window.firebase.auth.GoogleAuthProvider():null);
+      if(!authClient||!provider) throw new Error("Firebase Auth abhi initialize nahi hua. Page refresh karo.");
+      await authClient.signInWithPopup(provider);
     }catch(e){
       console.error("KHANS Google login error:",e);
-      const code=e&&e.code||"";
-      if(code==="auth/popup-blocked" || code==="auth/popup-cancelled-by-user"){
+      let code=e&&e.code||"";
+      if(code==="auth/popup-blocked"||code==="auth/popup-cancelled-by-user"){
         try{
           if(b)b.textContent="Google sign-in redirect ho raha hai...";
-          await auth.signInWithRedirect(googleProvider);
+          const authClient=window.KHANS_AUTH||window.firebase.auth();
+          const provider=window.KHANS_GOOGLE_PROVIDER||new window.firebase.auth.GoogleAuthProvider();
+          await authClient.signInWithRedirect(provider);
           return;
-        }catch(e2){e=e2}
+        }catch(e2){e=e2;code=e2&&e2.code||code}
       }
       if(b)b.textContent=(e&&e.message)||"Google sign-in failed";
-      if(code==="auth/unauthorized-domain"){
-        if(b)b.textContent="GitHub Pages domain Firebase Authorized Domains mein add karo.";
-      }
-      toast("Google login failed: "+((e&&e.code)||"unknown error"),true);
+      if(code==="auth/unauthorized-domain"&&b)b.textContent="GitHub Pages domain Firebase Authorized Domains mein add karo.";
+      toast("Google login failed: "+(code||"unknown error"),true);
     }finally{
       if(btn)btn.disabled=false;
     }
@@ -511,6 +513,8 @@ const OWNER_PHONE="+92 313 9186430";
 const WHATSAPP="923139186430";
 if(!firebase.apps.length)firebase.initializeApp(firebaseConfig);
 const auth=firebase.auth(),db=firebase.database(),storage=firebase.storage(),googleProvider=new firebase.auth.GoogleAuthProvider();
+window.KHANS_AUTH=auth;
+window.KHANS_GOOGLE_PROVIDER=googleProvider;
 // Keep Google/Firebase sessions on this device so customers and the owner do not have to log in again after refresh/reopen.
 auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).catch(e=>console.warn("Firebase local persistence:",e));
 googleProvider.setCustomParameters({prompt:"select_account"});
