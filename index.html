@@ -143,7 +143,8 @@
       if(user){document.body.classList.remove("authLocked");$("authGate")?.classList.add("hidden");$("loginBtn")?.classList.add("hidden");$("logoutBtn")?.classList.remove("hidden");$("mobileLoginBtn")?.classList.add("hidden");$("mobileLogoutBtn")?.classList.remove("hidden");$("ownerBtn")?.classList.toggle("hidden",!isOwnerUser);$("mobileOwnerBtn")?.classList.toggle("hidden",!isOwnerUser);db.ref("customers/"+user.uid).update({name:user.displayName||"",email:user.email||"",lastLogin:Date.now()});db.ref("savedDesigns/"+user.uid).once("value",s=>{savedSet=new Set(Object.keys(s.val()||{}));if($("savedCount"))$("savedCount").textContent=savedSet.size});if(isOwnerUser)$("salluFab")?.classList.remove("hidden");if($("authGateStatus"))$("authGateStatus").textContent="Signed in";renderCustomerAccount?.()}else{document.body.classList.add("authLocked");$("authGate")?.classList.remove("hidden");$("loginBtn")?.classList.remove("hidden");$("logoutBtn")?.classList.add("hidden");$("mobileLoginBtn")?.classList.remove("hidden");$("mobileLogoutBtn")?.classList.add("hidden");$("ownerBtn")?.classList.add("hidden");$("mobileOwnerBtn")?.classList.add("hidden");$("salluFab")?.classList.add("hidden")};
     });
   }
-  // Firebase compat scripts are loaded near the end of the page. Start auth only after they are available.\n  window.addEventListener("load", authBoot);
+  // Firebase compat scripts are loaded before the main app code. Start auth after the page is ready.
+  window.addEventListener("load", authBoot);
   window.addEventListener("DOMContentLoaded",()=>{setTimeout(fillCalc,100);setTimeout(()=>{if(typeof loadRates==="function")loadRates()},250)});
 })();
 
