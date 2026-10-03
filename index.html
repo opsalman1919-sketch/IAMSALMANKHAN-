@@ -34,9 +34,34 @@
   if(typeof closeModal!=="function") window.closeModal=function(id){$(id)?.classList.remove("show")};
   if(typeof openLoginModal!=="function") window.openLoginModal=function(){if($("loginModal"))$("loginModal").classList.add("show")};
   if(typeof handleLogout!=="function") window.handleLogout=function(){auth.signOut().catch(()=>{})};
-  if(typeof loginWithGoogle!=="function") window.loginWithGoogle=function(){
-    const b=$("authGateStatus");if(b)b.textContent="Opening Google sign-in...";
-    auth.signInWithPopup(googleProvider).catch(e=>{if(b)b.textContent=e.message||"Google sign-in failed";toast("Google login failed",true)});
+  if(typeof loginWithGoogle!=="function") window.loginWithGoogle=async function(){
+    const b=$("authGateStatus");
+    if(b)b.textContent="Opening Google sign-in...";
+    const btn=$("authGateGoogle");
+    if(btn)btn.disabled=true;
+    try{
+      if(!window.firebase || !window.firebase.auth){
+        throw new Error("Firebase Auth abhi load nahi hua. Page ko refresh karo.");
+      }
+      await auth.signInWithPopup(googleProvider);
+    }catch(e){
+      console.error("KHANS Google login error:",e);
+      const code=e&&e.code||"";
+      if(code==="auth/popup-blocked" || code==="auth/popup-cancelled-by-user"){
+        try{
+          if(b)b.textContent="Google sign-in redirect ho raha hai...";
+          await auth.signInWithRedirect(googleProvider);
+          return;
+        }catch(e2){e=e2}
+      }
+      if(b)b.textContent=(e&&e.message)||"Google sign-in failed";
+      if(code==="auth/unauthorized-domain"){
+        if(b)b.textContent="GitHub Pages domain Firebase Authorized Domains mein add karo.";
+      }
+      toast("Google login failed: "+((e&&e.code)||"unknown error"),true);
+    }finally{
+      if(btn)btn.disabled=false;
+    }
   };
   if(typeof openUserSettings!=="function") window.openUserSettings=function(){
     if(!ensureUser())return;
