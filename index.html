@@ -229,9 +229,80 @@ function go(id){document.getElementById(id)?.scrollIntoView({behavior:"smooth"})
 window.closeM=id=>document.getElementById(id).classList.remove("show");
 function showLogin(){if(!user)document.getElementById("loginModal").classList.add("show")}window.openLogin=showLogin;
 
-window.login=async()=>{try{const result=await signInWithPopup(auth,provider);await ensureUser(result.user);closeM("loginModal");toast("Signed in successfully.")}catch(e){console.error(e);toast("Google login failed: "+(e.message||"Please try again."),true)}};
-async function ensureUser(u){user=u;const old=await read("users/"+u.uid)||{};await update(ref(db,"users/"+u.uid),{uid:u.uid,name:u.displayName||"",email:u.email||"",photoURL:u.photoURL||"",phone:old.phone||"",address:old.address||"",lastLogin:Date.now(),role:u.uid===OWNER_UID?"owner":"customer"});document.getElementById("app").classList.remove("hidden");document.getElementById("loginBtn").textContent=(u.displayName||"Account").split(" ")[0];document.getElementById("accountBtn").classList.remove("hidden");document.getElementById("ownerBtn").classList.toggle("hidden",u.uid!==OWNER_UID);if(u.uid===OWNER_UID)document.getElementById("ownerBtn").textContent="Owner Center";updateSalluVisibility()}
-onAuthStateChanged(auth,u=>{user=u;if(u)ensureUser(u);else{document.getElementById("app").classList.remove("hidden");document.getElementById("loginModal").classList.remove("show");document.getElementById("loginBtn").textContent="Continue with Google";document.getElementById("accountBtn").classList.add("hidden");document.getElementById("ownerBtn").classList.add("hidden");updateSalluVisibility()}});
+async function ensureUser(u){
+  user=u;
+  const loginBtn=document.getElementById("loginBtn");
+  const accountBtn=document.getElementById("accountBtn");
+  const ownerBtn=document.getElementById("ownerBtn");
+  document.getElementById("app")?.classList.remove("hidden");
+  if(loginBtn){
+    loginBtn.classList.remove("hidden");
+    loginBtn.style.display="inline-flex";
+    loginBtn.textContent=(u.displayName||"Account").split(" ")[0];
+  }
+  accountBtn?.classList.remove("hidden");
+  ownerBtn?.classList.toggle("hidden",u.uid!==OWNER_UID);
+  if(ownerBtn && u.uid===OWNER_UID)ownerBtn.textContent="Owner Center";
+  updateSalluVisibility();
+  try{
+    const old=await read("users/"+u.uid)||{};
+    await update(ref(db,"users/"+u.uid),{
+      uid:u.uid,
+      name:u.displayName||"",
+      email:u.email||"",
+      photoURL:u.photoURL||"",
+      phone:old.phone||"",
+      address:old.address||"",
+      lastLogin:Date.now(),
+      role:u.uid===OWNER_UID?"owner":"customer"
+    });
+  }catch(e){
+    console.warn("Customer profile sync failed; login remains active.",e);
+  }
+}
+
+window.login=async()=>{
+  if(!auth || !provider){
+    toast("Firebase login is not ready. Refresh the page and try again.",true);
+    return;
+  }
+  try{
+    const result=await signInWithPopup(auth,provider);
+    await ensureUser(result.user);
+    closeM("loginModal");
+    toast("Signed in successfully.");
+  }catch(e){
+    console.error(e);
+    const code=e?.code||"";
+    let msg=e?.message||"Please try again.";
+    if(code.includes("popup-blocked"))msg="Popup blocked hai. Chrome mein popups allow karo.";
+    else if(code.includes("unauthorized-domain"))msg="GitHub Pages domain Firebase Authentication mein authorized nahi hai.";
+    else if(code.includes("operation-not-allowed"))msg="Firebase Authentication mein Google provider enable nahi hai.";
+    else if(code.includes("popup-closed-by-user"))msg="Google login popup close ho gaya.";
+    toast("Google login failed: "+msg,true);
+  }
+};
+
+onAuthStateChanged(auth,u=>{
+  user=u||null;
+  const loginBtn=document.getElementById("loginBtn");
+  const accountBtn=document.getElementById("accountBtn");
+  const ownerBtn=document.getElementById("ownerBtn");
+  document.getElementById("app")?.classList.remove("hidden");
+  if(u){
+    ensureUser(u);
+  }else{
+    if(loginBtn){
+      loginBtn.classList.remove("hidden");
+      loginBtn.style.display="inline-flex";
+      loginBtn.textContent="Continue with Google";
+    }
+    accountBtn?.classList.add("hidden");
+    ownerBtn?.classList.add("hidden");
+    document.getElementById("loginModal")?.classList.remove("show");
+    updateSalluVisibility();
+  }
+});
 function demoDesigns(cat){let ci=Math.max(0,cats.findIndex(x=>x[0]===cat));return Array.from({length:20},(_,i)=>{let threeD=i%5===0;return{id:cat.replace(/\W/g,"").slice(0,4).toUpperCase()+"-"+String(i+1).padStart(2,"0"),name:cat+" Premium Design "+String(i+1).padStart(2,"0"),style:["Modern","Luxury","LED","Layered","Minimal","Royal","Linear","Curved"][i%8],image:img(imgs[(i+ci)%imgs.length]),mediaType:threeD?"3d-photo":"photo",price:0,description:threeD?"High-end architectural 3D showcase render for premium visualization.":"Professional interior showcase image."}})}
 function allDesigns(cat){return[...demoDesigns(cat),...Object.values(customDesigns).filter(d=>d.category===cat&&d.active!==false)]}
 function renderCats(){document.getElementById("cats").innerHTML=cats.map(c=>`<button class="cat" onclick="openCat('${esc(c[0])}')"><img src="${c[1]}?auto=format&fit=crop&w=900&q=82"><div class="shade"></div><div class="ct"><h3>${esc(c[0])}</h3><small>Design Studio</small></div></button>`).join("");document.getElementById("pills").innerHTML=`<button class="pill active" onclick="filterCat('All',this)">All</button>`+cats.map(c=>`<button class="pill" onclick="filterCat('${esc(c[0])}',this)">${esc(c[0])}</button>`).join("")}
@@ -644,6 +715,37 @@ window.openAccount=async function(){await __baseOpenAccount();if(!user)return;le
 // Improve Sallu speech: Pakistani-friendly recognition, warm female voice preference, sentence pauses.
 const __baseSalluSpeak=window.salluSpeak;
 window.salluSpeak=function(text){if(!('speechSynthesis'in window))return;window.speechSynthesis.cancel();let parts=String(text).split(/(?<=[.!?۔])\s+/).filter(Boolean),i=0;let speakNext=()=>{if(i>=parts.length)return;let u=new SpeechSynthesisUtterance(parts[i++]);let v=(typeof salluFemaleVoice==='function'?salluFemaleVoice():null);if(v)u.voice=v;u.lang=v?.lang||'en-PK';u.rate=.90;u.pitch=1.10;u.volume=1;u.onend=()=>setTimeout(speakNext,130);window.speechSynthesis.speak(u)};speakNext()};
+/* ===== INTERACTION SAFETY BRIDGE ===== */
+window.addProject=addProject;
+window.addTestimonial=addTestimonial;
+window.renderAnalytics=renderAnalytics;
+window.renderCats=renderCats;
+window.ensureUser=ensureUser;
+
+function ensureLoginButton(){
+  const nav=document.querySelector(".navlinks");
+  if(!nav)return;
+  let btn=document.getElementById("loginBtn");
+  if(!btn){
+    btn=document.createElement("button");
+    btn.id="loginBtn";
+    btn.className="gold";
+    btn.type="button";
+    btn.textContent="Continue with Google";
+    nav.appendChild(btn);
+  }
+  btn.classList.remove("hidden");
+  btn.style.display="inline-flex";
+  btn.type="button";
+  btn.onclick=ev=>{ev.preventDefault();window.login();};
+}
+
+window.addEventListener("DOMContentLoaded",()=>{
+  ensureLoginButton();
+  setTimeout(ensureLoginButton,300);
+  setTimeout(ensureLoginButton,1200);
+});
+
 window.addEventListener('load',()=>{let sr=window.SpeechRecognition||window.webkitSpeechRecognition;if(sr&&typeof salluRecognition!=='undefined'&&salluRecognition){salluRecognition.lang='en-PK'}document.querySelectorAll('.salluMsg').forEach(e=>e.textContent=e.textContent.replace(/\bOwner\b/g,'Boss'));document.querySelectorAll('.kgFeature button').forEach(b=>b.addEventListener('click',()=>{}));});
 </script>
 </body>
