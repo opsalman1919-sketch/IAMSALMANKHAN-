@@ -1,0 +1,97 @@
+name: Apply KHANS mobile fixes
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch index.html
+        shell: python
+        run: |
+          from pathlib import Path
+          p = Path("index.html")
+          c = p.read_text(encoding="utf-8")
+          
+          c = c.replace(
+            ".close{width:36px;height:36px;border:0;border-radius:50%;background:#eee}",
+            ".close{width:40px;height:40px;border:1px solid #f0b8b4;border-radius:50%;background:#fff;color:#b42318;display:grid;place-items:center;font-size:20px;font-weight:800;line-height:1;transition:.2s;box-shadow:0 3px 12px rgba(180,35,24,.08)}.close:hover{background:#fff1f0;color:#8f1d16;transform:scale(1.04)}.close:active{transform:scale(.96)}"
+          )
+          
+          c = c.replace(
+            '@media(max-width:640px){body{font-size:14px}.wrap{padding-left:12px;padding-right:12px}.section{padding:42px 0}.hero{padding:42px 0}.hero h1{font-size:clamp(34px,11vw,46px);line-height:1.04}.hero p{font-size:14px}',
+            '@media(max-width:640px){body{font-size:14px}.wrap{padding-left:12px;padding-right:12px}.section{padding:42px 0}.hero{padding:38px 0 44px}.hero h1{font-size:clamp(32px,9.5vw,39px);line-height:1.08;letter-spacing:-.7px;max-width:340px;margin:10px 0 16px}.hero h1 span{display:inline}.hero p{font-size:14px;line-height:1.7}'
+          )
+          
+          c = c.replace(
+            '<button id="accountBtn" class="outline hidden" onclick="showPage(\'customer-account\')"><i class="fa-regular fa-user"></i> My Account</button>',
+            '<button id="accountBtn" class="outline hidden accountBtn" onclick="showPage(\'customer-account\')" aria-label="Open My Account"><span id="accountAvatarWrap" class="accountAvatarWrap"><i class="fa-regular fa-user"></i></span><span id="accountLabel">My Account</span></button>'
+          )
+          
+          c = c.replace(
+            '.navlinks button{min-height:40px}.mediaWrap{cursor:zoom-in}',
+            '.navlinks button{min-height:40px}.accountBtn{display:inline-flex;align-items:center;gap:8px;max-width:190px;overflow:hidden}.accountAvatarWrap{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;overflow:hidden;background:#f7f1e3;color:#8b6b2e;flex:0 0 28px}.accountAvatarWrap img{width:100%;height:100%;object-fit:cover}.accountBtn #accountLabel{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mediaWrap{cursor:zoom-in}'
+          )
+          
+          c = c.replace(
+            '<div id="customerSummary" class="stats"></div><div class="grid grid2" style="margin-top:15px">',
+            '<div id="customerProfileCard" class="panel customerProfileCard" style="margin-bottom:15px"><div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap"><div id="customerProfileAvatar" class="profileAvatar"><i class="fa-regular fa-user"></i></div><div style="flex:1;min-width:180px"><h3 id="customerProfileName" style="margin:0">Customer Account</h3><div id="customerProfileEmail" class="small muted">Google account</div></div><span class="tag">Firebase Account</span></div><div class="grid grid2" style="margin-top:15px"><div class="field"><label>WhatsApp / Phone</label><input id="profilePhone" type="tel" placeholder="+92 3XX XXXXXXX"></div><div class="field"><label>Address</label><input id="profileAddress" type="text" placeholder="Swat, Pakistan"></div></div><div class="actions" style="margin-top:12px"><button class="gold" onclick="saveCustomerProfile()">Save Profile</button><button class="outline" onclick="handleLogout()">Sign Out</button></div></div><div id="customerSummary" class="stats"></div><div class="grid grid2" style="margin-top:15px">'
+          )
+          
+          c = c.replace(
+            '.visualizerGrid{display:grid;grid-template-columns:1.45fr .75fr;gap:16px;margin-top:14px}',
+            '.profileAvatar{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:#f7f1e3;color:#8b6b2e;border:1px solid #e4d4ad;font-size:24px;overflow:hidden}.profileAvatar img{width:100%;height:100%;object-fit:cover}.customerProfileCard{box-shadow:0 8px 25px rgba(23,23,23,.05)}\\n.visualizerGrid{display:grid;grid-template-columns:1.45fr .75fr;gap:16px;margin-top:14px}'
+          )
+          
+          old = "async function startCamera(){try{const video=document.getElementById('camera');if(!video)return;cameraStream=await navigator.mediaDevices.getUserMedia({video:true,audio:false});video.srcObject=cameraStream;video.classList.remove('hidden');toast('Camera preview active')}catch(e){toast('Camera permission not available: '+e.message,true)}};window.startCamera=startCamera;"
+          new = "async function startCamera(){try{const video=document.getElementById('camera');if(!video)return toast('Camera preview element missing.',true);if(!window.isSecureContext)return toast('Camera ke liye HTTPS page zaroori hai.',true);if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia)return toast('Is browser mein camera access supported nahi hai.',true);stopCamera();cameraStream=await navigator.mediaDevices.getUserMedia({audio:false,video:{facingMode:{ideal:'environment'},width:{ideal:1280},height:{ideal:720}}});video.srcObject=cameraStream;video.classList.remove('hidden');document.getElementById('roomImage')?.classList.add('hidden');document.getElementById('roomVideo')?.classList.add('hidden');document.getElementById('roomPlaceholder')?.classList.add('hidden');video.muted=true;video.setAttribute('playsinline','');await video.play().catch(()=>{});toast('Camera preview active')}catch(e){console.error('Camera error',e);const n=e?.name||'';let m='Camera open nahi hui.';if(n==='NotAllowedError'||n==='PermissionDeniedError')m='Camera permission deny hai. Chrome Settings > Site settings > Camera mein Allow karein.';else if(n==='NotFoundError')m='Phone ka camera available nahi mila.';else if(n==='NotReadableError')m='Camera kisi aur app mein use ho raha hai. Pehle doosri camera/video app band karein.';else if(n==='SecurityError')m='Browser security ne camera block kiya. HTTPS page se dobara try karein.';toast(m,true)}};window.startCamera=startCamera;"
+          if old in c:
+              c = c.replace(old,new)
+          
+          old = "function stopCamera(){if(cameraStream){cameraStream.getTracks().forEach(t=>t.stop());cameraStream=null}const video=document.getElementById('camera');if(video)video.srcObject=null};window.stopCamera=stopCamera;"
+          new = "function stopCamera(){if(cameraStream){cameraStream.getTracks().forEach(t=>t.stop());cameraStream=null}const video=document.getElementById('camera');if(video){video.pause();video.srcObject=null;video.classList.add('hidden')}const ph=document.getElementById('roomPlaceholder');if(ph)ph.classList.remove('hidden')};window.stopCamera=stopCamera;"
+          if old in c:
+              c = c.replace(old,new)
+          
+          a = c.index("function applyOwnerUI()")
+          b = c.index("auth.onAuthStateChanged", a)
+          c = c[:a] + """function applyOwnerUI(){const setHidden=(id,hide)=>{const el=document.getElementById(id);if(el)el.classList.toggle('hidden',hide)};setHidden('ownerBtn',!isOwnerUser);setHidden('salluFab',!isOwnerUser);setHidden('accountBtn',!currentUser);setHidden('logoutBtn',!currentUser);setHidden('loginBtn',!!currentUser);setHidden('mobileOwnerBtn',!isOwnerUser);setHidden('mobileOwnerCenterBtn',!isOwnerUser);setHidden('mobileLogoutBtn',!currentUser);setHidden('mobileLoginBtn',!!currentUser);const label=document.getElementById('accountLabel'),wrap=document.getElementById('accountAvatarWrap');if(currentUser){const name=currentUser.displayName||currentUser.email?.split('@')[0]||'My Account';if(label)label.textContent=name;if(wrap)wrap.innerHTML=currentUser.photoURL?'<img src="'+esc(currentUser.photoURL)+'" alt="Profile">':'<i class="fa-regular fa-user"></i>'}else{if(label)label.textContent='My Account';if(wrap)wrap.innerHTML='<i class="fa-regular fa-user"></i>'}}
+""" + c[b:]
+          
+          marker = "async function renderCustomerAccount()"
+          i = c.index(marker)
+          funcs = """async function loadCustomerProfile(){if(!currentUser)return;try{const s=await db.ref('users/'+currentUser.uid).once('value');const u=s.val()||{};const n=document.getElementById('customerProfileName'),em=document.getElementById('customerProfileEmail'),p=document.getElementById('profilePhone'),ad=document.getElementById('profileAddress'),av=document.getElementById('customerProfileAvatar');if(n)n.textContent=u.name||currentUser.displayName||currentUser.email?.split('@')[0]||'Customer';if(em)em.textContent=u.email||currentUser.email||'';if(p)p.value=u.phone||u.whatsapp||'';if(ad)ad.value=u.address||'';if(av)av.innerHTML=currentUser.photoURL?'<img src="'+esc(currentUser.photoURL)+'" alt="Profile photo">':'<i class="fa-regular fa-user"></i>'}catch(e){console.warn('Profile load failed',e)}};window.loadCustomerProfile=loadCustomerProfile;
+async function saveCustomerProfile(){if(!currentUser)return openLoginModal();const phone=val('profilePhone'),address=val('profileAddress');try{await db.ref('users/'+currentUser.uid).update({uid:currentUser.uid,name:currentUser.displayName||currentUser.email?.split('@')[0]||'Customer',email:currentUser.email||'',photoURL:currentUser.photoURL||'',phone,whatsapp:phone,address,role:isOwnerUser?'owner':'customer',profileUpdatedAt:Date.now()});toast('Profile save ho gaya.');loadCustomerProfile()}catch(e){console.error(e);toast('Profile save nahi ho saka. Firebase permissions check karein.',true)}};window.saveCustomerProfile=saveCustomerProfile;
+"""
+          c = c[:i] + funcs + c[i:]
+          c = c.replace("async function renderCustomerAccount(){if(!currentUser)return openLoginModal();const uid=currentUser.uid;", "async function renderCustomerAccount(){if(!currentUser)return openLoginModal();const uid=currentUser.uid;loadCustomerProfile();")
+          
+          a = c.index("function showPage(id){")
+          b = c.index("window.showPage=showPage;",a)
+          replacement = """const pageBackStack=['home'];
+function showPage(id,fromBack=false){const currentId=(document.querySelector('.page:not(.hidden)')?.id||'page-home').replace(/^page-/,'');if(!fromBack&&id!==currentId){if(pageBackStack[pageBackStack.length-1]!==currentId)pageBackStack.push(currentId);pageBackStack.push(id);try{history.pushState({kgPage:id},'',location.href.split('#')[0]+'#'+encodeURIComponent(id))}catch(_){}}
+if(id==='owner-center'){if(!currentUser){openLoginModal();toast('Pehle Owner Gmail se login karein.',true);return;}if(!safeOwnerAccess(currentUser)){toast('Owner Center sirf authorized Boss account ke liye hai.',true);return;}isOwnerUser=true;applyOwnerUI();}document.querySelectorAll('.page').forEach(x=>x.classList.add('hidden'));const el=document.getElementById('page-'+id)||document.getElementById('page-home');el.classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'});if(id==='customer-account')renderCustomerAccount();if(id==='owner-center'){loadOwnerData();setTimeout(()=>document.getElementById('owner-center')?.scrollIntoView({behavior:'smooth',block:'start'}),50);}}
+window.showPage=showPage;
+function goBackInSite(){const shown=[...document.querySelectorAll('.modal.show')].reverse()[0];if(shown){closeModal(shown.id);return true}if(pageBackStack.length>1){pageBackStack.pop();showPage(pageBackStack[pageBackStack.length-1],true);return true}return false}
+function initMobileBackGesture(){let sx=0,sy=0;document.addEventListener('touchstart',e=>{if(e.touches.length!==1)return;const t=e.touches[0];sx=t.clientX;sy=t.clientY},{passive:true});document.addEventListener('touchend',e=>{const t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy,tag=(e.target?.tagName||'').toLowerCase();if(dx>110&&Math.abs(dy)<65&&!['input','textarea','select','button'].includes(tag))goBackInSite()},{passive:true})}
+initMobileBackGesture();
+"""
+          c = c[:a] + replacement + c[b+len("window.showPage=showPage;"):]
+          c = c.replace("function boot(){initHomeCats();loadRates();loadCustomDesigns();loadProjects();renderGallery();renderHomeOffers();showPage('home');", "function boot(){initHomeCats();loadRates();loadCustomDesigns();loadProjects();renderGallery();renderHomeOffers();showPage('home',true);")
+          
+          p.write_text(c, encoding="utf-8")
+      
+      - name: Commit patched site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet || git commit -m "Fix mobile camera, account UI, close button and touch back"
+          git push
