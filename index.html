@@ -333,7 +333,7 @@ async function saveProgress(){const ref=db.ref('projectProgress').push();await r
 async function ownerMessages(c){c.innerHTML='<div class="panel"><h3>Client Chat / Message</h3><p class="muted">Customer UID par direct message bhejo; message customer Notifications mein appear hoga.</p><div class="grid grid2"><input id="msgUid" placeholder="Customer Firebase UID"><input id="msgTitle" placeholder="Message title"></div><div class="field"><input id="msgText" placeholder="Your message"></div><button class="gold" onclick="sendOwnerMessage()">Send Message</button></div>'}
 async function sendOwnerMessage(){const uid=val('msgUid'),title=val('msgTitle')||'KHANS Message',message=val('msgText');if(!uid||!message)return toast('Customer UID aur message zaroor enter karein.',true);await db.ref('notifications/'+uid).push({type:'message',title,message,read:false,createdAt:Date.now()});saveOwnerLog('Client message sent',uid);toast('Message sent')}
 async function ownerNotifications(c){const arr=await readEntries('ownerNotifications');c.innerHTML='<div class="panel"><h3>Owner Notifications</h3>'+arr.reverse().slice(0,50).map(x=>'<div class="notice" style="margin:6px 0"><b>'+esc(x.title||'Notification')+'</b><div>'+esc(x.message||'')+'</div><div class="small muted">'+fmtDate(x.createdAt)+'</div></div>').join('')+'</div>'}
-async async function ownerAnalytics(c){
+async function ownerAnalytics(c){
   const [orders,payments,expenses,leads]=await Promise.all([safeReadNestedEntries('orders'),safeReadEntries('payments'),safeReadEntries('expenses'),safeReadEntries('leads')]);
   const completed=orders.filter(x=>x.status==='Completed').length,
     paid=payments.filter(x=>x.status==='Paid').reduce((a,x)=>a+Number(x.amount||0),0),
