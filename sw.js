@@ -1,4 +1,4 @@
-const CACHE='kgpk-v5-payment-render-fix';
+const CACHE='kgpk-v6-force-refresh-20261114';
 const CORE=['./','./index.html','./manifest.json'];
 
 const MOBILE_PATCH=String.raw`
