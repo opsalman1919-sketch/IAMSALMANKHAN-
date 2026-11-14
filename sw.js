@@ -1,4 +1,4 @@
-const CACHE='kgpk-v4-mobilefix';
+const CACHE='kgpk-v5-payment-render-fix';
 const CORE=['./','./index.html','./manifest.json'];
 
 const MOBILE_PATCH=String.raw`
