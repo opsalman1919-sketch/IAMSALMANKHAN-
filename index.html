@@ -12,7 +12,7 @@
 <meta property="og:description" content="Premium false ceilings, TV walls and interior design services in Swat & Mingora.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://opsalman1919-sketch.github.io/IAMSALMANKHAN-/">
-<meta name="theme-color" content="#c8a45a">
+<meta name="theme-color" content="#090909">
 <link rel="manifest" href="./manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -117,6 +117,80 @@ html,body{max-width:100%;overflow-x:hidden}body{-webkit-font-smoothing:antialias
   .desktopMenuBtn{display:none!important}
   .mobileNav{display:grid!important;place-items:center}
 }
+
+/* KHANS LUXURY BLACK + GOLD VISUAL REFRESH — styling only; all existing content and behavior preserved */
+:root{
+ --gold:#d6ad55;--gold2:#f4d98e;--ink:#f5f0e6;--bg:#090909;--card:#151515;
+ --line:#4b3a1b;--muted:#b8b0a2;--navy:#080808;--ok:#39b978;--danger:#ff7168;
+ --shadow:0 22px 65px rgba(0,0,0,.48)
+}
+html{background:#090909}
+body{background:#090909;color:var(--ink)}
+header{background:rgba(8,8,8,.92);border-bottom:1px solid #4b3a1b;box-shadow:0 8px 35px #0008}
+.brand{color:#fff}
+.brand span,.eyebrow,.hero h1 span{color:var(--gold2)}
+.navlinks button,.desktopMenuBtn,.desktopMore{color:#f4efe5}
+.navlinks button:hover,.desktopMenuBtn:hover{background:#2a2112;color:var(--gold2)}
+.hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 78% 20%,#b68e3e30,transparent 38%),linear-gradient(120deg,#080808 0%,#15110a 58%,#080808 100%);padding-top:88px;padding-bottom:88px}
+.hero:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 35%,#d6ad5508 60%,transparent 80%)}
+.heroGrid{position:relative;z-index:1}
+.hero h1{color:#fff;text-shadow:0 5px 30px #000}
+.hero p,.muted{color:var(--muted)}
+.heroImg{position:relative;border:1px solid #9d7835;border-radius:26px;box-shadow:0 24px 80px #000,0 0 35px #c8a45a20;animation:khansHeroFloat 8s ease-in-out infinite}
+.heroImg:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(135deg,#d6ad5522,transparent 38%,transparent 68%,#d6ad5514);box-shadow:inset 0 0 55px #0008}
+@keyframes khansHeroFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-7px) scale(1.008)}}
+.section{background:#090909;color:var(--ink)}
+.section:nth-of-type(even){background:#0e0d0b}
+.sectionHead h2,.section h2,.section h3{color:#fff}
+.card,.panel,.contactCard,.customerTool,.quoteBox,.stat,.notice,.box,.ownerHead,.ownerSide,.ownerMain,.paymentMethod,.paymentGrid,.contactGrid,.compareGrid,.projectThumb{
+ background:#151515;color:var(--ink);border:1px solid #49391e;box-shadow:0 12px 35px #0005
+}
+.card,.customerTool,.contactCard,.panel{transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease}
+.card:hover,.customerTool:hover,.contactCard:hover{transform:translateY(-5px);border-color:#c99e48;box-shadow:0 18px 45px #0009,0 0 22px #d6ad5515}
+.cardBody,.panel,.customerTool{color:var(--ink)}
+.cardBody h3,.cardBody h4,.customerTool h3,.panel h3{color:#fff}
+.customerTool .toolIcon{background:#302512;color:var(--gold2);border:1px solid #755a28}
+.customerToolsSection{background:#0b0b0b}
+.pill,.outline,.field input,.field select,.field textarea,input,select,textarea{
+ background:#111;color:#f5f0e6;border-color:#574321
+}
+.pill:hover,.pill.active{background:linear-gradient(135deg,#e0bd68,#9c742e);color:#100d07;border-color:#e0bd68}
+.gold,.primary{background:linear-gradient(135deg,#f0cf78,#c09236 55%,#9e742d);color:#171107;border:1px solid #f0d58d;box-shadow:0 8px 22px #c8a45a30}
+.gold:hover,.primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.outline{background:#171717;color:#f3e7c7;border-color:#80602d}
+.tag{background:#342914;color:#f0d58d}
+.hr{border-color:#49391e}
+.footer{background:#050505;color:#d9d0c0;border-top:1px solid #49391e}
+.footer a{color:#e8c979}
+.modalBox,.zoomModal .modalBox{background:#121212;color:#f5f0e6;border:1px solid #71572b;box-shadow:0 30px 100px #000c}
+.modalTop{border-color:#49391e}
+.close{background:#211a0e;color:#f0d58d;border:1px solid #71572b}
+.table{color:#f5f0e6}
+.table th{background:#282012;color:#f2d58a}
+.table td,.table th{border-color:#49391e}
+.table tr:nth-child(even){background:#181818}
+.ownerTabs{background:#0b0b0b}
+.ownerTab{background:#171717;color:#ddd0b5;border:1px solid #49391e}
+.ownerTab.active,.ownerTab:hover{background:linear-gradient(135deg,#e0bd68,#9c742e);color:#100d07}
+.ownerSideTitle,.ownerHead h2{color:#f1d58d}
+.searchRow input,.field input,.field select,.field textarea{background:#101010;color:#f5f0e6;border:1px solid #5a4523}
+.searchRow input::placeholder,.field input::placeholder,.field textarea::placeholder{color:#8f8779}
+.projectThumb,.mediaWrap,.roomMedia,.visualizerStage,.zoomStage{background:#0b0b0b;border-color:#49391e}
+.zoomControls button{background:#171717;color:#f5f0e6;border-color:#574321}
+.zoomTitle,.zoomHint{background:#171717;color:#f1d58d;border-color:#574321}
+.mobileMenuList,.mobileQuickNav{background:#101010;color:#f5f0e6;border-color:#49391e}
+.mobileMenuList button,.mobileQuickNav button{color:#f5f0e6}
+.badge3d,.projectBadge{background:#352813;color:#f1d58d;border:1px solid #80602d}
+.salluPanel{background:#121212;color:#f5f0e6;border:1px solid #71572b}
+.salluHead{background:#211a0e;color:#f1d58d}
+.salluMsgs{background:#101010}
+.salluInput{background:#171717;border-color:#49391e}
+@media(max-width:800px){
+ .hero{padding-top:48px;padding-bottom:48px}
+ .heroImg{animation:none}
+}
+@media(prefers-reduced-motion:reduce){.heroImg{animation:none}}
+
 </style>
 <style>.ownerLayout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:18px;align-items:start}.ownerSide{position:sticky;top:18px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:10px;box-shadow:0 10px 30px #00000008;max-height:calc(100vh - 36px);overflow:auto}.ownerSideTitle{padding:12px 12px 8px;font-size:11px;font-weight:800;letter-spacing:.12em;color:#a07b32}.ownerTabs{display:flex!important;flex-direction:column!important;gap:3px!important;border:0!important;margin:0!important}.ownerTab{display:flex!important;align-items:center;gap:10px;width:100%;text-align:left;border:0!important;border-radius:11px;padding:11px 12px!important;font-weight:700;color:#707070;background:transparent}.ownerTab:hover{background:#faf5e9;color:#8b6b2e}.ownerTab.active{color:#8b6b2e!important;background:#fff4e9;border:0!important}.ownerTab i{width:18px;text-align:center}.ownerMain{min-width:0}.ownerMenuBtn{display:none}.ownerQuick{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:15px}.ownerQuick .panel{margin:0}.paymentMethod{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fff}.paymentMethod b{display:block;margin-bottom:4px}.payBadge{display:inline-block;padding:4px 8px;border-radius:999px;background:#f8f1df;color:#8b6b2e;font-size:11px;font-weight:800}@media(max-width:900px){.ownerLayout{display:block}.ownerSide{display:none;position:fixed;z-index:260;left:10px;top:74px;width:min(290px,82vw);max-height:calc(100vh - 90px);box-shadow:0 25px 80px #0005}.ownerSide.show{display:block}.ownerMenuBtn{display:inline-flex!important;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #ffffff30;border-radius:12px;background:#fff;color:#171717}.ownerQuick{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.ownerQuick{grid-template-columns:1fr}.ownerHead .actions{min-width:auto!important}.paymentGrid{grid-template-columns:1fr!important}}</style></head>
 <body>
