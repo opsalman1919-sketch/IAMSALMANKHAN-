@@ -1,0 +1,18 @@
+{
+  "name": "KHANS GYPSUMCRAFT PK",
+  "short_name": "KHANS GYPSUMCRAFT",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#faf9f6",
+  "theme_color": "#c8a45a",
+  "description": "Premium gypsum, false ceiling, TV wall and interior design services in Swat, Pakistan.",
+  "icons": [
+    {
+      "src": "./icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

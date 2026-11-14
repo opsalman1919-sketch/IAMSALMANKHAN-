@@ -1,0 +1,23 @@
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null && auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2'",
+    "customers": {
+      "$uid": { ".read": "auth != null && (auth.uid === $uid || auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2')", ".write": "auth != null && (auth.uid === $uid || auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2')" }
+    },
+    "savedDesigns": { "$uid": { ".read": "auth != null && (auth.uid === $uid || auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2')", ".write": "auth != null && (auth.uid === $uid || auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2')" } },
+    "roomPlans": { "$uid": { ".read": "auth != null && (auth.uid === $uid || auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2')", ".write": "auth != null && (auth.uid === $uid || auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2')" } },
+    "quotations": { "$uid": { ".read": "auth != null && (auth.uid === $uid || auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2')", ".write": "auth != null && (auth.uid === $uid || auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2')" } },
+    "orders": { "$uid": { ".read": "auth != null && (auth.uid === $uid || auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2')", ".write": "auth != null && (auth.uid === $uid || auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2')" } },
+    "notifications": { "$uid": { ".read": "auth != null && (auth.uid === $uid || auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2')", ".write": "auth != null && (auth.uid === $uid || auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2')" } },
+    "appointments": { "$uid": { ".read": "auth != null && (auth.uid === $uid || auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2')", ".write": "auth != null && (auth.uid === $uid || auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2')" } },
+    "siteVisits": { "$uid": { ".read": "auth != null && (auth.uid === $uid || auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2')", ".write": "auth != null && (auth.uid === $uid || auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2')" } },
+    "ownerNotifications": { ".read": "auth != null && auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2'", ".write": "auth != null" },
+    "designs": { ".read": "auth != null", ".write": "auth != null && auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2'" },
+    "projects": { ".read": "auth != null", ".write": "auth != null && auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2'" },
+    "testimonials": { ".read": "auth != null", ".write": "auth != null && auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2'" },
+    "offers": { ".read": "auth != null", ".write": "auth != null && auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2'" },
+    "settings": { ".read": "auth != null", ".write": "auth != null && auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2'" },
+    "activityLogs": { ".read": "auth != null && auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2'", ".write": "auth != null && auth.uid === '0opYFH8lt7go4jDCaQhgI4EIqRq2'" }
+  }
+}
