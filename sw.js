@@ -1,4 +1,4 @@
-const CACHE='kgpk-v7-site-repair-20261114';
+const CACHE='kgpk-v8-owner-render-repair-20261114';
 const CORE=['./','./index.html','./manifest.json'];
 
 self.addEventListener('install',event=>{
