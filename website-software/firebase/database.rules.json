@@ -1,0 +1,10 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "business": {
+      ".read": "auth != null && auth.uid === 'REPLACE_WITH_NEW_OWNER_AUTH_UID'",
+      ".write": "auth != null && auth.uid === 'REPLACE_WITH_NEW_OWNER_AUTH_UID'"
+    }
+  }
+}
