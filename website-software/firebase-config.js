@@ -1,17 +1,18 @@
-// Firebase web configuration for the NEW, isolated KHANS software project.
-// These are public client identifiers, not server secrets. Replace all placeholders.
-// Never put a Firebase service-account private key in this file.
+// Existing KHANS website Firebase project configuration.
+// Firebase web config is public client configuration; never add service-account secrets here.
 export const firebaseConfig = {
-  apiKey: "REPLACE_WITH_NEW_PROJECT_WEB_API_KEY",
-  authDomain: "REPLACE_WITH_NEW_PROJECT.firebaseapp.com",
-  databaseURL: "https://REPLACE_WITH_NEW_PROJECT-default-rtdb.firebaseio.com",
-  projectId: "REPLACE_WITH_NEW_PROJECT",
-  storageBucket: "REPLACE_WITH_NEW_PROJECT.appspot.com",
-  messagingSenderId: "REPLACE_WITH_SENDER_ID",
-  appId: "REPLACE_WITH_WEB_APP_ID"
+  apiKey: "AIzaSyAOZQKkqeDHC81KW3aQSHGVuW4ckncmMo8",
+  authDomain: "khan-sgypsumcraptpk.firebaseapp.com",
+  databaseURL: "https://khan-sgypsumcraptpk-default-rtdb.firebaseio.com",
+  projectId: "khan-sgypsumcraptpk",
+  storageBucket: "khan-sgypsumcraptpk.firebasestorage.app",
+  messagingSenderId: "82454361678",
+  appId: "1:82454361678:web:ec6f56190fe6cc68fe751f"
 };
-// Create the owner in the NEW project's Firebase Authentication and paste that new UID.
-export const OWNER_UID = "REPLACE_WITH_NEW_OWNER_AUTH_UID";
+
+// Owner UID extracted from the existing website's Firebase configuration.
+// Authentication must already have this UID in the SAME Firebase project.
+export const OWNER_UID = "0opYFH8lt7go4jDCaQhgI4EIqRq2";
 export const isFirebaseConfigured = () =>
-  Object.values(firebaseConfig).every(v => typeof v === "string" && v.length > 0 && !v.includes("REPLACE_WITH")) &&
-  OWNER_UID.length > 0 && !OWNER_UID.includes("REPLACE_WITH");
+  Object.values(firebaseConfig).every(v => typeof v === "string" && v.length > 0) &&
+  OWNER_UID.length > 0;
