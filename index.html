@@ -204,6 +204,36 @@ input,select,textarea{min-width:0}
   .hero h1{font-size:32px}
 }
 
+
+/* OWNER DASHBOARD: compact desktop command center */
+@media(min-width:901px){
+  #page-owner-center .section{padding-top:18px;padding-bottom:18px}
+  #page-owner-center .ownerHead{padding:14px 18px;border-radius:16px;min-height:76px}
+  #page-owner-center .ownerHead h2{font-size:22px}
+  #page-owner-center .ownerLayout{grid-template-columns:320px minmax(0,1fr);gap:14px;margin-top:12px}
+  #page-owner-center .ownerSide{position:static;top:auto;max-height:none;overflow:visible;padding:8px;border-radius:15px}
+  #page-owner-center .ownerSideTitle{padding:7px 8px 9px;font-size:10px}
+  #page-owner-center .ownerTabs{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px!important}
+  #page-owner-center .ownerTab{min-width:0;min-height:32px;padding:7px 8px!important;gap:6px;font-size:10px;line-height:1.15;border-radius:8px}
+  #page-owner-center .ownerTab i{width:14px;flex:0 0 14px;font-size:11px}
+  #page-owner-center .ownerTab span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  #page-owner-center .ownerQuick{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:10px}
+  #page-owner-center .ownerQuick .panel{padding:11px}
+  #page-owner-center .ownerQuick .total{font-size:22px}
+  #page-owner-center .stats{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+  #page-owner-center .stat{padding:10px}
+  #page-owner-center .ownerContent>.panel{padding:14px}
+}
+@media(min-width:901px) and (max-width:1100px){
+  #page-owner-center .ownerLayout{grid-template-columns:270px minmax(0,1fr);gap:10px}
+  #page-owner-center .ownerQuick{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #page-owner-center .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:900px){
+  #page-owner-center .ownerLayout{display:block}
+  #page-owner-center .ownerSide{max-height:calc(100dvh - 100px);overflow:auto}
+}
+
 </style></head>
 <body>
 <div id="toast" class="hidden" style="position:fixed;top:85px;left:50%;transform:translateX(-50%);z-index:300;background:#171717;color:#fff;padding:11px 16px;border-radius:11px;box-shadow:0 15px 40px #0004;font-size:13px"></div>
