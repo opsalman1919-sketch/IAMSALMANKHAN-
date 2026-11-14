@@ -1,0 +1,24 @@
+{
+  "name": "KHANS GYPSUMCRAFT PK Business Software",
+  "short_name": "KHANS Software",
+  "description": "Business management workspace for KHANS GYPSUMCRAFT PK",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#faf9f6",
+  "theme_color": "#c8a45a",
+  "icons": [
+    {
+      "src": "./original-site/icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./original-site/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
