@@ -6,6 +6,10 @@
 <title>KHANS GYPSUMCRAFT PK — Business Software</title><link rel="manifest" href="./manifest.json"><link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+<section id="authGate" class="auth-gate" aria-labelledby="authTitle">
+  <div class="auth-card"><div class="auth-brand"><span class="brand-mark">K</span><span><strong>KHANS</strong><small>GYPSUMCRAFT PK</small></span></div><p class="eyebrow">PRIVATE BUSINESS WORKSPACE</p><h1 id="authTitle">Owner sign in</h1><p class="auth-copy">Sign in with the owner account assigned in the separate Firebase project.</p><form id="ownerLoginForm"><label>Email address<input id="ownerEmail" type="email" autocomplete="username" required></label><label>Password<input id="ownerPassword" type="password" autocomplete="current-password" required></label><button class="button primary auth-submit" type="submit">Sign in securely</button></form><p id="authMessage" class="auth-message" role="status">Checking authentication setup…</p><p class="auth-foot">Access is restricted to the configured owner account. There is no public sign-up.</p></div>
+</section>
+<div id="appRoot" hidden>
 <div class="app-shell">
 <aside class="sidebar" id="sidebar">
 <a class="brand" href="./index.html"><span class="brand-mark">K</span><span><strong>KHANS</strong><small>GYPSUMCRAFT PK</small></span></a>
@@ -40,5 +44,6 @@
 <div id="pageBody"></div>
 <footer class="page-footer">KHANS GYPSUMCRAFT PK · Separate Business Software · Development Preview</footer>
 </section></main></div>
+</div>
 <div class="modal-backdrop" id="modalBackdrop" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-head"><h2 id="modalTitle">Add record</h2><button class="icon-button" id="closeModal" aria-label="Close">×</button></div><form id="recordForm"><div id="formFields" class="form-grid"></div><div class="form-actions"><button type="button" class="button secondary" id="cancelModal">Cancel</button><button type="submit" class="button primary">Save record</button></div></form></section></div>
-<script src="./app.js"></script><script>if("serviceWorker" in navigator && location.protocol!=="file:"){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));}</script></body></html>
+<script src="./app.js"></script><script type="module" src="./firebase-auth.js"></script><script>if("serviceWorker" in navigator && location.protocol!=="file:"){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));}</script></body></html>
