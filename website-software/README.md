@@ -17,24 +17,32 @@ The responsive Poppins / white / black / gold workspace includes:
 - Reports, CSV exports, JSON backup download and local backup restore
 - Add, edit, delete, and search for records
 - PWA manifest and static app-shell service worker
+- Owner sign-in screen integrated with Firebase Email/Password Authentication
+- Owner UID check in the client before showing the workspace
+- Deny-by-default Realtime Database and Storage rules drafts for a separate project
 
 ## Data and security status
-- Current records are stored in browser local storage on one device.
-- There is no connected cloud database, secure owner login, server-side role enforcement, or remote backup yet.
-- Do not enter real or sensitive customer data in this preview.
-- The existing Firebase Realtime Database rules were found to permit authenticated root reads. This project does not reuse or deploy those rules.
-- Proposed owner-scoped Realtime Database and Storage rules are in `firebase/`. They are drafts for a separate backend and have not been deployed or tested against a live Firebase project.
-- PWA caching only caches static app files; it does not secure or synchronize local records.
+- Firebase sign-in is wired but intentionally disabled until a NEW Firebase project config and its owner UID are supplied in `firebase-config.js`.
+- The owner-only rules in `firebase/database.rules.json` and `firebase/storage.rules` contain a UID placeholder. Replace it with the new project's owner UID before deploying. Placeholder rules are not ready to publish.
+- Rules have not been deployed and no live Firebase project has been connected or security-tested.
+- Client-side owner gating is not a replacement for server-enforced Firebase rules.
+- The 17 modules still store records in browser local storage on one device. Cloud database synchronization, migration, and remote backups are not yet implemented.
+- Do not enter real or sensitive customer information in this preview.
+- The existing website Firebase project is not reused. Its old rules were found to allow authenticated root reads.
+- PWA caching only caches static app files; it does not secure or synchronize business records.
 - This build is not production-ready.
 
+## Firebase setup
+Follow `FIREBASE_SETUP.md`. Create a separate Firebase project, enable Email/Password, create the owner account, configure the web app, and replace the owner UID placeholders. Never commit a service-account private key.
+
 ## Production work remaining
-1. Set up a separate Firebase project or another isolated backend.
-2. Confirm the owner account in that backend and test authentication.
-3. Deploy reviewed least-privilege rules and implement server-enforced owner / staff roles.
-4. Move records from local storage to validated cloud data models with audit history and remote backups.
-5. Finish quotation / invoice print layouts, payment reconciliation, and workflow validation.
-6. Test security, responsive layouts, recovery, and deployment.
+1. Complete separate Firebase project setup and verify owner sign-in.
+2. Deploy and test least-privilege database and Storage rules.
+3. Connect all module CRUD operations to the cloud database with validation and audit history.
+4. Add remote backups and safe local-to-cloud migration.
+5. Finish quotation / invoice print layouts and payment reconciliation.
+6. Test authorization, data recovery, responsive layouts, and deployment.
 7. Package Android, iOS, and Windows apps after the web version is stable.
 
 ## Preview
-Open `index.html` locally or serve this folder through a static server. PWA installation requires HTTPS.
+Open `index.html` locally or serve this folder through a static server. Firebase Authentication and ES modules require HTTPS or localhost. PWA installation requires HTTPS.
