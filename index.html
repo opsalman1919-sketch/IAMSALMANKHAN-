@@ -119,7 +119,92 @@ html,body{max-width:100%;overflow-x:hidden}body{-webkit-font-smoothing:antialias
 }
 
 </style>
-<style>.ownerLayout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:18px;align-items:start}.ownerSide{position:sticky;top:18px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:10px;box-shadow:0 10px 30px #00000008;max-height:calc(100vh - 36px);overflow:auto}.ownerSideTitle{padding:12px 12px 8px;font-size:11px;font-weight:800;letter-spacing:.12em;color:#a07b32}.ownerTabs{display:flex!important;flex-direction:column!important;gap:3px!important;border:0!important;margin:0!important}.ownerTab{display:flex!important;align-items:center;gap:10px;width:100%;text-align:left;border:0!important;border-radius:11px;padding:11px 12px!important;font-weight:700;color:#707070;background:transparent}.ownerTab:hover{background:#faf5e9;color:#8b6b2e}.ownerTab.active{color:#8b6b2e!important;background:#fff4e9;border:0!important}.ownerTab i{width:18px;text-align:center}.ownerMain{min-width:0}.ownerMenuBtn{display:none}.ownerQuick{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:15px}.ownerQuick .panel{margin:0}.paymentMethod{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fff}.paymentMethod b{display:block;margin-bottom:4px}.payBadge{display:inline-block;padding:4px 8px;border-radius:999px;background:#f8f1df;color:#8b6b2e;font-size:11px;font-weight:800}@media(max-width:900px){.ownerLayout{display:block}.ownerSide{display:none;position:fixed;z-index:260;left:10px;top:74px;width:min(290px,82vw);max-height:calc(100vh - 90px);box-shadow:0 25px 80px #0005}.ownerSide.show{display:block}.ownerMenuBtn{display:inline-flex!important;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #ffffff30;border-radius:12px;background:#fff;color:#171717}.ownerQuick{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.ownerQuick{grid-template-columns:1fr}.ownerHead .actions{min-width:auto!important}.paymentGrid{grid-template-columns:1fr!important}}#authGate{position:fixed;inset:0;z-index:100000;display:flex;align-items:center;justify-content:center;padding:24px;background:linear-gradient(135deg,#fbfaf7 0%,#f3eee3 100%)}#authGate.hidden{display:none!important}.authGateCard{width:min(100%,430px);padding:38px 30px;background:#fff;border:1px solid #eadfc9;border-radius:24px;box-shadow:0 24px 80px rgba(23,23,23,.12);text-align:center}.authGateLogo{width:70px;height:70px;margin:0 auto 18px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(135deg,#d9bb72,#b68e3e);color:#fff;font-size:23px;font-weight:900}.authGateCard h1{margin:0 0 10px;font-size:25px}.authGateCard p{margin:0 0 24px;color:#6f6f6f;line-height:1.7}.authGateCard button{width:100%;min-height:48px}.authGateError{margin-top:14px;color:#b42318;font-size:13px;line-height:1.5}</style></head>
+<style>.ownerLayout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:18px;align-items:start}.ownerSide{position:sticky;top:18px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:10px;box-shadow:0 10px 30px #00000008;max-height:calc(100vh - 36px);overflow:auto}.ownerSideTitle{padding:12px 12px 8px;font-size:11px;font-weight:800;letter-spacing:.12em;color:#a07b32}.ownerTabs{display:flex!important;flex-direction:column!important;gap:3px!important;border:0!important;margin:0!important}.ownerTab{display:flex!important;align-items:center;gap:10px;width:100%;text-align:left;border:0!important;border-radius:11px;padding:11px 12px!important;font-weight:700;color:#707070;background:transparent}.ownerTab:hover{background:#faf5e9;color:#8b6b2e}.ownerTab.active{color:#8b6b2e!important;background:#fff4e9;border:0!important}.ownerTab i{width:18px;text-align:center}.ownerMain{min-width:0}.ownerMenuBtn{display:none}.ownerQuick{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:15px}.ownerQuick .panel{margin:0}.paymentMethod{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fff}.paymentMethod b{display:block;margin-bottom:4px}.payBadge{display:inline-block;padding:4px 8px;border-radius:999px;background:#f8f1df;color:#8b6b2e;font-size:11px;font-weight:800}@media(max-width:900px){.ownerLayout{display:block}.ownerSide{display:none;position:fixed;z-index:260;left:10px;top:74px;width:min(290px,82vw);max-height:calc(100vh - 90px);box-shadow:0 25px 80px #0005}.ownerSide.show{display:block}.ownerMenuBtn{display:inline-flex!important;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #ffffff30;border-radius:12px;background:#fff;color:#171717}.ownerQuick{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.ownerQuick{grid-template-columns:1fr}.ownerHead .actions{min-width:auto!important}.paymentGrid{grid-template-columns:1fr!important}}#authGate{position:fixed;inset:0;z-index:100000;display:flex;align-items:center;justify-content:center;padding:24px;background:linear-gradient(135deg,#fbfaf7 0%,#f3eee3 100%)}#authGate.hidden{display:none!important}.authGateCard{width:min(100%,430px);padding:38px 30px;background:#fff;border:1px solid #eadfc9;border-radius:24px;box-shadow:0 24px 80px rgba(23,23,23,.12);text-align:center}.authGateLogo{width:70px;height:70px;margin:0 auto 18px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(135deg,#d9bb72,#b68e3e);color:#fff;font-size:23px;font-weight:900}.authGateCard h1{margin:0 0 10px;font-size:25px}.authGateCard p{margin:0 0 24px;color:#6f6f6f;line-height:1.7}.authGateCard button{width:100%;min-height:48px}.authGateError{margin-top:14px;color:#b42318;font-size:13px;line-height:1.5}
+/* RESPONSIVE LAYOUT: desktop, tablet and mobile */
+html{width:100%;overflow-x:hidden}
+body{width:100%;min-width:320px;overflow-x:hidden}
+img,video,canvas,iframe{max-width:100%}
+button,input,select,textarea{max-width:100%}
+.wrap{width:100%;max-width:1500px;margin-left:auto;margin-right:auto}
+main,.page,.section,.panel,.ownerMain{min-width:0}
+.grid,.heroGrid,.detail,.contactGrid,.footerGrid,.visualizerGrid,.compareGrid,.ownerLayout,.projectZoomLayout{min-width:0}
+.grid>* ,.heroGrid>* ,.detail>* ,.contactGrid>* ,.footerGrid>* ,.visualizerGrid>* ,.compareGrid>* ,.ownerLayout>*{min-width:0}
+.tableWrap{width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.table{width:100%}
+input,select,textarea{min-width:0}
+@media(min-width:1181px){
+  .nav{gap:14px}
+  .navlinks{gap:5px;justify-content:center}
+  .navlinks button{font-size:12px;padding:9px 8px}
+  .heroGrid{grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);gap:clamp(28px,4vw,64px)}
+  .ownerLayout{grid-template-columns:250px minmax(0,1fr)}
+}
+@media(min-width:901px) and (max-width:1180px){
+  .navlinks{display:none}
+  .desktopMenuBtn{display:grid!important}
+  .mobileNav{display:none!important}
+  .desktopAccountActions button{font-size:11px;padding:8px 10px}
+  .heroGrid{grid-template-columns:minmax(0,1fr) minmax(300px,.9fr);gap:24px}
+  .ownerLayout{grid-template-columns:220px minmax(0,1fr);gap:12px}
+  .ownerQuick{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .customerToolsGrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:900px){
+  .wrap{max-width:none;padding-left:16px;padding-right:16px}
+  .heroGrid,.detail,.contactGrid,.visualizerGrid{grid-template-columns:minmax(0,1fr)}
+  .ownerLayout{display:block}
+  .ownerSide{max-width:calc(100vw - 20px)}
+  .ownerMain{width:100%}
+  .ownerHead{flex-wrap:wrap}
+  .ownerHead .actions{flex-wrap:wrap}
+  .projectZoomLayout{grid-template-columns:minmax(0,1fr)}
+  .projectZoomStrip{min-width:0;max-width:100%;overflow-x:auto}
+}
+@media(max-width:640px){
+  body{font-size:14px}
+  .wrap{padding-left:12px;padding-right:12px}
+  header .nav{min-height:62px;gap:8px}
+  .brand{font-size:14px;white-space:normal;line-height:1.25;max-width:calc(100% - 58px)}
+  .desktopAccountActions,.desktopMenuBtn,.navlinks{display:none!important}
+  .mobileNav{display:grid!important;flex:0 0 42px;width:42px;height:42px;place-items:center}
+  .mobileQuickNav{top:62px}
+  .hero{padding:38px 0}
+  .hero h1{font-size:clamp(32px,9vw,44px);overflow-wrap:anywhere}
+  .heroGrid,.grid2,.grid3,.grid4,.contactGrid,.footerGrid,.compareGrid,.visualizerGrid{grid-template-columns:minmax(0,1fr)}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .customerToolsGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .customerTool{min-width:0;min-height:0}
+  .customerTool:last-child{grid-column:1/-1}
+  .actions{width:100%;gap:7px}
+  .actions>*{min-width:0;flex:1 1 130px}
+  .panel{padding:14px;border-radius:15px}
+  .field input,.field select,.field textarea{font-size:16px}
+  .modal{padding:8px}
+  .modalBox{width:100%;max-width:100%;max-height:calc(100dvh - 16px);height:auto;padding:14px;border-radius:16px}
+  .table{min-width:560px}
+  .ownerQuick{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ownerHead{padding:16px;border-radius:18px}
+  .ownerHead .actions>*{flex:1 1 120px}
+  .visualizerStage,.roomMedia{min-height:300px}
+  .visualizerToolbar{align-items:flex-start;flex-direction:column}
+  .visualizerToolbar .actions{width:100%}
+  .salluPanel{right:8px;left:8px;width:auto;bottom:125px;max-width:none}
+  .salluFab{right:12px;bottom:70px;width:54px;height:54px}
+  .projectGallery{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .projectZoomLayout{height:calc(100dvh - 16px);grid-template-rows:minmax(0,1fr) auto}
+}
+@media(max-width:380px){
+  .mobileQuickNav{grid-template-columns:repeat(2,minmax(0,1fr));padding:7px 9px;gap:6px}
+  .mobileQuickNav button{font-size:11px;padding:8px 5px}
+  .brand{font-size:12px}
+  .stats,.steps,.customerToolsGrid{grid-template-columns:minmax(0,1fr)}
+  .customerTool:last-child{grid-column:auto}
+  .ownerQuick{grid-template-columns:minmax(0,1fr)}
+  .hero h1{font-size:32px}
+}
+
+</style></head>
 <body>
 <div id="toast" class="hidden" style="position:fixed;top:85px;left:50%;transform:translateX(-50%);z-index:300;background:#171717;color:#fff;padding:11px 16px;border-radius:11px;box-shadow:0 15px 40px #0004;font-size:13px"></div>
 <div id="authGate" role="dialog" aria-modal="true" aria-labelledby="authGateTitle">
