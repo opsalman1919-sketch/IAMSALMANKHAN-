@@ -1,15 +1,23 @@
-# Separate Firebase backend setup
+# Existing Firebase project connection
 
-This backend must be a NEW Firebase project. Do not reuse the existing public website Firebase project.
+The software Firebase web configuration and owner UID have been populated from the existing KHANS website source.
 
-1. Create a new Firebase project and register a Web app. Copy its web config into `firebase-config.js`.
-2. In Authentication → Sign-in method, enable Email/Password. Create the owner account in the Firebase console; public sign-up is not provided.
-3. Copy the new owner's UID into `OWNER_UID` in `firebase-config.js`.
-4. Create Realtime Database. Replace the UID placeholder in `database.rules.json` with that exact UID and publish the rules. The rules deny root access and grant access only to the owner under `/business`. Do not publish placeholder rules.
-5. If using Storage for project images, replace the UID in `storage.rules` and publish those rules. All other paths remain denied.
-6. Add the deployment hostname to Authentication → Settings → Authorized domains and deploy over HTTPS.
+- Project ID: `khan-sgypsumcraptpk`
+- Realtime Database: `https://khan-sgypsumcraptpk-default-rtdb.firebaseio.com`
+- Owner UID: `0opYFH8lt7go4jDCaQhgI4EIqRq2`
 
-## Current implementation boundary
-The sign-in screen and Firebase Authentication integration are wired, but sign-in stays disabled until a new project configuration and owner UID are supplied. The 17 business modules still store records in this browser's local storage. Cloud data migration, live database synchronization, remote backups, and security testing are not yet implemented. Do not enter real customer data until those steps are complete.
+## Owner login
+The owner sign-in screen uses Firebase Email/Password Authentication for this same project and checks the signed-in user's UID against the owner UID above. The owner account must already exist in this Firebase project's Authentication users. If login fails, verify that Email/Password is enabled and that the owner account is present.
 
-Never put a Firebase service-account private key in frontend code or GitHub. Server-side staff-role provisioning must use a trusted server.
+## Important database security warning
+The existing website's Realtime Database rules were inspected. They grant root-level reads to any authenticated user (`auth != null`). The root-level write rule is restricted to the owner UID. A root-level read grant cannot be narrowed by adding more restrictive child rules below it.
+
+For that reason:
+- Do NOT publish the software's separate `firebase/database.rules.json` or `firebase/storage.rules` over the existing website project. Those files are deny-by-default templates intended for an isolated backend and could break the original website if deployed as-is.
+- Do NOT assume that the current Firebase database is safe for private business records. Existing authenticated users may be able to read data.
+- The software's owner-only screen is a client-side gate, not a replacement for server-side database authorization.
+- Cloud business-record sync is not enabled yet. The current 17 modules still use browser local storage.
+
+Before storing private customer, quotation, invoice, payment, or staff data in the existing database, the complete current website data model and access requirements must be reviewed and the database rules redesigned without breaking the public website. A separate Firebase project remains the safer production choice.
+
+Never commit service-account private keys or passwords to GitHub.
