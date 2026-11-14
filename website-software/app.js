@@ -78,7 +78,8 @@ document.getElementById("pageBody").addEventListener("click",e=>{
  const edit=e.target.closest("[data-edit]");if(edit)return openForm(currentPage,edit.dataset.edit);
  const del=e.target.closest("[data-delete]");if(del){if(confirm("Delete this record? This cannot be undone.")){records[currentPage]=list(currentPage).filter(r=>r.id!==del.dataset.delete);saveRecords();setPage(currentPage)}return}
  const exp=e.target.closest("[data-export]");if(exp)return exportCsv(exp.dataset.export);
- if(e.target.id==="backupJson"){download(new Blob([JSON.stringify({exportedAt:new Date().toISOString(),records},null,2)],{type:"application/json"}),"khans-business-backup.json")}\n if(e.target.id==="restoreBackup"){document.getElementById("restoreFile").click()}
+ if(e.target.id==="backupJson"){download(new Blob([JSON.stringify({exportedAt:new Date().toISOString(),records},null,2)],{type:"application/json"}),"khans-business-backup.json")}
+ if(e.target.id==="restoreBackup"){document.getElementById("restoreFile").click()}
  if(e.target.id==="clearSearch"){const s=document.getElementById("tableSearch");s.value="";setPage(currentPage)}
 });
 document.getElementById("pageBody").addEventListener("input",e=>{if(e.target.id==="tableSearch"){const q=e.target.value.toLowerCase();const rows=list(currentPage).filter(r=>Object.values(r).join(" ").toLowerCase().includes(q));document.getElementById("recordRows").innerHTML=renderRows(currentPage,rows)}});
