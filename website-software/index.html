@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#c8a45a"><meta name="description" content="KHANS GYPSUMCRAFT PK business management workspace">
-<title>KHANS GYPSUMCRAFT PK — Business Software</title><link rel="stylesheet" href="./styles.css">
+<title>KHANS GYPSUMCRAFT PK — Business Software</title><link rel="manifest" href="./manifest.json"><link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 <div class="app-shell">
@@ -41,4 +41,4 @@
 <footer class="page-footer">KHANS GYPSUMCRAFT PK · Separate Business Software · Development Preview</footer>
 </section></main></div>
 <div class="modal-backdrop" id="modalBackdrop" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-head"><h2 id="modalTitle">Add record</h2><button class="icon-button" id="closeModal" aria-label="Close">×</button></div><form id="recordForm"><div id="formFields" class="form-grid"></div><div class="form-actions"><button type="button" class="button secondary" id="cancelModal">Cancel</button><button type="submit" class="button primary">Save record</button></div></form></section></div>
-<script src="./app.js"></script></body></html>
+<script src="./app.js"></script><script>if("serviceWorker" in navigator && location.protocol!=="file:"){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));}</script></body></html>
