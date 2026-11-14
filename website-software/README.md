@@ -1,42 +1,40 @@
 # KHANS GYPSUMCRAFT PK — Separate Business Software
 
-This is a separate business-management application. It is being developed without editing the public website at the repository root.
+A separate business-management application. The public website at the repository root is not edited by this project.
 
 ## Safety boundary
-- All software work is on the `software-development` branch under `website-software/`.
-- The original public website at the repository root is not edited.
-- The `original-site/` folder is a reference snapshot only.
-- Do not merge this branch into `main` without explicit owner review.
+- All software development is restricted to the `software-development` branch and `website-software/`.
+- `original-site/` is a reference snapshot only.
+- Do not merge into `main` without explicit owner review.
 
-## Current development build
-The responsive, Poppins / white / black / gold workspace currently includes:
-- Overview dashboard and recent activity
-- Customers and Projects
-- Quotations, Orders, Invoices, and Payments
-- Inventory and Expenses
-- Appointments and Leads / CRM
-- Team directory and Daily Site Logs
-- Saved Designs, Gallery Manager, and Testimonials
-- Notifications and local Business Settings
-- Reports, CSV exports, and JSON backup download
+## Development build
+The responsive Poppins / white / black / gold workspace includes:
+- Overview and recent activity
+- Customers, Projects, Quotations, Orders, Invoices, Payments
+- Inventory, Expenses, Appointments, Leads / CRM, Team
+- Daily Site Logs, Saved Designs, Gallery Manager, Testimonials
+- Notifications and Business Settings
+- Reports, CSV exports, JSON backup download and local backup restore
 - Add, edit, delete, and search for records
-- Installable PWA manifest and app-shell service worker
+- PWA manifest and static app-shell service worker
 
-## Data and security limitations
-- Records are currently saved in this browser's local storage on one device only.
-- There is no secure owner login, server-side authorization, Firebase connection, cloud synchronization, or automated remote backup.
-- Do not enter real or sensitive customer information in this preview.
-- Existing Firebase Realtime Database rules were inspected and appear to allow any authenticated user to read at the root. Do not connect this software to the existing database or deploy copied rules until least-privilege access is designed and reviewed.
-- The PWA app shell can cache static files; this does not make local records cloud-synced or protected.
-- This build is not production-ready and is not a substitute for tested accounting software.
+## Data and security status
+- Current records are stored in browser local storage on one device.
+- There is no connected cloud database, secure owner login, server-side role enforcement, or remote backup yet.
+- Do not enter real or sensitive customer data in this preview.
+- The existing Firebase Realtime Database rules were found to permit authenticated root reads. This project does not reuse or deploy those rules.
+- Proposed owner-scoped Realtime Database and Storage rules are in `firebase/`. They are drafts for a separate backend and have not been deployed or tested against a live Firebase project.
+- PWA caching only caches static app files; it does not secure or synchronize local records.
+- This build is not production-ready.
 
-## Remaining production stages
-1. Choose a separate Firebase project or another isolated backend for the software.
-2. Implement secure authentication and server-enforced owner / staff roles.
-3. Implement validated cloud data models, audit history, backups, and access rules.
-4. Add quotation / invoice printing, payment reconciliation, and full business workflows.
-5. Test permissions, mobile behavior, data recovery, and deployment.
-6. Package Android, iOS, and Windows versions after the web app and backend are stable.
+## Production work remaining
+1. Set up a separate Firebase project or another isolated backend.
+2. Confirm the owner account in that backend and test authentication.
+3. Deploy reviewed least-privilege rules and implement server-enforced owner / staff roles.
+4. Move records from local storage to validated cloud data models with audit history and remote backups.
+5. Finish quotation / invoice print layouts, payment reconciliation, and workflow validation.
+6. Test security, responsive layouts, recovery, and deployment.
+7. Package Android, iOS, and Windows apps after the web version is stable.
 
-## Local preview
-Open `index.html` in a modern browser, or serve this folder through a local static web server. PWA installation requires HTTPS (for example, a correctly configured GitHub Pages deployment).
+## Preview
+Open `index.html` locally or serve this folder through a static server. PWA installation requires HTTPS.
