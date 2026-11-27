@@ -836,7 +836,7 @@ function heroSlideChange(step){heroSlideGo(khansHeroIndex+step);restartHeroSlide
 function restartHeroSlideshow(){if(khansHeroTimer)clearInterval(khansHeroTimer);if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)khansHeroTimer=setInterval(()=>{if(!document.hidden)heroSlideGo(khansHeroIndex+1)},6000)}
 window.heroSlideGo=heroSlideGo;window.heroSlideChange=heroSlideChange;
 
-function boot(){initHomeCats();loadRates();loadCustomDesigns();loadProjects();renderGallery();renderHomeOffers();showPage('home');initSallu();initSalluTextInput();updateInstallButton();if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
+function boot(){heroSlideGo(0);restartHeroSlideshow();initHomeCats();loadRates();loadCustomDesigns();loadProjects();renderGallery();renderHomeOffers();showPage('home');initSallu();initSalluTextInput();updateInstallButton();if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
 window.addEventListener('DOMContentLoaded',boot);
 window.openSavedDesigns=openSavedDesigns;
 window.openCompare=openCompare;
