@@ -429,16 +429,11 @@ button:active,.gold:active,.outline:active{transform:translateY(1px)}
 #page-owner-center .ownerMenuBtn{background:#29292d!important;color:#e8c778!important;border:1px solid #d4ad5650!important;border-radius:10px}
 #page-owner-center .ownerMain .grid>*{min-width:0}
 @keyframes kgOwnerEnter{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
-#kgSoundToggle{position:fixed;right:16px;bottom:18px;z-index:260;display:flex;align-items:center;gap:8px;padding:10px 13px;border:1px solid #d5b36a77;border-radius:999px;background:linear-gradient(135deg,#252528,#111113);color:#f0d38a;font-family:inherit;font-weight:700;font-size:12px;box-shadow:0 10px 28px #0008;cursor:pointer}
-#kgSoundToggle i{font-size:14px}
-#kgSoundToggle[aria-pressed="false"]{color:#aaa;border-color:#ffffff30}
 @media(max-width:900px){#page-owner-center .ownerLayout{display:block!important}#page-owner-center .ownerSide{position:relative!important;top:auto;max-height:300px;margin-bottom:12px}#page-owner-center .ownerTabs{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}#page-owner-center .ownerMain{min-height:420px;padding:11px}}
-@media(max-width:640px){#kgSoundToggle{right:10px;bottom:12px;padding:9px 11px}}
 @media(prefers-reduced-motion:reduce){#page-owner-center #ownerContent{animation:none}}
 </style>
 </head>
 <body>
-<button id="kgSoundToggle" type="button" aria-label="Turn click sounds off" aria-pressed="true" onclick="toggleKhansClickSound()"><i class="fa-solid fa-volume-high"></i><span>Sound ON</span></button>
 <div id="toast" class="hidden" style="position:fixed;top:85px;left:50%;transform:translateX(-50%);z-index:300;background:#171717;color:#fff;padding:11px 16px;border-radius:11px;box-shadow:0 15px 40px #0004;font-size:13px"></div>
 <div id="authGate" role="dialog" aria-modal="true" aria-labelledby="authGateTitle">
   <div class="authGateCard">
@@ -875,15 +870,4 @@ window.heroSlideGo=heroSlideGo;window.heroSlideChange=heroSlideChange;
 let khansClickSoundOn=true,khansAudioContext=null;
 try{khansClickSoundOn=localStorage.getItem('khansClickSound')!=='off'}catch(_){}
 function syncKhansSoundButton(){const b=document.getElementById('kgSoundToggle');if(!b)return;b.setAttribute('aria-pressed',khansClickSoundOn?'true':'false');b.setAttribute('aria-label',khansClickSoundOn?'Turn click sounds off':'Turn click sounds on');b.innerHTML='<i class="fa-solid '+(khansClickSoundOn?'fa-volume-high':'fa-volume-xmark')+'"></i><span>Sound '+(khansClickSoundOn?'ON':'OFF')+'</span>'}
-function toggleKhansClickSound(){khansClickSoundOn=!khansClickSoundOn;try{localStorage.setItem('khansClickSound',khansClickSoundOn?'on':'off')}catch(_){}syncKhansSoundButton();if(khansClickSoundOn)playKhansClickSound()}
-function playKhansClickSound(){if(!khansClickSoundOn)return;try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;khansAudioContext=khansAudioContext||new C();if(khansAudioContext.state==='suspended')khansAudioContext.resume();const o=khansAudioContext.createOscillator(),g=khansAudioContext.createGain(),now=khansAudioContext.currentTime;o.type='sine';o.frequency.setValueAtTime(920,now);o.frequency.exponentialRampToValueAtTime(620,now+.045);g.gain.setValueAtTime(.0001,now);g.gain.exponentialRampToValueAtTime(.035,now+.006);g.gain.exponentialRampToValueAtTime(.0001,now+.055);o.connect(g);g.connect(khansAudioContext.destination);o.start(now);o.stop(now+.06)}catch(_){}}
-document.addEventListener('click',e=>{if(e.target.closest('#kgSoundToggle'))return;if(e.target.closest('button,a,[role="button"],.ownerTab,.category,.pill,.customerTool'))playKhansClickSound()});
-window.toggleKhansClickSound=toggleKhansClickSound;
-
-function boot(){syncKhansSoundButton();heroSlideGo(0);restartHeroSlideshow();initHomeCats();loadRates();loadCustomDesigns();loadProjects();renderGallery();renderHomeOffers();showPage('home');initSallu();initSalluTextInput();updateInstallButton();if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
-window.addEventListener('DOMContentLoaded',boot);
-window.openSavedDesigns=openSavedDesigns;
-window.openCompare=openCompare;
-</script>
-</body>
-</html>
+function toggleKhansClickSound(){khansClickSoundOn=!khansClickSoundOn;try{localStorage.setItem('khansClickSound',khansClic
