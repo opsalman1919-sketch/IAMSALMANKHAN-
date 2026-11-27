@@ -866,6 +866,33 @@ function restartHeroSlideshow(){if(khansHeroTimer)clearInterval(khansHeroTimer);
 window.heroSlideGo=heroSlideGo;window.heroSlideChange=heroSlideChange;
 
 
+/* Subtle click sound for interactive controls (no floating sound button) */
+let khansAudioContext=null;
+function playKhansClickSound(){
+ try{
+  const AudioCtx=window.AudioContext||window.webkitAudioContext;
+  if(!AudioCtx)return;
+  khansAudioContext=khansAudioContext||new AudioCtx();
+  if(khansAudioContext.state==='suspended')khansAudioContext.resume();
+  const oscillator=khansAudioContext.createOscillator();
+  const gain=khansAudioContext.createGain();
+  const now=khansAudioContext.currentTime;
+  oscillator.type='sine';
+  oscillator.frequency.setValueAtTime(920,now);
+  oscillator.frequency.exponentialRampToValueAtTime(620,now+.045);
+  gain.gain.setValueAtTime(.0001,now);
+  gain.gain.exponentialRampToValueAtTime(.035,now+.006);
+  gain.gain.exponentialRampToValueAtTime(.0001,now+.055);
+  oscillator.connect(gain);
+  gain.connect(khansAudioContext.destination);
+  oscillator.start(now);
+  oscillator.stop(now+.06);
+ }catch(_){}
+}
+document.addEventListener('click',e=>{
+ if(e.target.closest('button,a,[role="button"],.ownerTab,.category,.pill,.customerTool'))playKhansClickSound();
+});
+
 function boot(){heroSlideGo(0);restartHeroSlideshow();initHomeCats();loadRates();loadCustomDesigns();loadProjects();renderGallery();renderHomeOffers();showPage('home');initSallu();initSalluTextInput();updateInstallButton();if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
 window.addEventListener('DOMContentLoaded',boot);
 window.openSavedDesigns=openSavedDesigns;
