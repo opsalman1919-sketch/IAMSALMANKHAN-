@@ -338,6 +338,47 @@ input,select,textarea{min-width:0}
 @media(max-width:900px){.ownerLayout{grid-template-columns:230px minmax(0,1fr)}}
 @media(max-width:640px){.ownerLayout{grid-template-columns:1fr}}
 </style>
+
+<style id="khans-smooth-visual-polish">
+/* KHANS smooth graphics polish — presentation layer only */
+:root{color-scheme:dark;--kg-ease:cubic-bezier(.22,.68,0,1)}
+html{scroll-padding-top:82px;scroll-behavior:smooth}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+header{backdrop-filter:saturate(145%) blur(14px);-webkit-backdrop-filter:saturate(145%) blur(14px)}
+img,video,model-viewer{max-width:100%}
+img{height:auto}
+button,a,.card,.category,.customerTool,.panel,.stat,.pill,.step,.modalBox{ -webkit-tap-highlight-color:transparent}
+button,.gold,.outline,.pill,.category,.card,.customerTool,.panel,.step,.modalBox,.heroImg{
+ transition-timing-function:var(--kg-ease)
+}
+.gold{position:relative;isolation:isolate;overflow:hidden}
+.gold:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 20%,#fff4 48%,transparent 72%);transform:translateX(-130%);transition:transform .65s var(--kg-ease)}
+.gold:hover:after{transform:translateX(130%)}
+.card,.category,.customerTool{backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.card img.cover,.category img{backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.card:hover{transform:perspective(1000px) translate3d(0,-5px,0) rotateX(1deg)}
+.category:hover,.customerTool:hover{transform:translate3d(0,-5px,0)}
+.heroImg{backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.field input,.field select,.field textarea,.salluInput input{transition:border-color .2s ease,box-shadow .2s ease,background-color .2s ease}
+button:active,.gold:active,.outline:active{transform:translateY(1px)}
+::selection{background:#e4c574;color:#111}
+:focus-visible{scroll-margin:100px}
+@media(hover:hover) and (pointer:fine){
+ .gold,.outline,.pill,.category,.card,.customerTool,.panel,.heroImg{will-change:auto}
+ .card:hover,.category:hover,.customerTool:hover{box-shadow:0 22px 48px #0009,0 0 0 1px #d8b45e30}
+}
+@media(max-width:640px){
+ html{scroll-padding-top:68px}
+ header{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+ .card:hover,.category:hover,.customerTool:hover,.gold:hover{transform:none}
+ .gold:after{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+</style>
+
 </head>
 <body>
 <div id="toast" class="hidden" style="position:fixed;top:85px;left:50%;transform:translateX(-50%);z-index:300;background:#171717;color:#fff;padding:11px 16px;border-radius:11px;box-shadow:0 15px 40px #0004;font-size:13px"></div>
