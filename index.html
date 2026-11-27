@@ -878,7 +878,8 @@ function toggleKhansClickSound(){khansClickSoundOn=!khansClickSoundOn;try{localS
 function playKhansClickSound(){if(!khansClickSoundOn)return;try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;khansAudioContext=khansAudioContext||new C();if(khansAudioContext.state==='suspended')khansAudioContext.resume();const o=khansAudioContext.createOscillator(),g=khansAudioContext.createGain(),now=khansAudioContext.currentTime;o.type='sine';o.frequency.setValueAtTime(920,now);o.frequency.exponentialRampToValueAtTime(620,now+.045);g.gain.setValueAtTime(.0001,now);g.gain.exponentialRampToValueAtTime(.035,now+.006);g.gain.exponentialRampToValueAtTime(.0001,now+.055);o.connect(g);g.connect(khansAudioContext.destination);o.start(now);o.stop(now+.06)}catch(_){}}
 document.addEventListener('click',e=>{if(e.target.closest('#kgSoundToggle'))return;if(e.target.closest('button,a,[role="button"],.ownerTab,.category,.pill,.customerTool'))playKhansClickSound()});
 window.toggleKhansClickSound=toggleKhansClickSound;
-\nfunction boot(){syncKhansSoundButton();heroSlideGo(0);restartHeroSlideshow();initHomeCats();loadRates();loadCustomDesigns();loadProjects();renderGallery();renderHomeOffers();showPage('home');initSallu();initSalluTextInput();updateInstallButton();if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
+
+function boot(){syncKhansSoundButton();heroSlideGo(0);restartHeroSlideshow();initHomeCats();loadRates();loadCustomDesigns();loadProjects();renderGallery();renderHomeOffers();showPage('home');initSallu();initSalluTextInput();updateInstallButton();if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
 window.addEventListener('DOMContentLoaded',boot);
 window.openSavedDesigns=openSavedDesigns;
 window.openCompare=openCompare;
