@@ -379,6 +379,30 @@ button:active,.gold:active,.outline:active{transform:translateY(1px)}
 }
 </style>
 
+
+<style id="khans-black-gold-showcase">
+/* Consistent black + gold premium surfaces */
+#page-home .section[style*="background:#fff"],#page-home .customerToolsSection{background:transparent!important}
+.paymentMethod,.ownerSide{background:linear-gradient(145deg,#202023,#111113)!important;color:#f5f1e8!important;border-color:#51452e!important}
+.paymentMethod *,.ownerSide *{color:inherit}
+#offerBanner .panel{background:linear-gradient(145deg,#302714,#17130c)!important;color:#f5f1e8!important;border-color:#9a7838!important}
+#offerBanner .panel h3,#offerBanner .panel p{color:#f5f1e8!important}
+#page-home .sectionHead h2,#page-home .sectionHead p{color:#f5f1e8}
+#page-home .panel{background:linear-gradient(145deg,#202023,#121214)!important}
+#page-home .heroImg{position:relative;overflow:hidden;isolation:isolate;background:#111;min-height:430px}
+#page-home .heroImg:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(110deg,#08080822,#08080800 45%,#08080855),linear-gradient(0deg,#08080866,transparent 45%);pointer-events:none}
+#page-home .heroImg .heroSlideImage{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.035);transition:opacity 1s ease,transform 6s ease;filter:saturate(.92) contrast(1.04)}
+#page-home .heroImg .heroSlideImage.active{opacity:1;transform:scale(1)}
+.heroSlideControls{position:absolute;z-index:3;left:16px;right:16px;bottom:15px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.heroSlideDots{display:flex;align-items:center;gap:7px}
+.heroSlideDots button,.heroSlideArrow{width:34px;height:34px;border-radius:50%;border:1px solid #f4dfa077;background:#111b;color:#f4dfa0;backdrop-filter:blur(8px);display:grid;place-items:center}
+.heroSlideDots button{width:8px;height:8px;padding:0;border:0;background:#fff9}
+.heroSlideDots button.active{width:23px;border-radius:9px;background:#e2bf69}
+.heroSlideArrow:hover{background:#d8b45e;color:#111}
+@media(max-width:640px){#page-home .heroImg{min-height:300px;border-radius:20px}.heroSlideControls{bottom:10px}.heroSlideArrow{width:32px;height:32px}}
+@media(prefers-reduced-motion:reduce){#page-home .heroImg .heroSlideImage{transition:none;transform:none}}
+</style>
+
 </head>
 <body>
 <div id="toast" class="hidden" style="position:fixed;top:85px;left:50%;transform:translateX(-50%);z-index:300;background:#171717;color:#fff;padding:11px 16px;border-radius:11px;box-shadow:0 15px 40px #0004;font-size:13px"></div>
@@ -395,7 +419,13 @@ button:active,.gold:active,.outline:active{transform:translateY(1px)}
 <div class="mobileQuickNav" id="mobileQuickNav"><button onclick="showPage('home')">Home</button><button onclick="showPage('design-studio')">Designs</button><button onclick="showPage('room-planner')">Room Planner</button><button onclick="showPage('calculator')">Smart Calculator</button><button onclick="showPage('portfolio')">Projects</button><button onclick="showPage('site-visit')">Site Visit</button><button onclick="openVisualizerFromNav()">Room Visualizer</button></div>
 <div id="mobileMenu" class="modal"><div class="modalBox" style="max-width:430px"><div class="modalTop"><h3>KHANS Menu</h3><button class="close" onclick="closeModal('mobileMenu')">×</button></div><div class="small muted" style="margin-top:4px">CUSTOMER AREA</div><div class="mobileMenuList"><button class="outline" onclick="openCustomerArea('myOrders')"><i class="fa-solid fa-cart-shopping"></i> My Orders</button><button class="outline" onclick="openCustomerArea('myQuotes')"><i class="fa-solid fa-file-invoice-dollar"></i> My Quotations</button><button class="outline" onclick="openCustomerArea('myInvoices')"><i class="fa-solid fa-file-invoice"></i> My Invoices</button><button class="outline" onclick="openCustomerArea('myPayments')"><i class="fa-solid fa-credit-card"></i> My Payments</button><button class="outline" onclick="openCustomerArea('myTracking')"><i class="fa-solid fa-list-check"></i> Project Tracking</button><button class="outline" onclick="openCustomerArea('myNotifications')"><i class="fa-solid fa-bell"></i> Notifications</button><button class="outline" onclick="openCustomerArea('myRoomPlans')"><i class="fa-solid fa-ruler-combined"></i> Saved Room Plans</button><button class="outline" onclick="openUserSettings();closeModal('mobileMenu')"><i class="fa-solid fa-gear"></i> User Settings</button><button class="outline" onclick="openSavedDesigns();closeModal('mobileMenu')"><i class="fa-regular fa-heart"></i> Saved Designs</button><button class="outline" onclick="openCompare();closeModal('mobileMenu')"><i class="fa-solid fa-code-compare"></i> Compare Designs</button><button id="mobileLoginBtn" class="gold" onclick="openLoginModal();closeModal('mobileMenu')"><i class="fa-brands fa-google"></i> Continue with Google</button><button id="mobileLogoutBtn" class="danger hidden" onclick="handleLogout();closeModal('mobileMenu')"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</button></div></div></div>
 <main>
-<section id="page-home" class="page"><div class="hero"><div class="wrap heroGrid"><div><div class="eyebrow">WHITE GOLD • PREMIUM INTERIORS</div><h1 id="heroTitle">Modern ceilings.<br><span>Beautiful spaces.</span></h1><p id="heroText">Explore premium false ceilings, TV walls, gypsum details and interior concepts. Select a design, plan your room, estimate your project and request a quotation for WhatsApp.</p><div class="heroActions"><button class="gold" onclick="showPage('design-studio')">Explore Designs</button><button class="outline" onclick="showPage('calculator')">Get a Quote</button><button class="outline" onclick="openAdvancedGallery()">Advanced Gallery</button></div></div><div class="heroImg"></div></div></div>
+<section id="page-home" class="page"><div class="hero"><div class="wrap heroGrid"><div><div class="eyebrow">BLACK • GOLD • PREMIUM INTERIORS</div><h1 id="heroTitle">Modern ceilings.<br><span>Beautiful spaces.</span></h1><p id="heroText">Explore premium false ceilings, TV walls, gypsum details and interior concepts. Select a design, plan your room, estimate your project and request a quotation for WhatsApp.</p><div class="heroActions"><button class="gold" onclick="showPage('design-studio')">Explore Designs</button><button class="outline" onclick="showPage('calculator')">Get a Quote</button><button class="outline" onclick="openAdvancedGallery()">Advanced Gallery</button></div></div><div class="heroImg" id="homeHeroShowcase" role="region" aria-label="KHANS premium interior design photo slideshow">
+<img class="heroSlideImage active" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1500&q=85" alt="Premium modern living room interior with architectural ceiling design" fetchpriority="high">
+<img class="heroSlideImage" src="https://images.unsplash.com/photo-1776362355123-ca966d36e29c?auto=format&fit=crop&w=1500&q=82" alt="Luxury living room with grand interior architecture" loading="lazy">
+<img class="heroSlideImage" src="https://images.unsplash.com/photo-1744126405308-b7fb2d430e96?auto=format&fit=crop&w=1500&q=82" alt="Elegant high ceiling luxury living room" loading="lazy">
+<img class="heroSlideImage" src="https://images.unsplash.com/photo-1758448755981-954afbf60ff7?auto=format&fit=crop&w=1500&q=82" alt="Modern lounge with marble walls and ambient lighting" loading="lazy">
+<div class="heroSlideControls"><button class="heroSlideArrow" type="button" aria-label="Previous photo" onclick="heroSlideChange(-1)"><i class="fa-solid fa-chevron-left"></i></button><div class="heroSlideDots" id="heroSlideDots"><button class="active" aria-label="Show photo 1" onclick="heroSlideGo(0)"></button><button aria-label="Show photo 2" onclick="heroSlideGo(1)"></button><button aria-label="Show photo 3" onclick="heroSlideGo(2)"></button><button aria-label="Show photo 4" onclick="heroSlideGo(3)"></button></div><button class="heroSlideArrow" type="button" aria-label="Next photo" onclick="heroSlideChange(1)"><i class="fa-solid fa-chevron-right"></i></button></div>
+</div></div></div>
 <div class="section" style="padding-top:30px"><div class="wrap"><div class="grid grid3"><div class="panel"><div class="eyebrow">01</div><h3>Design Studio</h3><p class="muted">20 demo concepts per category plus owner-added media.</p></div><div class="panel"><div class="eyebrow">02</div><h3>Smart Estimate</h3><p class="muted">Area, rate, labour, material and owner-controlled pricing.</p></div><div class="panel"><div class="eyebrow">03</div><h3>Project Journey</h3><p class="muted">Quotation → order → site visit → installation → completion.</p></div></div></div></div>
 <div class="section customerToolsSection" style="padding-top:18px"><div class="wrap"><div class="sectionHead" style="margin-bottom:18px"><div class="eyebrow">CUSTOMER TOOLS</div><h2 style="margin-bottom:6px">All Customer Tools in One Place</h2><p class="muted">Quickly access the Room Planner, Calculator, Projects, Site Visit, and Room Visualizer.</p></div><div class="customerToolsGrid"><div class="customerTool"><div class="toolIcon">📐</div><h3>Room Planner</h3><p>Plan your room measurements, budget, style, and materials.</p><button class="gold" onclick="showPage('room-planner')">Open Room Planner</button></div><div class="customerTool"><div class="toolIcon">🧮</div><h3>Smart Calculator</h3><p>Calculate area, materials, labor, and your project estimate.</p><button class="gold" onclick="showPage('calculator')">Open Calculator</button></div><div class="customerTool"><div class="toolIcon">🏗️</div><h3>Projects</h3><p>Explore our real project portfolio and completed work.</p><button class="gold" onclick="showPage('portfolio')">Open Projects</button></div><div class="customerTool"><div class="toolIcon">📅</div><h3>Site Visit</h3><p>Request a free measurement and site visit.</p><button class="gold" onclick="showPage('site-visit')">Open Site Visit</button></div><div class="customerTool"><div class="toolIcon">🖼️</div><h3>Room Visualizer</h3><p>Preview your selected design on a photo of your room.</p><button class="gold" onclick="openVisualizerFromNav()">Open Visualizer</button></div><div class="customerTool"><div class="toolIcon">▶️</div><h3>YouTube</h3><p>Watch KHANS GYPSUMCRAFT PK videos.</p><button class="gold" onclick="openYouTube()">Open YouTube</button></div></div></div></div>
 <div class="section" style="background:#fff"><div class="wrap sectionHead"><div class="eyebrow">DESIGN CATEGORIES</div><h2>Premium Interior Collection</h2><p class="muted">Browse by room and style.</p></div><div class="wrap grid grid4" id="homeCats"></div></div></section>
@@ -791,7 +821,22 @@ function openSavedDesigns(){if(!currentUser)return openLoginModal();renderSavedM
 function val(id){return document.getElementById(id)?.value?.trim()||''}function num(id){return Number(document.getElementById(id)?.value)||0}
 function renderHomeOffers(){db.ref('offers').once('value',s=>{const arr=s.exists()?Object.values(s.val()).filter(x=>x.active!==false):[];if(arr.length){const p=document.getElementById('page-home');const old=document.getElementById('offerBanner');if(old)old.remove();const el=document.createElement('div');el.id='offerBanner';el.className='wrap';el.style.paddingBottom='20px';el.innerHTML=`<div class="panel" style="background:linear-gradient(135deg,#fff7dd,#f6e8b8)">${arr.slice(0,2).map(o=>`<div style="padding:5px"><span class="tag">Limited Offer</span><h3 style="margin:4px 0">${esc(o.title)}</h3><p class="small muted">${esc(o.message)}</p></div>`).join('')}</div>`;p.insertAdjacentElement('afterbegin',el)}})}
 function initPanorama(){const p=document.getElementById('panorama');const im=p?.querySelector('img');if(!p||!im)return;let down=false,startX=0,startT=0;p.onpointerdown=e=>{down=true;startX=e.clientX;startT=im.offsetLeft||0;p.setPointerCapture(e.pointerId)};p.onpointermove=e=>{if(!down)return;const dx=e.clientX-startX;im.style.transform=`translateX(${dx}px)`};p.onpointerup=()=>{down=false};}
-function boot(){initHomeCats();loadRates();loadCustomDesigns();loadProjects();renderGallery();renderHomeOffers();showPage('home');initSallu();initSalluTextInput();updateInstallButton();if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
+
+/* KHANS home hero slideshow */
+let khansHeroIndex=0,khansHeroTimer=null;
+function heroSlideGo(index){
+ const root=document.getElementById('homeHeroShowcase');if(!root)return;
+ const slides=[...root.querySelectorAll('.heroSlideImage')],dots=[...root.querySelectorAll('.heroSlideDots button')];
+ if(!slides.length)return;
+ khansHeroIndex=(index+slides.length)%slides.length;
+ slides.forEach((el,i)=>el.classList.toggle('active',i===khansHeroIndex));
+ dots.forEach((el,i)=>{el.classList.toggle('active',i===khansHeroIndex);el.setAttribute('aria-current',i===khansHeroIndex?'true':'false')});
+}
+function heroSlideChange(step){heroSlideGo(khansHeroIndex+step);restartHeroSlideshow()}
+function restartHeroSlideshow(){if(khansHeroTimer)clearInterval(khansHeroTimer);if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)khansHeroTimer=setInterval(()=>{if(!document.hidden)heroSlideGo(khansHeroIndex+1)},6000)}
+window.heroSlideGo=heroSlideGo;window.heroSlideChange=heroSlideChange;
+
+function boot(){heroSlideGo(0);restartHeroSlideshow();initHomeCats();loadRates();loadCustomDesigns();loadProjects();renderGallery();renderHomeOffers();showPage('home');initSallu();initSalluTextInput();updateInstallButton();if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
 window.addEventListener('DOMContentLoaded',boot);
 window.openSavedDesigns=openSavedDesigns;
 window.openCompare=openCompare;
