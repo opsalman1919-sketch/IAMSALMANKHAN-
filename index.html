@@ -866,8 +866,10 @@ function restartHeroSlideshow(){if(khansHeroTimer)clearInterval(khansHeroTimer);
 window.heroSlideGo=heroSlideGo;window.heroSlideChange=heroSlideChange;
 
 
-/* Optional subtle click sound for interactive controls */
-let khansClickSoundOn=true,khansAudioContext=null;
-try{khansClickSoundOn=localStorage.getItem('khansClickSound')!=='off'}catch(_){}
-function syncKhansSoundButton(){const b=document.getElementById('kgSoundToggle');if(!b)return;b.setAttribute('aria-pressed',khansClickSoundOn?'true':'false');b.setAttribute('aria-label',khansClickSoundOn?'Turn click sounds off':'Turn click sounds on');b.innerHTML='<i class="fa-solid '+(khansClickSoundOn?'fa-volume-high':'fa-volume-xmark')+'"></i><span>Sound '+(khansClickSoundOn?'ON':'OFF')+'</span>'}
-function toggleKhansClickSound(){khansClickSoundOn=!khansClickSoundOn;try{localStorage.setItem('khansClickSound',khansClic
+function boot(){heroSlideGo(0);restartHeroSlideshow();initHomeCats();loadRates();loadCustomDesigns();loadProjects();renderGallery();renderHomeOffers();showPage('home');initSallu();initSalluTextInput();updateInstallButton();if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
+window.addEventListener('DOMContentLoaded',boot);
+window.openSavedDesigns=openSavedDesigns;
+window.openCompare=openCompare;
+</script>
+</body>
+</html>
