@@ -316,6 +316,29 @@ main{width:100%;min-width:0}
  #page-home .customerTool p{font-size:12px}
 }
 
+
+/* HOME LAPTOP SPACE BALANCE — wider canvas and tighter section rhythm */
+@media(min-width:1025px){
+ #page-home>.hero>.wrap,
+ #page-home>.section>.wrap{width:100%;max-width:none;margin:0;padding-left:clamp(28px,3.2vw,58px);padding-right:clamp(28px,3.2vw,58px)}
+ #page-home .hero{padding-top:clamp(38px,3.4vw,54px);padding-bottom:clamp(38px,3.4vw,54px)}
+ #page-home .heroGrid{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(28px,3.5vw,58px)}
+ #page-home .heroGrid>div:first-child{max-width:760px}
+ #page-home .heroImg{width:100%;min-height:clamp(350px,31vw,460px);max-height:460px}
+ #page-home>.section{padding-top:clamp(22px,2vw,32px)!important;padding-bottom:clamp(22px,2vw,32px)!important}
+ #page-home>.section .grid.grid3{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,1.5vw,24px)}
+ #page-home .customerToolsGrid{grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(12px,1.15vw,18px)}
+ #page-home .customerToolsGrid>.customerTool:nth-child(-n+4){grid-column:span 3}
+ #page-home .customerToolsGrid>.customerTool:nth-child(n+5){grid-column:span 4}
+ #page-home .customerTool{min-height:clamp(180px,15vw,215px);padding:clamp(14px,1.25vw,20px)}
+}
+@media(min-width:1025px) and (max-width:1240px){
+ #page-home>.hero>.wrap,#page-home>.section>.wrap{padding-left:24px;padding-right:24px}
+ #page-home .heroGrid{gap:24px}
+ #page-home .heroImg{min-height:330px}
+ #page-home .customerTool{min-height:180px}
+}
+
 </style>
 <style>.ownerLayout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:18px;align-items:start}.ownerSide{position:sticky;top:18px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:10px;box-shadow:0 10px 30px #00000008;max-height:calc(100vh - 36px);overflow:auto}.ownerSideTitle{padding:12px 12px 8px;font-size:11px;font-weight:800;letter-spacing:.12em;color:#a07b32}.ownerTabs{display:flex!important;flex-direction:column!important;gap:3px!important;border:0!important;margin:0!important}.ownerTab{display:flex!important;align-items:center;gap:10px;width:100%;text-align:left;border:0!important;border-radius:11px;padding:11px 12px!important;font-weight:700;color:#707070;background:transparent}.ownerTab:hover{background:#faf5e9;color:#8b6b2e}.ownerTab.active{color:#8b6b2e!important;background:#fff4e9;border:0!important}.ownerTab i{width:18px;text-align:center}.ownerMain{min-width:0}.ownerMenuBtn{display:none}.ownerQuick{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:15px}.ownerQuick .panel{margin:0}.paymentMethod{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fff}.paymentMethod b{display:block;margin-bottom:4px}.payBadge{display:inline-block;padding:4px 8px;border-radius:999px;background:#f8f1df;color:#8b6b2e;font-size:11px;font-weight:800}@media(max-width:900px){.ownerLayout{display:block}.ownerSide{display:none;position:fixed;z-index:260;left:10px;top:74px;width:min(290px,82vw);max-height:calc(100vh - 90px);box-shadow:0 25px 80px #0005}.ownerSide.show{display:block}.ownerMenuBtn{display:inline-flex!important;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #ffffff30;border-radius:12px;background:#fff;color:#171717}.ownerQuick{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.ownerQuick{grid-template-columns:1fr}.ownerHead .actions{min-width:auto!important}.paymentGrid{grid-template-columns:1fr!important}}#authGate{position:fixed;inset:0;z-index:100000;display:flex;align-items:center;justify-content:center;padding:24px;background:linear-gradient(135deg,#fbfaf7 0%,#f3eee3 100%)}#authGate.hidden{display:none!important}.authGateCard{width:min(100%,430px);padding:38px 30px;background:#fff;border:1px solid #eadfc9;border-radius:24px;box-shadow:0 24px 80px rgba(23,23,23,.12);text-align:center}.authGateLogo{width:70px;height:70px;margin:0 auto 18px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(135deg,#d9bb72,#b68e3e);color:#fff;font-size:23px;font-weight:900}.authGateCard h1{margin:0 0 10px;font-size:25px}.authGateCard p{margin:0 0 24px;color:#6f6f6f;line-height:1.7}.authGateCard button{width:100%;min-height:48px}.authGateError{margin-top:14px;color:#b42318;font-size:13px;line-height:1.5}
 /* RESPONSIVE LAYOUT: desktop, tablet and mobile */
