@@ -913,79 +913,73 @@ document.addEventListener('click',e=>{
  if(e.target.closest('button,a,[role="button"],.ownerTab,.category,.pill,.customerTool'))playKhansClickSound();
 });
 
-/* KHANS true 3D ceiling showcase — procedural Three.js scenes */
+/* KHANS animated installation scene with moving workers */
 function initKhans3D(){
  const host=document.getElementById('homeHeroShowcase');if(!host||host.dataset.khans3dReady)return;host.dataset.khans3dReady='1';
  const canvas=document.createElement('canvas');canvas.className='khans3dCanvas';host.appendChild(canvas);
  if(!window.THREE){host.dataset.khans3dReady='';return}
- const THREE=window.THREE,renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:false});
- renderer.setPixelRatio(Math.min(2,window.devicePixelRatio||1));renderer.setSize(host.clientWidth,host.clientHeight);
- renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
- const scene=new THREE.Scene();scene.background=new THREE.Color('#17191d');
- const camera=new THREE.PerspectiveCamera(48,host.clientWidth/Math.max(1,host.clientHeight),.1,100);camera.position.set(8,6.2,10);camera.lookAt(0,2.1,0);
- const ambient=new THREE.HemisphereLight(0xffe6c0,0x242c3b,2.15);scene.add(ambient);
- const key=new THREE.DirectionalLight(0xffdfad,3.2);key.position.set(5,9,7);key.castShadow=true;key.shadow.mapSize.set(1024,1024);scene.add(key);
- const fill=new THREE.PointLight(0x8fb9ff,28,18);fill.position.set(-4,3,4);scene.add(fill);
- const root=new THREE.Group();scene.add(root);
- const mats={wall:new THREE.MeshStandardMaterial({color:0x34363b,roughness:.92}),floor:new THREE.MeshStandardMaterial({color:0x282725,roughness:.88}),plaster:new THREE.MeshStandardMaterial({color:0xe9e5db,roughness:.72}),gold:new THREE.MeshStandardMaterial({color:0xb89047,metalness:.62,roughness:.32}),dark:new THREE.MeshStandardMaterial({color:0x16181c,roughness:.8}),wood:new THREE.MeshStandardMaterial({color:0x6b4930,roughness:.72}),panel:new THREE.MeshStandardMaterial({color:0xe5e1d7,roughness:.82}),glow:new THREE.MeshStandardMaterial({color:0xffd884,emissive:0xffa52d,emissiveIntensity:1.8})};
- function meshBox(parent,w,h,d,mat,x,y,z){const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),mat);m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;parent.add(m);return m}
- function strip(parent,a,b,r,mat){const A=new THREE.Vector3(...a),B=new THREE.Vector3(...b),len=A.distanceTo(B);const m=new THREE.Mesh(new THREE.CylinderGeometry(r,r,len,8),mat);m.position.copy(A).add(B).multiplyScalar(.5);m.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),B.clone().sub(A).normalize());parent.add(m);return m}
- function lightLine(parent,a,b,color=0xffd27b){const L=new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(...a),new THREE.Vector3(...b)]),new THREE.LineBasicMaterial({color}));parent.add(L);return L}
- function makeRoom(){meshBox(root,10,.15,10,mats.floor,0,0,0);meshBox(root,10,5,.15,mats.wall,0,2.5,-5);meshBox(root,.15,5,10,mats.wall,-5,2.5,0);meshBox(root,.15,5,10,mats.wall,5,2.5,0);meshBox(root,10,5,.15,mats.wall,0,2.5,5);
-  // subtle floor planks
-  for(let z=-4.7;z<=4.7;z+=.65)lightLine(root,[-4.9,.08,z],[4.9,.08,z],0x46433e);
-  // windows on back wall
-  const winmat=new THREE.MeshStandardMaterial({color:0x202f3a,metalness:.3,roughness:.3,emissive:0x0b1724,emissiveIntensity:.3});
-  meshBox(root,2.1,1.7,.08,winmat,-2.5,2.7,-4.89);meshBox(root,2.1,1.7,.08,winmat,2.5,2.7,-4.89);
-  // seating, rug, TV wall
-  meshBox(root,4.2,.13,2.0,mats.wood,0,.18,2.5);meshBox(root,3.5,.65,1.0,mats.wood,0,.48,2.5);meshBox(root,3.7,.22,1.05,mats.plaster,0,.88,2.5);
-  meshBox(root,3.7,2.0,.12,mats.dark,0,2.1,4.75);meshBox(root,3.25,1.6,.1,mats.dark,0,2.2,4.64);
-  meshBox(root,3.6,.35,.65,mats.wood,0,.25,4.2);
-  meshBox(root,.12,1.4,1.1,mats.wood,-3.8,.7,2.2);meshBox(root,.12,1.4,1.1,mats.wood,3.8,.7,2.2);
+ const T=THREE,renderer=new T.WebGLRenderer({canvas,antialias:true});renderer.setPixelRatio(Math.min(1.7,devicePixelRatio||1));renderer.setSize(host.clientWidth,host.clientHeight);renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;
+ const scene=new T.Scene();scene.background=new T.Color(0x18191b);scene.fog=new T.Fog(0x18191b,18,35);
+ const camera=new T.PerspectiveCamera(48,host.clientWidth/Math.max(1,host.clientHeight),.1,70);camera.position.set(8,5.8,10);
+ scene.add(new T.HemisphereLight(0xffe9c9,0x28313a,2.3));const sun=new T.DirectionalLight(0xffdfb1,3.1);sun.position.set(5,9,6);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);scene.add(sun);
+ const fill=new T.PointLight(0x9bbcff,20,18);fill.position.set(-4,3,4);scene.add(fill);
+ const world=new T.Group();scene.add(world);
+ const mat=(color,rough=.8,metal=0,em=0)=>new T.MeshStandardMaterial({color,roughness:rough,metalness:metal,emissive:color,emissiveIntensity:em});
+ const wall=mat(0x3c3a38),floor=mat(0x292826),paint=mat(0xe8e3d9),wood=mat(0x77513a),metal=mat(0x8e969b,.34,.72),dark=mat(0x222326),skin=mat(0xb98259),pants=mat(0x303b49),shirt1=mat(0x28635c),shirt2=mat(0xb58a43),boardMat=mat(0xe5e1d8,.86),lightMat=mat(0xffc96f,.25,0,.9);
+ function box(parent,w,h,d,m,x,y,z){let o=new T.Mesh(new T.BoxGeometry(w,h,d),m);o.position.set(x,y,z);o.castShadow=true;o.receiveShadow=true;parent.add(o);return o}
+ function cylinder(parent,r1,r2,h,m,x,y,z){let o=new T.Mesh(new T.CylinderGeometry(r1,r2,h,9),m);o.position.set(x,y,z);o.castShadow=true;parent.add(o);return o}
+ function line(parent,a,b,m,r=.025){let A=new T.Vector3(...a),B=new T.Vector3(...b),o=new T.Mesh(new T.CylinderGeometry(r,r,A.distanceTo(B),7),m);o.position.copy(A).add(B).multiplyScalar(.5);o.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),B.clone().sub(A).normalize());parent.add(o);return o}
+ // room shell, warm construction-site lighting
+ box(world,10,.12,10,floor,0,0,0);box(world,10,5,.12,wall,0,2.5,-5);box(world,.12,5,10,wall,-5,2.5,0);box(world,.12,5,10,wall,5,2.5,0);
+ // doorway / windows / furniture
+ box(world,2.1,2.1,.08,dark,-3.4,1.5,-4.91);box(world,1.8,1.2,.08,mat(0x31424b,.4),2.7,2.8,-4.91);
+ box(world,3.5,.25,1.4,wood,0,.18,3.3);box(world,3.2,.55,1.1,wood,0,.55,3.3);box(world,3.5,1.8,.1,dark,0,2.3,4.8);box(world,3.1,1.45,.08,dark,0,2.3,4.65);
+ // folding work stand / scaffold
+ const scaffold=new T.Group();world.add(scaffold);
+ for(const x of [-3.3,3.3]){line(scaffold,[x,.15,-1.4],[x,3.6,-1.4],metal,.04);line(scaffold,[x,.15,1.4],[x,3.6,1.4],metal,.04);line(scaffold,[x,.15,-1.4],[x,.15,1.4],metal,.04);line(scaffold,[x,3.1,-1.4],[x,3.1,1.4],metal,.04);line(scaffold,[x,.7,-1.4],[x,1.3,1.4],metal,.025)}
+ box(scaffold,6.8,.12,1.1,wood,0,3.05,0);scaffold.visible=false;
+ // human worker articulated rig: torso, head, upper/lower arms, hands, legs, shoes, helmet
+ function worker(x,z,shirt,flip=false){
+  const g=new T.Group();world.add(g);g.position.set(x,0,z);if(flip)g.rotation.y=Math.PI;
+  const torso=box(g,.58,.9,.34,shirt,0,1.45,0);const hips=box(g,.48,.3,.3,pants,0,.94,0);
+  const head=new T.Group();g.add(head);cylinder(head,.19,.2,.27,skin,0,2.13,0);const helmet= new T.Mesh(new T.SphereGeometry(.23,12,8,0,Math.PI*2,0,Math.PI*.52),shirt===shirt1?shirt2:shirt1);helmet.position.set(0,2.29,0);head.add(helmet);box(head,.48,.055,.28,helmet.material,0,2.21,.02);
+  const arms=[];for(const side of [-1,1]){const shoulder=new T.Group();g.add(shoulder);shoulder.position.set(side*.36,1.78,0);const upper=cylinder(shoulder,.12,.1,.38,shirt,0,-.2,0);upper.rotation.z=side*.22;const elbow=new T.Group();shoulder.add(elbow);elbow.position.set(side*.05,-.4,0);cylinder(elbow,.095,.08,.35,shirt,0,-.17,0);const hand=box(elbow,.12,.13,.12,skin,0,-.38,.03);arms.push({shoulder,elbow,side,hand})}
+  const legs=[];for(const side of [-1,1]){const leg=new T.Group();g.add(leg);leg.position.set(side*.16,.86,0);cylinder(leg,.12,.1,.48,pants,0,-.24,0);box(leg,.24,.12,.38,dark,0,-.49,.1);legs.push(leg)}
+  return {g,torso,head,arms,legs}
  }
- const ceilGroup=new THREE.Group();root.add(ceilGroup);
- let designIdx=0,stage=0,stageTime=0,last=performance.now(),sceneStart=performance.now();
- const designDefs=[
- {name:'Modern Cove',type:0,base:0xe9e4d8,accent:0xffd47d},
- {name:'Linear LED',type:1,base:0xe7e2d8,accent:0xffcf73},
- {name:'Geometric Luxury',type:2,base:0xece7dd,accent:0xffd886},
- {name:'Royal Bedroom',type:3,base:0xe3ded5,accent:0xffce79}
- ];
- function clearCeiling(){while(ceilGroup.children.length){const o=ceilGroup.children.pop();o.traverse(v=>{if(v.geometry)v.geometry.dispose();if(v.material&&v.material.dispose)v.material.dispose()})}}
- function buildCeiling(def,stageNum){
-  clearCeiling();const baseMat=new THREE.MeshStandardMaterial({color:def.base,roughness:.78});const glowMat=new THREE.MeshStandardMaterial({color:def.accent,emissive:def.accent,emissiveIntensity:stageNum>=3?2.4:.3});
-  if(stageNum>=1){
-   const metal=new THREE.MeshStandardMaterial({color:0x9b9da0,metalness:.7,roughness:.28});
-   for(let x=-4.1;x<=4.1;x+=.55)strip(ceilGroup,[x,4.2,-4.1],[x,4.2,4.1],.018,metal);
-   for(let z=-4.1;z<=4.1;z+=.55)strip(ceilGroup,[-4.1,4.2,z],[4.1,4.2,z],.018,metal);
+ const crewA=worker(-1.9,0,shirt1),crewB=worker(2.05,-.1,shirt2,true);
+ // tools and board-stack at ground
+ const toolGroup=new T.Group();world.add(toolGroup);box(toolGroup,1.9,.15,1.1,boardMat,-3.2,.13,-.2);for(let i=0;i<5;i++)box(toolGroup,1.8,.04,1.05,boardMat,-3.2,.23+i*.045,-.2);
+ const drill=box(world,.16,.26,.45,mat(0x3e4549,.35),-2,1.2,0);const drillGrip=box(world,.1,.18,.1,mat(0x222222),-2,1.02,.15);
+ const ceiling=new T.Group();world.add(ceiling);
+ const designs=[0,1,2,3];let designIdx=0,phase=0,elapsed=0,last=performance.now();const stageDuration=5.5;
+ function clearCeil(){while(ceiling.children.length){let o=ceiling.children.pop();o.traverse(q=>{q.geometry?.dispose();if(q.material?.dispose)q.material.dispose()})}}
+ function makeCeil(stage,variant){
+  clearCeil();const base=mat([0xe9e5db,0xe6e2d9,0xece7dc,0xe2ddd4][variant]);const led=mat(0xffcf7a,.3,0,stage===3?2.5:.15);
+  if(stage>=1){for(let x=-4.3;x<=4.3;x+=.55)line(ceiling,[x,4.1,-4.2],[x,4.1,4.2],metal,.025);for(let z=-4.2;z<=4.2;z+=.55)line(ceiling,[-4.2,4.1,z],[4.2,4.1,z],metal,.025)}
+  if(stage>=2){box(ceiling,9.15,.14,9.15,base,0,4.22,0);for(const v of [-4.45,4.45]){box(ceiling,9.4,.2,.28,base,0,4.42,v);box(ceiling,.28,.2,9.4,base,v,4.42,0)}
+   if(variant===0){box(ceiling,6.4,.18,6.4,base,0,4.49,0);box(ceiling,5.3,.12,5.3,base,0,4.59,0)}
+   if(variant===1){for(let q=-3;q<=3;q+=1.5)box(ceiling,8.2,.13,.2,base,0,4.48,q)}
+   if(variant===2){for(let k=0;k<4;k++){let size=8.2-k*1.35;box(ceiling,size,.14,.15,base,0,4.48,-size/2);box(ceiling,size,.14,.15,base,0,4.48,size/2);box(ceiling,.15,.14,size,base,-size/2,4.48,0);box(ceiling,.15,.14,size,base,size/2,4.48,0)}}
+   if(variant===3){for(let q=1;q<=4;q++){let s=q*1.5;box(ceiling,s,.16,.16,base,0,4.48,-s/2);box(ceiling,s,.16,.16,base,0,4.48,s/2);box(ceiling,.16,.16,s,base,-s/2,4.48,0);box(ceiling,.16,.16,s,base,s/2,4.48,0)}}
   }
-  if(stageNum>=2){
-   meshBox(ceilGroup,9.2,.14,9.2,baseMat,0,4.28,0);
-   // stepped perimeter trays and design shapes
-   meshBox(ceilGroup,9.4,.18,.32,baseMat,0,4.42,-4.55);meshBox(ceilGroup,9.4,.18,.32,baseMat,0,4.42,4.55);meshBox(ceilGroup,.32,.18,9.4,baseMat,-4.55,4.42,0);meshBox(ceilGroup,.32,.18,9.4,baseMat,4.55,4.42,0);
-   if(def.type===0){meshBox(ceilGroup,6.2,.22,6.2,baseMat,0,4.48,0);meshBox(ceilGroup,5.5,.12,5.5,baseMat,0,4.61,0)}
-   if(def.type===1){for(let z of [-2.4,-1.2,0,1.2,2.4])meshBox(ceilGroup,8.3,.16,.22,baseMat,0,4.5,z);for(let x of [-2.4,0,2.4])meshBox(ceilGroup,.22,.16,8.3,baseMat,x,4.5,0)}
-   if(def.type===2){for(let i=0;i<4;i++){const side=4.4-i*.75;meshBox(ceilGroup,side,.16,.16,baseMat,0,4.48,-side/2);meshBox(ceilGroup,side,.16,.16,baseMat,0,4.48,side/2);meshBox(ceilGroup,.16,.16,side,baseMat,-side/2,4.48,0);meshBox(ceilGroup,.16,.16,side,baseMat,side/2,4.48,0)}}
-   if(def.type===3){for(let k=1;k<=4;k++){const size=k*1.65;meshBox(ceilGroup,size,.18,.18,baseMat,0,4.48,-size/2);meshBox(ceilGroup,size,.18,.18,baseMat,0,4.48,size/2);meshBox(ceilGroup,.18,.18,size,baseMat,-size/2,4.48,0);meshBox(ceilGroup,.18,.18,size,baseMat,size/2,4.48,0)}}
-  }
-  if(stageNum>=3){
-   const perimeter=4.35;lightLine(ceilGroup,[-perimeter,4.55,-perimeter],[perimeter,4.55,-perimeter],def.accent);lightLine(ceilGroup,[perimeter,4.55,-perimeter],[perimeter,4.55,perimeter],def.accent);lightLine(ceilGroup,[perimeter,4.55,perimeter],[-perimeter,4.55,perimeter],def.accent);lightLine(ceilGroup,[-perimeter,4.55,perimeter],[-perimeter,4.55,-perimeter],def.accent);
-   const points=[[-2.5,4.58,0],[2.5,4.58,0],[0,4.58,-2.5],[0,4.58,2.5]];
-   points.forEach(p=>{const lamp=new THREE.Mesh(new THREE.SphereGeometry(.12,16,8),glowMat);lamp.position.set(...p);ceilGroup.add(lamp)});
-   if(def.type===1){for(let x of [-2.6,0,2.6])lightLine(ceilGroup,[x,4.56,-3.6],[x,4.56,3.6],def.accent)}
-   if(def.type===2){lightLine(ceilGroup,[-3.2,4.56,-3.2],[3.2,4.56,3.2],def.accent);lightLine(ceilGroup,[3.2,4.56,-3.2],[-3.2,4.56,3.2],def.accent)}
-   if(def.type===3){for(let x of [-2.6,-1.3,0,1.3,2.6])lightLine(ceilGroup,[x,4.56,-3.7],[x,4.56,3.7],def.accent)}
-  }
+  if(stage===3){for(let x=-4.25;x<=4.25;x+=.2){const edge=x===-4.25||x>=4.05; if(edge){}}
+   line(ceiling,[-4.35,4.54,-4.35],[4.35,4.54,-4.35],led,.04);line(ceiling,[4.35,4.54,-4.35],[4.35,4.54,4.35],led,.04);line(ceiling,[4.35,4.54,4.35],[-4.35,4.54,4.35],led,.04);line(ceiling,[-4.35,4.54,4.35],[-4.35,4.54,-4.35],led,.04);if(variant===1)for(let z of [-2.5,0,2.5])line(ceiling,[-3.5,4.56,z],[3.5,4.56,z],led,.03);if(variant===2){line(ceiling,[-3,4.56,-3],[3,4.56,3],led,.03);line(ceiling,[3,4.56,-3],[-3,4.56,3],led,.03)}}
  }
- makeRoom();buildCeiling(designDefs[0],0);
- let raf=0;const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
- function animate(now){if(!host.isConnected)return;const dt=Math.min(.05,(now-last)/1000);last=now;const elapsed=(now-sceneStart)/1000;
-  if(!reduced){stageTime+=dt;if(stageTime>4.4){stageTime=0;stage=(stage+1)%4;buildCeiling(designDefs[designIdx],stage);if(stage===0){designIdx=(designIdx+1)%designDefs.length;buildCeiling(designDefs[designIdx],0)}}}
-  const d=designDefs[designIdx];const cycle=elapsed%19;camera.position.set(8+Math.sin(cycle*.32)*1.4,6.0+Math.sin(cycle*.23)*.25,10+Math.cos(cycle*.28)*.9);camera.lookAt(0,2.8,0);
-  renderer.render(scene,camera);raf=requestAnimationFrame(animate);
+ makeCeil(0,0);
+ // Animate real visible worker actions across build stages; 4 designs cycle
+ function animate(now){if(!host.isConnected)return;const dt=Math.min(.04,(now-last)/1000);last=now;elapsed+=dt;phase+=dt;
+  const stage=Math.floor(phase/stageDuration)%4,sub=(phase%stageDuration)/stageDuration;
+  if(stage===0){scaffold.visible=false;crewA.g.position.set(-1.9,0,0);crewB.g.position.set(2.05,0,-.1);crewA.arms[0].shoulder.rotation.z=-.2+Math.sin(now*.002)*.14;crewA.arms[1].shoulder.rotation.z=.25;crewB.arms[0].shoulder.rotation.z=.25;crewB.arms[1].shoulder.rotation.z=-.25;crewA.arms[0].elbow.rotation.z=-.5+Math.sin(now*.003)*.3;crewB.arms[1].elbow.rotation.z=-.3;toolGroup.visible=true}
+  if(stage===1){scaffold.visible=true;toolGroup.visible=false;crewA.g.position.set(-3.3,0,0);crewB.g.position.set(3.3,0,0);crewA.arms[1].shoulder.rotation.z=-1.1+Math.sin(now*.003)*.22;crewA.arms[1].elbow.rotation.z=-.6;crewB.arms[0].shoulder.rotation.z=1.1+Math.sin(now*.003)*.22;crewB.arms[0].elbow.rotation.z=.6}
+  if(stage===2){scaffold.visible=true;toolGroup.visible=false;crewA.g.position.set(-2.9,0,0);crewB.g.position.set(2.9,0,0);crewA.arms[1].shoulder.rotation.z=-1.4;crewB.arms[0].shoulder.rotation.z=1.4;crewA.arms[1].elbow.rotation.z=-.7+Math.sin(now*.004)*.15;crewB.arms[0].elbow.rotation.z=.7+Math.sin(now*.004)*.15}
+  if(stage===3){scaffold.visible=false;toolGroup.visible=false;crewA.g.position.set(-1.5,0,1.3);crewB.g.position.set(1.5,0,1.3);crewA.arms[1].shoulder.rotation.z=-.8+Math.sin(now*.005)*.3;crewB.arms[0].shoulder.rotation.z=.8+Math.sin(now*.005)*.3}
+  crewA.legs[0].rotation.x=Math.sin(now*.002)*.08;crewB.legs[1].rotation.x=Math.cos(now*.002)*.08;
+  if(Math.floor(phase/stageDuration)!==Math.floor((phase-dt)/stageDuration)){const old=Math.floor((phase-dt)/stageDuration)%4;if(stage===0){designIdx=(designIdx+1)%designs.length}makeCeil(stage,designIdx)}
+  // Camera smoothly moves, but always keeps workers and ceiling visible
+  const sweep=elapsed*0.22;camera.position.set(7.4+Math.sin(sweep)*1.0,5.6+Math.sin(sweep*.65)*.2,9.2+Math.cos(sweep)*.8);camera.lookAt(0,2.4,0);renderer.render(scene,camera);requestAnimationFrame(animate)
  }
- buildCeiling(designDefs[0],0);raf=requestAnimationFrame(animate);
- const onResize=()=>{camera.aspect=host.clientWidth/Math.max(1,host.clientHeight);camera.updateProjectionMatrix();renderer.setSize(host.clientWidth,host.clientHeight)};window.addEventListener('resize',onResize,{passive:true});
+ requestAnimationFrame(animate);window.addEventListener('resize',()=>{camera.aspect=host.clientWidth/Math.max(1,host.clientHeight);camera.updateProjectionMatrix();renderer.setSize(host.clientWidth,host.clientHeight)},{passive:true});
 }
 function boot(){heroSlideGo(0);restartHeroSlideshow();initKhans3D();initHomeCats();loadRates();loadCustomDesigns();loadProjects();renderGallery();renderHomeOffers();showPage('home');initSallu();initSalluTextInput();updateInstallButton();if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
 window.addEventListener('DOMContentLoaded',boot);
