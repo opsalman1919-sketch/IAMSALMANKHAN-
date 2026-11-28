@@ -432,6 +432,35 @@ button:active,.gold:active,.outline:active{transform:translateY(1px)}
 @media(max-width:900px){#page-owner-center .ownerLayout{display:block!important}#page-owner-center .ownerSide{position:relative!important;top:auto;max-height:300px;margin-bottom:12px}#page-owner-center .ownerTabs{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}#page-owner-center .ownerMain{min-height:420px;padding:11px}}
 @media(prefers-reduced-motion:reduce){#page-owner-center #ownerContent{animation:none}}
 </style>
+<style id="khans-home-construction-progress">
+#page-home #homeHeroShowcase[data-build-stage]{position:relative}
+#page-home #homeHeroShowcase .buildCeilingOverlay{position:absolute;z-index:2;top:0;left:0;right:0;height:43%;overflow:hidden;pointer-events:none;perspective:900px}
+#page-home #homeHeroShowcase .buildPlane{position:absolute;inset:-6% -4% 0;width:108%;height:110%;transform:rotateX(10deg) scale(1.02);transform-origin:top center;transition:transform .8s ease}
+#page-home #homeHeroShowcase .buildGrid{position:absolute;inset:0;opacity:0;background-image:linear-gradient(#f2d48b66 1px,transparent 1px),linear-gradient(90deg,#f2d48b66 1px,transparent 1px);background-size:9.5% 23%;background-position:0 0;transition:opacity .7s}
+#page-home #homeHeroShowcase .buildPanels{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:2px;padding:3%;opacity:0;transition:opacity .8s}
+#page-home #homeHeroShowcase .buildPanels span{background:linear-gradient(145deg,#d6d1c83a,#eee7d222);border:1px solid #f1d27d88;box-shadow:inset 0 0 22px #f2d48b12}
+#page-home #homeHeroShowcase .buildLights{position:absolute;inset:0;opacity:0;background:radial-gradient(ellipse at 16% 24%,#ffe9a0b0 0 1.2%,transparent 6%),radial-gradient(ellipse at 50% 22%,#ffe9a0b0 0 1.2%,transparent 6%),radial-gradient(ellipse at 84% 24%,#ffe9a0b0 0 1.2%,transparent 6%),radial-gradient(ellipse at 16% 74%,#ffe9a0b0 0 1.2%,transparent 6%),radial-gradient(ellipse at 50% 72%,#ffe9a0b0 0 1.2%,transparent 6%),radial-gradient(ellipse at 84% 74%,#ffe9a0b0 0 1.2%,transparent 6%);transition:opacity .8s}
+#page-home #homeHeroShowcase[data-build-stage="1"] .buildGrid{opacity:0}
+#page-home #homeHeroShowcase[data-build-stage="2"] .buildGrid{opacity:.9}
+#page-home #homeHeroShowcase[data-build-stage="3"] .buildGrid{opacity:.28}
+#page-home #homeHeroShowcase[data-build-stage="3"] .buildPanels{opacity:.82}
+#page-home #homeHeroShowcase[data-build-stage="4"] .buildPanels{opacity:.22}
+#page-home #homeHeroShowcase[data-build-stage="4"] .buildLights{opacity:1}
+#page-home #homeHeroShowcase[data-build-stage="4"] .buildPlane{transform:rotateX(7deg) scale(1.02)}
+#page-home #homeHeroShowcase .buildStageCard{position:absolute;z-index:4;left:16px;top:16px;width:min(280px,calc(100% - 32px));padding:12px 14px;border:1px solid #d8b45e66;border-radius:14px;background:#08090bbf;backdrop-filter:blur(12px);box-shadow:0 14px 34px #0005;pointer-events:none}
+#page-home #homeHeroShowcase .buildStageTop{display:flex;align-items:center;justify-content:space-between;gap:8px}
+#page-home #homeHeroShowcase .buildStageEyebrow{font-size:9px;letter-spacing:.18em;color:#dfbd69;font-weight:700}
+#page-home #homeHeroShowcase .buildStageNumber{font-size:10px;color:#f6f1e6;font-variant-numeric:tabular-nums}
+#page-home #homeHeroShowcase .buildStageTitle{font-size:16px;font-weight:750;color:#fff;margin-top:4px}
+#page-home #homeHeroShowcase .buildStageDesc{font-size:10px;color:#d4cbb9;margin-top:3px}
+#page-home #homeHeroShowcase .buildStageTrack{height:3px;background:#ffffff20;border-radius:99px;overflow:hidden;margin-top:10px}
+#page-home #homeHeroShowcase .buildStageTrack span{display:block;width:25%;height:100%;background:linear-gradient(90deg,#b98c36,#f3d78c);border-radius:99px;transition:width .5s}
+#page-home #homeHeroShowcase .buildStageDots{display:flex;gap:5px;margin-top:7px}
+#page-home #homeHeroShowcase .buildStageDots span{height:3px;flex:1;border-radius:99px;background:#ffffff22;transition:background .35s}
+#page-home #homeHeroShowcase .buildStageDots span.active{background:#e1bb61}
+@media(max-width:640px){#page-home #homeHeroShowcase .buildCeilingOverlay{height:37%}#page-home #homeHeroShowcase .buildStageCard{top:10px;left:10px;padding:9px 11px;width:min(240px,calc(100% - 20px))}#page-home #homeHeroShowcase .buildStageTitle{font-size:14px}#page-home #homeHeroShowcase .buildStageDesc{font-size:9px}#page-home #homeHeroShowcase .buildGrid{background-size:14% 30%}}
+@media(prefers-reduced-motion:reduce){#page-home #homeHeroShowcase .buildPlane,#page-home #homeHeroShowcase .buildGrid,#page-home #homeHeroShowcase .buildPanels,#page-home #homeHeroShowcase .buildLights,#page-home #homeHeroShowcase .buildStageTrack span,#page-home #homeHeroShowcase .buildStageDots span{transition:none}}
+</style>
 </head>
 <body>
 <div id="toast" class="hidden" style="position:fixed;top:85px;left:50%;transform:translateX(-50%);z-index:300;background:#171717;color:#fff;padding:11px 16px;border-radius:11px;box-shadow:0 15px 40px #0004;font-size:13px"></div>
@@ -449,6 +478,8 @@ button:active,.gold:active,.outline:active{transform:translateY(1px)}
 <div id="mobileMenu" class="modal"><div class="modalBox" style="max-width:430px"><div class="modalTop"><h3>KHANS Menu</h3><button class="close" onclick="closeModal('mobileMenu')">×</button></div><div class="small muted" style="margin-top:4px">CUSTOMER AREA</div><div class="mobileMenuList"><button class="outline" onclick="openCustomerArea('myOrders')"><i class="fa-solid fa-cart-shopping"></i> My Orders</button><button class="outline" onclick="openCustomerArea('myQuotes')"><i class="fa-solid fa-file-invoice-dollar"></i> My Quotations</button><button class="outline" onclick="openCustomerArea('myInvoices')"><i class="fa-solid fa-file-invoice"></i> My Invoices</button><button class="outline" onclick="openCustomerArea('myPayments')"><i class="fa-solid fa-credit-card"></i> My Payments</button><button class="outline" onclick="openCustomerArea('myTracking')"><i class="fa-solid fa-list-check"></i> Project Tracking</button><button class="outline" onclick="openCustomerArea('myNotifications')"><i class="fa-solid fa-bell"></i> Notifications</button><button class="outline" onclick="openCustomerArea('myRoomPlans')"><i class="fa-solid fa-ruler-combined"></i> Saved Room Plans</button><button class="outline" onclick="openUserSettings();closeModal('mobileMenu')"><i class="fa-solid fa-gear"></i> User Settings</button><button class="outline" onclick="openSavedDesigns();closeModal('mobileMenu')"><i class="fa-regular fa-heart"></i> Saved Designs</button><button class="outline" onclick="openCompare();closeModal('mobileMenu')"><i class="fa-solid fa-code-compare"></i> Compare Designs</button><button id="mobileLoginBtn" class="gold" onclick="openLoginModal();closeModal('mobileMenu')"><i class="fa-brands fa-google"></i> Continue with Google</button><button id="mobileLogoutBtn" class="danger hidden" onclick="handleLogout();closeModal('mobileMenu')"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</button></div></div></div>
 <main>
 <section id="page-home" class="page"><div class="hero"><div class="wrap heroGrid"><div><div class="eyebrow">BLACK • GOLD • PREMIUM INTERIORS</div><h1 id="heroTitle">Modern ceilings.<br><span>Beautiful spaces.</span></h1><p id="heroText">Explore premium false ceilings, TV walls, gypsum details and interior concepts. Select a design, plan your room, estimate your project and request a quotation for WhatsApp.</p><div class="heroActions"><button class="gold" onclick="showPage('design-studio')">Explore Designs</button><button class="outline" onclick="showPage('calculator')">Get a Quote</button><button class="outline" onclick="openAdvancedGallery()">Advanced Gallery</button></div></div><div class="heroImg" id="homeHeroShowcase" role="region" aria-label="KHANS premium interior design photo slideshow">
+<div class="buildCeilingOverlay" aria-hidden="true"><div class="buildPlane"><div class="buildGrid"></div><div class="buildPanels"><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="buildLights"></div></div></div>
+<div class="buildStageCard" aria-live="polite"><div class="buildStageTop"><span class="buildStageEyebrow">LIVE BUILD PROCESS</span><span class="buildStageNumber" id="khansBuildNumber">01 / 04</span></div><div class="buildStageTitle" id="khansBuildTitle">Empty room</div><div class="buildStageDesc" id="khansBuildDesc">Starting with the original ceiling structure</div><div class="buildStageTrack"><span id="khansBuildProgress"></span></div><div class="buildStageDots"><span class="active"></span><span></span><span></span><span></span></div></div>
 <img class="heroSlideImage active" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1500&q=85" alt="Premium modern living room interior with architectural ceiling design" fetchpriority="high">
 <img class="heroSlideImage" src="https://images.unsplash.com/photo-1776362355123-ca966d36e29c?auto=format&fit=crop&w=1500&q=82" alt="Luxury living room with grand interior architecture" loading="lazy">
 <img class="heroSlideImage" src="https://images.unsplash.com/photo-1744126405308-b7fb2d430e96?auto=format&fit=crop&w=1500&q=82" alt="Elegant high ceiling luxury living room" loading="lazy">
@@ -851,6 +882,28 @@ function val(id){return document.getElementById(id)?.value?.trim()||''}function 
 function renderHomeOffers(){db.ref('offers').once('value',s=>{const arr=s.exists()?Object.values(s.val()).filter(x=>x.active!==false):[];if(arr.length){const p=document.getElementById('page-home');const old=document.getElementById('offerBanner');if(old)old.remove();const el=document.createElement('div');el.id='offerBanner';el.className='wrap';el.style.paddingBottom='20px';el.innerHTML=`<div class="panel" style="background:linear-gradient(135deg,#fff7dd,#f6e8b8)">${arr.slice(0,2).map(o=>`<div style="padding:5px"><span class="tag">Limited Offer</span><h3 style="margin:4px 0">${esc(o.title)}</h3><p class="small muted">${esc(o.message)}</p></div>`).join('')}</div>`;p.insertAdjacentElement('afterbegin',el)}})}
 function initPanorama(){const p=document.getElementById('panorama');const im=p?.querySelector('img');if(!p||!im)return;let down=false,startX=0,startT=0;p.onpointerdown=e=>{down=true;startX=e.clientX;startT=im.offsetLeft||0;p.setPointerCapture(e.pointerId)};p.onpointermove=e=>{if(!down)return;const dx=e.clientX-startX;im.style.transform=`translateX(${dx}px)`};p.onpointerup=()=>{down=false};}
 
+/* KHANS home construction-stage visual sequence (Home-only) */
+let khansBuildStageIndex=0,khansBuildTimer=null;
+const khansBuildStages=[{title:"Empty room",desc:"Starting with the original ceiling structure"},{title:"Metal framework",desc:"The ceiling grid is laid out and secured"},{title:"Gypsum boards",desc:"Panels cover the frame and shape the ceiling"},{title:"LED & final reveal",desc:"Finishing details and warm lights come alive"}];
+function khansSetBuildStage(index){
+ const root=document.getElementById('homeHeroShowcase');if(!root)return;
+ khansBuildStageIndex=(index+khansBuildStages.length)%khansBuildStages.length;
+ root.dataset.buildStage=String(khansBuildStageIndex+1);
+ const stage=khansBuildStages[khansBuildStageIndex];
+ const number=document.getElementById('khansBuildNumber'),title=document.getElementById('khansBuildTitle'),desc=document.getElementById('khansBuildDesc'),progress=document.getElementById('khansBuildProgress'),dots=root.querySelectorAll('.buildStageDots span');
+ if(number)number.textContent=String(khansBuildStageIndex+1).padStart(2,'0')+' / 04';
+ if(title)title.textContent=stage.title;if(desc)desc.textContent=stage.desc;
+ if(progress)progress.style.width=((khansBuildStageIndex+1)*25)+'%';
+ dots.forEach((dot,i)=>dot.classList.toggle('active',i<=khansBuildStageIndex));
+}
+function khansStartBuildSequence(){
+ const root=document.getElementById('homeHeroShowcase');if(!root)return;
+ khansSetBuildStage(0);
+ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){khansSetBuildStage(3);return}
+ if(khansBuildTimer)clearInterval(khansBuildTimer);
+ khansBuildTimer=setInterval(()=>{if(!document.hidden)khansSetBuildStage(khansBuildStageIndex+1)},5000);
+}
+
 /* KHANS home hero slideshow */
 let khansHeroIndex=0,khansHeroTimer=null;
 function heroSlideGo(index){
@@ -893,7 +946,7 @@ document.addEventListener('click',e=>{
  if(e.target.closest('button,a,[role="button"],.ownerTab,.category,.pill,.customerTool'))playKhansClickSound();
 });
 
-function boot(){heroSlideGo(0);restartHeroSlideshow();initHomeCats();loadRates();loadCustomDesigns();loadProjects();renderGallery();renderHomeOffers();showPage('home');initSallu();initSalluTextInput();updateInstallButton();if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
+function boot(){heroSlideGo(0);restartHeroSlideshow();khansStartBuildSequence();initHomeCats();loadRates();loadCustomDesigns();loadProjects();renderGallery();renderHomeOffers();showPage('home');initSallu();initSalluTextInput();updateInstallButton();if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
 window.addEventListener('DOMContentLoaded',boot);
 window.openSavedDesigns=openSavedDesigns;
 window.openCompare=openCompare;
