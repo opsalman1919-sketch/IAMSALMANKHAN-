@@ -966,6 +966,7 @@ function initKhans3D(){
  function loop(now){if(reduced){scene(42);return}const t=(now-started)/1000;scene(t);requestAnimationFrame(loop)}
  if(reduced)scene(42);else requestAnimationFrame(loop);
 }
+}
 function boot(){heroSlideGo(0);restartHeroSlideshow();initKhans3D();initHomeCats();loadRates();loadCustomDesigns();loadProjects();renderGallery();renderHomeOffers();showPage('home');initSallu();initSalluTextInput();updateInstallButton();if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
 window.addEventListener('DOMContentLoaded',boot);
 window.openSavedDesigns=openSavedDesigns;
