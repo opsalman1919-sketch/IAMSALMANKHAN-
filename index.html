@@ -432,34 +432,22 @@ button:active,.gold:active,.outline:active{transform:translateY(1px)}
 @media(max-width:900px){#page-owner-center .ownerLayout{display:block!important}#page-owner-center .ownerSide{position:relative!important;top:auto;max-height:300px;margin-bottom:12px}#page-owner-center .ownerTabs{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}#page-owner-center .ownerMain{min-height:420px;padding:11px}}
 @media(prefers-reduced-motion:reduce){#page-owner-center #ownerContent{animation:none}}
 </style>
-<style id="khans-home-construction-progress">
-#page-home #homeHeroShowcase[data-build-stage]{position:relative}
-#page-home #homeHeroShowcase .buildCeilingOverlay{position:absolute;z-index:2;top:0;left:0;right:0;height:43%;overflow:hidden;pointer-events:none;perspective:900px}
-#page-home #homeHeroShowcase .buildPlane{position:absolute;inset:-6% -4% 0;width:108%;height:110%;transform:rotateX(10deg) scale(1.02);transform-origin:top center;transition:transform .8s ease}
-#page-home #homeHeroShowcase .buildGrid{position:absolute;inset:0;opacity:0;background-image:linear-gradient(#f2d48b66 1px,transparent 1px),linear-gradient(90deg,#f2d48b66 1px,transparent 1px);background-size:9.5% 23%;background-position:0 0;transition:opacity .7s}
-#page-home #homeHeroShowcase .buildPanels{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:2px;padding:3%;opacity:0;transition:opacity .8s}
-#page-home #homeHeroShowcase .buildPanels span{background:linear-gradient(145deg,#d6d1c83a,#eee7d222);border:1px solid #f1d27d88;box-shadow:inset 0 0 22px #f2d48b12}
-#page-home #homeHeroShowcase .buildLights{position:absolute;inset:0;opacity:0;background:radial-gradient(ellipse at 16% 24%,#ffe9a0b0 0 1.2%,transparent 6%),radial-gradient(ellipse at 50% 22%,#ffe9a0b0 0 1.2%,transparent 6%),radial-gradient(ellipse at 84% 24%,#ffe9a0b0 0 1.2%,transparent 6%),radial-gradient(ellipse at 16% 74%,#ffe9a0b0 0 1.2%,transparent 6%),radial-gradient(ellipse at 50% 72%,#ffe9a0b0 0 1.2%,transparent 6%),radial-gradient(ellipse at 84% 74%,#ffe9a0b0 0 1.2%,transparent 6%);transition:opacity .8s}
-#page-home #homeHeroShowcase[data-build-stage="1"] .buildGrid{opacity:0}
-#page-home #homeHeroShowcase[data-build-stage="2"] .buildGrid{opacity:.9}
-#page-home #homeHeroShowcase[data-build-stage="3"] .buildGrid{opacity:.28}
-#page-home #homeHeroShowcase[data-build-stage="3"] .buildPanels{opacity:.82}
-#page-home #homeHeroShowcase[data-build-stage="4"] .buildPanels{opacity:.22}
-#page-home #homeHeroShowcase[data-build-stage="4"] .buildLights{opacity:1}
-#page-home #homeHeroShowcase[data-build-stage="4"] .buildPlane{transform:rotateX(7deg) scale(1.02)}
-#page-home #homeHeroShowcase .buildStageCard{position:absolute;z-index:4;left:16px;top:16px;width:min(280px,calc(100% - 32px));padding:12px 14px;border:1px solid #d8b45e66;border-radius:14px;background:#08090bbf;backdrop-filter:blur(12px);box-shadow:0 14px 34px #0005;pointer-events:none}
-#page-home #homeHeroShowcase .buildStageTop{display:flex;align-items:center;justify-content:space-between;gap:8px}
-#page-home #homeHeroShowcase .buildStageEyebrow{font-size:9px;letter-spacing:.18em;color:#dfbd69;font-weight:700}
-#page-home #homeHeroShowcase .buildStageNumber{font-size:10px;color:#f6f1e6;font-variant-numeric:tabular-nums}
-#page-home #homeHeroShowcase .buildStageTitle{font-size:16px;font-weight:750;color:#fff;margin-top:4px}
-#page-home #homeHeroShowcase .buildStageDesc{font-size:10px;color:#d4cbb9;margin-top:3px}
-#page-home #homeHeroShowcase .buildStageTrack{height:3px;background:#ffffff20;border-radius:99px;overflow:hidden;margin-top:10px}
-#page-home #homeHeroShowcase .buildStageTrack span{display:block;width:25%;height:100%;background:linear-gradient(90deg,#b98c36,#f3d78c);border-radius:99px;transition:width .5s}
-#page-home #homeHeroShowcase .buildStageDots{display:flex;gap:5px;margin-top:7px}
-#page-home #homeHeroShowcase .buildStageDots span{height:3px;flex:1;border-radius:99px;background:#ffffff22;transition:background .35s}
-#page-home #homeHeroShowcase .buildStageDots span.active{background:#e1bb61}
-@media(max-width:640px){#page-home #homeHeroShowcase .buildCeilingOverlay{height:37%}#page-home #homeHeroShowcase .buildStageCard{top:10px;left:10px;padding:9px 11px;width:min(240px,calc(100% - 20px))}#page-home #homeHeroShowcase .buildStageTitle{font-size:14px}#page-home #homeHeroShowcase .buildStageDesc{font-size:9px}#page-home #homeHeroShowcase .buildGrid{background-size:14% 30%}}
-@media(prefers-reduced-motion:reduce){#page-home #homeHeroShowcase .buildPlane,#page-home #homeHeroShowcase .buildGrid,#page-home #homeHeroShowcase .buildPanels,#page-home #homeHeroShowcase .buildLights,#page-home #homeHeroShowcase .buildStageTrack span,#page-home #homeHeroShowcase .buildStageDots span{transition:none}}
+<style id="khans-home-cinematic-3d">
+#page-home #homeHeroShowcase{position:relative;isolation:isolate;overflow:hidden;background:#0b0c10}
+#page-home #homeHeroShowcase .heroSlideImage{opacity:.18!important;filter:blur(1px);transition:opacity .8s}
+#page-home #homeHeroShowcase .khans3dCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:3;display:block;pointer-events:none}
+#page-home #homeHeroShowcase .khans3dHud{position:absolute;z-index:5;left:16px;top:16px;width:min(300px,calc(100% - 32px));padding:13px 15px;border:1px solid #d7b56055;border-radius:14px;background:linear-gradient(140deg,#08090bd9,#11141aab);backdrop-filter:blur(14px);color:#fff;pointer-events:none;box-shadow:0 18px 45px #0005}
+#page-home #homeHeroShowcase .khans3dEyebrow{font-size:9px;letter-spacing:.22em;color:#dfbd69;font-weight:800}
+#page-home #homeHeroShowcase .khans3dName{font-size:16px;font-weight:750;margin-top:5px}
+#page-home #homeHeroShowcase .khans3dStage{font-size:10px;color:#cfc8bb;margin-top:4px}
+#page-home #homeHeroShowcase .khans3dProgress{height:3px;background:#ffffff20;border-radius:9px;margin-top:11px;overflow:hidden}
+#page-home #homeHeroShowcase .khans3dProgress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ad8235,#f5dc99);transition:width .4s}
+#page-home #homeHeroShowcase .khans3dRoomDots{display:flex;gap:5px;margin-top:8px}
+#page-home #homeHeroShowcase .khans3dRoomDots span{height:3px;flex:1;background:#ffffff22;border-radius:8px}
+#page-home #homeHeroShowcase .khans3dRoomDots span.active{background:#e4bf69}
+#page-home #homeHeroShowcase .heroSlideControls{z-index:6}
+@media(max-width:640px){#page-home #homeHeroShowcase .khans3dHud{top:10px;left:10px;padding:10px 12px;width:min(250px,calc(100% - 20px))}#page-home #homeHeroShowcase .khans3dName{font-size:14px}}
+@media(prefers-reduced-motion:reduce){#page-home #homeHeroShowcase .khans3dProgress i{transition:none}}
 </style>
 </head>
 <body>
@@ -478,8 +466,8 @@ button:active,.gold:active,.outline:active{transform:translateY(1px)}
 <div id="mobileMenu" class="modal"><div class="modalBox" style="max-width:430px"><div class="modalTop"><h3>KHANS Menu</h3><button class="close" onclick="closeModal('mobileMenu')">×</button></div><div class="small muted" style="margin-top:4px">CUSTOMER AREA</div><div class="mobileMenuList"><button class="outline" onclick="openCustomerArea('myOrders')"><i class="fa-solid fa-cart-shopping"></i> My Orders</button><button class="outline" onclick="openCustomerArea('myQuotes')"><i class="fa-solid fa-file-invoice-dollar"></i> My Quotations</button><button class="outline" onclick="openCustomerArea('myInvoices')"><i class="fa-solid fa-file-invoice"></i> My Invoices</button><button class="outline" onclick="openCustomerArea('myPayments')"><i class="fa-solid fa-credit-card"></i> My Payments</button><button class="outline" onclick="openCustomerArea('myTracking')"><i class="fa-solid fa-list-check"></i> Project Tracking</button><button class="outline" onclick="openCustomerArea('myNotifications')"><i class="fa-solid fa-bell"></i> Notifications</button><button class="outline" onclick="openCustomerArea('myRoomPlans')"><i class="fa-solid fa-ruler-combined"></i> Saved Room Plans</button><button class="outline" onclick="openUserSettings();closeModal('mobileMenu')"><i class="fa-solid fa-gear"></i> User Settings</button><button class="outline" onclick="openSavedDesigns();closeModal('mobileMenu')"><i class="fa-regular fa-heart"></i> Saved Designs</button><button class="outline" onclick="openCompare();closeModal('mobileMenu')"><i class="fa-solid fa-code-compare"></i> Compare Designs</button><button id="mobileLoginBtn" class="gold" onclick="openLoginModal();closeModal('mobileMenu')"><i class="fa-brands fa-google"></i> Continue with Google</button><button id="mobileLogoutBtn" class="danger hidden" onclick="handleLogout();closeModal('mobileMenu')"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</button></div></div></div>
 <main>
 <section id="page-home" class="page"><div class="hero"><div class="wrap heroGrid"><div><div class="eyebrow">BLACK • GOLD • PREMIUM INTERIORS</div><h1 id="heroTitle">Modern ceilings.<br><span>Beautiful spaces.</span></h1><p id="heroText">Explore premium false ceilings, TV walls, gypsum details and interior concepts. Select a design, plan your room, estimate your project and request a quotation for WhatsApp.</p><div class="heroActions"><button class="gold" onclick="showPage('design-studio')">Explore Designs</button><button class="outline" onclick="showPage('calculator')">Get a Quote</button><button class="outline" onclick="openAdvancedGallery()">Advanced Gallery</button></div></div><div class="heroImg" id="homeHeroShowcase" role="region" aria-label="KHANS premium interior design photo slideshow">
-<div class="buildCeilingOverlay" aria-hidden="true"><div class="buildPlane"><div class="buildGrid"></div><div class="buildPanels"><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="buildLights"></div></div></div>
-<div class="buildStageCard" aria-live="polite"><div class="buildStageTop"><span class="buildStageEyebrow">LIVE BUILD PROCESS</span><span class="buildStageNumber" id="khansBuildNumber">01 / 04</span></div><div class="buildStageTitle" id="khansBuildTitle">Empty room</div><div class="buildStageDesc" id="khansBuildDesc">Starting with the original ceiling structure</div><div class="buildStageTrack"><span id="khansBuildProgress"></span></div><div class="buildStageDots"><span class="active"></span><span></span><span></span><span></span></div></div>
+
+
 <img class="heroSlideImage active" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1500&q=85" alt="Premium modern living room interior with architectural ceiling design" fetchpriority="high">
 <img class="heroSlideImage" src="https://images.unsplash.com/photo-1776362355123-ca966d36e29c?auto=format&fit=crop&w=1500&q=82" alt="Luxury living room with grand interior architecture" loading="lazy">
 <img class="heroSlideImage" src="https://images.unsplash.com/photo-1744126405308-b7fb2d430e96?auto=format&fit=crop&w=1500&q=82" alt="Elegant high ceiling luxury living room" loading="lazy">
@@ -882,28 +870,6 @@ function val(id){return document.getElementById(id)?.value?.trim()||''}function 
 function renderHomeOffers(){db.ref('offers').once('value',s=>{const arr=s.exists()?Object.values(s.val()).filter(x=>x.active!==false):[];if(arr.length){const p=document.getElementById('page-home');const old=document.getElementById('offerBanner');if(old)old.remove();const el=document.createElement('div');el.id='offerBanner';el.className='wrap';el.style.paddingBottom='20px';el.innerHTML=`<div class="panel" style="background:linear-gradient(135deg,#fff7dd,#f6e8b8)">${arr.slice(0,2).map(o=>`<div style="padding:5px"><span class="tag">Limited Offer</span><h3 style="margin:4px 0">${esc(o.title)}</h3><p class="small muted">${esc(o.message)}</p></div>`).join('')}</div>`;p.insertAdjacentElement('afterbegin',el)}})}
 function initPanorama(){const p=document.getElementById('panorama');const im=p?.querySelector('img');if(!p||!im)return;let down=false,startX=0,startT=0;p.onpointerdown=e=>{down=true;startX=e.clientX;startT=im.offsetLeft||0;p.setPointerCapture(e.pointerId)};p.onpointermove=e=>{if(!down)return;const dx=e.clientX-startX;im.style.transform=`translateX(${dx}px)`};p.onpointerup=()=>{down=false};}
 
-/* KHANS home construction-stage visual sequence (Home-only) */
-let khansBuildStageIndex=0,khansBuildTimer=null;
-const khansBuildStages=[{title:"Empty room",desc:"Starting with the original ceiling structure"},{title:"Metal framework",desc:"The ceiling grid is laid out and secured"},{title:"Gypsum boards",desc:"Panels cover the frame and shape the ceiling"},{title:"LED & final reveal",desc:"Finishing details and warm lights come alive"}];
-function khansSetBuildStage(index){
- const root=document.getElementById('homeHeroShowcase');if(!root)return;
- khansBuildStageIndex=(index+khansBuildStages.length)%khansBuildStages.length;
- root.dataset.buildStage=String(khansBuildStageIndex+1);
- const stage=khansBuildStages[khansBuildStageIndex];
- const number=document.getElementById('khansBuildNumber'),title=document.getElementById('khansBuildTitle'),desc=document.getElementById('khansBuildDesc'),progress=document.getElementById('khansBuildProgress'),dots=root.querySelectorAll('.buildStageDots span');
- if(number)number.textContent=String(khansBuildStageIndex+1).padStart(2,'0')+' / 04';
- if(title)title.textContent=stage.title;if(desc)desc.textContent=stage.desc;
- if(progress)progress.style.width=((khansBuildStageIndex+1)*25)+'%';
- dots.forEach((dot,i)=>dot.classList.toggle('active',i<=khansBuildStageIndex));
-}
-function khansStartBuildSequence(){
- const root=document.getElementById('homeHeroShowcase');if(!root)return;
- khansSetBuildStage(0);
- if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){khansSetBuildStage(3);return}
- if(khansBuildTimer)clearInterval(khansBuildTimer);
- khansBuildTimer=setInterval(()=>{if(!document.hidden)khansSetBuildStage(khansBuildStageIndex+1)},5000);
-}
-
 /* KHANS home hero slideshow */
 let khansHeroIndex=0,khansHeroTimer=null;
 function heroSlideGo(index){
@@ -946,7 +912,62 @@ document.addEventListener('click',e=>{
  if(e.target.closest('button,a,[role="button"],.ownerTab,.category,.pill,.customerTool'))playKhansClickSound();
 });
 
-function boot(){heroSlideGo(0);restartHeroSlideshow();khansStartBuildSequence();initHomeCats();loadRates();loadCustomDesigns();loadProjects();renderGallery();renderHomeOffers();showPage('home');initSallu();initSalluTextInput();updateInstallButton();if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
+/* KHANS four-scene cinematic room builder: canvas-based 3D projection */
+function initKhans3D(){
+ const host=document.getElementById('homeHeroShowcase');if(!host||host.dataset.khans3dReady)return;host.dataset.khans3dReady='1';
+ const canvas=document.createElement('canvas');canvas.className='khans3dCanvas';canvas.setAttribute('aria-label','Animated 3D gypsum ceiling room build');host.appendChild(canvas);
+ const hud=document.createElement('div');hud.className='khans3dHud';hud.innerHTML='<div class="khans3dEyebrow">CINEMATIC ROOM BUILD</div><div class="khans3dName">Room 01 · Modern Cove</div><div class="khans3dStage">Starting empty room</div><div class="khans3dProgress"><i></i></div><div class="khans3dRoomDots"><span class="active"></span><span></span><span></span><span></span></div>';host.appendChild(hud);
+ const ctx=canvas.getContext('2d');if(!ctx)return;
+ const designs=[
+  {name:'Modern Cove',wall:'#33353b',trim:'#c9a75d',ceiling:'#c4c0b6',accent:'#e7c66d',shape:0},
+  {name:'Linear LED',wall:'#353a42',trim:'#c9a75d',ceiling:'#bdbab4',accent:'#ffd98b',shape:1},
+  {name:'Geometric Luxury',wall:'#292e35',trim:'#b99149',ceiling:'#d0c9ba',accent:'#ffdb83',shape:2},
+  {name:'Royal Bedroom',wall:'#382e30',trim:'#d3ad5e',ceiling:'#c6bfb2',accent:'#f5d88c',shape:3}
+ ];
+ const stages=['Empty room','Metal framework','Gypsum ceiling panels','LED & luxury reveal'];
+ const dots=hud.querySelectorAll('.khans3dRoomDots span'),nameEl=hud.querySelector('.khans3dName'),stageEl=hud.querySelector('.khans3dStage'),progress=hud.querySelector('.khans3dProgress i');
+ let W=0,H=0,dpr=1,started=performance.now(),last=0;
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function resize(){const r=host.getBoundingClientRect();W=Math.max(1,r.width);H=Math.max(1,r.height);dpr=Math.min(2,devicePixelRatio||1);canvas.width=W*dpr;canvas.height=H*dpr;canvas.style.width=W+'px';canvas.style.height=H+'px';ctx.setTransform(dpr,0,0,dpr,0,0)}
+ window.addEventListener('resize',resize,{passive:true});resize();
+ function project(x,y,z,cameraAngle,camPitch){
+  const ca=Math.cos(cameraAngle),sa=Math.sin(cameraAngle),cp=Math.cos(camPitch),sp=Math.sin(camPitch);
+  const xx=x*ca-z*sa,zz=x*sa+z*ca,yy=y*cp-zz*sp,depth=zz*cp+y*sp+8;
+  const focal=Math.min(W,H)*1.15,scale=focal/(depth+0.01);
+  return {x:W/2+xx*scale,y:H*.52-yy*scale,s:scale,depth};
+ }
+ function poly(points,fill,stroke=null,alpha=1){ctx.globalAlpha=alpha;ctx.beginPath();points.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.closePath();if(fill){ctx.fillStyle=fill;ctx.fill()}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=1;ctx.stroke()}ctx.globalAlpha=1}
+ function box(x,y,z,w,h,d,fill,stroke,ang,pitch){
+  const v=[[x,y,z],[x+w,y,z],[x+w,y,z+d],[x,y,z+d],[x,y+h,z],[x+w,y+h,z],[x+w,y+h,z+d],[x,y+h,z+d]];
+  const p=v.map(q=>project(q[0],q[1],q[2],ang,pitch));
+  poly([p[0],p[1],p[5],p[4]],fill,stroke);poly([p[1],p[2],p[6],p[5]],fill,stroke);poly([p[2],p[3],p[7],p[6]],fill,stroke);poly([p[3],p[0],p[4],p[7]],fill,stroke);poly([p[4],p[5],p[6],p[7]],fill,stroke);
+ }
+ function line3(a,b,color,width,ang,pitch){const p=project(...a,ang,pitch),q=project(...b,ang,pitch);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke()}
+ function scene(t){
+  const room=Math.floor(t/14)%4,local=(t%14),stage=Math.min(3,Math.floor(local/3.5)),phase=(local%3.5)/3.5,design=designs[room];
+  nameEl.textContent='Room '+String(room+1).padStart(2,'0')+' · '+design.name;stageEl.textContent=stages[stage];progress.style.width=((stage+phase)/4*100)+'%';dots.forEach((d,i)=>d.classList.toggle('active',i<=room));
+  const angle=-.42+Math.sin(local*.25)*.08+Math.sin(t*.13)*.07,pitch=.15+Math.sin(local*.18)*.03;
+  const sky=ctx.createLinearGradient(0,0,0,H);sky.addColorStop(0,'#11151b');sky.addColorStop(.55,'#272b31');sky.addColorStop(1,'#0a0b0e');ctx.fillStyle=sky;ctx.fillRect(0,0,W,H);
+  // Room shell and flooring
+  box(-4,-3,-4,8,.15,8,'#282a2e','#555',angle,pitch);
+  box(-4,-3,-4,8,5,.12,design.wall,'#555',angle,pitch);box(-4,-3,-4,.12,5,8,'#262a30','#4c4e52',angle,pitch);box(3.88,-3,-4,.12,5,8,'#22262b','#444',angle,pitch);
+  for(let k=0;k<10;k++)line3([-3.8,-2.98,-3.7+k*.75],[3.8,-2.98,-3.7+k*.75],'#8e826d55',.5,angle,pitch);
+  // Ceiling framework draws in stage 2
+  if(stage>=1){const reveal=Math.min(1,(local-3.5)/2.5);for(let x=-3.4;x<=3.4;x+=.65){line3([x,1.65,-3.5],[x,1.65,3.5],design.trim,1.1*reveal,angle,pitch)}for(let z=-3.4;z<=3.4;z+=.65)line3([-3.5,1.65,z],[3.5,1.65,z],design.trim,1.1*reveal,angle,pitch)}
+  // Panels build in with a progressive wave
+  if(stage>=2){const n=Math.max(0,(local-7)/2.5);for(let x=-3.25;x<3.25;x+=1.6)for(let z=-3.25;z<3.25;z+=1.65){const offset=(x+3.25)*.045+(z+3.25)*.045;if(n>offset){const a=Math.min(1,(n-offset)*1.8);box(x,1.65,z,1.52,.07,1.55,design.ceiling,'#a99c86',angle,pitch)}}}
+  // Cove outline and decorative geometric inset
+  if(stage>=2){const glow=stage===3?1:.18;const col=stage===3?design.accent:'#c49a4b88';line3([-3.35,1.7,-3.35],[3.35,1.7,-3.35],col,2.5*glow,angle,pitch);line3([3.35,1.7,-3.35],[3.35,1.7,3.35],col,2.5*glow,angle,pitch);line3([3.35,1.7,3.35],[-3.35,1.7,3.35],col,2.5*glow,angle,pitch);line3([-3.35,1.7,3.35],[-3.35,1.7,-3.35],col,2.5*glow,angle,pitch)if(design.shape===1){line3([-2.7,1.73,0],[2.7,1.73,0],col,2.2*glow,angle,pitch);line3([0,1.73,-2.7],[0,1.73,2.7],col,2.2*glow,angle,pitch)}if(design.shape===2){line3([-2.8,1.73,-2.8],[2.8,1.73,2.8],col,2.2*glow,angle,pitch);line3([2.8,1.73,-2.8],[-2.8,1.73,2.8],col,2.2*glow,angle,pitch)}if(design.shape===3){for(let q=1;q<=3;q++){let s=q*.72;line3([-s,1.73,-s],[s,1.73,-s],col,1.4*glow,angle,pitch);line3([s,1.73,-s],[s,1.73,s],col,1.4*glow,angle,pitch);line3([s,1.73,s],[-s,1.73,s],col,1.4*glow,angle,pitch);line3([-s,1.73,s],[-s,1.73,-s],col,1.4*glow,angle,pitch)}}
+  if(stage===3){for(let x=-2.7;x<=2.7;x+=1.35){const p=project(x,1.72,0,angle,pitch);ctx.save();ctx.shadowColor=design.accent;ctx.shadowBlur=22;ctx.fillStyle=design.accent;ctx.beginPath();ctx.ellipse(p.x,p.y,Math.max(2,p.s*.08),Math.max(2,p.s*.045),0,0,Math.PI*2);ctx.fill();ctx.restore()}}
+  // Furniture/TV wall reveal during final phase
+  if(stage===3){const fade=Math.min(1,(local-10.5)/2);box(-2.5,-2.95,2.85,5,.35,.18,'#25262a','#756247',angle,pitch);box(-1.9,-2.7,3.05,3.8,2.05,.12,'#111318',design.trim,angle,pitch);box(-1.55,-2.5,3.16,3.1,1.72,.05,'#090b0f','#6b5a3d',angle,pitch);box(-2.3,-2.95,-1.6,1.25,.75,1.05,'#777064','#9a895e',angle,pitch);box(1.05,-2.95,-1.6,1.25,.75,1.05,'#777064','#9a895e',angle,pitch);box(-.65,-2.92,-.2,1.3,.22,1.1,'#5a5144','#c1a264',angle,pitch)}
+  // subtle dolly/turn cinematic framing
+ }
+ function loop(now){if(reduced){scene(42);return}const t=(now-started)/1000;scene(t);requestAnimationFrame(loop)}
+ if(reduced)scene(42);else requestAnimationFrame(loop);
+}
+}
+function boot(){heroSlideGo(0);restartHeroSlideshow();initKhans3D();initHomeCats();loadRates();loadCustomDesigns();loadProjects();renderGallery();renderHomeOffers();showPage('home');initSallu();initSalluTextInput();updateInstallButton();if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
 window.addEventListener('DOMContentLoaded',boot);
 window.openSavedDesigns=openSavedDesigns;
 window.openCompare=openCompare;
